@@ -1,0 +1,283 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  padding-top: 75px;
+  padding-bottom: 50px;
+
+  font-family: "Intro Light";
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+
+.footer__nav,
+.footer__info {
+  width: 296px
+}
+
+.footer-info-menu__item--social {
+  position: absolute;
+  bottom: 170px;
+}
+
+.footer-info-menu__item--payment {
+  position: absolute;
+  bottom: 340px;
+}
+
+.footer-info-menu__item--address {
+  margin-top: 30px;
+}
+
+.footer-info-menu__item--development {
+  margin-top: 355px
+}
+
+.footer-menu__item--privacy-policy {
+  padding-top: 55px;
+}
+
+.footer__info {
+  margin-top: 55px;
+}
+
+.footer-menu__item--copyright {
+  position: absolute;
+  bottom: 110px;
+}
+
+.footer-info-menu__item--logo {
+  position: absolute;
+  bottom: 230px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    // display: block;
+    padding: 20px;
+    padding-right: 70px;
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+
+  .footer__nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 678px;
+  }
+
+  .footer-menu__item--copyright {
+    bottom: 0;
+  }
+
+
+  .footer__info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 678px;
+    min-height: 270px;
+  }
+
+  .footer-info-menu__link {
+    padding-top: 30px;
+  }
+
+
+  .footer-info-menu__item--email {
+    margin-top: 10px;
+  }
+
+  .footer-info-menu__item--phone {
+    margin-top: 0;
+  }
+
+  .footer-info-menu__item--phone > a{
+    padding-top: 20px;
+  }
+
+  .footer-info-menu__item--logo {
+    position: static;
+  }
+
+  .footer-info-menu__item--social {
+    bottom: 0;
+  }
+
+  .footer-info-menu__item--address {
+    margin-top: 70px;
+  }
+
+  .footer-info-menu__item--development {
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .footer-info-menu__item--payment {
+    position: static;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 55px;
+    padding-right: 50px;
+    padding-top: 120px;
+    padding-bottom: 170px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -30%;
+      top: -100%;
+      display: block;
+      width: 1237px;
+      height: 1237px;
+      z-index: -1;
+      background-image: radial-gradient(618.50px at 50% 50%, rgba(227, 219, 214, 0.085) 0%, rgba(227, 219, 214, 0) 100%);
+    }
+  }
+
+  .footer__nav {
+    justify-content: space-around;
+    width: 55%;
+  }
+
+  .footer__info {
+    margin-top: 0;
+    justify-content: space-around;
+    width: 45%;
+    min-height: 290px;
+  }
+
+  .footer-menu__item--copyright {
+    bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer {
+    position: relative;
+    padding-left: 270px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .footer {
+    padding-left: 310px;
+    padding-right: 190px;
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+
+  .footer-menu:first-of-type {
+    margin-left: 0;
+  }
+}
+
+
+
+.footer-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footer-menu__link {
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: color 300ms;
+}
+
+.footer-menu__link:hover,
+.footer-menu__link:focus {
+  color: #E08B66;
+}
+
+.footer-menu__item--privacy-policy > .footer-menu__link {
+  text-transform: none;
+}
+
+
+
+.footer-info-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footer-info-menu__link {
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: color 300ms;
+}
+
+.footer-info-menu__link[href]:hover,
+.footer-info-menu__link[href]:focus {
+  color: #E08B66;
+}
+
+.footer-phone-humber {
+  display: inline-block;
+  padding-top: 30px;
+  color: #FFFFFF;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.footer-email {
+  display: inline-block;
+  padding-top: 10px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer-address {
+  font-style: normal;
+}
+
+
+.footer-development {
+  margin: 0;
+  padding-top: 40px;
+}
+
+.footer-development a {
+  padding-left: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-development a:hover,
+.footer-development a:focus {
+  color: #E08B66;
+}

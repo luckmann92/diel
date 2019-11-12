@@ -1,0 +1,4 @@
+<?php
+$MESS['HOME_COLLECTION_BLOCK_TITLE'] = 'коллекции';
+$MESS['HOME_COLLECTION_BTN_READ_MORE'] = 'Подробнее';
+$MESS['HOME_COLLECTION_BTN_LINK_TO_COLLECTION'] = 'Все коллекции';

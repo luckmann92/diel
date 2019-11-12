@@ -1,0 +1,136 @@
+.button-transition {
+  position: relative;
+  display: inline-block;
+  padding: 10px 40px;
+  padding-right: 83px;
+  color: #E08B66;
+  font-size: 16px;
+  line-height: 32px;
+  font-family: "Intro Light";
+  letter-spacing: -0.191667px;
+  text-decoration: none;
+  border: 1px solid rgba(224, 139, 102, 0.5);
+  z-index: 100;
+
+  &:hover > .button-transition__image {
+    right: 20px;
+  }
+}
+
+.button-transition__image {
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 40px;
+  transition: right 300ms;
+}
+
+.button-primery {
+  display: inline-block;
+  padding: 10px 40px;
+  font-family: "Intro Light";
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: -0.191667px;
+  text-decoration: none;
+  color: #D7825D;
+  background-color: transparent;
+  border: 1px solid rgba(215, 130, 93, 0.5);
+}
+
+.button-serch svg {
+  transition: transform 300ms;
+}
+
+.button-serch:hover svg {
+  transform: scale(1.1);
+}
+
+.button-second {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 10px 40px;
+  font-family: "Intro Light";
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: -0.191667px;
+  color: #E08B66;
+  // border: 1px solid rgba(224, 139, 102, 0.5);
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.button-second svg {
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.button-second::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: top 300ms, 
+              right 300ms,
+              bottom 300ms,
+              left 300ms;
+  border: 1px solid rgba(224, 139, 102, 0.5);
+  z-index: -1;
+}
+
+.button-second:hover::before  {
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-color: rgba(224, 139, 102, 0.5);
+}
+
+
+
+
+
+
+.button-next {
+  width: 80px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button-next__icon {
+  transition: margin 300ms;
+}
+
+.button-next:focus {
+  outline: none;
+}
+
+.button-next:hover > .button-next__icon,
+.button-next:focus > .button-next__icon {
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+.button-up {
+  background-color: transparent;
+  border: none;
+  transition: transform 300ms;
+  cursor: pointer;
+}
+
+.button-up:hover,
+.button-up:focus {
+  transform: scale(1.4);
+  outline: none;
+}

@@ -1,0 +1,61 @@
+
+.popup-successful {
+  display: flex;
+  justify-content: center;
+}
+
+.popup-successful__inner {
+  position: relative;
+  margin: 20px 15px;
+  padding: 50px 15px;
+  height: fit-content;
+  background-color: #160A04;
+  border: 2px solid rgba(224, 139, 102, 0.3);
+}
+
+.popup-successful__title {
+  margin-bottom: 40px;
+}
+
+.popup-successful__message {
+  font-family: "Lazurski";
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+
+.popup-successful__close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .popup-successful__inner {
+    margin-top: 145px;
+    padding: 95px 160px 90px 55px;
+  }
+
+  .popup-successful__title {
+    margin-bottom: 50px;
+  }
+
+  .popup-successful__close {
+    top: 60px;
+    right: 60px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .popup-successful__inner {
+    padding: 90px 150px;
+    width: 1035px;
+    box-sizing: border-box;
+  }
+
+  .popup-successful__title {
+    margin-bottom: 60px;
+  }
+}

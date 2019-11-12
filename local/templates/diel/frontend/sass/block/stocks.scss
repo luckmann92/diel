@@ -1,0 +1,244 @@
+.stocks {
+  padding-top: 52px;
+  padding-bottom: 50px;
+  padding-left: 12px;
+  background-color: #130A07;
+  background: linear-gradient(#1C0F0A 0%, #130A07 5%, #130A07 100%);
+}
+
+.stocks__slider-wrapper {
+  margin-top: 40px !important;
+}
+
+.stocks__button-transition {
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .stocks {
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: 20px;
+  }
+
+  .stocks__slider-wrapper {
+    margin-top: 50px !important;
+  }
+
+  .stocks__button-transition {
+    position: absolute;
+    margin: 0;
+    top: 70px;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .stocks {
+    position: relative;
+    padding-top: 152px;
+    padding-bottom: 100px;
+    padding-left: 55px;
+  }
+
+  .stocks__title {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .stocks__slider-wrapper {
+    margin: 0 !important;
+  }
+
+  .stocks__button-transition {
+    top: auto;
+    right: auto;;
+    bottom: 310px;
+    left: 55px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .stocks {
+    padding-left: 270px;
+  }
+
+  .stocks__button-transition {
+    left: 270px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .stocks {
+    padding-left: 310px;
+    background: url(../img/background_diamond.png) no-repeat bottom -260px right -400px,
+                linear-gradient(#1C0F0A 0%, #130A07 5%, #130A07 100%);
+  }
+
+  .stocks__button-transition {
+    // top: 152px;
+    // bottom: auto;
+    // right: 125px;
+    // left: auto;
+    left: 310px;
+  }
+}
+
+
+
+
+.stocks-slider {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.stocks-slider-options {
+  display: none;
+}
+
+.stocks-slider__item {
+  flex-shrink: 0;
+  width: 253px;
+}
+
+.stocks-slider__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 186px;
+  overflow: hidden;
+}
+
+.stocks-slider__image {
+  width: 100%;
+}
+
+.stocks-slider__title {
+  margin: 0;
+  margin-top: 30px;
+  font-family: "Lazurski Bold";
+  font-size: 18px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+
+.stocks-slider__description {
+  margin: 0;
+  margin-top: 20px;
+  font-family: "Intro Light";
+  font-size: 16px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+
+.stocks-slider__link-detail {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .stocks-slider__item {
+    width: 296px;
+  }
+
+  .stocks-slider__title {
+    line-height: 36px;
+  }
+
+  .stocks-slider__link-detail {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .stocks-slider__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .stocks-slider__image-wrapper {
+    order: 1;
+    padding-right: 0;
+    width: 750px;
+    height: 550px;
+  }
+
+  .stocks-slider__image {
+    width: initial;
+    object-fit: cover;
+  }
+
+  .stocks-slider__title {
+    margin-top: 120px;
+    font-size: 24px;
+  }
+
+  .stocks-slider__description {
+    margin-top: 30px;
+    width: 363px;
+  }
+
+  .stocks-slider-options {
+    display: block;
+    margin-top: 135px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .stocks-slider__item {
+    justify-content: flex-start;
+  }
+
+  .stocks-slider__text {
+    margin-right: 85px; 
+  }
+
+  .stocks-slider__image-wrapper {
+    padding-right: 410px;
+  }
+}
+
+
+.stocks-slider-options__item-text {
+  font-family: "Lazurski";
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  fill: #765B4A;
+}
+
+.stocks-slider-options__item {
+  cursor: pointer;
+}
+
+.stocks-slider-options__item .stocks-slider-options__item-text,
+.stocks-slider-options__item line,
+.stocks-slider-options__item circle:last-of-type,
+.stocks-slider-options__item circle:first-of-type {
+  transition: 300ms;
+}
+
+.stocks-slider-options__item--active circle:first-of-type,
+.stocks-slider-options__item:hover circle:first-of-type {
+  fill: #AF6A4D;
+}
+
+.stocks-slider-options__item--active circle:last-of-type,
+.stocks-slider-options__item:hover circle:last-of-type {
+  stroke: #AF6A4D;
+}
+
+.stocks-slider-options__item--active line,
+.stocks-slider-options__item:hover line {
+  stroke: #AF6A4D;
+}
+
+.stocks-slider-options__item--active .stocks-slider-options__item-text,
+.stocks-slider-options__item:hover .stocks-slider-options__item-text {
+  stroke: #AF6A4D;
+  font-size: 24px;
+  line-height: 24px;
+}

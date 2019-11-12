@@ -1,0 +1,306 @@
+.all-collections-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.all-collections-item {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.all-collections-item__image-wrapper {
+  margin-bottom: 47px;
+}
+
+.all-collections-item__image {
+  width: 100%;
+}
+
+.all-collections-item__title {
+  position: absolute;
+  top: 0;
+  transform: translateY(calc(-100% - 20px));
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lazurski";
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+
+  span {
+    align-self: flex-start;
+  }
+
+  span:first-child {
+    transform: translateX(5%);
+  }
+}
+
+.all-collections-item__title-bigger {
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #E08B66;
+}
+
+
+.all-collections-item__description {
+  position: relative;
+  align-self: flex-start;
+  // padding-right: 52px;
+}
+
+.all-collections-item__p {
+  margin: 12px 0;
+  font-family: "Intro Light";
+  font-size: 16px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+
+.all-collections-item__button-detail {
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .all-collections-item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .all-collections-item__description {
+    padding-right: 20px;
+    width: inherit;
+  }
+
+  .all-collections-item__image-wrapper {
+    flex-shrink: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    width: 302px;
+    
+    min-height: 555px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .all-collections-item__title {
+    top: initial;
+    bottom: 0;
+    right: 0;
+    transform: translate(20%, calc(100% + 30px));
+    width: 400px;
+    text-align: right;
+    font-size: 36px;
+    line-height: 48px;
+
+    span:first-child {
+      transform: translateX(0);
+    }
+  }
+
+  .all-collections-item__title-bigger {
+    transform: translateX(10%);
+    width: inherit;
+    font-size: 46px;
+    line-height: 48px;
+  }
+
+  .all-collections-item:nth-child(n + 2) {
+    .all-collections-item__description {
+      margin-top: 100px;
+    }    
+  }
+  .all-collections-item:nth-child(2n + 2) {
+    padding-bottom: 100px
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .all-collections-item__title {
+    transform: translate(20%, calc(100% + 80px));
+    width: 713px;
+    font-size: 64px;
+    line-height: 80px;
+  }
+
+  .all-collections-item__title-bigger {
+    font-size: 100px;
+    line-height: 80px;
+  }
+
+  .all-collections-item__image-wrapper {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 470px;
+    min-height: 863px;
+  }
+
+  .all-collections-item:first-child {
+    z-index: 2;
+  }
+
+  .all-collections-item:nth-child(2) {
+    z-index: 1;
+  }
+
+  .all-collections-item:nth-child(2n + 2) {
+
+    .all-collections-item__description {
+      padding-top: 70px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.all-collections__item {
+  padding-left: 12px;
+  padding-right: 12px;
+  // padding-bottom: 66px;
+}
+
+.all-collections__item {
+  // margin-bottom: 60px
+}
+
+.all-collections__title {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .all-collections__title {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .all-collections__item {
+    padding-left: 20px;
+    padding-right: 20px;
+    // padding-bottom: 66px;
+  }
+
+  .all-collections__item:nth-child(2n + 2) {
+    flex-direction: row-reverse;
+
+    .all-collections-item__description {
+      padding-right: 0;
+      padding-left: 25px;
+    }
+
+    .all-collections-item__title {
+      top: initial;
+      bottom: 0;
+      text-align: left;
+      transform: translate(-50%);
+    }
+
+    .all-collections-item__title-bigger {
+      transform: translateX(10%);
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .all-collections__title {
+    margin-left: 55px;
+    margin-right: 70px;
+  }
+
+  .all-collections__item {
+    padding-left: 55px;
+    padding-right: 70px;
+    // padding-bottom: 143px;
+  }
+
+  .all-collections__item:nth-child(2n + 2) {
+
+    .all-collections-item__description {
+      padding-left: 40px;
+    }
+  }
+
+  .all-collections__item:first-child {
+    margin-top: -155px;
+
+    & * {
+      z-index: 2;
+    }
+
+    .all-collections-item__description {
+      z-index: 3;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 295px;
+      width: 403px;
+      height: 363px;
+      background-image: url(../img/our_products_diamond_bc.png);
+      background-repeat: no-repeat;
+      opacity: .1;
+      z-index: 1;
+    }
+
+    .all-collections-item__description {
+      padding-top: 155px;
+    }
+  }
+  
+}
+
+@media screen and (min-width: 1440px) {
+  .all-collections__title {
+    margin-left: 270px;
+  }
+
+  .all-collections__item {
+    padding-left: 270px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .all-collections__title {
+    margin-left: 310px;
+    margin-right: 252px;
+  }
+
+  .all-collections__item {
+    padding-left: 310px;
+    padding-right: 252px;
+  }
+
+  .all-collections__item:nth-child(2n + 2) {
+
+    .all-collections-item__description {
+      padding-left: 87px;
+    }
+  }
+}
+
+
+
+
+
