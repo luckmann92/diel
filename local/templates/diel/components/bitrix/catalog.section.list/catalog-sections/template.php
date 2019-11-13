@@ -13,13 +13,15 @@ Loc::loadMessages(__FILE__);
         <? foreach ($arSections as $k => $arSection) { ?>
             <li class="catalog-our-products-list__item product-card <?= $arSection['CLASS'] ?>">
                 <? if ($arSection['TYPE_VIEW'] > 0) { ?>
-                    <div class="product-card__image-wrapper">
+                    <a class="product-card__image-wrapper" href="<?= $arSection['SECTION_PAGE_URL'] ?>">
                         <img class="product-card__image"
                              src="<?= $arSection['PICTURE']['SRC'] ?>"
                              alt="<?= $arSection['PICTURE']['ALT'] ?>">
-                    </div>
+                    </a>
                     <div class="product-card__text">
-                        <h3 class="product-card__title"><?= $arSection['NAME'] ?></h3>
+                        <h3 class="product-card__title">
+                            <a class="product-card__link" href="<?= $arSection['SECTION_PAGE_URL'] ?>"><?= $arSection['NAME'] ?></a>
+                        </h3>
                         <p class="product-card__description"><?= $arSection['DESCRIPTION'] ?></p>
                         <div class="product-card__footer">
                             <a class="product-card__button-detail link-detail" href="<?= $arSection['SECTION_PAGE_URL'] ?>">
