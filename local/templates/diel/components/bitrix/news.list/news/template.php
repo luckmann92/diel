@@ -18,15 +18,15 @@
                            href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее
                             <?= GetContentSvgIcon('arrow-long') ?>
                         </a>
-                    </div>
-
-                    <div class="all-collections-item__image-wrapper">
-                        <img class="all-collections-item__image" src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
 
                         <h3 class="all-collections-item__title">
                             <span><?= $arItem['PROPERTIES']['TITLE']['VALUE'] ?></span>
                             <span class="all-collections-item__title-bigger"><?= $arItem['PROPERTIES']['SUBTITLE']['VALUE'] ?></span>
                         </h3>
+                    </div>
+
+                    <div class="all-collections-item__image-wrapper">
+                        <img class="all-collections-item__image" src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
                     </div>
                 </li>
             <? } ?>

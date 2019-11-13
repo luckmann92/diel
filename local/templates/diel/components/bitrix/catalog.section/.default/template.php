@@ -98,14 +98,16 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
                 <? if ($item['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
                 <? } ?>
-                <div class="product-card__image-wrapper">
+                <a class="product-card__image-wrapper" href="<?= $item['DETAIL_PAGE_URL'] ?>">
                     <img class="product-card__image"
                          src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>"
                          alt="<?= $item['PREVIEW_PICTURE']['ALT'] ?>">
-                </div>
+                </a>
 
                 <div class="product-card__text">
-                    <h3 class="product-card__title"><?= $item['NAME'] ?></h3>
+                    <h3 class="product-card__title">
+                        <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>"> <?= $item['NAME'] ?></a>
+                    </h3>
                     <? if ($isBigBlock) { ?>
                         <p class="product-card__description"><?= $item['PREVIEW_TEXT'] ?></p>
                     <? } ?>

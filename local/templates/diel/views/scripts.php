@@ -21,7 +21,6 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/banner-sl
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/stocks-slider.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/advantages.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/our-products.js"));
-Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/popup.js"));
 // Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/popup-request-call.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/button-up.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/filter.js"));
@@ -31,4 +30,5 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/main.js")
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/search.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/slider.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/tabs.js"));
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/popup.js"));
 

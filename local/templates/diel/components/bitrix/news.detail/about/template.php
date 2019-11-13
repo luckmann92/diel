@@ -52,6 +52,7 @@
         <li class="all-collections__item all-collections-item">
             <div class="all-collections-item__description">
 							<p class="all-collections-item__p"><?= htmlspecialchars_decode($arResult['PROPERTIES']['DESCRIPTION_3']['VALUE']['TEXT']) ?></p>
+							
 							<h3 class="all-collections-item__title">
 								<span><?= $arResult['PROPERTIES']['SUBTITLE_IMAGE_3']['VALUE'] ?></span>
 								<span class="all-collections-item__title-bigger"><?= $arResult['PROPERTIES']['TITLE_IMAGE_3']['VALUE'] ?></span>

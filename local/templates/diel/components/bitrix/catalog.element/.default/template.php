@@ -256,16 +256,18 @@ if ($arParams['PROPERTY_CODE'] || ($arResult['DETAIL_TEXT'] || $arResult['PREVIE
                                     <? if ($arItems[0]['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                                         <span class="product-card__novelty">Новинка</span>
                                     <? } ?>
-                                    <div class="product-card__image-wrapper">
+                                    <a class="product-card__image-wrapper" href="<?= $arItems[0]['DETAIL_PAGE_URL'] ?>">
                                         <? if ($arItems[0]['PREVIEW_PICTURE']['SRC']) { ?>
                                             <img class="product-card__image"
                                                  src="<?= $arItems[0]['PREVIEW_PICTURE']['SRC'] ?>"
                                                  alt="<?= $arItems[0]['NAME'] ?>">
                                         <? } ?>
-                                    </div>
+                                    </a>
 
                                     <div class="product-card__text">
-                                        <h3 class="product-card__title"><?= $arItems[0]['NAME'] ?></h3>
+                                        <h3 class="product-card__title">
+                                            <a class="product-card__link" href="<?= $arItems[0]['DETAIL_PAGE_URL'] ?>"><?= $arItems[0]['NAME'] ?></a>
+                                        </h3>
                                         <? if ($arItems[0]['PREVIEW_TEXT']) { ?>
                                             <p class="product-card__description"><?= $arItems[0]['PREVIEW_TEXT'] ?></p>
                                         <? } ?>

@@ -164,8 +164,15 @@ if (document.querySelector(".popup-request-call") && document.querySelector(".co
   let popup = new Popup(".popup-request-call"),
       btn = document.querySelector(".contacts__call");
 
+    btn.onclick = function(evt) {
+      evt.preventDefault();
+evt.stopPropagation();
+      popup.showPopup();
+    }
+
     btn.addEventListener("click", function(evt) {
       evt.preventDefault();
+
       popup.showPopup();
   });
 }
