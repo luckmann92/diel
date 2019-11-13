@@ -168,7 +168,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
             </form>
         </section>
     <? } else { ?>
-        <section class="popup popup-request-call popup--active">
+        <section class="popup popup-request-call popup--active arcticmodal-overlay">
             <div class="popup-request-call__inner">
                 <h2 class="popup-request-call__title section-title"><?= $arResult['arForm']['NAME'] ?></h2>
 

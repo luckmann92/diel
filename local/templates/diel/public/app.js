@@ -32,6 +32,18 @@ btnFastShow.on('click', function (e) {
     });
     return false;
 });
-$('.js-init-form-close').on('click', function () {
-    $.arcticmodal('close');
-});
+// $('.js-init-form-close').on('click', function () {
+//     $.arcticmodal('close');
+// });
+
+setInterval(function() {
+    $('.js-init-form-close').on('click', function() {
+        $.arcticmodal('close');
+    });
+
+    $('.popup').on('click', function(e) {
+        console.log(e.target);
+        if (e.target.classList.contains("popup"))
+            $.arcticmodal('close');
+    });
+}, 100);

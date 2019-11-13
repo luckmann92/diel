@@ -8,7 +8,6 @@ btnModal.on('click', function (e) {
         url = '/local/tools/ajax.web.form.php',
         price = $('#offer-price');
 
-
     $.arcticmodal({
         type: 'ajax',
         url: url + '?sign=' + sign + '&ajax_form=' + formID,
@@ -52,5 +51,7 @@ btnModal.on('click', function (e) {
             }
         }
     });
+
     return false;
 });
+

@@ -1,21 +1,33 @@
 (function() {
   if (!document.querySelector(".banner__list")) return;
 
+  let sum = document.querySelectorAll(".banner__item").length;
+
+  if (sum < 2) return;
+
+  if (sum <= 3) {
+    let btn = document.querySelectorAll(".banner-menu-circle__nav-btn");
+
+    for (let i = 0; i < btn.length; i++) {
+      btn[i].style.display = "none";
+    }
+  }
+
   let bannerSlider = tns({
-    container: ".banner__list",
-    controlsPosition: "bottom",
-    mode: "gallery",
-    // nav: false,
-    items: 1,
-    navContainer: ".banner-menu-circle__nav",
+        container: ".banner__list",
+        controlsPosition: "bottom",
+        mode: "gallery",
+        // nav: false,
+        items: 1,
+        navContainer: ".banner-menu-circle__nav",
 
-    controls: false,
-    touch: false,
-    speed: 1600,
+        controls: false,
+        touch: false,
+        speed: 1600,
 
-    // autoplay: true,
-    autoplayTimeout: 10000,
-  }),
+        // autoplay: true,
+        autoplayTimeout: 10000,
+      }),
 
       bannerSliderInfo = bannerSlider.getInfo();
       indexPrev = bannerSliderInfo.indexCached,

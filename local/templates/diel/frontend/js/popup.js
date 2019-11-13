@@ -160,6 +160,16 @@ if (document.querySelector(".popup-request-call") && document.querySelector(".fl
   });
 }
 
+if (document.querySelector(".popup-request-call") && document.querySelector(".popup-menu-footer__phone")) {
+  let popup = new Popup(".popup-request-call"),
+      btn = document.querySelector(".popup-menu-footer__phone");
+
+    btn.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      popup.showPopup();
+  });
+}
+
 if (document.querySelector(".popup-request-call") && document.querySelector(".contacts__call")) {
   let popup = new Popup(".popup-request-call"),
       btn = document.querySelector(".contacts__call");

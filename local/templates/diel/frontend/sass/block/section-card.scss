@@ -175,6 +175,8 @@
       align-items: center;
       width: 100%;
       height: calc((100% - 30px) / 2);
+      // max-height: calc((100% - 30px) / 2);
+      // max-height: 300px;
     }
 
     &.product-card--view-3 {
