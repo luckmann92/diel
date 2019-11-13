@@ -44,8 +44,8 @@ if (document.querySelector(".diel-select")) {
       el.querySelectorAll(".diel-select-list__item").forEach(function(el, index) {
         el.dataset.id = index;
 
-        if (el.parentElement.parentElement.querySelector(".diel-select__button").offsetWidth > width) 
-          width = el.parentElement.parentElement.querySelector(".diel-select__button").offsetWidth;
+        if (el.offsetWidth > width)
+          width = el.offsetWidth;
 
         el.addEventListener("click", function() {
           this.parentElement.parentElement.querySelector(".filter__diel-js").selectedIndex = this.dataset.id;
@@ -57,6 +57,7 @@ if (document.querySelector(".diel-select")) {
       });
 
       el.querySelector(".diel-select__button").style.width = width + 17 + "px";
+
       if (option.length > 0) {
         el.querySelector(".diel-select__button-text").textContent = option[0].textContent;
       }

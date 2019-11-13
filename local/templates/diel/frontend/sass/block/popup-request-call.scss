@@ -1,16 +1,5 @@
-.popup-request-call {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 12px;
-  width: 100vw;
-  height: 100%;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, .5);
-  overflow: hidden;
-  transition: opacity 400ms;
-  z-index: 100;
-}
+// .popup-request-call {
+// }
 
 .popup-request-call--hidden {
   visibility: hidden;

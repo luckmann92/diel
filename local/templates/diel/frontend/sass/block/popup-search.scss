@@ -188,14 +188,9 @@
   position: absolute;
   top: 2px;
   right: 2px;
-  padding: 0;
+  padding: 10px;
   background-color: transparent;
   border: none;
-}
-
-.popup-search__button--close {
-  padding: 10px;
-
   transition: transform 300ms;
 
   &:hover {

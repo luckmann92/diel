@@ -73,9 +73,12 @@
   .all-collections-item {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 1;
   }
 
   .all-collections-item__description {
+    flex-grow: 1;
     padding-right: 20px;
     width: inherit;
   }
@@ -204,6 +207,7 @@
     flex-direction: row-reverse;
 
     .all-collections-item__description {
+      margin-bottom: 200px;
       padding-right: 0;
       padding-left: 25px;
     }
@@ -211,12 +215,13 @@
     .all-collections-item__title {
       top: initial;
       bottom: 0;
+      left: 0;
       text-align: left;
-      transform: translate(-50%);
+      transform: translate(-20%, calc(100% + 30px))
     }
 
     .all-collections-item__title-bigger {
-      transform: translateX(10%);
+      transform: translateX(-10%);
     }
   }
 }
@@ -236,6 +241,7 @@
   .all-collections__item:nth-child(2n + 2) {
 
     .all-collections-item__description {
+      margin-bottom: 300px;
       padding-left: 40px;
     }
   }

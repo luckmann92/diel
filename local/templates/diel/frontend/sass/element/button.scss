@@ -12,12 +12,12 @@
   border: 1px solid rgba(224, 139, 102, 0.5);
   z-index: 100;
 
-  &:hover > .button-transition__image {
+  &:hover > svg {
     right: 20px;
   }
 }
 
-.button-transition__image {
+.button-transition svg {
   position: absolute;
   top: calc(50% - 5px);
   right: 40px;
@@ -35,14 +35,6 @@
   color: #D7825D;
   background-color: transparent;
   border: 1px solid rgba(215, 130, 93, 0.5);
-}
-
-.button-serch svg {
-  transition: transform 300ms;
-}
-
-.button-serch:hover svg {
-  transform: scale(1.1);
 }
 
 .button-second {
@@ -88,6 +80,40 @@
   border-color: rgba(224, 139, 102, 0.5);
 }
 
+.button-picture {
+  padding: 10px 20px;
+  font-family: "Intro Light";
+  font-size: 16px;
+  line-height: 32px;
+  color: #fff;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: border-color 300ms;
+  cursor: pointer;
+}
+
+.button-picture span {
+  padding-right: 15px;
+}
+
+.button-picture:hover,
+.button-picture:focus {
+  border-color: #fff;
+  outline: none;
+}
+
+.button-picture:active {
+  color: #E08B66;
+  background-color: #220F06;
+  border-color: #E08B66;
+}
+
+.button-picture--filter {
+  background-image: url(./../img/svg/filter.svg);
+}
+
 
 
 
@@ -129,8 +155,10 @@
   cursor: pointer;
 }
 
-.button-up:hover,
-.button-up:focus {
+.button-up:hover {
   transform: scale(1.4);
+}
+
+.button-up:focus {
   outline: none;
 }

@@ -1,4 +1,6 @@
 (function() {
+  if (!document.querySelector(".collections__slider")) return;
+
   let jumpingSlider = tns({
       container: ".collections__slider",
   
@@ -28,7 +30,13 @@
         jumpingAnimate = document.querySelector(".jumping-animate"),
         jumpingLineFrom,
         jumpingLineTo,
+        options = document.querySelector(".collections__slider-options"),
+        items = document.querySelectorAll(".collections__slider jumping-slider__item"),
         svgJumpBtns = document.querySelectorAll(".jumping-slider-options__item");
+
+    if (items.length < 2) {
+      options.style.display = "none";
+    }
       
     for (let i = 0; i < svgJumpBtns.length; i++) {
       svgJumpBtns[i].addEventListener("click", function(evt) {

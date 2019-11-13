@@ -24,7 +24,7 @@
   color: #E08B66;
 }
 
-.new-design__description {
+.new-design__description-wrapper p {
   margin: 0;
   font-family: "Intro Light";
   font-size: 16px;
@@ -32,7 +32,7 @@
   color: #FFFFFF;
 }
 
-.new-design__description:nth-of-type(n + 2) {
+.new-design__description-wrapper p:nth-of-type(n + 2) {
   padding-top: 25px;
 }
 
@@ -67,8 +67,11 @@
     padding-bottom: 145px;
   }
 
-  .new-design__description {
+  .new-design__description-wrapper {
     width: 611px;
+  }
+
+  .new-design__description-wrapper p {
     line-height: 32px;
   }
 
@@ -104,7 +107,7 @@
     padding-bottom: 134px;
   }
 
-  .new-design__description {
+  .new-design__description-wrapper {
     width: 830px;
   }
 

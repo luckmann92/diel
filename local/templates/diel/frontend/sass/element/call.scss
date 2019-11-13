@@ -3,12 +3,14 @@
   display: block;
   padding-left: 40px;
   font-family: "Intro Light";
-  font-size: 18px;
+  font-size: 16px;
   line-height: 150%;
-  /* identical to box height, or 27px */
-
   color: #fff;
   text-decoration: none;
+}
+
+.call:hover .call__description {
+  text-decoration: underline;
 }
 
 .call__icon {
@@ -19,4 +21,12 @@
 .call__description {
   display: block;
   color: #E08B66;
+}
+
+.call:nth-child(2) {
+  margin-top: 15px;
+}
+
+.call:nth-child(n + 2) svg {
+  display: none;
 }

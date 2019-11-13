@@ -21,7 +21,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #0D0705;
+  background-color: #21120C;
 }
 
 main {
@@ -85,6 +85,7 @@ p {
 @import "./element/title";
 @import "./element/link";
 @import "./element/button";
+@import "./element/icon";
 @import "./element/form-element";
 @import "./element/product-card";
 @import "./element/address";
@@ -212,7 +213,7 @@ p {
     height: 95%;
 
     @media screen and (min-width: 1366px) {
-      background-image: url(../img/price_list_bg.png);
+      background-image: url(../img/new-design-image2.png);
       background-repeat: no-repeat;
       background-size: 470px auto;
       background-position: top 0 right 60px;

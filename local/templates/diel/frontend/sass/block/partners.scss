@@ -10,6 +10,11 @@
   margin-bottom: 60px;
 }
 
+.partners__list {
+  overflow: hidden;
+  margin-right: -15px;
+}
+
 @media screen and (min-width: 768px) {
   .partners__title {
     margin-bottom: 30px;
@@ -18,11 +23,16 @@
   .partners__description {
     margin-bottom: 60px;
   }
+
+  .partners__list {
+    margin-right: -20px;
+  }
 }
 
 @media screen and (min-width: 1366px) {
   .partners__list {
     display: flex;
+    margin-right: -90px;
   }
 
   .partners__title {
@@ -53,7 +63,7 @@
   }
 
   .partners__list {
-    display: flex;
+    margin-right: -120px;
   }
 
   .partners__title {

@@ -86,8 +86,18 @@ if (document.querySelector(".filter") && document.querySelector(".diel-select-li
 
 if (document.querySelector(".popup-main-menu") && document.querySelector(".main-menu-button")) {
   let mainMenu = new Popup(".popup-main-menu");
-  document.querySelector(".main-menu-button").addEventListener("click", function() {
+  document.querySelector(".main-menu-button").addEventListener("click", function(evt) {
+    evt.preventDefault();
     mainMenu.showPopup();
+  });
+}
+
+if (document.querySelector(".popup-main-menu") && document.querySelector(".flow-button-menu")) {
+  let popup = new Popup(".popup-main-menu"),
+      btn = document.querySelector(".flow-button-menu");
+  btn.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    popup.showPopup();
   });
 }
 
@@ -97,14 +107,61 @@ if (document.querySelector(".popup-search") && document.querySelector(".user-men
 
   btn.addEventListener("click", function(evt) {
     evt.preventDefault();
-    
     search.showPopup();
+  });
+}
+
+if (document.querySelector(".popup-search") && document.querySelector(".flow-menu__link-search")) {
+  let search = new Popup(".popup-search"),
+      btn = document.querySelector(".flow-menu__link-search");
+
+  btn.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    search.showPopup();
+  });
+}
+
+if (document.querySelector(".popup-search") && document.querySelector(".popup-main-menu__search")) {
+  let search = new Popup(".popup-search"),
+      btn = document.querySelector(".popup-main-menu__search");
+
+  btn.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    search.showPopup();
+
+    setTimeout(function() {
+      if (document.querySelector(".popup-main-menu")) {
+        let popup = new Popup(".popup-main-menu");
+  
+        popup.closePopup();
+      }
+    }, 400);
   });
 }
 
 if (document.querySelector(".popup-request-call") && document.querySelector(".user-menu__link-phone")) {
   let popup = new Popup(".popup-request-call"),
       btn = document.querySelector(".user-menu__link-phone");
+
+    btn.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      popup.showPopup();
+  });
+}
+
+if (document.querySelector(".popup-request-call") && document.querySelector(".flow-menu__link-phone")) {
+  let popup = new Popup(".popup-request-call"),
+      btn = document.querySelector(".flow-menu__link-phone");
+
+    btn.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      popup.showPopup();
+  });
+}
+
+if (document.querySelector(".popup-request-call") && document.querySelector(".contacts__call")) {
+  let popup = new Popup(".popup-request-call"),
+      btn = document.querySelector(".contacts__call");
 
     btn.addEventListener("click", function(evt) {
       evt.preventDefault();

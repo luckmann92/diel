@@ -8,6 +8,11 @@
   line-height: 26px;
   color: #FFFFFF;
   text-decoration: none;
+  transition: color 300ms;
+}
+
+.email:hover {
+  color: #E08B66;
 }
 
 .email__icon {

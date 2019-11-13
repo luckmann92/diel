@@ -4,6 +4,10 @@
   padding-bottom: 0;
 }
 
+.section-card ~ :nth-of-type(2):not(.page__pagination) {
+  margin-top: 150px !important;
+}
+
 .section-card__title {
   margin-bottom: 40px;
 }
@@ -36,6 +40,10 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 300ms;
+}
+
+.product-card__footer .product-card__button-detail {
+  margin: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -75,6 +83,8 @@
     align-items: center;
     margin-top: 30px;
   }
+
+
 }
 
 @media screen and (min-width: 1440px) {

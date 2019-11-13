@@ -1,4 +1,6 @@
 (function() {
+  if (!document.querySelector(".advantages__list")) return;
+
   let advantagesSlider = tns({
       container: ".advantages__list",
       controlsPosition: "bottom",

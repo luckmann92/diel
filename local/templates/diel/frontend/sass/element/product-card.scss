@@ -46,7 +46,7 @@
   padding-top: 15px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 120%;
   letter-spacing: 2px;
 
@@ -78,7 +78,8 @@
 .product-card__price {
   display: block;
   margin-top: 10px;
-  font-family: "Lazurski Bold";
+  font-family: "Lazurski";
+  font-weight: normal;
   font-size: 18px;
   line-height: 120%;
   letter-spacing: 2px;
@@ -190,7 +191,11 @@
   }
 
   .product-card__button-detail {
-    // margin-top: 30px;
+    margin-top: 30px;
+  }
+
+  .product-card--view-3 .product-card__button-detail {
+    margin-top: 0;
   }
 }
 

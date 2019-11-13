@@ -73,12 +73,12 @@
   line-height: 32px;
   text-decoration: none;
 
-  &:hover .link-detail__image {
+  &:hover svg {
     margin-left: 30px;
   }
 }
 
-.link-detail__image {
+.link-detail svg {
   margin-left: 10px;
   transition: margin-left 300ms;
 }

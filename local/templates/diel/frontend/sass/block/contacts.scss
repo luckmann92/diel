@@ -87,8 +87,17 @@
     max-width: 600px;
   }
 
+  .contacts__tabs .tabs__item-content {
+    margin-left: -40px;
+  }
+
   .contacts-inormation__item-map-inner {
     width: 890px;
     padding-top: 565px;
+  }
+
+  .contacts__tabs .tabs__item,
+  .contacts__tabs .tabs__item-content {
+    width: initial;
   }
 }

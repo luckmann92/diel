@@ -30,6 +30,11 @@
   position: absolute;
   top: 25px;
   right: 25px;
+  transition: transform 300ms;
+}
+
+.popup-successful__close:hover {
+  transform: rotate(90deg);
 }
 
 @media screen and (min-width: 768px) {
