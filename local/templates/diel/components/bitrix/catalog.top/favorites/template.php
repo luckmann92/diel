@@ -37,15 +37,8 @@ use Bitrix\Main\Page\Asset;
         </div>
 
         <div class="page-filter__right">
-            <div class="filter__diel-select diel-select">
-                <button class="diel-select__button diel-select__button-filter">
-                    <span class="diel-select__button-text">Фильтр</span>
-                </button>
-
-                <!-- <ol class="diel-select__list diel-select-list">
-                    <li class="diel-select-list__item">Что то</li>
-                    <li class="diel-select-list__item">С чем то</li>
-                </ol> -->
+            <div class="filter__diel-select">
+                <button class="button-picture button-picture--filter"><span>Фильтр</<span></button>
             </div>
 
             <span class="page-filter__label page-filter__label-sum">Показывать товаров на странице</span>

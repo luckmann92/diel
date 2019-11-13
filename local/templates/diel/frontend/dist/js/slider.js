@@ -1,10 +1,25 @@
 (function() {
-  let jumpingSlider = tns({
-      container: ".jumping-slider",
+  if (!document.querySelector(".jumping-slider")) return;
+
+  let slider = document.querySelectorAll(".jumping-slider");
+
+  slider.forEach(function(el) {
+
+    if (el.classList.contains("collections__slider")) {
+      let options = el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-slider-options"),
+          items = el.querySelectorAll(".jumping-slider__item");
+      
+      if (items.length < 3) {
+        options.style.display = "none";
+      }
+    }
+
+    let jumpingSlider = tns({
+      container: el,
   
       controls: false,
       // nav: false,
-      navContainer: ".jumping-slider-options__nav",
+      navContainer: el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-slider-options__nav"),
       touch: true,
       mouseDrag: true,
 
@@ -24,11 +39,17 @@
       }
     });
 
-    let jumpingLine = document.querySelector(".jumping-line"),
-        jumpingAnimate = document.querySelector(".jumping-animate"),
+    let jumpingLine = el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-line"),
+        jumpingAnimate = el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-animate"),
         jumpingLineFrom,
         jumpingLineTo,
-        svgJumpBtns = document.querySelectorAll(".jumping-slider-options__item");
+        options = el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-slider-options"),
+        items = el.querySelectorAll(".jumping-slider__item"),
+        svgJumpBtns = el.parentNode.parentNode.parentNode.parentNode.querySelectorAll(".jumping-slider-options__item");
+
+    if (items.length < 2) {
+      options.style.display = "none";
+    }
       
     for (let i = 0; i < svgJumpBtns.length; i++) {
       svgJumpBtns[i].addEventListener("click", function(evt) {
@@ -78,4 +99,5 @@
       let index = jumpingSlider.getInfo().index;
       // console.log(index);
     });
+  });
   })();

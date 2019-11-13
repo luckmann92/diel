@@ -17,13 +17,18 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/swip
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/imask.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/flow-menu.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/banner-slider.js"));
-Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/collections-slider.js"));
+// Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/collections-slider.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/stocks-slider.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/advantages.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/our-products.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/popup.js"));
-Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/popup-request-call.js"));
+// Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/popup-request-call.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/button-up.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/filter.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/form.js"));
+
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/main.js"));
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/search.js"));
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/slider.js"));
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/tabs.js"));
 

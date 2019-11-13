@@ -1,4 +1,4 @@
-(function() {
+/*(function() {
   let umBtnPhone = document.querySelector(".user-menu__link-phone");
   umBtnPhone.addEventListener("click", showPopupPhone);
 
@@ -29,4 +29,4 @@
     popup.classList.add("popup-request-call--hidden");
   }
 })();
-
+*/

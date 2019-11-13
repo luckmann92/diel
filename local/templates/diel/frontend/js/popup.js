@@ -33,6 +33,7 @@ function Popup(popupClass) {
 
     popup.addEventListener("click", function(evt) {
       if (evt.target === popup) {
+        evt.stopPropagation();
         that.closePopup();
       }
     });

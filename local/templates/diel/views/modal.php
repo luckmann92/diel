@@ -114,7 +114,7 @@ global $arSetting;
                 ); ?>
             </div>
         </div>
-        <button class="popup-search__close popup-search__button popup-search__button--close">
+        <button class="popup-search__close popup__close">
             <?= GetContentSvgIcon('close') ?>
         </button>
     </div>

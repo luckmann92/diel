@@ -10,10 +10,10 @@ Loc::loadMessages(__FILE__);
 if ($arResult['ITEMS']) { ?>
     <ul class="contacts__tabs tabs">
         <? foreach ($arResult['ITEMS'] as $k => $arItem) { ?>
-            <li class="tabs__item tabs__item--active">
+            <li class="tabs__item">
                 <button class="tabs__button"
                         type="button"><?= $arItem['PROPERTIES']['CITY']['VALUE'] ?: $arItem['NAME'] ?></button>
-                <div class="tabs__item-content" style="display: block">
+                <div class="tabs__item-content">
                     <ul class="contacts-inormation">
                         <? if ($arItem['PROPERTIES']['ADDRESS']['VALUE']) { ?>
                             <li class="contacts-inormation__item">
@@ -28,7 +28,7 @@ if ($arResult['ITEMS']) { ?>
                         <? if ($arItem['PROPERTIES']['PHONE']['VALUE'] || $arItem['PROPERTIES']['PHONES']['VALUE']) { ?>
                             <li class="contacts-inormation__item">
                                 <? if ($arItem['PROPERTIES']['PHONE']['VALUE']) { ?>
-                                    <a class="call"
+                                    <a class="contacts__call call"
                                        href="tel:+<?= prepareText($arItem['PROPERTIES']['PHONE']['VALUE']) ?>">
                                         <?= GetContentSvgIcon('call__icon') ?>
                                         <span class="call__phone-number"><?= $arItem['PROPERTIES']['PHONE']['VALUE'] ?></span>

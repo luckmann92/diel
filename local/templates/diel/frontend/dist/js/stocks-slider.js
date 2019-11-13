@@ -1,4 +1,6 @@
 (function() {
+  if (!document.querySelector(".stocks__slider")) return;
+
   let stocksSlider = tns({
     container: ".stocks__slider",
 
@@ -29,7 +31,13 @@
       sliderAnimate = document.querySelector(".stocks-slider-options__animate"),
       sliderLineFrom,
       sliderLineTo,
+      options = document.querySelector(".stocks__slider-options"),
+      items = document.querySelectorAll(".stocks__slider-wrapper .stocks-slider__item"),
       svgJumpBtns = document.querySelectorAll(".stocks-slider-options__item");
+
+  if (items.length < 2) {
+    options.style.display = "none";
+  }
 
   for (let i = 0; i < svgJumpBtns.length; i++) {
     svgJumpBtns[i].addEventListener("click", function(evt) {

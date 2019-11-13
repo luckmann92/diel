@@ -4622,7 +4622,7 @@ p {
     right: 75px; }
   .contacts__tabs {
     max-width: 600px; }
-  .contacts__tabs .tabs__item-content {
+  .contacts__tabs ~ .tabs__content {
     margin-left: -40px; }
   .contacts-inormation__item-map-inner {
     width: 890px;

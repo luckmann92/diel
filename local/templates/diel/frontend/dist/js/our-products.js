@@ -1,4 +1,6 @@
 (function() {
+  if (!document.querySelector(".our-products__list")) return;
+
     let ourProductsSlider = tns({
         container: ".our-products__list",
         controlsPosition: "bottom",
@@ -21,9 +23,9 @@
         }
       });
   
-      let btnNext = document.querySelector(".our-products__button-next");
-  
-      btnNext.addEventListener("click", function() {
-        ourProductsSlider.goTo('next');
-      });
+    let btnNext = document.querySelector(".our-products__button-next");
+
+    btnNext.addEventListener("click", function() {
+      ourProductsSlider.goTo('next');
+    });
   })();

@@ -30,11 +30,11 @@ global $arSetting;
         ); ?>
         <ul class="user-menu">
             <li class="user-menu__item">
-                <a class="user-menu__link user-menu__link-search" href="<?=SITE_DIR?>search/">
+                <a class="user-menu__link user-menu__link-search icon-search" href="<?=SITE_DIR?>search/">
                     <?= GetContentSvgIcon('head-search') ?>
                 </a>
             </li>
-            <li class="user-menu__item user-menu__link-phone">
+            <li class="user-menu__item user-menu__link-phone icon-phone">
             <?$APPLICATION->IncludeComponent(
 	"bitrix:form.result.new", 
 	"callback", 
@@ -67,7 +67,7 @@ global $arSetting;
 );?>
             </li>
             <li class="user-menu__item">
-                <a class="user-menu__link" href="/favorites/">
+                <a class="user-menu__link icon-favorites" href="/favorites/">
                     <?= GetContentSvgIcon('head-favorites') ?>
                 </a>
             </li>

@@ -4,7 +4,6 @@
   
     document.addEventListener("click", function(evt) {
       if (evt.target.classList.contains("tabs__button")) {
-        console.log("hi");
         let tabsItem = document.querySelectorAll(".tabs__item");
   
         tabsItem.forEach(function(el) {
@@ -18,20 +17,45 @@
   
     function showActiveTab() {
       let tabs = document.querySelector(".tabs"),
-      tabsItem = tabs.querySelectorAll(".tabs__item"),
-      tabsContent = document.querySelector(".tabs__content");
-  
-      tabsItem.forEach(function(el) {
-        if (el.classList.contains("tabs__item--active")) {
-          let tabsItemContent = el.querySelector(".tabs__item-content");
-              clone = tabsItemContent.cloneNode(true);
-          
-          clone.style.display = "initial";
-  
-          tabsContent.innerHTML = "";
-          tabsContent.appendChild(clone);
-        }
-      });
+          tabsItem = tabs.querySelectorAll(".tabs__item"),
+          tabsContent = document.querySelector(".tabs__content");
+
+      let flag = false;
+
+      
+        tabsItem.forEach(function(el) {
+          if (el.classList.contains("tabs__item--active")) {
+            flag = true;
+          }
+        });
+
+      if (flag) {
+        tabsItem.forEach(function(el) {
+          if (el.classList.contains("tabs__item--active")) {
+            let tabsItemContent = el.querySelector(".tabs__item-content");
+                clone = tabsItemContent.cloneNode(true);
+            
+            clone.style.display = "initial";
+    
+            tabsContent.innerHTML = "";
+            tabsContent.appendChild(clone);
+          }
+        });
+      } else {
+        tabsItem[0].classList.add("tabs__item--active");
+      
+        tabsItem.forEach(function(el) {
+          if (el.classList.contains("tabs__item--active")) {
+            let tabsItemContent = el.querySelector(".tabs__item-content");
+                clone = tabsItemContent.cloneNode(true);
+            
+            clone.style.display = "initial";
+    
+            tabsContent.innerHTML = "";
+            tabsContent.appendChild(clone);
+          }
+        });
+      }
     }
   }
 })();

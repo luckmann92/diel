@@ -1,4 +1,6 @@
 (function() {
+  if (!document.querySelector(".banner__list")) return;
+
   let bannerSlider = tns({
     container: ".banner__list",
     controlsPosition: "bottom",
