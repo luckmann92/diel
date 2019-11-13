@@ -211,16 +211,18 @@ function addBannerInContent($urlPage = '')
                     <? if ($arBanner['NAME']) { ?>
                         <span class="new-design__title-bigger"><?= $arBanner['NAME'] ?></span>
                     <? } ?>
-                    <div class="new-design__description-wrapper">
-                        <?= htmlspecialchars_decode($arBanner['PREVIEW_TEXT']) ?>
-                        <? if ($arBanner['PROPS']['LINK']['VALUE']) { ?>
-                            <a class="new-design__link-detail link-detail"
-                               href="<?= $arBanner['PROPS']['LINK']['VALUE'] ?>">
-                                Подробнее
-                                <?=GetContentSvgIcon('arrow-long')?>
-                            </a>
-                        <? } ?>
-                    </div>
+                </h2>
+
+                <div class="new-design__description-wrapper">
+                    <?= htmlspecialchars_decode($arBanner['PREVIEW_TEXT']) ?>
+                    <? if ($arBanner['PROPS']['LINK']['VALUE']) { ?>
+                        <!-- <a class="new-design__link-detail link-detail"
+                            href="<?= $arBanner['PROPS']['LINK']['VALUE'] ?>">
+                            Подробнее
+                            <?=GetContentSvgIcon('arrow-long')?>
+                        </a> -->
+                    <? } ?>
+                </div>
             </div>
         </section>
         <?
