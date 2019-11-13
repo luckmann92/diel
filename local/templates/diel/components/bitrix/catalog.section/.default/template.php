@@ -93,7 +93,7 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
             <? foreach ($arItem as $ind => $item) { ?>
                 <? if (!$isBigBlock) { ?>
                     <div class="product-card">
-                    <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>">
+                    <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>"></a>
                 <? } ?>
                 <? if ($item['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
@@ -113,17 +113,16 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
                     <? } ?>
 
                     <b class="product-card__price"><?= number_format($item['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
-
-                    <? if ($isBigBlock) { ?>
-                        <div class="product-card__footer">   
+                    <div class="product-card__footer">
+                        <? if (!$isBigBlock) { ?>
                             <a class="product-card__button-detail link-detail" href="<?= $item['DETAIL_PAGE_URL'] ?>">Подробнее
                                 <?= GetContentSvgIcon('arrow-long') ?>
                             </a>
+                        <? } ?>
                             <a data-product-id="<?=$item['ID']?>" class="product-card__fast button-second js-init-fast-show">Быстрый просмотр
-                                <?= GetContentSvgIcon('eye') ?>
+                                        <?= GetContentSvgIcon('eye') ?>
                             </a>
-                        </div>
-                    <? } ?>
+                    </div>
                 </div>
                 <? if (!$isBigBlock) { ?>
                     </a>
