@@ -153,7 +153,7 @@
                 break;
             case 'P_SIZE':
                 ?>
-                <fieldset class="card-item-form__fieldset"
+                <fieldset class="card-item-form__fieldset card-item-form__fieldset--size"
                           data-role="property"
                           data-property="<?= $arProperty['code'] ?>"
                           data-type="<?= $arProperty['type'] ?>">

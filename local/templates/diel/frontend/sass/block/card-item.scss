@@ -5,6 +5,7 @@
 }
 
 .card-item-form__fieldset {
+  flex-grow: 1;
   margin: 0;
   padding: 0;
   border: none;
@@ -255,6 +256,10 @@
   .card-item-form__fieldset:nth-child(3),
   .card-item-form__fieldset:nth-child(4) {
     width: 50%;
+  }
+
+  .card-item-form__fieldset.card-item-form__fieldset--size {
+    width: 100%;
   }
 
   .card-item-form__price {

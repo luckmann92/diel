@@ -10,6 +10,12 @@
   flex-shrink: 0;
   // margin-right: 30px;
   width: 253px;
+
+  transform: scale(0.95);
+}
+
+.jumping-slider__item.tns-slide-active:nth-child(2n) {
+  transform: scale(1);
 }
 
 .jumping-slider__image-wrapper {
@@ -22,6 +28,8 @@
 
 .jumping-slider__image {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .jumping-slider__title {
@@ -106,7 +114,6 @@
 
   .jumping-slider__image {
     height: 100%;
-    object-fit: cover;
   }
 
   .jumping-slider__item {

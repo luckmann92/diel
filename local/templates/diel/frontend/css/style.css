@@ -1785,7 +1785,11 @@ p {
 
 .jumping-slider__item {
   flex-shrink: 0;
-  width: 253px; }
+  width: 253px;
+  transform: scale(0.95); }
+
+.jumping-slider__item.tns-slide-active:nth-child(2n) {
+  transform: scale(1); }
 
 .jumping-slider__image-wrapper {
   display: flex;
@@ -1795,7 +1799,9 @@ p {
   overflow: hidden; }
 
 .jumping-slider__image {
-  width: 100%; }
+  width: 100%;
+  height: 100%;
+  object-fit: contain; }
 
 .jumping-slider__title {
   position: relative;
@@ -1842,8 +1848,7 @@ p {
     width: 717px;
     height: 100%; }
   .jumping-slider__image {
-    height: 100%;
-    object-fit: cover; }
+    height: 100%; }
   .jumping-slider__item {
     position: relative;
     width: 717px; }
@@ -3514,6 +3519,7 @@ p {
   flex-wrap: wrap; }
 
 .card-item-form__fieldset {
+  flex-grow: 1;
   margin: 0;
   padding: 0;
   border: none; }
@@ -3708,6 +3714,8 @@ p {
   .card-item-form__fieldset:nth-child(3),
   .card-item-form__fieldset:nth-child(4) {
     width: 50%; }
+  .card-item-form__fieldset.card-item-form__fieldset--size {
+    width: 100%; }
   .card-item-form__price {
     font-size: 36px;
     line-height: 40px;
