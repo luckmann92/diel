@@ -3233,12 +3233,8 @@ p {
 .section-card-list__item:nth-child(5) {
   margin-right: 0; }
 
-.product-card__fast {
-  position: absolute;
-  right: 30px;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 300ms; }
+.product-card__footer {
+  display: none; }
 
 .product-card__footer .product-card__button-detail {
   margin: 0; }
@@ -3251,7 +3247,12 @@ p {
   .section-card__title {
     margin-bottom: 50px; }
   .section-card__list:first-of-type {
-    margin-top: 40px; } }
+    margin-top: 40px; }
+  .product-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px; } }
 
 @media screen and (min-width: 1366px) {
   .section-card {
@@ -3261,12 +3262,7 @@ p {
   .section-card__title {
     margin-bottom: 60px; }
   .section-card__list:first-of-type {
-    margin-top: 60px; }
-  .product-card__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px; } }
+    margin-top: 60px; } }
 
 @media screen and (min-width: 1440px) {
   .section-card {
@@ -3333,10 +3329,29 @@ p {
     .section-card-list__item.product-card--view-3 {
       width: calc((100% - 30px * 2) / 2);
       height: initial;
-      box-sizing: border-box; }
-  .section-card-list__item:hover .product-card__fast {
-    visibility: visible;
-    opacity: 1; } }
+      box-sizing: border-box; } }
+
+.section-card__list .product-card__fast {
+  position: absolute;
+  right: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms; }
+
+.section-card__list .product-card:not(.product-card--view-3) .product-card__fast {
+  right: 15px;
+  bottom: 30px;
+  padding: 5px; }
+  .section-card__list .product-card:not(.product-card--view-3) .product-card__fast::before {
+    display: none; }
+  .section-card__list .product-card:not(.product-card--view-3) .product-card__fast span {
+    display: none; }
+  .section-card__list .product-card:not(.product-card--view-3) .product-card__fast svg {
+    padding: 0; }
+
+.section-card__list .product-card:hover .product-card__fast {
+  visibility: visible;
+  opacity: 1; }
 
 .section-card__list--view-list {
   display: flex;

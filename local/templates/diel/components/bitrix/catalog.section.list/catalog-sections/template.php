@@ -28,9 +28,10 @@ Loc::loadMessages(__FILE__);
                                 <?= Loc::getMessage('CATALOG_SECTIONS_DEFAULT_READ_MORE') ?>
                                 <?= GetContentSvgIcon('arrow-long') ?>
                             </a>
-                            <a class="product-card__fast button-second">Быстрый просмотр
+                            <!-- <a class="product-card__fast button-second" hidden>
+                                <span>Быстрый просмотр</span>
                                 <?= GetContentSvgIcon('eye') ?>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 <? } else { ?>

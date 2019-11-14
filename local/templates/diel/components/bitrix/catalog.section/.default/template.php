@@ -114,13 +114,14 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
 
                     <b class="product-card__price"><?= number_format($item['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
                     <div class="product-card__footer">
-                        <? if (!$isBigBlock) { ?>
+                        <? if ($isBigBlock) { ?>
                             <a class="product-card__button-detail link-detail" href="<?= $item['DETAIL_PAGE_URL'] ?>">Подробнее
                                 <?= GetContentSvgIcon('arrow-long') ?>
                             </a>
                         <? } ?>
-                            <a data-product-id="<?=$item['ID']?>" class="product-card__fast button-second js-init-fast-show">Быстрый просмотр
-                                        <?= GetContentSvgIcon('eye') ?>
+                            <a data-product-id="<?=$item['ID']?>" class="product-card__fast button-second js-init-fast-show" hidden>
+                                <span>Быстрый просмотр</span>
+                                <?= GetContentSvgIcon('eye') ?>
                             </a>
                     </div>
                 </div>

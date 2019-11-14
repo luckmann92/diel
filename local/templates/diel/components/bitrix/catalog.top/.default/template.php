@@ -107,9 +107,10 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
                             <a class="product-card__button-detail link-detail" href="<?= $item['DETAIL_PAGE_URL'] ?>">Подробнее
                                 <?= GetContentSvgIcon('arrow-long') ?>
                             </a>
-                            <a data-product-id="<?=$item['ID']?>" class="product-card__fast button-second js-init-fast-show">Быстрый просмотр
+                            <!-- <a data-product-id="<?=$item['ID']?>" class="product-card__fast button-second js-init-fast-show" hidden>
+                                <span>Быстрый просмотр</span>
                                 <?= GetContentSvgIcon('eye') ?>
-                            </a>
+                            </a> -->
                         </div>
                     <? } ?>
                 </div>

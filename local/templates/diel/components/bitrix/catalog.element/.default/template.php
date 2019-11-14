@@ -277,7 +277,8 @@ if ($arParams['PROPERTY_CODE'] || ($arResult['DETAIL_TEXT'] || $arResult['PREVIE
                                             href="<?= $arItems[0]['DETAIL_PAGE_URL'] ?>">Подробнее
                                                 <?= GetContentSvgIcon('arrow-long') ?>
                                             </a>
-                                            <a data-product-id="<?=$arItems[0]['ID']?>" class="product-card__fast button-second js-init-fast-show">Быстрый просмотр
+                                            <a data-product-id="<?=$arItems[0]['ID']?>" class="product-card__fast button-second js-init-fast-show" hidden>
+                                                <span>Быстрый просмотр</span>
                                                 <?= GetContentSvgIcon('eye') ?>
                                             </a>
                                         </div>
