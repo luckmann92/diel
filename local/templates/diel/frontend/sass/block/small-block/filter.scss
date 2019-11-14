@@ -7,6 +7,7 @@
 
   background-color: rgba(0, 0, 0, 0.6);
   overflow-y: auto;
+  z-index: 950;
 }
 
 .filter__close {
@@ -78,6 +79,18 @@
   color: #E08B66;
   background-color: transparent;
   border: none;
+  transition: color 300ms;
+}
+
+.filter__reset:hover,
+.filter__submit:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.filter__reset:focus,
+.filter__submit:focus {
+  outline: none;
 }
 
 .filter__section-title {

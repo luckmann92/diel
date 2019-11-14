@@ -1413,7 +1413,8 @@ p {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  overflow-y: auto; }
+  overflow-y: auto;
+  z-index: 950; }
 
 .filter__close {
   position: absolute;
@@ -1474,7 +1475,17 @@ p {
   letter-spacing: -0.15px;
   color: #E08B66;
   background-color: transparent;
-  border: none; }
+  border: none;
+  transition: color 300ms; }
+
+.filter__reset:hover,
+.filter__submit:hover {
+  color: #fff;
+  cursor: pointer; }
+
+.filter__reset:focus,
+.filter__submit:focus {
+  outline: none; }
 
 .filter__section-title {
   margin-top: 70px;

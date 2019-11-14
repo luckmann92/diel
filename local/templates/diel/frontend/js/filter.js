@@ -19,6 +19,14 @@ if (document.querySelector(".diel-select__button")) {
 
 if (document.querySelector(".diel-select")) {
   let selectWrapper = document.querySelectorAll(".diel-select");
+
+    selectWrapper.forEach(function(el) {
+      let option = el.querySelectorAll(".filter__diel-option-js");
+
+      if (option.length > 0) {
+        el.querySelector(".diel-select__button-text").textContent = option[0].textContent;
+      }
+    });
   
   showSelect();
 
@@ -38,14 +46,8 @@ if (document.querySelector(".diel-select")) {
         el.querySelector(".diel-select-list").appendChild(li);
       }
 
-
-      let width = 0;
-
       el.querySelectorAll(".diel-select-list__item").forEach(function(el, index) {
         el.dataset.id = index;
-
-        if (el.offsetWidth > width)
-          width = el.offsetWidth;
 
         el.addEventListener("click", function() {
           this.parentElement.parentElement.querySelector(".filter__diel-js").selectedIndex = this.dataset.id;
@@ -56,6 +58,18 @@ if (document.querySelector(".diel-select")) {
         });
       });
 
+      let btn = el.querySelector(".diel-select__button"),
+          btnText = btn.querySelector(".diel-select__button-text"),
+          li = el.querySelectorAll(".diel-select-list__item");
+
+      let width = 0;
+
+      li.forEach(function(el) {
+        btnText.textContent = el.textContent;
+
+        if (btn.offsetWidth > width) width = btn.offsetWidth;
+      });
+
       el.querySelector(".diel-select__button").style.width = width + 17 + "px";
 
       if (option.length > 0) {
@@ -64,4 +78,16 @@ if (document.querySelector(".diel-select")) {
     }
     });
   }
+
+  window.addEventListener("reset", function() {
+    let selectWrapper = document.querySelectorAll(".diel-select");
+
+    selectWrapper.forEach(function(el) {
+      let option = el.querySelectorAll(".filter__diel-option-js");
+
+      if (option.length > 0) {
+        el.querySelector(".diel-select__button-text").textContent = option[0].textContent;
+      }
+    });
+  });
 }

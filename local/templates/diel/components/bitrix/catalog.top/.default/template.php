@@ -20,7 +20,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 
             <div class="filter__diel-select diel-select">
                 <button class="diel-select__button">
-                    <span class="diel-select__button-text">Цене от высокой к низкой</span>
+                    <span class="diel-select__button-text"></span>
                 </button>
 
                 <ol class="diel-select__list diel-select-list"></ol>

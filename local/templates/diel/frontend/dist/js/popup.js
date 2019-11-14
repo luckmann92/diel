@@ -49,6 +49,7 @@ function Popup(popupClass) {
         document.addEventListener("click", function(evt) {
           for (let i = evt.target; i !== null; i = i.parentNode) {
             if (i == document) break;
+
             if (i.classList.contains(elem)) {
               evt.preventDefault();
               that.showPopup();
@@ -70,19 +71,21 @@ if (document.querySelector(".popup-leave-feedback") && document.querySelector(".
   });
 }
 
-if (document.querySelector(".popup-product-card") && document.querySelector(".product-card")) {
-  let productCardkPopup = new Popup(".popup-product-card");
-  productCardkPopup.addElement("product-card");
-}
-
 if (document.querySelector(".popup-order") && document.querySelector(".card-item-form__submit")) {
   let productCardkPopup = new Popup(".popup-order");
   productCardkPopup.addElement("card-item-form__submit");
 }
 
-if (document.querySelector(".filter") && document.querySelector(".diel-select-list__item")) {
-  let filter = new Popup(".filter");
-  filter.addElement("diel-select-list__item");
+if (document.querySelector(".filter") && document.querySelector(".button-picture--filter")) {
+  let filter = new Popup(".filter"),
+      btn = document.querySelector(".button-picture--filter");
+
+      btn.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        filter.showPopup();
+      });
+
+  // filter.addElement("diel-select-list__item");
 }
 
 if (document.querySelector(".popup-main-menu") && document.querySelector(".main-menu-button")) {
