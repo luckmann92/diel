@@ -194,17 +194,18 @@
                                 <span class="diel-select__button-text"></span>
                             </button>
 
-                            <ol class="diel-select__list diel-select-list">
-                                <?
+                            <ol class="diel-select__list diel-select-list"></ol>
+                            <select class="filter__diel-js" hidden>
+                            <?
                                 foreach ($arProperty['values'] as $value) { ?>
-                                    <li class="diel-select-list__item js-init-prop"
+                                    <option class="filter__diel-option-js"
                                         data-role="property.value"
                                         data-state="hidden"
                                         data-prop="inserts"
-                                        data-value="<?= $value['id'] ?>"><?= $value['name'] ?></li>
+                                        data-value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
                                     <?
                                 } ?>
-                            </ol>
+                            </select>
                         </div>
                     </div>
                 </fieldset>

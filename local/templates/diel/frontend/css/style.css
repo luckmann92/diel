@@ -4100,7 +4100,9 @@ p {
     margin-top: 10px;
     margin-bottom: 0;
     width: 302px;
-    min-height: 555px; }
+    min-height: 555px;
+    transform: skewY(4deg);
+    z-index: -1; }
     .all-collections-item__image-wrapper img {
       height: 100%;
       object-fit: cover; }
@@ -6568,7 +6570,7 @@ p {
 
 .footer {
   position: relative;
-  z-index: 1; }
+  z-index: 4; }
   .footer::before {
     background-color: #0D0705;
     height: 95%;
