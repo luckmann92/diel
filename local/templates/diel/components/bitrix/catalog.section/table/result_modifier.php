@@ -10,9 +10,10 @@ Loader::IncludeModule('highloadblock');
 
 foreach ($arResult['ITEMS'] as $k => $arItem) {
     foreach ($arItem['OFFERS'] as $arOffer) {
-        if ($arOffer['ITEM_PRICES']) {
-            $arResult['ITEMS'][$k]['PRICES'][] = $arOffer['ITEM_PRICES'][0]['PRICE'];
-        }
+            if ($arOffer['ITEM_PRICES']) {
+                $arItem[$k]['PRICES'][] = $arOffer['ITEM_PRICES'][0]['PRICE'];
+            }
+
         if ($arOffer['PROPERTIES']['COLOR']['VALUE']) {
             $arHighloadProperty = $arOffer['PROPERTIES']['COLOR'];
             $sTableName = $arHighloadProperty['USER_TYPE_SETTINGS']['TABLE_NAME'];
@@ -68,4 +69,6 @@ foreach ($arResult['ITEMS'] as $k => $arItem) {
             $arResult['ITEMS'][$k]['INSERTS'][] = $arOffer['PROPERTIES']['INSERTS'];
         }
     }
+    sort($arItem[$k]['PRICES']);
+    $arResult['ITEMS'][$k]['PRICES'] = $arItem[$k]['PRICES'];
 }

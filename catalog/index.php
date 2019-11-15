@@ -230,6 +230,7 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "SIZE",
 			2 => "INSERTS",
 		),
+		"TYPE_SECTION" => "LIST",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",

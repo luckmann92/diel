@@ -55,12 +55,23 @@
                     </ul>
                 </div>
             <? } ?>
+            <?if ($arItem['PROPERTIES']) {
+                $k = 1;
+                foreach ($arItem['PROPERTIES'] as $CODE => $arProp) {
+                    if ($k > 2) {
+                        continue;
+                    }
+                    if (stripos( $CODE, 'OPTIONS_') !== false && $arProp['VALUE'] && !is_array($arProp['VALUE'])) {
+                    ?>
             <div class="product-card__weight-wrapper">
-                <p class="product-card__weight-title">Средний вес:</p>
+                <p class="product-card__weight-title"><?=$arProp['NAME']?></p>
 
-                <p class="product-card__weight">1,94г</p>
+                <p class="product-card__weight"><?=$arProp['VALUE']?></p>
             </div>
-
+<?}?>
+<?
+    $k++;            }?>
+<?}?>
             <? if ($arItem['PRICES']) { ?>
                 <? sort($arItem['PRICES']) ?>
                 <div class="product-card__text">

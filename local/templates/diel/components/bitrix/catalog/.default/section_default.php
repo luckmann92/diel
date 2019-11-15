@@ -84,11 +84,10 @@ if ($isFilter || $isSidebar) {
 				}
 			}
 
-
-
+			$templateComponent = $arParams['TYPE_SECTION'] == 'LIST' ? 'table' : '';
 			$intSectionID = $APPLICATION->IncludeComponent(
 				"bitrix:catalog.section",
-				"",
+                $templateComponent,
 				array(
 					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
