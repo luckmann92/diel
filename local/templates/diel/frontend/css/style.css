@@ -3236,10 +3236,7 @@ p {
 .section-card {
   padding-left: 12px;
   padding-right: 12px;
-  padding-bottom: 0; }
-
-.section-card ~ :nth-of-type(2):not(.page__pagination) {
-  margin-top: 150px !important; }
+  padding-bottom: 8%; }
 
 .section-card__title {
   margin-bottom: 40px; }
@@ -3267,8 +3264,7 @@ p {
 @media screen and (min-width: 768px) {
   .section-card {
     padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 0; }
+    padding-right: 20px; }
   .section-card__title {
     margin-bottom: 50px; }
   .section-card__list:first-of-type {
@@ -3282,8 +3278,7 @@ p {
 @media screen and (min-width: 1366px) {
   .section-card {
     padding-left: 55px;
-    padding-right: 50px;
-    padding-bottom: 0; }
+    padding-right: 50px; }
   .section-card__title {
     margin-bottom: 60px; }
   .section-card__list:first-of-type {
@@ -3291,14 +3286,12 @@ p {
 
 @media screen and (min-width: 1440px) {
   .section-card {
-    padding-left: 270px;
-    padding-bottom: 0; } }
+    padding-left: 270px; } }
 
 @media screen and (min-width: 1920px) {
   .section-card {
     padding-left: 310px;
-    padding-right: 100px;
-    padding-bottom: 0; }
+    padding-right: 100px; }
     .section-card::before {
       content: "";
       position: absolute;
@@ -3873,6 +3866,7 @@ p {
     left: 1065px;
     margin-top: 82px; }
   .card-item__kit {
+    margin-top: 300px;
     margin-right: 110px; } }
 
 .favorites-list {
