@@ -6602,6 +6602,11 @@ p {
   .page-news__other {
     padding-bottom: 155px; } }
 
+.main-page .header {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 @media screen and (min-width: 1440px) {
   .main-page {
     position: relative;
