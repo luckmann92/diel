@@ -6468,6 +6468,9 @@ p {
   background-color: transparent;
   z-index: 0; }
 
+.page-collection__products {
+  padding-bottom: 8%; }
+
 .page-for-buyer .header {
   position: absolute;
   top: 0; }
