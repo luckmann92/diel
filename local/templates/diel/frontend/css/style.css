@@ -6534,7 +6534,7 @@ p {
 .page-about__certificates {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: rgba(0, 0, 0, 0.72); }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)), linear-gradient(180deg, #3D2318 0%, #361E14 89.91%); }
 
 @media screen and (min-width: 768px) {
   .page-about__partners {

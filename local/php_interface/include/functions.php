@@ -241,17 +241,18 @@ function addBannerInContent($urlPage = '')
 
                 <div class="new-design__description-wrapper">
                     <p><?= htmlspecialchars_decode($arBanner['PREVIEW_TEXT']) ?></p>
-                    <? if ($arBanner['PROPS']['LINK']['VALUE']) { ?>
-                        <!-- <a class="new-design__link-detail link-detail"
+                    <!-- <? if ($arBanner['PROPS']['LINK']['VALUE']) { ?>
+                        <a class="new-design__link-detail link-detail"
                             href="<?= $arBanner['PROPS']['LINK']['VALUE'] ?>">
                             Подробнее
                             <?=GetContentSvgIcon('arrow-long')?>
-                        </a> -->
-                    <? } ?>
+                        </a>
+                    <? } ?> -->
                     <?if ($arBanner['PREVIEW_PICTURE']) {?>
                         <img src="<?=$arBanner['PREVIEW_PICTURE']?>">
                     <?}?>
                 </div>
+                
             </div>
         </section>
         <?
