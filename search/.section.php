@@ -1,6 +1,6 @@
 <?
 $sSectionName = "Страница поиска";
 $arDirProperties = Array(
-    'PAGE_LAYOUT' => 'column1'
+    'PAGE_LAYOUT' => 'search'
 );
 ?>
