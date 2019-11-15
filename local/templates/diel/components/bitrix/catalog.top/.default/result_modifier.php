@@ -52,7 +52,8 @@ foreach ($arResult['ITEMS'] as $key => $arItems) {
                 $arItems[$k]['PRICES'][] = $arOffer['ITEM_PRICES'][0]['PRICE'];
             }
         }
-        sort($arResult['ITEMS'][$k]['PRICES']);
+        sort($arItems[$k]['PRICES']);
+        $arResult['ITEMS'][$key][$k]['PRICES'] = $arItems[$k]['PRICES'];
     }
     foreach ($arItems as $k => $arItem) {
         switch ($type_block) {

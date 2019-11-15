@@ -46,7 +46,7 @@ if ($isFilter || $isSidebar) {
 		"HIDE_NOT_AVAILABLE" => "N",
 		"TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],
 		"CONVERT_CURRENCY" => "N",
-		"CURRENCY_ID" => $arParams["CURRENCY_ID"],
+		"CURRENCY_ID" => 1,
 		"SEF_MODE" => "N",
 		"SEF_RULE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["smart_filter"],
 		"SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
