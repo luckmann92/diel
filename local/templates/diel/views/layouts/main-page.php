@@ -384,6 +384,10 @@
                     </svg>
                 </a>
             </div>
+
+            <div class="new-design__image-wrapper">
+                <img class="new-design__image" src="local/templates/diel/frontend/img/new-design-image2.png" alt="">
+            </div>
         </div>
     </section>
 </main>
