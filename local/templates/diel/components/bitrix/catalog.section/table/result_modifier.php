@@ -72,3 +72,10 @@ foreach ($arResult['ITEMS'] as $k => $arItem) {
     sort($arItem[$k]['PRICES']);
     $arResult['ITEMS'][$k]['PRICES'] = $arItem[$k]['PRICES'];
 }
+$this->SetViewTarget('class_title');
+echo 'section-card__title section-title';
+$this->EndViewTarget();
+
+$this->SetViewTarget('class_wrapper');
+echo 'page__card section-card';
+$this->EndViewTarget();

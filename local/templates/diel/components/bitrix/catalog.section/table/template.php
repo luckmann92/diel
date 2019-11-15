@@ -3,6 +3,60 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 ?>
+<?if (count($arResult['ITEMS']) > 0) {?>
+    <div class="section-card__filter page-filter">
+        <div class="page-filter__left">
+            <span class="page-filter__label ">Сортировать по</span>
+
+            <div class="filter__diel-select diel-select">
+                <button class="diel-select__button">
+                    <span class="diel-select__button-text"></span>
+                </button>
+
+                <ol class="diel-select__list diel-select-list"></ol>
+
+                <select class="filter__diel-js" hidden>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=name&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "name"):?> selected <?endif;?>>По названию</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=price&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "price" && $_GET["method"] == "asc"):?> selected <?endif;?>>По возрастанию цены</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=price&method=desc', array('sort', 'method'))?>#catalog-sort-panel" <?if($_GET["sort"] == "price" && $_GET["method"] == "desc"):?> selected <?endif;?>>По убыванию цены</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="page-filter__right">
+            <div class="filter__diel-select" style="display: none">
+                <button class="button-picture button-picture--filter"><span>Фильтр</<span></button>
+            </div>
+
+            <span class="page-filter__label page-filter__label-sum">Показывать товаров на странице</span>
+
+            <div class="filter__diel-select diel-select">
+                <button class="diel-select__button">
+                    <span class="diel-select__button-text">12</span>
+                </button>
+
+                <ol class="diel-select__list diel-select-list"></ol>
+
+                <select class="filter__diel-js" hidden>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('list_num=12', array('list_num'))?>#catalog-sort-panel" <?if ($_GET["list_num"] == "12" || !isset($_GET['list_num'])):?> selected <?endif;?>>12</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('list_num=24', array('list_num'))?>#catalog-sort-panel" <?if ($_GET["list_num"] == "24"):?> selected <?endif;?>>24</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('list_num=36', array('list_num'))?>#catalog-sort-panel" <?if($_GET["list_num"] == "36"):?> selected <?endif;?>>36</option>
+                </select>
+            </div>
+        </div>
+
+        <?/*$APPLICATION->IncludeComponent(
+                'bitrix:catalog.section.list',
+                'catalog-sub',
+                array(
+                    'IBLOCK_ID' => $arParams["IBLOCK_ID"],
+                    'SECTION_ID' => $arResult['ORIGINAL_PARAMETERS']['SECTION_ID'],
+                    'SECTION_CODE' => $arResult['CODE']
+                )
+        )*/?>
+    </div>
+<?}?>
+<?if (count($arResult['ITEMS']) > 0) {?>
 <ol class="section-card__list--view-list">
     <? foreach ($arResult['ITEMS'] as $k => $arItem) { ?>
         <li class="section-card-list__item">
@@ -84,4 +138,9 @@
         </li>
     <? } ?>
 </ol>
-
+<?} else {?>
+<div class="search-result">
+            Ничего не найдено
+        </div>
+<?}?>
+<?=$arResult['NAV_STRING']?>
