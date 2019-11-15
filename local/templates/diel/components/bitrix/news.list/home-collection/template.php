@@ -27,7 +27,7 @@ Loc::loadMessages(__FILE__);
                         <? if ($arItem['PREVIEW_TEXT']) { ?>
                             <p class="jumping-slider__description"><?= $arItem['PREVIEW_TEXT'] ?></p>
                         <? } ?>
-                        <a class="jumping-slider__link-detail link-detail" href="#">
+                        <a class="jumping-slider__link-detail link-detail" href="<?=$arItem['DETAIL_PAGE_URL']?>">
                             <?= Loc::getMessage('HOME_COLLECTION_BTN_READ_MORE') ?>
                             <?= GetContentSvgIcon('arrow-long') ?>
                         </a>
