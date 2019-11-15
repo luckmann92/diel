@@ -1,29 +1,29 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"женская коллекция", 
-		"#", 
+		"Вдохновение коллекция 2019",
+		"/collections/8/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"украшения", 
-		"#", 
+		"/catalog/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"индивидуальный заказ", 
-		"#", 
+		"/individual/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"покупка и доставка", 
-		"#", 
+		"/delivery/",
 		Array(), 
 		Array(), 
 		"" 
@@ -37,28 +37,28 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Мужская коллекция", 
-		"#", 
+		"/catalog/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"коллекции", 
-		"#", 
+		"/collections/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"свадьба", 
-		"#", 
+		"Отзывы клиентов",
+		"/reviews/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"контакты", 
-		"#", 
+		"/contacts/",
 		Array(), 
 		Array(), 
 		"" 

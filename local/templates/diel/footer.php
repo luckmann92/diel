@@ -40,7 +40,7 @@ $pageLayoutClass = $APPLICATION->GetViewContent('page_layout_class');
     <title><?= $APPLICATION->GetTitle(); ?></title>
 </head>
 <body>
-<div class="<?=$pageLayout?> <?=$pageLayoutClass?>">
+<div class="page <?=$pageLayout?> <?=$pageLayoutClass?>">
 <?
 $APPLICATION->ShowPanel();
 

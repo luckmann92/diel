@@ -47,7 +47,7 @@ if ($_REQUEST['ACTION']) {
             $arProduct['PROPS']['COLLECTION'] = $rsCollection->GetNext();
         }
         if ($arProduct) {
-            dump($arProduct['PROPS']);
+            $price = CPrice::GetBasePrice($arProduct['ID'])['PRICE'];
             ?>
             <section class="popup popup-product-card popup--active">
                 <div class="popup-product-card__inner">
@@ -63,7 +63,9 @@ if ($_REQUEST['ACTION']) {
                     </div>
 
                     <div class="popup-product-card__middle">
-                        <p class="popup-product-card__price">552 000 ₽</p>
+                        <?if ($price) {?>
+                        <p class="popup-product-card__price">от <?=number_format($price, 0, '', ' ')?> ₽</p>
+                <?}?>
                         <?if ($arProduct['PROPS']['COLLECTION']) {?>
                         <a class="popup-product-card__collection" href="<?=$arProduct['PROPS']['COLLECTION']['DETAIL_PAGE_URL']?>"><?=$arProduct['PROPS']['COLLECTION']['NAME']?></a>
                 <?}?>
@@ -71,27 +73,21 @@ if ($_REQUEST['ACTION']) {
                             <?=GetContentSvgIcon('favorites')?>
                         </a>
                     </div>
-
+<?if ($arProduct['PROPS']) {?>
                     <table class="characteristics">
                         <caption class="characteristics__caption">Характеристики</caption>
-                        <tbody><tr class="characteristics__row">
-                            <td class="characteristics__col">Total number of pixels</td>
-                            <td class="characteristics__col">18.7 million</td>
-                        </tr>
+                        <tbody>
+                        <?foreach ($arProduct['PROPS'] as $CODE => $arProp) {?>
+                            <?if (stripos($CODE, 'OPTIONS_') !== false && $arProp['VALUE'] && !is_array($arProp['VALUE'])) {?>
                         <tr class="characteristics__row">
-                            <td class="characteristics__col">Effective Pixels</td>
-                            <td class="characteristics__col">18 million</td>
+                            <td class="characteristics__col"><?=$arProp['NAME']?></td>
+                            <td class="characteristics__col"><?=$arProp['VALUE']?></td>
                         </tr>
-                        <tr class="characteristics__row">
-                            <td class="characteristics__col">The size</td>
-                            <td class="characteristics__col">APS-C (22.3 x 14.9 mm)</td>
-                        </tr>
-                        <tr class="characteristics__row">
-                            <td class="characteristics__col">Crop factor</td>
-                            <td class="characteristics__col">1.6</td>
-                        </tr>
-                        </tbody></table>
+                        <?}?>
+                    <?}?>
 
+                        </tbody></table>
+<?}?>
                     <a class="popup-product-card__link-detail link-detail" href="<?=$arProduct['DETAIL_PAGE_URL']?>">Подробнее
                         <?=GetContentSvgIcon('arrow-long')?>
                     </a>

@@ -16,7 +16,7 @@ if ($arResult) {?>
             <li class="breadcrumbs__item">
                 <?
                 if ($key == count($arResult) - 1) { ?>
-                    <a class="breadcrumbs__link" href="<?= $arLink["LINK"] ?>"><?= $arLink["TITLE"] ?></a>
+                    <span class="breadcrumbs__link"><?= $arLink["TITLE"] ?></span>
                 <? } else { ?>
                     <a class="breadcrumbs__link" href="<?= $arLink["LINK"] ?>"><?= $arLink["TITLE"] ?></a>
                 <? } ?>

@@ -11,9 +11,38 @@ Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 */
 
-
-
+$APPLICATION->IncludeComponent(
+    "bitrix:catalog.smart.filter",
+    "",
+    array(
+        "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+        "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+        "SECTION_ID" => $arCurSection['ID'],
+        "FILTER_NAME" => $arParams["FILTER_NAME"],
+        "PRICE_CODE" => $arParams["~PRICE_CODE"],
+        "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+        "CACHE_TIME" => $arParams["CACHE_TIME"],
+        "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+        "SAVE_IN_SESSION" => "N",
+        "FILTER_VIEW_MODE" => $arParams["FILTER_VIEW_MODE"],
+        "XML_EXPORT" => "N",
+        "SECTION_TITLE" => "NAME",
+        "SECTION_DESCRIPTION" => "DESCRIPTION",
+        'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
+        "TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],
+        'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
+        'CURRENCY_ID' => $arParams['CURRENCY_ID'],
+        "SEF_MODE" => $arParams["SEF_MODE"],
+        "SEF_RULE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["smart_filter"],
+        "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
+        "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+        "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+    ),
+    $component,
+    array('HIDE_ICONS' => 'Y')
+);
 ?>
+<?if ($arResult['SHOW_SORT_PANEL']) {?>
     <div class="section-card__filter page-filter">
         <div class="page-filter__left">
             <span class="page-filter__label ">Сортировать по</span>
@@ -34,7 +63,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         </div>
 
         <div class="page-filter__right">
-            <div class="filter__diel-select">
+            <div class="filter__diel-select" style="display: none">
                 <button class="button-picture button-picture--filter"><span>Фильтр</<span></button>
             </div>
 
@@ -65,8 +94,8 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                 )
         )*/?>
     </div>
-
-
+<?}?>
+<?if ($arResult['ITEMS']) {?>
 <?
 $type = 1;
 foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
@@ -78,23 +107,23 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
             $isBigBlock = $i == $type;
             ?>
             <? if ($isBigBlock || (count($arItem) == 2)) { ?>
-                <li class="section-card-list__item <?= $isBigBlock ? 'product-card product-card--view-3' : '' ?>">
+                <li class="section-card-list__item <?= $isBigBlock ? 'product-card product-card--view-3' : '' ?>" >
             <? } ?>
             <? foreach ($arItem as $ind => $item) { ?>
                 <? if (!$isBigBlock) { ?>
-                    <div class="product-card">
-                    <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>">
+                    <div class="product-card" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
+                    <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
                 <? } ?>
                 <? if ($item['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
                 <? } ?>
-                <div class="product-card__image-wrapper">
+                <div class="product-card__image-wrapper" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
                     <img class="product-card__image"
                          src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>"
                          alt="<?= $item['PREVIEW_PICTURE']['ALT'] ?>">
                 </div>
 
-                <div class="product-card__text">
+                <div class="product-card__text" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
                     <h3 class="product-card__title"><?= $item['NAME'] ?></h3>
                     <? if ($isBigBlock) { ?>
                         <p class="product-card__description"><?= $item['PREVIEW_TEXT'] ?></p>
@@ -147,4 +176,11 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
         $type = 1;
     } ?>
 <? } ?>
+<? } else {?>
+    <?if ($arParams['TYPE_PAGE'] == 'search') {?>
+        <div class="search-result">
+            Ничего не найдено
+        </div>
+    <?}?>
+<?}?>
 <?=$arResult['NAV_STRING']?>

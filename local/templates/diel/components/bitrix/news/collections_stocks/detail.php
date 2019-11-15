@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
 ?>
 <?$ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
@@ -51,6 +52,7 @@ $this->setFrameMode(true);
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => $arParams["DETAIL_PAGER_TEMPLATE"],
 		"PAGER_SHOW_ALL" => $arParams["DETAIL_PAGER_SHOW_ALL"],
+        "SHOW_ALL_WO_SECTION" => "Y",
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
 		"ELEMENT_ID" => $arResult["VARIABLES"]["ELEMENT_ID"],
 		"ELEMENT_CODE" => $arResult["VARIABLES"]["ELEMENT_CODE"],

@@ -6,14 +6,12 @@
 <? if ($arResult['ITEMS']) { ?>
     <section class="page-about__partners partners">
         <h2 class="partners__title section-title">наши партнеры</h2>
-
-        <p class="partners__description"><? $APPLICATION->IncludeFile("/include/about/team.php",
+        <? $APPLICATION->IncludeFile("/include/about/team.php",
                 array(), array(
                     "SHOW_BORDER" => true,
                     "MODE" => "html"
                 )
-            ); ?></p>
-
+            ); ?>
         <div class="partners__list">
             <? foreach ($arResult['ITEMS'] as $k => $arItems) { ?>
                 <ul class="partners-list">

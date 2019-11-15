@@ -11,7 +11,9 @@
  */
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
-$arResult["RENDER_FORM"] = "N";
+
+
+$arResult["RENDER_FORM"] = $arParams['INDIVIDUAL_ORDER'] == 'Y' ? 'Y' : 'N';
 if (!isset($_REQUEST["ajax_form"]) || empty($_REQUEST["ajax_form"])) {
     $signer = new \Bitrix\Main\Security\Sign\Signer;
     $params = $arParams;

@@ -105,7 +105,7 @@ function GetCurrentFilial()
     if (\Bitrix\Main\Loader::includeModule('iblock')) {
         $rs = CIBlockElement::GetList(
             array(),
-            array('!PROPERTY_DEFAULT_VALUE' => false),
+            array('IBLOCK_ID' => 9, '!PROPERTY_DEFAULT_VALUE' => false),
             false,
             false,
             array('ID', 'IBLOCK_ID', 'PROPERTY_*')
@@ -149,28 +149,53 @@ function GetBanner($urlPage = '')
     global $APPLICATION;
     $arBanner = array();
     if (\Bitrix\Main\Loader::includeModule('iblock')) {
-        $arFilter = array(
-            'IBLOCK_CODE' => 'banners',
-            array(
-                'LOGIC' => 'OR',
-                array('PROPERTY_URL_VALUE' => $urlPage ? prepareText($urlPage) : prepareText($APPLICATION->GetCurPage())),
-                array("!PROPERTY_CATALOG_SECTION_VALUE" => false)
-            )
-        );
-        $rs = CIBlockElement::GetList(
-            array(),
-            $arFilter,
-            false,
-            false,
-            array('ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'PROPERTY_*')
-        );
-        while ($ar = $rs->GetNextElement()) {
-            $arBanner = $ar->GetFields();
-            $arBanner['PROPS'] = $ar->GetProperties();
+        $url =  $urlPage ?: $APPLICATION->GetCurPage();
+        $res = getBannerElement($url);
+        if ($res['ID']) {
+            return $res;
+        } else {
+            return getBannerElement($url, true);
         }
 
     }
+    return getBannerElement($urlPage);
+}
+
+function getBannerElement($url, $isDefault = false) {
+    $arBanner = array();
+
+    $arFilter['IBLOCK_CODE'] = 'banners';
+    if ($isDefault) {
+        $arFilter['PROPERTY_DEFAULT.ID'] = 7;
+    } else {
+        $arFilter['?PROPERTY_URL'] = $url;
+    }
+
+    $rs = CIBlockElement::GetList(
+        array(),
+        $arFilter,
+        false,
+        false,
+        array('ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'PROPERTY_*')
+    );
+    while ($ar = $rs->GetNextElement()) {
+        $arBanner = $ar->GetFields();
+        if ($arBanner['PREVIEW_PICTURE']) {
+            $arBanner['PREVIEW_PICTURE'] = CFile::GetPath($arBanner['PREVIEW_PICTURE']);
+        }
+        $arBanner['PROPS'] = $ar->GetProperties();
+    }
     return $arBanner;
+}
+
+function cleanArray($array) {
+    $result = array();
+    foreach ($array as $k => $vl) {
+        if (strlen($vl) > 0) {
+            $result[] = $vl;
+        }
+    }
+    return $result;
 }
 
 /**
@@ -203,6 +228,7 @@ function addBannerInContent($urlPage = '')
 {
     global $APPLICATION;
     $arBanner = GetBanner($urlPage);
+;
     if ($arBanner) {
         ob_start(); ?>
         <section class="new-design section-skew--left">
@@ -214,7 +240,7 @@ function addBannerInContent($urlPage = '')
                 </h2>
 
                 <div class="new-design__description-wrapper">
-                    <?= htmlspecialchars_decode($arBanner['PREVIEW_TEXT']) ?>
+                    <p><?= htmlspecialchars_decode($arBanner['PREVIEW_TEXT']) ?></p>
                     <? if ($arBanner['PROPS']['LINK']['VALUE']) { ?>
                         <!-- <a class="new-design__link-detail link-detail"
                             href="<?= $arBanner['PROPS']['LINK']['VALUE'] ?>">
@@ -222,6 +248,9 @@ function addBannerInContent($urlPage = '')
                             <?=GetContentSvgIcon('arrow-long')?>
                         </a> -->
                     <? } ?>
+                    <?if ($arBanner['PREVIEW_PICTURE']) {?>
+                        <img src="<?=$arBanner['PREVIEW_PICTURE']?>">
+                    <?}?>
                 </div>
             </div>
         </section>

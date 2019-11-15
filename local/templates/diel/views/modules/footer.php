@@ -11,7 +11,6 @@ Loc::loadMessages(__FILE__);
 
 global $arSetting;
 
-
 ?>
 <footer class="footer section-skew--left">
     <? $APPLICATION->IncludeComponent(

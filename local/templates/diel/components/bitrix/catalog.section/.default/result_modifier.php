@@ -15,12 +15,21 @@ $this->SetViewTarget('type_page');
 echo 'products';
 $this->EndViewTarget();
 
+
+if (count($arResult['ITEMS']) < 5) {
+    for ($index = 0; $index < 5; $index++) {
+        if (!isset($arResult['ITEMS'][$index])) {
+            $arResult['ITEMS'][$index] = array();
+        }
+
+    }
+}
+
 $arResult['ITEMS'] = array_chunk($arResult['ITEMS'], 5);
 
 $type_block = 1;
 
 $arBlocks = array();
-
 
 foreach ($arResult['ITEMS'] as $key => $arItems) {
     foreach ($arItems as $k => $arItem) {

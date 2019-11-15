@@ -14,7 +14,3 @@ $this->EndViewTarget();
 $this->SetViewTarget('content_in_section');
 echo 'Y';
 $this->EndViewTarget();
-
-if ($arResult['ITEMS']) {
-    $arResult['ITEMS'] = array_chunk($arResult['ITEMS'], 3);
-}

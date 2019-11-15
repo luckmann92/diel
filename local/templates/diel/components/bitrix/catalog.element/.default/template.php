@@ -85,7 +85,7 @@
 		"WEB_FORM_ID" => "2",
 		"IGNORE_CUSTOM_TEMPLATE" => "N",
 		"USE_EXTENDED_ERRORS" => "N",
-		"LINK_TEXT" => "",
+		"LINK_TEXT" => "Оформить заказ",
 		"LINK_CSS_CLASS" => "",
 		"FORM_TITLE" => "",
 		"FORM_DESCRIPTION" => "",
@@ -93,8 +93,8 @@
 		"SEF_MODE" => "N",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "3600",
-		"LIST_URL" => "result_list.php",
-		"EDIT_URL" => "result_edit.php",
+		"LIST_URL" => "",
+		"EDIT_URL" => "",
 		"SUCCESS_URL" => "",
 		"CHAIN_ITEM_TEXT" => "",
 		"FAST_ORDER" => "Y",
@@ -243,175 +243,70 @@ if ($arParams['PROPERTY_CODE'] || ($arResult['DETAIL_TEXT'] || $arResult['PREVIE
     <? } ?>
 <? } ?>
 <? if ($arResult['KIT']) { ?>
-    <?$GLOBALS['arrFilter']['ID'] = array_keys($arResult['KIT']);?>
     <div class="card-item__kit card-item-kit">
         <h3 class="section-title-small">Комплект</h3>
 
         <div class="card-item-kit__slider-wrapper">
-            <? foreach ($arResult['KIT'] as $arItems) { ?>
-                <ul class="card-item-kit__slider">
-                    <li class="card-item-kit__slider-item">
-                        <ul class="kit section-card__list">
-                            <? if ($arItems[0]) { ?>
-                                <li class="kit__item section-card-list__item product-card product-card--view-3">
-                                    <? if ($arItems[0]['PROPERTIES']['IS_NEW']['VALUE']) { ?>
-                                        <span class="product-card__novelty">Новинка</span>
-                                    <? } ?>
-                                    <a class="product-card__image-wrapper" href="<?= $arItems[0]['DETAIL_PAGE_URL'] ?>">
-                                        <? if ($arItems[0]['PREVIEW_PICTURE']['SRC']) { ?>
-                                            <img class="product-card__image"
-                                                 src="<?= $arItems[0]['PREVIEW_PICTURE']['SRC'] ?>"
-                                                 alt="<?= $arItems[0]['NAME'] ?>">
-                                        <? } ?>
-                                    </a>
+    <?
+    global $arrFilter;
+    $GLOBALS['arrFilter']['ID'] = array_keys($arResult['AR_KITS']);
+    $APPLICATION->IncludeComponent(
+        "bitrix:catalog.top",
+        ".default",
+        array(
+            "COMPONENT_TEMPLATE" => ".default",
+            "IBLOCK_TYPE" => "catalog",
+            "IBLOCK_ID" => "3",
+            "FILTER_NAME" => "arrFilter",
+            "CUSTOM_FILTER" => "",
+            "USE_FILTER" => "Y",
+            "HIDE_NOT_AVAILABLE" => "N",
+            "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+            "ELEMENT_SORT_FIELD" => $_GET["sort"]=="name"?"name":"catalog_PRICE_1",
+            "ELEMENT_SORT_ORDER" => $_GET["method"]=="desc"?"desc":"asc",
+            "ELEMENT_SORT_FIELD2" => "id",
+            "ELEMENT_SORT_ORDER2" => "desc",
+            "OFFERS_SORT_FIELD" => "sort",
+            "OFFERS_SORT_ORDER" => "asc",
+            "OFFERS_SORT_FIELD2" => "id",
+            "OFFERS_SORT_ORDER2" => "desc",
+            "ELEMENT_COUNT" => "9",
+            "LINE_ELEMENT_COUNT" => "3",
+            "OFFERS_FIELD_CODE" => array(
+                0 => "",
+                1 => "",
+            ),
+            "OFFERS_LIMIT" => "5",
+            "SECTION_URL" => "",
+            "DETAIL_URL" => "",
+            "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+            "SEF_MODE" => "N",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "36000000",
+            "CACHE_GROUPS" => "Y",
+            "CACHE_FILTER" => "N",
+            "ACTION_VARIABLE" => "action",
+            "PRODUCT_ID_VARIABLE" => "id",
+            "PRICE_CODE" => array(
+                0 => "BASE",
+            ),
+            "USE_PRICE_COUNT" => "N",
+            "SHOW_PRICE_COUNT" => "1",
+            "PRICE_VAT_INCLUDE" => "Y",
+            "CONVERT_CURRENCY" => "N",
+            "BASKET_URL" => "/personal/basket.php",
+            "USE_PRODUCT_QUANTITY" => "N",
+            "ADD_PROPERTIES_TO_BASKET" => "Y",
+            "PRODUCT_PROPS_VARIABLE" => "prop",
+            "PARTIAL_PRODUCT_PROPERTIES" => "N",
+            "DISPLAY_COMPARE" => "N",
+            "COMPATIBLE_MODE" => "Y"
+        ),
+        false
+    );?>
 
-                                    <div class="product-card__text">
-                                        <h3 class="product-card__title">
-                                            <a class="product-card__link" href="<?= $arItems[0]['DETAIL_PAGE_URL'] ?>"><?= $arItems[0]['NAME'] ?></a>
-                                        </h3>
-                                        <? if ($arItems[0]['PREVIEW_TEXT']) { ?>
-                                            <p class="product-card__description"><?= $arItems[0]['PREVIEW_TEXT'] ?></p>
-                                        <? } ?>
-                                        <b class="product-card__price"><?= $arItems[0]['PRICE'] ?> ₽</b>
-                                        <div class="product-card__footer">
-                                            <a class="product-card__button-detail link-detail"
-                                            href="<?= $arItems[0]['DETAIL_PAGE_URL'] ?>">Подробнее
-                                                <?= GetContentSvgIcon('arrow-long') ?>
-                                            </a>
-                                            <a data-product-id="<?=$arItems[0]['ID']?>" class="product-card__fast button-second js-init-fast-show" hidden>
-                                                <span>Быстрый просмотр</span>
-                                                <?= GetContentSvgIcon('eye') ?>
-                                            </a>
-                                        </div>
-                                    </div>
 
-                                    <a data-product-id="<?= $arItems[0]['ID'] ?>"
-                                       class="<?=isFavorites($arItems[0]['ID'])?> product-card__to-favorites js-init-add-favorites"
-                                       href="#">
-                                        <?= GetContentSvgIcon('favorites') ?>
-                                    </a>
-                                </li>
-                            <? } ?>
-                            <? if ($arItems[1] || $arItems[2]) { ?>
-                                <li class="kit__item section-card-list__item">
-                                    <? if ($arItems[1]) { ?>
-                                        <div class="product-card">
-                                            <a class="product-card__link" href="<?= $arItems[1]['DETAIL_PAGE_URL'] ?>">
-                                                <? if ($arItems[1]['PROPERTIES']['IS_NEW']['VALUE']) { ?>
-                                                    <span class="product-card__novelty">Новинка</span>
-                                                <? } ?>
-                                                <div class="product-card__image-wrapper">
-                                                    <? if ($arItems[1]['PREVIEW_PICTURE']['SRC']) { ?>
-                                                        <img class="product-card__image"
-                                                             src="<?= $arItems[1]['PREVIEW_PICTURE']['SRC'] ?>"
-                                                             alt="<?= $arItems[1]['NAME'] ?>">
-                                                    <? } ?>
-                                                </div>
 
-                                                <div class="product-card__text">
-                                                    <h3 class="product-card__title"><?= $arItems[1]['NAME'] ?></h3>
-
-                                                    <b class="product-card__price"><?= $arItems[1]['PRICE'] ?> ₽</b>
-                                                </div>
-                                            </a>
-
-                                            <a data-product-id="<?= $arItems[1]['ID'] ?>"
-                                               class="<?=isFavorites($arItems[1]['ID'])?> product-card__to-favorites js-init-add-favorites" href="#">
-                                                <?= GetContentSvgIcon('favorites') ?>
-                                            </a>
-                                        </div>
-                                    <? } ?>
-                                    <? if ($arItems[2]) { ?>
-                                        <div class="product-card">
-                                            <a class="product-card__link" href="<?= $arItems[2]['DETAIL_PAGE_URL'] ?>">
-                                                <? if ($arItems[2]['PROPERTIES']['IS_NEW']['VALUE']) { ?>
-                                                    <span class="product-card__novelty">Новинка</span>
-                                                <? } ?>
-
-                                                <div class="product-card__image-wrapper">
-                                                    <img class="product-card__image"
-                                                         src="<?= $arItems[2]['PREVIEW_PICTURE']['SRC'] ?>"
-                                                         alt="<?= $arItems[2]['NAME'] ?>">
-                                                </div>
-
-                                                <div class="product-card__text">
-                                                    <h3 class="product-card__title"><?= $arItems[2]['NAME'] ?></h3>
-
-                                                    <b class="product-card__price"><?= $arItems[2]['PRICE'] ?> ₽</b>
-                                                </div>
-                                            </a>
-
-                                            <a data-product-id="<?= $arItems[2]['ID'] ?>"
-                                               class="<?=isFavorites($arItems[2]['ID'])?> product-card__to-favorites js-init-add-favorites"
-                                               href="#">
-                                                <?= GetContentSvgIcon('favorites') ?>
-                                            </a>
-                                        </div>
-                                    <? } ?>
-                                </li>
-                            <? } ?>
-                            <? if ($arItems[3] || $arItems[4]) { ?>
-                                <li class="kit__item section-card-list__item">
-                                    <? if ($arItems[3]) { ?>
-                                        <div class="product-card">
-                                            <a class="product-card__link" href="<?= $arItems[3]['DETAIL_PAGE_URL'] ?>">
-                                                <? if ($arItems[3]['PROPERTIES']['IS_NEW']['VALUE']) { ?>
-                                                    <span class="product-card__novelty">Новинка</span>
-                                                <? } ?>
-                                                <? if ($arItems[3]['PREVIEW_PICTURE']) { ?>
-                                                    <div class="product-card__image-wrapper">
-                                                        <img class="product-card__image"
-                                                             src="<?= $arItems[3]['PREVIEW_PICTURE']['SRC'] ?>"
-                                                             alt="<?= $arItems[3]['NAME'] ?>">
-                                                    </div>
-                                                <? } ?>
-                                                <div class="product-card__text">
-                                                    <h3 class="product-card__title"><?= $arItems[3]['NAME'] ?></h3>
-
-                                                    <b class="product-card__price"><?= $arItems[3]['PRICE'] ?> ₽</b>
-                                                </div>
-                                            </a>
-
-                                            <a data-product-id="<?= $arItems[3]['ID'] ?>"
-                                               class="<?=isFavorites($arItems[3]['ID'])?> product-card__to-favorites js-init-add-favorites" href="#">
-                                                <?= GetContentSvgIcon('favorites') ?>
-                                            </a>
-                                        </div>
-                                    <? } ?>
-                                    <? if ($arItems[4]) { ?>
-                                        <div class="product-card">
-                                            <a class="product-card__link" href="<?= $arItems[4]['DETAIL_PAGE_URL'] ?>">
-                                                <? if ($arItems[4]['PROPERTIES']['IS_NEW']['VALUE']) { ?>
-                                                    <span class="product-card__novelty">Новинка</span>
-                                                <? } ?>
-                                                <div class="product-card__image-wrapper">
-                                                    <? if ($arItems[4]['PREVIEW_PICTURE']['SRC']) { ?>
-                                                        <img class="product-card__image"
-                                                             src="<?= $arItems[4]['PREVIEW_PICTURE']['SRC'] ?>"
-                                                             alt="<?= $arItems[4]['NAME'] ?>">
-                                                    <? } ?>
-                                                </div>
-
-                                                <div class="product-card__text">
-                                                    <h3 class="product-card__title"><?= $arItems[4]['NAME'] ?></h3>
-
-                                                    <b class="product-card__price"><?= $arItems[4]['PRICE'] ?> ₽</b>
-                                                </div>
-                                            </a>
-
-                                            <a data-product-id="<?= $arItems[4]['ID'] ?>"
-                                               class="<?=isFavorites($arItems[4]['ID'])?> product-card__to-favorites js-init-add-favorites"
-                                               href="#">
-                                                <?= GetContentSvgIcon('favorites') ?>
-                                            </a>
-                                        </div>
-                                    <? } ?>
-                                </li>
-                            <? } ?>
-                        </ul>
-                    </li>
-                </ul>
-            <? } ?>
             <div class="jumping-slider-options hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1601" height="70" viewBox="0 0 1601 17" fill="none">
                     <line x1="16" y1="8.5" x2="1601" y2="8.5" stroke="#F1C9B3" stroke-opacity="0.37"></line>

@@ -24,6 +24,14 @@ if ($arParams['TYPE_PAGE'] == 'search') {
     $this->EndViewTarget();
 }
 
+if (count($arResult['ITEMS']) < 5) {
+    for ($index = 0; $index < 5; $index++) {
+        if (!isset($arResult['ITEMS'][$index])) {
+            $arResult['ITEMS'][$index] = array();
+        }
+
+    }
+}
 $arResult['ITEMS'] = array_chunk($arResult['ITEMS'], 5);
 
 $type_block = 1;
@@ -83,5 +91,10 @@ foreach ($arResult['ITEMS'] as $key => $arItems) {
     if ($type_block > 3) {
         $type_block = 1;
     }
+}
+if (count($arResult['ITEMS']) > 0) {
+    $arResult['SHOW_SORT_PANEL'] = true;
+} else {
+    $arResult['SHOW_SORT_PANEL'] = false;
 }
 $arResult['ITEMS'] = $arBlocks;

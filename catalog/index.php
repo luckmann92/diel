@@ -222,7 +222,7 @@ $APPLICATION->SetTitle("Каталог");
 		"COMPONENT_TEMPLATE" => ".default",
 		"SEF_FOLDER" => "/catalog/",
 		"USE_ALSO_BUY" => "N",
-		"FILTER_NAME" => "",
+		"FILTER_NAME" => "arrFilter",
 		"SIDEBAR_SECTION_POSITION" => "right",
 		"SIDEBAR_DETAIL_POSITION" => "right",
 		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => array(

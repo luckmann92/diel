@@ -94,4 +94,4 @@ $APPLICATION->SetTitle("Коллекции");
 		)
 	),
 	false
-);?>Text here....<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

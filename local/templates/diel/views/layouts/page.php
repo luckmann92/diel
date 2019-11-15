@@ -10,14 +10,7 @@ Loc::loadMessages(__FILE__);
 global $arSetting;
 
 $banner = $APPLICATION->GetViewContent('banner');
-$class_wrapper = $APPLICATION->GetViewContent('class_wrapper');
-$class_title = $APPLICATION->GetViewContent('class_title');
-$about = $APPLICATION->GetViewContent('about');
-$content_in_section = $APPLICATION->GetViewContent('content_in_section');
-$collection_products = $APPLICATION->GetViewContent('collection_products');
-$search_result = $APPLICATION->GetViewContent('search_result');
-$search = $APPLICATION->GetViewContent('search');
-$other_news = $APPLICATION->GetViewContent('other_news');
+
 ?>
 <div class="catalog-top-wrapper">
     <? $APPLICATION->IncludeFile("views/modules/header.php",
@@ -48,41 +41,16 @@ $other_news = $APPLICATION->GetViewContent('other_news');
             $component,
             array('HIDE_ICONS' => true)
         ); ?>
-
-
-        <section class="<?= $class_wrapper ?>">
-            <? if ($content_in_section) { ?>
-                <h2 class="<?= $class_title ?>"><?= $APPLICATION->GetTitle(false) ?></h2>
-                <?= $arParams['CONTENT'] ?>
-            <? } else { ?>
-                <? if ($search) { ?>
-                    <div class="search-section__header">
-                <? } ?>
-                <h2 class="<?= $class_title ?>"><?=$search ? GetContentSvgIcon('icon-search-page') : ''?><?= $search && $_REQUEST['q'] ? $_REQUEST['q'] : $APPLICATION->GetTitle(false) ?></h2>
-
-                <? if ($search_result > 0) { ?>
-                    <p class="search-section__header-result">
-                        <span class="search-section__header-result-span"><?= NumPluralForm($search_result, array('Найден', 'Найдено')) ?> </span><?= $search_result ?> <?= NumPluralForm($search_result, array('результат', 'результата', 'результатов')) ?>
+        <section class="page-text age-contacts__contacts contacts">
+            <h2 class="section-title"><?= $APPLICATION->GetTitle(false) ?></h2>
+            <div class="page-text__content new-design__inner" style="padding-left: 0">
+                <div class="new-design__description-wrapper" style="margin-bottom: 80px">
+                    <p>
+                        <?= $arParams['CONTENT'] ?>
                     </p>
-                <? } ?>
-                <? if ($search) { ?>
-                    </div>
-                <? } ?>
-                <? if ($about) { ?>
-                    <?= $about ?>
-                <? } else { ?>
-                    <?= $arParams['CONTENT'] ?>
-                <? } ?>
-
-            <? } ?>
+                </div>
+            </div>
         </section>
-        <?= $collection_products ?>
-        <?= $other_news ?>
-        <? if ($content_in_section != 'Y') { ?>
-            <? if ($about) { ?>
-                <?= $arParams['CONTENT'] ?>
-            <? } ?>
-            <?= $banner ?>
-        <? } ?>
+        <?= $banner ?>
     </main>
 </div>

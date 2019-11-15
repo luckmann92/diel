@@ -79,7 +79,7 @@ Loc::loadMessages(__FILE__);
         </div>
     </div>
 
-    <a class="collections__button-transition button-transition" href="/collection/">
+    <a class="collections__button-transition button-transition" href="/collections/">
         <?= Loc::getMessage('HOME_COLLECTION_BTN_LINK_TO_COLLECTION') ?>
         <?= GetContentSvgIcon('arrow-long') ?>
     </a>

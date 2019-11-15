@@ -30,14 +30,14 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Покупателям", 
-		"#", 
+		"/customers/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Доставка и оплата", 
-		"#", 
+		"/delivery/",
 		Array(), 
 		Array(), 
 		"" 

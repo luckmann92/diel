@@ -129,6 +129,7 @@ while ($ar = $rs->GetNext()){
 if ($arResult['PROPERTIES']['KIT']['VALUE']) {
     $arKit = array();
     foreach ($arResult['PROPERTIES']['KIT']['VALUE'] as $ID) {
+        $arResult['AR_KITS'][$ID] = $ID;
         $rs = CIBlockElement::GetList(array(),
             array('ID' => $ID, 'IBLOCK_ID' => $arParams['IBLOCK_ID']),
             false,false,

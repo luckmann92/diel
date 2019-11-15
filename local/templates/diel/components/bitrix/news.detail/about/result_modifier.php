@@ -10,3 +10,5 @@ $this->EndViewTarget();
 $this->SetViewTarget('class_title');
 echo 'about-company__title section-title ';
 $this->EndViewTarget();
+
+$APPLICATION->SetDirProperty('PAGE_LAYOUT', 'column1');

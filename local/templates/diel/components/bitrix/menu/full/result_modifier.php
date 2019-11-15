@@ -38,7 +38,4 @@ if (!empty($arResult)) {
 
 }
 
-if (count($arResult) > 3) {
-    $count = intval(count($arResult) / 3);
-    $arResult = array_chunk($arResult, $count);
-}
+$arResult['ITEMS'] = array_chunk($arResult['ITEMS'], 3);

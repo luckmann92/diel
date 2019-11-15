@@ -28,6 +28,7 @@
                 <button class="filter__reset" type="reset">Сбросить фильтр</button>
             </div>
             <? foreach ($arResult["ITEMS"] as $k => $arFilterItem) {
+                dump($arFilterItem['DISPLAY_TYPE']);
                 if ($arFilterItem['VALUES']) { ?>
                     <div class="filter__section">
                         <h3 class="filter__section-title"><?= $arFilterItem['NAME'] ?></h3>

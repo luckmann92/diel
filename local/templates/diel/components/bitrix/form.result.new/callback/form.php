@@ -16,6 +16,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
     $APPLICATION->RestartBuffer();
     if ($arResult['FORM_ERRORS']) {
         $arResponse = array(
+                'error' => true,
             'result' => false,
             'message' => $arResult['FORM_ERRORS']
         );
@@ -94,7 +95,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                         <img class="popup-order-form__image" src="<?= $arParams['PRODUCT']['PICTURE'] ?>" alt="">
                     </div>
 
-                    <h3 class="popup-order-form__title"><?= $arParams['PRODUCT']['NAME'] ?></h3>
+                    <h3 class="popup-order-form__title"><?= htmlspecialchars_decode($arParams['PRODUCT']['NAME'])?></h3>
                     <p class="popup-order-form__price" id="modal_form_product_price"></p>
                 </div>
 
@@ -102,72 +103,154 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                     <?= GetContentSvgIcon('close') ?>
                 </button>
             </form>
+            <div class="popup-error" style="display: none;"></div>
         </section>
-    <? } elseif ($arParams['ADD_REVIEWS'] == 'Y') {
-        ?>
+    <? } elseif ($arParams['ADD_REVIEWS'] == 'Y') {?>
 
         <section class="popup popup-leave-feedback popup--active">
             <form class="popup-leave-feedback__form" id="form_id_<?= $arResult['arForm']['ID'] ?>" enctype="multipart/form-data" action="<?= POST_FORM_ACTION_URI; ?>">
-            <?= bitrix_sessid_post(); ?>
+                <h2 class="popup-leave-feedback__title section-title">Оставить отзыв</h2>
+                <?= bitrix_sessid_post(); ?>
                 <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
                 <input type="hidden" name="web_form_submit" value="Y">
-                <h2 class="popup-leave-feedback__title section-title">Оставить отзыв</h2>
-
-                <?
-                $k = 1;
-                foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
-                    <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
-                        <? if ($k == 1) { ?>
-                            <div class="popup-leave-feedback__form-top">
-                        <? } ?>
-                        <div class="input-text-wrapper">
-                            <input class="input-text"
-                                   id="<?= $SID ?>"
-                                   name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
-                                   placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
-                        </div>
-                        <? if ($k == 2) { ?>
+                <div class="popup-leave-feedback__form-top">
+                    <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
+                        <?if ($SID == 'PHONE' || $SID == 'NAME') {?>
+                            <?$class = $SID == 'PHONE' ? 'popup-request-call__phone' : 'popup-request-call__username';?>
+                            <div class="popup-leave-feedback__form-name input-text-wrapper">
+                                <input class="input-text"
+                                       id="<?= $SID ?>"
+                                       name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
+                                       placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
+                            </div>
+                        <?}?>
+                    <?}?>
+                </div>
+                <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) {?>
+                    <?if ($SID != 'PHONE' && $SID != 'NAME') {?>
+                        <? if ($arAnswer[0]['FIELD_TYPE'] == 'textarea') { ?>
+                            <div class="popup-leave-feedback__form-review textarea-wrapper">
+                                <textarea class="textarea"
+                                          id="<?= $SID ?>"
+                                          name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
+                                          placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>"></textarea>
                             </div>
                         <? } ?>
-                    <? } ?>
-                    <? if ($arAnswer[0]['FIELD_TYPE'] == 'textarea') { ?>
-                        <div class="popup-leave-feedback__form-review textarea-wrapper">
-                            <textarea class="textarea"
-                                      id="<?= $SID ?>"
-                                      name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
-                                      placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>"></textarea>
-                        </div>
-                    <? } ?>
-                    <? $k++; ?>
-                <? } ?>
+                        <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
+                            <div class="popup-leave-feedback__form-email input-text-wrapper">
+                                <input class="input-text"
+                                       id="<?= $SID ?>"
+                                       name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
+                                       placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
+                            </div>
+                        <?}?>
+                    <?}?>
+                <?}?>
+
                 <div class="popup-leave-feedback__form-bottom">
-                    <div class="popup-leave-feedback__form-bottom-left">
-                        <input type="hidden" name="captcha_sid" value="<?=htmlspecialcharsbx($arResult["CAPTCHACode"]);?>">
-                        <input type="text" style="display: none" name="captcha_word" size="30" maxlength="50" value="" class="inputtext" /><
-                        <div class="g-recaptcha" data-sitekey="6Ldi5cEUAAAAAPSo2HUSMb1LgcjdSCllFfY09OAX"></div>
-                    </div>
-
                     <div class="popup-leave-feedback__form-bottom-right">
-                        <label class="popup-leave-feedback__form-consent label"><input class="input-checkbox"
-                                                                                       type="checkbox">Я согласен с
-                            политикой обработки персональных данных</label>
-
+                        <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
+                            <? if ($arAnswer[0]['FIELD_TYPE'] == 'checkbox') { ?>
+                                <label class="popup-leave-feedback__form-consent label"
+                                       for="<?= $SID ?>">
+                                    <input class="input-checkbox"
+                                           id="<?= $SID ?>"
+                                           name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
+                                           value="<?= $arAnswer[0]['ID'] ?>"
+                                           type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
+                                </label>
+                            <? } ?>
+                        <?}?>
                         <div class="popup-leave-feedback__form-submit input-submit-wrapper">
                             <input class="input-submit" type="submit" value="Оставить отзыв">
                         </div>
                     </div>
                 </div>
 
-                <button class="popup-leave-feedback__close popup__close" type="button">
-                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M25 2.94663L22.4821 0.673828L12.5 9.68445L2.51786 0.673828L0 2.94663L9.98214 11.9573L0 20.9679L2.51786 23.2407L12.5 14.2301L22.4821 23.2407L25 20.9679L15.0179 11.9573L25 2.94663Z"
-                              fill="white" fill-opacity="0.5"></path>
-                    </svg>
+                <button class="popup-leave-feedback__close popup__close js-init-form-close" type="button">
+                    <?=GetContentSvgIcon('close')?>
                 </button>
+                <div class="popup-error" style="display: none;"></div>
             </form>
         </section>
-    <? } else { ?>
+    <? } elseif ($arParams['INDIVIDUAL_ORDER'] == 'Y') { ?>
+        <form class="order-section__form price-list-form" id="form_id_<?= $arResult['arForm']['ID'] ?>" enctype="multipart/form-data" action="<?= POST_FORM_ACTION_URI; ?>">
+            <?= bitrix_sessid_post(); ?>
+            <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
+            <input type="hidden" name="web_form_submit" value="Y">
+            <ul class="price-list-form__list">
+                <?foreach ($arResult["arAnswers"] as $SID => $arAnswer) {?>
+            <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
+                <li class="price-list-form__item">
+                    <div class="input-text-wrapper">
+                        <input class="input-text"
+                               type="text"
+                               id="<?= $SID ?>"
+                               name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
+                               placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
+                    </div>
+                </li>
+                    <?}?>
+            <? if ($arAnswer[0]['FIELD_TYPE'] == 'textarea') { ?>
+                        <li class="price-list-form__item">
+                            <div class="textarea-wrapper">
+                                <textarea class="textarea"
+                                          id="<?= $SID ?>"
+                                          name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
+                                          placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>"></textarea>
+                            </div>
+                        </li>
+                <?}?>
+            <? if ($arAnswer[0]['FIELD_TYPE'] == 'checkbox') { ?>
+                        <li class="price-list-form__item">
+                            <label class="price-list-form__label">
+                                <input class="input-checkbox"
+                                       id="<?= $SID ?>"
+                                       name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
+                                       value="<?= $arAnswer[0]['ID'] ?>"
+                                       checked="checked"
+                                       type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
+                            </label>
+                        </li>
+                <?}?>
+<?}?>
+
+
+                <li class="order-section__form-submit price-list-form__item price-list-form__item--submit">
+                    <div class="input-submit-wrapper">
+                        <input class="input-submit js-init-form-send" type="submit" value="Оформить заказ">
+                    </div>
+                </li>
+            </ul>
+            <div class="popup-error" style="display: none;"></div>
+        </form>
+        <script>
+            $('#form_id_' + <?= $arResult['arForm']['ID'] ?>).off('submit.ajax-form').on('submit.ajax-form', function (e) {
+                $('.popup-error').css('display','none').html('');
+                e.preventDefault();
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res.error === true) {
+                            $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                        } else {
+                            let result = '<section class="popup popup-request-call popup--active arcticmodal-overlay"> <div class="popup-successful__inner">' +
+                                '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
+                                '<div class="popup-successful__message">Заявка на обратный звонок отправлена. Менеджер свяжется с вами в ближайшее время. </div> <button class="popup-successful__close popup__close js-init-form-close"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path> </svg></button></div>';
+                            //$('#form_id_' + <?= $arResult['arForm']['ID'] ?>).addClass('popup-successful').html(result);
+                            $.arcticmodal({
+                                content: result
+                            });
+                        }
+                    }
+                });
+                return false;
+            });
+        </script>
+        <?} else {?>
         <section class="popup popup-request-call popup--active arcticmodal-overlay">
             <div class="popup-request-call__inner">
                 <h2 class="popup-request-call__title section-title"><?= $arResult['arForm']['NAME'] ?></h2>
@@ -209,6 +292,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                             </div>
                         </div>
                     </fieldset>
+                    <div class="popup-error" style="display: none;"></div>
                 </form>
                 <button class="popup-request-call__close popup__close js-init-form-close">
                     <?= GetContentSvgIcon('close') ?>
@@ -220,3 +304,13 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
 <? } ?>
 
 
+<style>
+    .popup-error {
+        margin-top: 25px;
+        background: #1c0d06;
+        border: 2px solid #e08b66;
+        display: block;
+        padding: 15px 25px;
+        color: #fff;
+    }
+</style>

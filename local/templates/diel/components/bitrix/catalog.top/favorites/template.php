@@ -37,7 +37,7 @@ use Bitrix\Main\Page\Asset;
         </div>
 
         <div class="page-filter__right">
-            <div class="filter__diel-select">
+            <div class="filter__diel-select" style="display: none;">
                 <button class="button-picture button-picture--filter"><span>Фильтр</<span></button>
             </div>
 
@@ -67,6 +67,7 @@ use Bitrix\Main\Page\Asset;
             </div>
         </div>
     </div>
+
     <ol class="favorites__list favorites-list">
         <? foreach ($arResult['ITEMS'] as $key => $arItem) {?>
             <li class="favorites__item product-card">

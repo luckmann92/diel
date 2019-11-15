@@ -24,7 +24,9 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
 }
 
 ?>
+
     <div class="section-card__filter page-filter">
+<?if (count($arResult['ITEMS']) > 0) {?>
         <div class="page-filter__left">
             <span class="page-filter__label ">Сортировать по</span>
 
@@ -64,7 +66,7 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
                 </select>
             </div>
         </div>
-
+<?}?>
         <?$APPLICATION->IncludeComponent(
                 'bitrix:catalog.section.list',
                 'catalog-sub',
@@ -79,12 +81,14 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
 
 <?
 $type = 1;
+if ($arResult['ITEMS']) {
 foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
 
     <ol class="section-card__list">
         <?
         $i = 1;
         foreach ($arItems as $k => $arItem) {
+
             $isBigBlock = $i == $type;
             ?>
             <? if ($isBigBlock || (count($arItem) == 2)) { ?>
@@ -92,19 +96,19 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
             <? } ?>
             <? foreach ($arItem as $ind => $item) { ?>
                 <? if (!$isBigBlock) { ?>
-                    <div class="product-card">
+                    <div class="product-card" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
                     <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>"></a>
                 <? } ?>
                 <? if ($item['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
                 <? } ?>
-                <a class="product-card__image-wrapper" href="<?= $item['DETAIL_PAGE_URL'] ?>">
+                <a class="product-card__image-wrapper" <?=!isset($item['ID']) ? 'style="display:none"' : ''?> href="<?= $item['DETAIL_PAGE_URL'] ?>">
                     <img class="product-card__image"
                          src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>"
                          alt="<?= $item['PREVIEW_PICTURE']['ALT'] ?>">
                 </a>
 
-                <div class="product-card__text">
+                <div class="product-card__text" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
                     <h3 class="product-card__title">
                         <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>"> <?= $item['NAME'] ?></a>
                     </h3>
@@ -157,5 +161,14 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
     if ($type > 3) {
         $type = 1;
     } ?>
-<? } ?>
+<? }
+} else {?>
+    <p style="padding-top: 40px" class="catalog-section__text-empty">К сожалению в данном разделе товаров нет</p>
+    <br>
+    <br>
+    <a class="product-card__button-transition button-transition" href="/catalog/">
+        Перейти в каталог
+
+    <?=GetContentSvgIcon('arrow-long')?></a>
+<?}?>
 <?=$arResult['NAV_STRING']?>

@@ -1,6 +1,6 @@
 <?
 $sSectionName = "Каталог";
 $arDirProperties = Array(
-    'PAGE_LAYOUT' => 'page'
+    'PAGE_LAYOUT' => 'column1'
 );
 ?>
