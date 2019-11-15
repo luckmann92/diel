@@ -3852,7 +3852,7 @@ p {
 @media screen and (min-width: 1920px) {
   .card-item {
     padding-left: 320px;
-    padding-bottom: 170px; }
+    padding-bottom: 16%; }
     .card-item::before {
       content: "";
       position: absolute;
