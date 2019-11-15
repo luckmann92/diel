@@ -106,24 +106,26 @@
 
     <ul class="all-collections__list all-collections-list">
         <li class="all-collections__item all-collections-item">
-            <div class="all-collections-item__description">
-                <p class="all-collections-item__p">Почти четверть века бренд входит в топ-10 лидеров российского ювелирного рынка. В багаже бренда – свидетельство клуба российской ювелирной торговли «Лидер отраслевого движения», награда «За высокое качество и современный дизайн»</p>
-                <p class="all-collections-item__p">Приз в номинации «Заслуга» (Merit Award) на престижной международной премии в области ювелирного искусства International Design Jewellery Excellence Award и другие дипломы крупнейших отраслевых и международных выставок.</p>
+            <div class="all-collections-item__inner">
+                <div class="all-collections-item__description">
+                    <p class="all-collections-item__p">Почти четверть века бренд входит в топ-10 лидеров российского ювелирного рынка. В багаже бренда – свидетельство клуба российской ювелирной торговли «Лидер отраслевого движения», награда «За высокое качество и современный дизайн»</p>
+                    <p class="all-collections-item__p">Приз в номинации «Заслуга» (Merit Award) на престижной международной премии в области ювелирного искусства International Design Jewellery Excellence Award и другие дипломы крупнейших отраслевых и международных выставок.</p>
 
-                <a class="all-collections-item__button-detail link-detail" href="#">Подробнее
-                    <svg class="link-detail__image" width="34" height="11" viewBox="0 0 34 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M28.763 9.9L29.537 10.533L33.587 5.583C33.737 5.399 33.737 5.134 33.587 4.95L29.537 0L28.763 0.632L32.145 4.766H0V5.766H32.145L28.763 9.9Z" fill="#E08B66"></path>
-                    </svg>
-                </a>
-            </div>
+                    <a class="all-collections-item__button-detail link-detail" href="#">Подробнее
+                        <svg class="link-detail__image" width="34" height="11" viewBox="0 0 34 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.763 9.9L29.537 10.533L33.587 5.583C33.737 5.399 33.737 5.134 33.587 4.95L29.537 0L28.763 0.632L32.145 4.766H0V5.766H32.145L28.763 9.9Z" fill="#E08B66"></path>
+                        </svg>
+                    </a>
+                </div>
 
-            <div class="all-collections-item__image-wrapper">
-                <img class="all-collections-item__image" src="./img/collections_3.png" alt="">
+                <div class="all-collections-item__image-wrapper">
+                    <img class="all-collections-item__image" src="./img/collections_3.png" alt="">
 
-                <h3 class="all-collections-item__title">
-                    <span>искусственный интеллект</span>
-                    <span class="all-collections-item__title-bigger">флирта</span>
-                </h3>
+                    <h3 class="all-collections-item__title">
+                        <span>искусственный интеллект</span>
+                        <span class="all-collections-item__title-bigger">флирта</span>
+                    </h3>
+                </div>
             </div>
         </li>
     </ul>

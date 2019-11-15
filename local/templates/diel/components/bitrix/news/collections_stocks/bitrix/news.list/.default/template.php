@@ -16,25 +16,27 @@ $this->setFrameMode(true);
 <ul class="all-collections__list all-collections-list">
     <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
     <li class="all-collections__item all-collections-item <?=$k == 0 ? 'section-skew' : ''?>">
-        <div class="all-collections-item__description">
-            <p class="all-collections-item__p"><?=$arItem['PREVIEW_TEXT']?></p>
+        <div class="all-collections-item__inner">
+            <div class="all-collections-item__description">
+                <p class="all-collections-item__p"><?=$arItem['PREVIEW_TEXT']?></p>
 
-            <a class="all-collections-item__button-detail link-detail" href="<?=$arItem['DETAIL_PAGE_URL']?>">Подробнее
-                <?=GetContentSvgIcon('arrow-long')?>
-            </a>
+                <a class="all-collections-item__button-detail link-detail" href="<?=$arItem['DETAIL_PAGE_URL']?>">Подробнее
+                    <?=GetContentSvgIcon('arrow-long')?>
+                </a>
 
-            <h3 class="all-collections-item__title">
-                <span><?=$arItem['NAME']?></span>
-                <?if ($arItem['PROPERTIES']['SUBTITLE']['VALUE']) {?>
-                <span class="all-collections-item__title-bigger"><?=$arItem['PROPERTIES']['SUBTITLE']['VALUE']?></span>
-                <?}?>
-            </h3>
+                <h3 class="all-collections-item__title">
+                    <span><?=$arItem['NAME']?></span>
+                    <?if ($arItem['PROPERTIES']['SUBTITLE']['VALUE']) {?>
+                    <span class="all-collections-item__title-bigger"><?=$arItem['PROPERTIES']['SUBTITLE']['VALUE']?></span>
+                    <?}?>
+                </h3>
+            </div>
+    <?if ($arItem['PREVIEW_PICTURE']) {?>
+            <div class="all-collections-item__image-wrapper">
+                <img class="all-collections-item__image" src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
+            </div>
+            <?}?>
         </div>
-<?if ($arItem['PREVIEW_PICTURE']) {?>
-        <div class="all-collections-item__image-wrapper">
-            <img class="all-collections-item__image" src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
-        </div>
-        <?}?>
     </li>
     <?}?>
 </ul>

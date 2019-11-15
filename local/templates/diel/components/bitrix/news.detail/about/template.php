@@ -20,6 +20,7 @@
     <? } ?>
     <ul class="all-collections__list all-collections-list">
         <li class="all-collections__item all-collections-item">
+					<div class="all-collections-item__inner">
             <div class="all-collections-item__description">
                 <p class="all-collections-item__p"><?= htmlspecialchars_decode($arResult['PROPERTIES']['DESCRIPTION_1']['VALUE']['TEXT']) ?></p>
 								
@@ -33,8 +34,10 @@
                 <img class="all-collections-item__image"
                      src="<?= CFile::GetPath($arResult['PROPERTIES']['IMAGE_1']['VALUE']) ?>" alt="">
             </div>
+					</div>
         </li>
         <li class="all-collections__item all-collections-item">
+					<div class="all-collections-item__inner">
             <div class="all-collections-item__description">
                 <p class="all-collections-item__p"><?= htmlspecialchars_decode($arResult['PROPERTIES']['DESCRIPTION_2']['VALUE']['TEXT']) ?><</p>
 						
@@ -48,8 +51,10 @@
                 <img class="all-collections-item__image"
                      src="<?= CFile::GetPath($arResult['PROPERTIES']['IMAGE_2']['VALUE']) ?>" alt="">
             </div>
+					</div>
         </li>
         <li class="all-collections__item all-collections-item">
+					<div class="all-collections-item__inner">
             <div class="all-collections-item__description">
 							<p class="all-collections-item__p"><?= htmlspecialchars_decode($arResult['PROPERTIES']['DESCRIPTION_3']['VALUE']['TEXT']) ?></p>
 							
@@ -63,6 +68,7 @@
                 <img class="all-collections-item__image"
                      src="<?= CFile::GetPath($arResult['PROPERTIES']['IMAGE_3']['VALUE']) ?>" alt="">
             </div>
+					</div>
         </li>
     </ul>
 </section>
