@@ -4,9 +4,10 @@
  */
 ?>
 <? if ($arResult['ITEMS']) { ?>
+    <?if ($arParams['TYPE_PAGE'] == 'about') {?>
     <section class="all-collections">
         <h2 class="all-collections__title section-title">Новости</h2>
-
+<?}?>
         <ul class="all-collections__list all-collections-list">
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
                 <li class="all-collections__item all-collections-item">
@@ -31,5 +32,7 @@
                 </li>
             <? } ?>
         </ul>
+    <?if ($arParams['TYPE_PAGE'] == 'about') {?>
     </section>
+<? } ?>
 <? } ?>

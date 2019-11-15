@@ -41,7 +41,7 @@ $banner = $APPLICATION->GetViewContent('banner');
             $component,
             array('HIDE_ICONS' => true)
         ); ?>
-        <section class="page-text age-contacts__contacts contacts">
+        <section class="page-text page-contacts__contacts contacts">
             <h2 class="section-title"><?= $APPLICATION->GetTitle(false) ?></h2>
             <div class="page-text__content new-design__inner" style="padding-left: 0">
                 <div class="new-design__description-wrapper" style="margin-bottom: 80px">

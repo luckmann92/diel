@@ -262,6 +262,7 @@
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER2" => "ASC",
+		"TYPE_PAGE" => 'about',
 		"FILTER_NAME" => "",
 		"FIELD_CODE" => array(
 			0 => "",
