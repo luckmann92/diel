@@ -12,7 +12,7 @@
                 <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
                 <? } ?>
-                <a class="<?= isFavorites($arItems['ID']) ?> product-card__to-favorites js-init-add-favorites"
+                <a class="<?= isFavorites($arItem['ID']) ?> product-card__to-favorites js-init-add-favorites"
                    data-product-id="<?= $arItem['ID'] ?>"
                    href="#">
                     <?= GetContentSvgIcon('favorites') ?>
