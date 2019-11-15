@@ -7,9 +7,7 @@ $this->SetViewTarget('class_wrapper');
 echo 'page__card section-card clearfix ';
 $this->EndViewTarget();
 
-$this->SetViewTarget('class_title');
-echo 'section-card__title section-title ';
-$this->EndViewTarget();
+
 
 $this->SetViewTarget('type_page');
 echo 'products';
@@ -22,6 +20,14 @@ if ($arParams['TYPE_PAGE'] == 'search') {
     $this->SetViewTarget('search_result');
     echo count($arResult['ITEMS']);
     $this->EndViewTarget();
+    $this->SetViewTarget('class_title');
+    echo 'search-section__title section-title ';
+    $this->EndViewTarget();
+} else {
+    $this->SetViewTarget('class_title');
+    echo 'section-card__title section-title ';
+    $this->EndViewTarget();
+
 }
 
 if (count($arResult['ITEMS']) < 5) {
