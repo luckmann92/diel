@@ -6523,15 +6523,18 @@ p {
     padding-bottom: 240px; } }
 
 .page-about__about-company {
-  margin-bottom: 50px; }
+  padding-bottom: 50px;
+  background-image: linear-gradient(139.61deg, #220F06 27.69%, #0D0704 89.12%); }
 
 .page-about__partners {
   padding-top: 50px;
-  padding-bottom: 95px; }
+  padding-bottom: 95px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)), linear-gradient(180deg, #3D2318 0%, #361E14 89.91%); }
 
 .page-about__certificates {
   padding-top: 50px;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.72); }
 
 @media screen and (min-width: 768px) {
   .page-about__partners {
@@ -6543,7 +6546,7 @@ p {
 
 @media screen and (min-width: 1366px) {
   .page-about__about-company {
-    margin-bottom: 115px; }
+    padding-bottom: 115px; }
   .page-about__partners {
     padding-top: 180px;
     padding-bottom: 200px; }
