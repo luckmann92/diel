@@ -15,14 +15,16 @@
 }
   
 html {
-  height: 100%;
+  // height: 100%;
+  // background: linear-gradient(144.6deg, #220F06 27.74%, #0D0704 89.26%);
+  background-image: linear-gradient(117.15deg, #220F06 27.07%, #0D0704 87.12%);
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #21120C;
-  background: linear-gradient(144.6deg, #220F06 27.74%, #0D0704 89.26%);
+  // background-color: #21120C;
+  // background: linear-gradient(144.6deg, #220F06 27.74%, #0D0704 89.26%);
 }
 
 main {

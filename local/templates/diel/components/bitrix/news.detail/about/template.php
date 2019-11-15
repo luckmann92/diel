@@ -14,7 +14,7 @@
     </div>
 <? $this->EndViewTarget() ?>
 
-<section class="all-collections">
+<section class="all-collections all-collections--block">
     <? if ($arResult['PROPERTIES']['BLOCK_TITLE']['VALUE']) { ?>
         <h2 class="all-collections__title section-title"><?= $arResult['PROPERTIES']['BLOCK_TITLE']['VALUE'] ?></h2>
     <? } ?>

@@ -12,13 +12,11 @@
   font-weight: bold; }
 
 html {
-  height: 100%; }
+  background-image: linear-gradient(117.15deg, #220F06 27.07%, #0D0704 87.12%); }
 
 body {
   margin: 0;
-  padding: 0;
-  background-color: #21120C;
-  background: linear-gradient(144.6deg, #220F06 27.74%, #0D0704 89.26%); }
+  padding: 0; }
 
 main {
   overflow: hidden; }
@@ -1908,8 +1906,7 @@ p {
   line-height: 24px; }
 
 .banner {
-  position: relative;
-  background-color: #21120C; }
+  position: relative; }
 
 .banner__list {
   margin: 0;
@@ -3133,8 +3130,7 @@ p {
   position: relative;
   padding: 12px;
   padding-top: 0;
-  padding-bottom: 55px;
-  background-image: linear-gradient(117.15deg, #220F06 27.07%, #0D0704 87.12%); }
+  padding-bottom: 55px; }
 
 .catalog-our-products__list {
   margin: 0;
@@ -4075,7 +4071,8 @@ p {
   overflow: hidden; }
 
 .all-collections-item:nth-child(1) {
-  margin-top: -4%; }
+  margin-top: -4%;
+  background-image: none; }
 
 .all-collections-item__inner {
   position: relative;
@@ -4151,9 +4148,6 @@ p {
   .all-collections-item:last-child {
     margin-bottom: -4%;
     padding-bottom: 12%; }
-    .all-collections-item:last-child .all-collections-item__image {
-      margin-top: -8%;
-      height: 100%; }
   .all-collections-item__description {
     flex-grow: 1;
     order: 1;
@@ -4213,6 +4207,16 @@ p {
     z-index: 1; }
   .all-collections-item:nth-child(2n + 2) .all-collections-item__description {
     padding-top: 70px; } }
+
+.all-collections--block {
+  padding-top: 50px;
+  background: linear-gradient(148.19deg, #220F06 27.74%, #0D0704 89.26%); }
+  @media screen and (min-width: 1366px) {
+    .all-collections--block {
+      padding-top: 90px; } }
+  @media screen and (min-width: 1920px) {
+    .all-collections--block {
+      padding-top: 120px; } }
 
 .all-collections__item {
   padding-left: 12px;
@@ -6548,8 +6552,7 @@ p {
     padding-bottom: 240px; } }
 
 .page-about__about-company {
-  padding-bottom: 50px;
-  background-image: linear-gradient(139.61deg, #220F06 27.69%, #0D0704 89.12%); }
+  padding-bottom: 50px; }
 
 .page-about__partners {
   padding-top: 50px;

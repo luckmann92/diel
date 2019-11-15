@@ -5,7 +5,7 @@
 ?>
 <? if ($arResult['ITEMS']) { ?>
     <?if ($arParams['TYPE_PAGE'] == 'about') {?>
-    <section class="all-collections">
+    <section class="all-collections all-collections--block">
         <h2 class="all-collections__title section-title">Новости</h2>
 <?}?>
         <ul class="all-collections__list all-collections-list">
