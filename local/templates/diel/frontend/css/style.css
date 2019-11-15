@@ -2816,12 +2816,20 @@ p {
   .company__image {
     min-height: 300px; } }
 
+.new-design {
+  margin-top: -4%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  transform: skewY(-4deg);
+  overflow: hidden; }
+
 .new-design__inner {
   display: flex;
   flex-direction: column;
   padding: 12px;
   padding-top: 40px;
-  padding-bottom: 75px; }
+  padding-bottom: 60px;
+  transform: skewY(4deg); }
 
 .new-design__title {
   order: 1;
@@ -2839,6 +2847,9 @@ p {
   text-align: right;
   color: #E08B66; }
 
+.new-design__image-wrapper {
+  display: none; }
+
 .new-design__description-wrapper p {
   margin: 0;
   font-family: "Intro Light";
@@ -2855,8 +2866,7 @@ p {
 @media screen and (min-width: 768px) {
   .new-design__inner {
     padding: 20px;
-    padding-top: 75px;
-    padding-bottom: 110px; }
+    padding-top: 75px; }
   .new-design__link-detail {
     margin-top: 40px; }
   .new-design__title {
@@ -2869,8 +2879,21 @@ p {
     position: relative;
     padding-left: 55px;
     padding-right: 97px;
-    padding-top: 110px;
-    padding-bottom: 145px; }
+    padding-top: 110px; }
+  .new-design__image-wrapper {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    margin-top: -8%;
+    max-width: 470px;
+    transform: skewY(-4deg);
+    overflow: hidden; }
+  .new-design__image {
+    width: 100%;
+    height: 104%;
+    object-fit: contain; }
   .new-design__description-wrapper {
     width: 611px; }
   .new-design__description-wrapper p {
@@ -2895,8 +2918,9 @@ p {
   .new-design__inner {
     padding-left: 310px;
     padding-right: 535px;
-    padding-top: 115px;
-    padding-bottom: 134px; }
+    padding-top: 115px; }
+  .new-design__image-wrapper {
+    right: 240px; }
   .new-design__description-wrapper {
     width: 830px; }
   .new-design__link-detail {
@@ -3109,7 +3133,8 @@ p {
   position: relative;
   padding: 12px;
   padding-top: 0;
-  padding-bottom: 55px; }
+  padding-bottom: 55px;
+  background-image: linear-gradient(117.15deg, #220F06 27.07%, #0D0704 87.12%); }
 
 .catalog-our-products__list {
   margin: 0;

@@ -231,7 +231,7 @@ function addBannerInContent($urlPage = '')
 ;
     if ($arBanner) {
         ob_start(); ?>
-        <section class="new-design section-skew--left">
+        <section class="new-design">
             <div class="new-design__inner">
                 <h2 class="new-design__title"><?= $arBanner['PROPS']['SUBTITLE']['VALUE'] ?>
                     <? if ($arBanner['NAME']) { ?>
@@ -248,8 +248,11 @@ function addBannerInContent($urlPage = '')
                             <?=GetContentSvgIcon('arrow-long')?>
                         </a>
                     <? } ?> -->
+                </div>
+
+                <div class="new-design__image-wrapper">
                     <?if ($arBanner['PREVIEW_PICTURE']) {?>
-                        <img src="<?=$arBanner['PREVIEW_PICTURE']?>">
+                        <img class="new-design__image" src="<?=$arBanner['PREVIEW_PICTURE']?>">
                     <?}?>
                 </div>
                 

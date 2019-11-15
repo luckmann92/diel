@@ -359,7 +359,7 @@
 	"bitrix:news.list",
 	"home-about",
 	array(), false);?>
-    <section class="new-design section-skew--left">
+    <section class="new-design">
         <div class="new-design__inner">
             <h2 class="new-design__title">
                 <?$APPLICATION->IncludeFile("/include/home/seo-title.php",
