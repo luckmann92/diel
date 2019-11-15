@@ -104,7 +104,7 @@
 		        "PICTURE" => $arResult['PREVIEW_PICTURE']['SRC'],
 		        'NAME' => $arResult['NAME'],
 		        'PRICE' => $arResult['NAME'],
-            'URL' => 'http://diel.local/' . $arResult['DETAIL_PAGE_URL']
+            'URL' => $arResult['DETAIL_PAGE_URL']
 		),
 		"CHAIN_ITEM_LINK" => "",
 		"VARIABLE_ALIASES" => array(
