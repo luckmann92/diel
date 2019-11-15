@@ -75,9 +75,9 @@
             </div>
         </div>
 
-        <a class="stocks__button-transition button-transition" href="/about/team.php">
+        <!-- <a class="stocks__button-transition button-transition" href="/about/team.php">
             О нашей команде
             <?=GetContentSvgIcon('arrow-long')?>
-        </a>
+        </a> -->
     </section>
 <? } ?>

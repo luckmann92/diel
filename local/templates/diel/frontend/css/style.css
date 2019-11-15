@@ -1785,11 +1785,7 @@ p {
 
 .jumping-slider__item {
   flex-shrink: 0;
-  width: 253px;
-  transform: scale(0.95); }
-
-.jumping-slider__item.tns-slide-active:nth-child(2n) {
-  transform: scale(1); }
+  width: 253px; }
 
 .jumping-slider__image-wrapper {
   display: flex;
