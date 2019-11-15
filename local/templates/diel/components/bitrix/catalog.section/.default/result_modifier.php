@@ -16,7 +16,7 @@ echo 'products';
 $this->EndViewTarget();
 
 
-if (count($arResult['ITEMS']) < 5) {
+if (count($arResult['ITEMS']) > 0 && count($arResult['ITEMS']) < 5) {
     for ($index = 0; $index < 5; $index++) {
         if (!isset($arResult['ITEMS'][$index])) {
             $arResult['ITEMS'][$index] = array();
