@@ -98,8 +98,9 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 <button class="popup-order__close popup__close js-init-form-close" type="button">
                     <?= GetContentSvgIcon('close') ?>
                 </button>
+                <div class="popup-error" style="display: none;"></div>
             </form>
-            <div class="popup-error" style="display: none;"></div>
+
         </section>
     <? } elseif ($arParams['ADD_REVIEWS'] == 'Y') {?>
 
