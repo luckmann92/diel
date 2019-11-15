@@ -57,13 +57,11 @@ global $arSetting;
                                     <li class="social-menu__item">
                                         <a class="social-menu__link social-menu__link-twitter"
                                            href="<?= $arItem['NAME'] ?>">
-                                            <? if ($arItem['PROPS']['ICON']['VALUE']) { ?>
-                                                <img style="max-width: 16px;"
-                                                     alt="<?= $arItem['PROPS']['SOCIAL_LIST']['NAME'] ?>"
-                                                     src="<?= CFile::GetPath($arItem['PROPS']['ICON']['VALUE']) ?>">
-                                            <? } else { ?>
-                                                <?= GetContentSvgIcon($arItem['PROPS']['SOCIAL_LIST']['VALUE']) ?>
-                                            <? } ?>
+                                            <?if ($arItem['PROPS']['ICON']['VALUE']) {?>
+                                                <?=file_get_contents($_SERVER['DOCUMENT_ROOT'] . CFile::GetPath($arSocial['PROPS']['ICON']['VALUE']))?>
+                                            <?} else {?>
+                                                <?=GetContentSvgIcon($arSocial['PROPS']['SOCIAL_LIST']['VALUE_XML_ID'])?>
+                                            <?}?>
                                         </a>
                                     </li>
                                 <? } ?>
