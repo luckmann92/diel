@@ -1678,6 +1678,9 @@ p {
   border-right: none;
   cursor: pointer; }
 
+.main-menu-button:focus {
+  outline: none; }
+
 .main-menu-button::before {
   content: "";
   display: block;
@@ -5276,6 +5279,7 @@ p {
   padding: 14px;
   padding-top: 30px;
   padding-bottom: 200px;
+  min-height: 100vh;
   background-color: #1C100A;
   background: linear-gradient(#1C100A, #21130C); }
 
@@ -5579,6 +5583,7 @@ p {
   padding: 14px;
   padding-top: 90px;
   padding-bottom: 200px;
+  min-height: 100vh;
   background-color: #1C100A;
   background: linear-gradient(#1C100A, #21130C); }
 
@@ -5630,9 +5635,17 @@ p {
   position: absolute;
   right: 0;
   top: 0;
+  bottom: 0;
   padding: 0;
+  padding-bottom: 15px;
   background-color: transparent;
   border: none; }
+
+.main-search__button:hover {
+  cursor: pointer; }
+
+.main-search__button:focus {
+  outline: none; }
 
 .main-search-result {
   margin: 0;

@@ -146,7 +146,7 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
                 </div>
                 <? if (!$isBigBlock) { ?>
                     </a>
-                    <a data-product-id="<?= $item['ID'] ?>" class="<?=isFavorites($item['ID'])?> product-card__to-favorites js-init-add-favorites"
+                    <a data-product-id="<?= $item['ID'] ?>" class="<?=isFavorites($item['ID'])?> product-card__to-favorites icon-favorites js-init-add-favorites"
                        href="#">
                         <?= GetContentSvgIcon('favorites') ?>
                     </a>
