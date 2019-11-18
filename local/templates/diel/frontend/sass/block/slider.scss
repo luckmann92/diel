@@ -173,6 +173,10 @@
   cursor: pointer;
 }
 
+.jumping-slider-options__item:focus {
+  outline: none;
+}
+
 .jumping-slider-options__item .jumping-slider-options__item-text,
 .jumping-slider-options__item line,
 .jumping-slider-options__item circle:last-of-type,

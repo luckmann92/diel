@@ -1886,6 +1886,9 @@ p {
 .jumping-slider-options__item {
   cursor: pointer; }
 
+.jumping-slider-options__item:focus {
+  outline: none; }
+
 .jumping-slider-options__item .jumping-slider-options__item-text,
 .jumping-slider-options__item line,
 .jumping-slider-options__item circle:last-of-type,
@@ -2096,6 +2099,9 @@ p {
 
 .banner-menu-circle__nav-btn {
   cursor: pointer; }
+
+.banner-menu-circle__nav-btn:focus {
+  outline: none; }
 
 .banner-menu-circle__nav-btn .banner-menu-circle__nav-text,
 .banner-menu-circle__nav-btn line,

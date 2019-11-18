@@ -253,6 +253,10 @@
   cursor: pointer;
 }
 
+.banner-menu-circle__nav-btn:focus {
+  outline: none;
+}
+
 .banner-menu-circle__nav-btn .banner-menu-circle__nav-text,
 .banner-menu-circle__nav-btn line,
 .banner-menu-circle__nav-btn circle:last-of-type,
