@@ -470,6 +470,9 @@ p {
   animation-duration: 500ms;
   animation-iteration-count: 2; }
 
+.icon-favorites:focus {
+  outline: none; }
+
 @keyframes pulse {
   25% {
     transform: scale(1.1); }

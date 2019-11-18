@@ -131,17 +131,18 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
 
                     <b class="product-card__price"><?= number_format($item['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
 
-                    <? if ($isBigBlock) { ?>
-                        <div class="product-card__footer">   
+                    <div class="product-card__footer">
+                        <? if ($isBigBlock) { ?>
                             <a class="product-card__button-detail link-detail" href="<?= $item['DETAIL_PAGE_URL'] ?>">Подробнее
                                 <?= GetContentSvgIcon('arrow-long') ?>
                             </a>
-                            <!-- <a data-product-id="<?=$item['ID']?>" class="product-card__fast button-second js-init-fast-show" hidden>
-                                <span>Быстрый просмотр</span>
-                                <?= GetContentSvgIcon('eye') ?>
-                            </a> -->
-                        </div>
-                    <? } ?>
+                        <? } ?>
+
+                        <a data-product-id="<?=$item['ID']?>" class="product-card__fast button-second js-init-fast-show" hidden>
+                            <span>Быстрый просмотр</span>
+                            <?= GetContentSvgIcon('eye') ?>
+                        </a>
+                    </div>
                 </div>
                 <? if (!$isBigBlock) { ?>
                     </a>
@@ -154,7 +155,7 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
                 <? unset($arItem[$ind]) ?>
             <? } ?>
             <? if ($isBigBlock) { ?>
-                <a data-product-id="<?= $item['ID'] ?>" class="product-card__to-favorites js-init-add-favorites"
+                <a data-product-id="<?= $item['ID'] ?>" class="product-card__to-favorites icon-favorites js-init-add-favorites"
                    href="#">
                     <?= GetContentSvgIcon('favorites') ?>
                 </a>
