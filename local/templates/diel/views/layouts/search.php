@@ -54,8 +54,11 @@ $search_result = $APPLICATION->GetViewContent('search_result');
                 <?}?>
             </form>
 
-
-            <?= $arParams['CONTENT'] ?>
+            <? if ($search_result) { ?>
+                <?= $arParams['CONTENT'] ?>
+            <? } else { ?>
+                <span class="search-section__not-found">К сожалению, по вашему поисковому запросу ничего не найдено.</span>
+            <? } ?>
         </section>
     </main>
 </div>

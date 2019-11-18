@@ -3238,7 +3238,7 @@ p {
 .section-card {
   padding-left: 12px;
   padding-right: 12px;
-  padding-bottom: 8%; }
+  padding-bottom: 12%; }
 
 .section-card__title {
   margin-bottom: 40px; }
@@ -4782,6 +4782,15 @@ p {
 
 .search-section__header-result-span {
   display: none; }
+
+.search-section__not-found {
+  font-family: "Intro Light";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 2px;
+  color: #FFFFFF; }
 
 @media screen and (min-width: 768px) {
   .search-section__header {
