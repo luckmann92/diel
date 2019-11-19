@@ -5649,12 +5649,16 @@ p {
   outline: none; }
 
 .main-search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin: 0;
   padding: 0;
   list-style-type: none; }
 
 .main-search-result__item {
-  position: relative; }
+  position: relative;
+  min-width: 310px; }
 
 .main-search-result__item--title {
   margin-top: 40px;
