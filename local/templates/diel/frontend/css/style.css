@@ -2135,7 +2135,7 @@ p {
   padding: 0 12px;
   padding-right: 0;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: calc(4% + 30px);
   background-color: #190E09; }
 
 .advantages-title-wrapper {
@@ -2233,7 +2233,7 @@ p {
 @media screen and (min-width: 768px) {
   .advantages {
     padding-top: 135px;
-    padding-bottom: 140px;
+    padding-bottom: calc(4% + 100px);
     padding-left: 20px; }
   .advantages__list {
     margin-top: 0; }
@@ -2250,7 +2250,7 @@ p {
   .advantages {
     position: relative;
     padding-top: 109px;
-    padding-bottom: 250px;
+    padding-bottom: calc(4% + 130px);
     padding-left: 55px;
     background-image: url(../img/background_diamond.png);
     background-repeat: no-repeat;
@@ -2276,7 +2276,6 @@ p {
 
 @media screen and (min-width: 1920px) {
   .advantages {
-    padding-bottom: 295px;
     padding-left: 270px;
     background-position: bottom -130px right 50px; }
   .advantages-title-wrapper {
