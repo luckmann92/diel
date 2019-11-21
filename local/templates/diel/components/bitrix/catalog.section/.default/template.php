@@ -38,6 +38,7 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
                 <ol class="diel-select__list diel-select-list"></ol>
 
                 <select class="filter__diel-js" hidden>
+                    <option class="filter__diel-option-js no-selected" value="" <?if ($_GET["sort"] != "name"  && $_GET["sort"] != "price"):?> selected <?endif;?>>Не выбрано</option>
                     <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=name&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "name"):?> selected <?endif;?>>По названию</option>
                     <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=price&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "price" && $_GET["method"] == "asc"):?> selected <?endif;?>>По возрастанию цены</option>
                     <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=price&method=desc', array('sort', 'method'))?>#catalog-sort-panel" <?if($_GET["sort"] == "price" && $_GET["method"] == "desc"):?> selected <?endif;?>>По убыванию цены</option>
@@ -67,24 +68,24 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
             </div>
         </div>
 <?}?>
-        <?$APPLICATION->IncludeComponent(
-                'bitrix:catalog.section.list',
-                'catalog-sub',
-                array(
-                    'IBLOCK_ID' => $arParams["IBLOCK_ID"],
-                    'SECTION_ID' => $arResult['ORIGINAL_PARAMETERS']['SECTION_ID'],
-                    'SECTION_CODE' => $arResult['CODE']
-                )
-        )?>
+
     </div>
 
-
+<?$APPLICATION->IncludeComponent(
+    'bitrix:catalog.section.list',
+    'catalog-sub',
+    array(
+        'IBLOCK_ID' => $arParams["IBLOCK_ID"],
+        'SECTION_ID' => $arResult['ORIGINAL_PARAMETERS']['SECTION_ID'],
+        'SECTION_CODE' => $arResult['CODE']
+    )
+)?>
 <?
 $type = 1;
 if ($arResult['ITEMS']) {
 foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
 
-    <ol class="section-card__list">
+    <ol class="section-card__list" id="catalog-sort-panel">
         <?
         $i = 1;
         foreach ($arItems as $k => $arItem) {

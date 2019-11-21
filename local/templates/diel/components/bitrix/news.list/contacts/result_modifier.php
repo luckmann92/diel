@@ -13,3 +13,13 @@ $this->EndViewTarget();
 $this->SetViewTarget('page_layout_class');
 echo 'page-contacts';
 $this->EndViewTarget();
+
+$arCoordinates = array();
+if ($arResult['ITEMS']) {
+    foreach ($arResult['ITEMS'] as $arItem) {
+        if ($arItem['PROPERTIES']['MAP']['VALUE']) {
+            $arCoordinates[] = $arItem['PROPERTIES']['MAP']['VALUE'];
+        }
+    }
+}
+$arResult['COORDINATES'] = $arCoordinates;

@@ -20,6 +20,7 @@ use Bitrix\Main\Page\Asset;
                 <ol class="diel-select__list diel-select-list"></ol>
 
                 <select class="filter__diel-js" hidden>
+                    <option class="filter__diel-option-js no-selected" value="" <?if ($_GET["sort"] != "name"  && $_GET["sort"] != "price"):?> selected <?endif;?>>Не выбрано</option>
                     <option class="filter__diel-option-js"
                             value="<?= $APPLICATION->GetCurPageParam('sort=name&method=asc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["sort"] == "name"): ?> selected <? endif; ?>>
                         По названию
@@ -68,7 +69,7 @@ use Bitrix\Main\Page\Asset;
         </div>
     </div>
 
-    <ol class="favorites__list favorites-list">
+    <ol class="favorites__list favorites-list" id="catalog-sort-panel">
         <? foreach ($arResult['ITEMS'] as $key => $arItem) {?>
             <li class="favorites__item product-card">
                 <a class="product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">

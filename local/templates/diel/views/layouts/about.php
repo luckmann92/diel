@@ -84,7 +84,7 @@ $title = $APPLICATION->GetViewContent('title');
             <? if ($about) { ?>
                 <?= $arParams['CONTENT'] ?>
             <? } ?>
-            <?= $banner ?>
+
         <? } ?>
     </main>
 </div>

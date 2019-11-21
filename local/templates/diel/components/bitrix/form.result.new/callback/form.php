@@ -42,7 +42,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                         <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
                             <div class="popup-order-form__name input-text-wrapper">
                                 <input class="input-text"
-                                       type="text"
+                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
                                        id="<?= $SID ?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                        placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
@@ -116,6 +116,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                             <?$class = $SID == 'PHONE' ? 'popup-request-call__phone' : 'popup-request-call__username';?>
                             <div class="popup-leave-feedback__form-name input-text-wrapper">
                                 <input class="input-text"
+                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
                                        id="<?= $SID ?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                        placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
@@ -137,6 +138,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                             <div class="popup-leave-feedback__form-email input-text-wrapper">
                                 <input class="input-text"
                                        id="<?= $SID ?>"
+                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                        placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
                             </div>
@@ -181,7 +183,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 <li class="price-list-form__item">
                     <div class="input-text-wrapper">
                         <input class="input-text"
-                               type="text"
+                               type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
                                id="<?= $SID ?>"
                                name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
@@ -262,7 +264,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                             <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
                                 <div class="input-text-wrapper <?= $arResult["arQuestions"][$SID]['CSS_CLASSES'] ?>">
                                     <input class="popup-request-call__username input-text"
-                                           type="text"
+                                           type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
                                            id="<?= $SID ?>"
                                            name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                            placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">

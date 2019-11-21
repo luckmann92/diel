@@ -122,9 +122,9 @@ if ($arResult['ITEMS']) { ?>
                                 </div>
                             </li>
                         <? } ?>
-                        <? if ($arItem['PROPERTIES']['MAP']['VALUE']) { ?>
+                        <? if ($arResult['COORDINATES']) { ?>
                             <li class="contacts-inormation__item contacts-inormation__item-map"
-                                data-geo="<?= $arItem['PROPERTIES']['MAP']['VALUE'] ?>">
+                                data-geo="<?= implode(';', $arResult['COORDINATES']) ?>">
                                 <div class="contacts-inormation__item-map-inner">
                                     <iframe src="https://yandex.ru/map-widget/v1/-/CGHXQOPY" width="560" height="400"
                                             frameborder="1" allowfullscreen="true"></iframe>

@@ -55,6 +55,7 @@ $APPLICATION->IncludeComponent(
                 <ol class="diel-select__list diel-select-list"></ol>
 
                 <select class="filter__diel-js" hidden>
+                    <option class="filter__diel-option-js no-selected" value="" <?if ($_GET["sort"] != "name"  && $_GET["sort"] != "price"):?> selected <?endif;?>>Не выбрано</option>
                     <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=name&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "name"):?> selected <?endif;?>>По названию</option>
                     <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=price&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "price" && $_GET["method"] == "asc"):?> selected <?endif;?>>По возрастанию цены</option>
                     <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=price&method=desc', array('sort', 'method'))?>#catalog-sort-panel" <?if($_GET["sort"] == "price" && $_GET["method"] == "desc"):?> selected <?endif;?>>По убыванию цены</option>
@@ -100,7 +101,7 @@ $APPLICATION->IncludeComponent(
 $type = 1;
 foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
 
-    <ol class="section-card__list">
+    <ol class="section-card__list" id="catalog-sort-panel">
         <?
         $i = 1;
         foreach ($arItems as $k => $arItem) {
