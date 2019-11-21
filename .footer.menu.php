@@ -32,7 +32,7 @@ $aMenuLinks = Array(
 		" ©2019 DIEL", 
 		"", 
 		Array(), 
-		Array("CLASS"=>""),
+		Array("CLASS"=>"footer-menu__item--copyright"),
 		"" 
 	),
 	Array(
