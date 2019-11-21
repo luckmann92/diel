@@ -47,6 +47,10 @@
   cursor: pointer;
 }
 
+.main-menu-button:focus {
+  outline: none;
+}
+
 .main-menu-button::before {
   content: "";
   display: block;

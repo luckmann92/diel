@@ -506,7 +506,7 @@
 @media screen and (min-width: 1920px) {
   .card-item {
     padding-left: 320px;
-    padding-bottom: 170px;
+    padding-bottom: 16%;
 
     &::before {
       content: "";
@@ -528,6 +528,7 @@
   }
 
   .card-item__kit {
+    margin-top: 300px;
     margin-right: 110px;
   }
 }

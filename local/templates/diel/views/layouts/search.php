@@ -40,67 +40,25 @@ $search_result = $APPLICATION->GetViewContent('search_result');
             $component,
             array('HIDE_ICONS' => true)
         ); ?>
-
         <section class="page__card section-card">
-            <div class="search-section__header">
-                <h2 class="search-section__title section-title">
+            <form class="search-section__header">
+                <button class="search-section__header-submit" type="submit">
                     <?=GetContentSvgIcon('search-header-img')?>
-                    <?= $APPLICATION->GetTitle(false) ?></h2>
+                </button>
+
+                <input class="search-section__title section-title" name="q" value="<?=$_REQUEST['q'] ?: $APPLICATION->GetTitle(false)?>">
+
                 <?if ($search_result) {?>
                 <p class="search-section__header-result">
                     <span class="search-section__header-result-span">Найдено </span><?=$search_result?></p>
                 <?}?>
-            </div>
-            <div class="section-card__filter page-filter">
-                <div class="page-filter__left">
-                    <span class="page-filter__label ">Сортировать по</span>
+            </form>
 
-                    <div class="filter__diel-select diel-select">
-                        <button class="diel-select__button">
-                            <span class="diel-select__button-text">Цене от высокой к низкой</span>
-                        </button>
-
-                        <ol class="diel-select__list diel-select-list">
-                            <li class="diel-select-list__item">Цене от низкой к высокой</li>
-                            <li class="diel-select-list__item">По популярности</li>
-                            <li class="diel-select-list__item">Новизне: сначала новые</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="page-filter__right">
-                    <div class="filter__diel-select">
-                        <button class="button-picture button-picture--filter"><span>Фильтр</<span></button>
-                    </div>
-
-                    <span class="page-filter__label page-filter__label-sum">Показывать товаров на странице</span>
-
-                    <div class="filter__diel-select diel-select">
-                        <button class="diel-select__button">
-                            <span class="diel-select__button-text">15</span>
-                        </button>
-
-                        <ol class="diel-select__list diel-select-list">
-                            <li class="diel-select-list__item">25</li>
-                            <li class="diel-select-list__item">40</li>
-                            <li class="diel-select-list__item">100</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <ul class="filter__tag-list filter-tag-list">
-                    <li class="filter-tag-list__item">
-                        <a class="filter-tag-list__link" href="#">Обручальные кольца</a>
-                    </li>
-                    <li class="filter-tag-list__item">
-                        <a class="filter-tag-list__link" href="#">Помолвочные кольца</a>
-                    </li>
-                    <li class="filter-tag-list__item">
-                        <a class="filter-tag-list__link" href="#">Summer 2019 collection</a>
-                    </li>
-                </ul>
-            </div>
-            <?= $arParams['CONTENT'] ?>
+            <? if ($search_result) { ?>
+                <?= $arParams['CONTENT'] ?>
+            <? } else { ?>
+                <span class="search-section__not-found">К сожалению, по вашему поисковому запросу ничего не найдено.</span>
+            <? } ?>
         </section>
     </main>
 </div>

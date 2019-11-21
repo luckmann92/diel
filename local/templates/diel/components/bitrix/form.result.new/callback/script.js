@@ -21,6 +21,20 @@ btnModal.on('click', function (e) {
                 opacity: 0
             }
         },
+        afterOpen: function(data, el) {
+            console.log(data);
+            console.log(el);
+            if (document.querySelector('input[type=tel]')) {
+                var element = document.querySelectorAll('input[type=tel]');
+            
+                for (let i = 0; i < element.length; i ++) {
+                  var maskOptions = {
+                    mask: '+{7}(000)000-00-00'
+                  };
+                  var mask = IMask(element[i], maskOptions);
+                }
+              }
+        },
         ajax: {
             type: 'GET',
             cache: false,
@@ -34,6 +48,7 @@ btnModal.on('click', function (e) {
                 }
                 $('#form_id_' + formID).off('submit.ajax-form').on('submit.ajax-form', function (e) {
                     e.preventDefault();
+
                     $.ajax({
                         url: $(this).attr('action'),
                         type: 'POST',
@@ -42,8 +57,6 @@ btnModal.on('click', function (e) {
                         success: function (res) {
                             console.log(JSON.stringify(res));
                             if (res.result === true) {
-                                console.log($(this));
-                                console.log(123);
                                 let result = '<div class="popup-successful__inner">' +
                                     '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
                                     '<div class="popup-successful__message">Менеджер свяжется с вами в ближайшее время. </div> <button class="popup-successful__close popup__close js-init-form-close"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path> </svg></button></div>';

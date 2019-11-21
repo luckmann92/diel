@@ -21,7 +21,7 @@
   padding: 14px;
   padding-top: 90px;
   padding-bottom: 200px;
-
+  min-height: 100vh;
   background-color: #1C100A;
   background: linear-gradient(#1C100A, #21130C);
 }
@@ -81,14 +81,27 @@
   position: absolute;
   right: 0;
   top: 0;
+  bottom: 0;
   padding: 0;
+  padding-bottom: 15px;
   background-color: transparent;
   border: none;
+}
+
+.main-search__button:hover {
+  cursor: pointer;
+}
+
+.main-search__button:focus {
+  outline: none;
 }
 
 
 
 .main-search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -96,6 +109,7 @@
 
 .main-search-result__item {
   position: relative;
+  min-width: 310px;
 }
 
 .main-search-result__item--title {

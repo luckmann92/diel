@@ -12,6 +12,8 @@ if ($arResult['ITEMS']) { ?>
         <ul class="banner__list">
             <? foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
                 <li class="banner__item banner__item--slide-<?= $key ?>">
+                    <img class="banner__item-bg" src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="">
+
                     <div class="banner__item-inner">
                         <h2 class="banner__title banner-title"><?= $arItem['NAME'] ?>
                             <? if ($arItem['PROPERTIES']['SUBTITLE']['VALUE']) { ?>

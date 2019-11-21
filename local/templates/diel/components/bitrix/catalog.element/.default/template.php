@@ -72,7 +72,7 @@
                 <? } ?>
             <? } ?>
             <div class="card-item-form__price-button-group">
-                <button class="card-item-form__in-favorite <?=isFavorites($arResult['ID'])?> js-init-add-favorites"
+                <button class="card-item-form__in-favorite icon-favorites <?=isFavorites($arResult['ID'])?> js-init-add-favorites"
                         data-product-id="<?= $arResult['ID'] ?>" type="button">
                     <?= GetContentSvgIcon('favorites') ?>
                 </button>
