@@ -67,6 +67,12 @@
   text-transform: uppercase;
   color: #F8F8F8;
   text-decoration: none;
+  transition: color 300ms;
+}
+
+.card-item-form__collection:hover,
+.card-item-form__collection:focus {
+  color: #E08B66;
 }
 
 .card-item-form__price-button-group {

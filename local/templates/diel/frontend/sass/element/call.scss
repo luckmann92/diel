@@ -9,8 +9,12 @@
   text-decoration: none;
 }
 
+.call__phone-number {
+  display: block;
+}
+
 .call:hover .call__description {
-  text-decoration: underline;
+  border-color: #E08B66;
 }
 
 .call__icon {
@@ -19,8 +23,10 @@
 }
 
 .call__description {
-  display: block;
+  position: relative;
+  display: inline-block;
   color: #E08B66;
+  border-bottom: 1px solid transparent;
 }
 
 .call:nth-child(2) {

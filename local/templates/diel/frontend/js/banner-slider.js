@@ -20,7 +20,7 @@
         // nav: false,
         items: 1,
         navContainer: ".banner-menu-circle__nav",
-
+        autoHeight: false,
         controls: false,
         touch: false,
         speed: 1600,

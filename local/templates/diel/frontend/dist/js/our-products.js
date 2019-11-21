@@ -4,8 +4,9 @@
     let ourProductsSlider = tns({
         container: ".our-products__list",
         controlsPosition: "bottom",
-    
-        controls: false,
+        autoWidth: true,
+        // items: 1.5,
+        // controls: false,
         nav: false,
         touch: true,
         speed: 1200,

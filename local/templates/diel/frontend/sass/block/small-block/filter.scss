@@ -61,6 +61,7 @@
 }
 
 .filter__section-submit {
+  margin-top: 70px;
   padding: 0;
   border-top: 1px solid rgba(224, 139, 102, 0.7);
 }
@@ -100,12 +101,18 @@
 
 .filter__price-wrapper {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
+  margin-top: -15px;
+}
+
+.filter__price-wrapper span {
+  padding: 0 10px;
 }
 
 .filter__price-min,
 .filter__price-max {
+  margin-top: 15px;
   padding: 5px 30px;
   width: 80px;
   font-family: "Intro Light";
@@ -130,6 +137,7 @@
 
 @media screen and (min-width: 768px) {
   .filter-form {
-    max-width: 333px;
+    display: inline-block;
+    min-width: 333px;
   }
 }

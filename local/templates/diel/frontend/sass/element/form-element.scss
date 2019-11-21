@@ -292,7 +292,7 @@
 }
 
 .diel-select__button-filter {
-  background-image: url(./../img/filter.svg);
+  background-image: url(./../img/svg/filter.svg);
 }
 
 .diel-select__list {
@@ -327,6 +327,10 @@
 .diel-select--active {
   border-color: #E08B66 !important;
   background-color: #220F06;
+
+  .diel-select__button {
+    background-image: url(./../img/svg/arrow_up.svg);
+  }
 
   .diel-select__button-text {
     padding-bottom: 6px;

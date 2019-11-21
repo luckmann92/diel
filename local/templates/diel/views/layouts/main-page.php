@@ -378,11 +378,11 @@
             <div class="new-design__description-wrapper">
                 <p class="new-design__description">Почти четверть века бренд входит в топ-10 лидеров российского ювелирного рынка. В багаже бренда – свидетельство клуба российской ювелирной торговли «Лидер отраслевого движения», награда «За высокое качество и современный дизайн»</p>
                 <p class="new-design__description">Приз в номинации «Заслуга» (Merit Award) на престижной международной премии в области ювелирного искусства International Design Jewellery Excellence Award и другие дипломы крупнейших отраслевых и международных выставок.</p>
-                <a class="new-design__link-detail link-detail" href="page-collections.html">Подробнее
+                <!-- <a class="new-design__link-detail link-detail" href="page-collections.html">Подробнее
                     <svg class="link-detail__image" width="34" height="11" viewBox="0 0 34 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28.763 9.9L29.537 10.533L33.587 5.583C33.737 5.399 33.737 5.134 33.587 4.95L29.537 0L28.763 0.632L32.145 4.766H0V5.766H32.145L28.763 9.9Z" fill="#E08B66"></path>
                     </svg>
-                </a>
+                </a> -->
             </div>
 
             <div class="new-design__image-wrapper">

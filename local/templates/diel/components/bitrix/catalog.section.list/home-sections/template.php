@@ -39,14 +39,12 @@ Loc::loadMessages(__FILE__);
                                             <?=GetContentSvgIcon('detail-product')?>
                                         </a>
                                     <? } else {?>
-                                        <a class="product-card__link" href="<?=$arSection['SECTION_PAGE_URL']?>">
-                                            <div class="product-card__image-wrapper">
-                                                <img class="product-card__image"
-                                                     src="<?=$arSection['PICTURE']['SRC']?>"
-                                                     alt="<?=$arSection['PICTURE']['ALT']?>">
-                                            </div>
-                                            <h3 class="product-card__title"><?=$arSection['NAME']?></h3>
+                                        <a class="product-card__image-wrapper product-card__link" href="<?=$arSection['SECTION_PAGE_URL']?>">
+                                            <img class="product-card__image"
+                                                    src="<?=$arSection['PICTURE']['SRC']?>"
+                                                    alt="<?=$arSection['PICTURE']['ALT']?>">
                                         </a>
+                                        <h3 class="product-card__title"><?=$arSection['NAME']?></h3>
                                     <?}?>
                                 </li>
                             <? } ?>

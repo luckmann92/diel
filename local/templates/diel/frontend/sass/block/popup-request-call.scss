@@ -65,12 +65,6 @@
   right: 30px;
   transition: transform 300ms;
   cursor: pointer;
-
-
-  &:hover {
-    transform: rotate(90deg);
-    cursor: pointer;
-  }
 }
 
 
@@ -125,7 +119,8 @@
     padding: 0;
   }
 
-  .popup-request-call__fieldset input[type=text] {
+  .popup-request-call__fieldset input[type=text],
+  .popup-request-call__fieldset input[type=tel] {
     margin-top: 50px;
   }
 }

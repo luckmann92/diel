@@ -97,7 +97,8 @@ global $arSetting;
                 </ul>
             </li>
             <li class="footer-info-menu__item footer-info-menu__item--address">
-                <address class="footer-address"><?= Loc::getMessage('FOOTER_ADDRESS_TITLE') ?>
+                <address class="footer-address">
+                    <span class="footer-address__title"><?= Loc::getMessage('FOOTER_ADDRESS_TITLE') ?></span>
                     <?= $arSetting['FILIAL']['PROPS']['CITY']['VALUE'] ? '<br>г. ' . $arSetting['FILIAL']['PROPS']['CITY']['VALUE'] . ',' : '' ?>
                     <?= $arSetting['FILIAL']['PROPS']['ADDRESS']['VALUE'] ? '<br>' . $arSetting['FILIAL']['PROPS']['ADDRESS']['VALUE'] : '' ?>
                 </address>

@@ -81,10 +81,11 @@
 }
 
 .button-picture {
-  padding: 10px 20px;
+  padding: 10px;
+  padding-right: 20px;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 14px;
+  line-height: 21px;
   color: #fff;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -112,6 +113,14 @@
 
 .button-picture--filter {
   background-image: url(./../img/svg/filter.svg);
+}
+
+@media screen and (min-width: 768px) {
+  .button-picture {
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 32px;
+  }
 }
 
 

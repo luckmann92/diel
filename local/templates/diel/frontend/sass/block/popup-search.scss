@@ -206,11 +206,6 @@
   background-color: transparent;
   border: none;
   transition: transform 300ms;
-
-  &:hover {
-    transform: rotate(90deg);
-    cursor: pointer;
-  }
 }
 
 @media screen and (min-width: 768px) {

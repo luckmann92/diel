@@ -113,19 +113,21 @@ foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
             <? foreach ($arItem as $ind => $item) { ?>
                 <? if (!$isBigBlock) { ?>
                     <div class="product-card" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
-                    <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
+                    <!-- <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>> -->
                 <? } ?>
                 <? if ($item['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
                 <? } ?>
-                <div class="product-card__image-wrapper" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
+                <a class="product-card__image-wrapper product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
                     <img class="product-card__image"
                          src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>"
                          alt="<?= $item['PREVIEW_PICTURE']['ALT'] ?>">
-                </div>
+                </a>
 
                 <div class="product-card__text" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
-                    <h3 class="product-card__title"><?= $item['NAME'] ?></h3>
+                    <h3 class="product-card__title">
+                        <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>"><?= $item['NAME'] ?></a>
+                    </h3>
                     <? if ($isBigBlock) { ?>
                         <p class="product-card__description"><?= $item['PREVIEW_TEXT'] ?></p>
                     <? } ?>
