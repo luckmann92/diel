@@ -3223,6 +3223,10 @@ p {
   display: grid;
   grid-gap: 30px; }
 
+.product-card__description {
+  max-height: 225px;
+  overflow: hidden; }
+
 .product-card__description,
 .product-card__button-detail {
   display: none; }
@@ -3234,9 +3238,6 @@ p {
     flex-direction: column; }
     .catalog-our-products-list__item:nth-child(n) .product-card__title {
       border-top: 1px solid rgba(255, 255, 255, 0.26); }
-    .catalog-our-products-list__item:nth-child(n) .product-card__description {
-      max-height: 225px;
-      overflow: hidden; }
     .catalog-our-products-list__item:nth-child(n) .product-card__description,
     .catalog-our-products-list__item:nth-child(n) .product-card__button-detail {
       display: none; }
