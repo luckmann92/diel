@@ -36,6 +36,15 @@
   margin-right: 15px;
 }
 
+.page-filter__right .filter__diel-select:first-child {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.page-filter__right .button-picture--filter {
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   .page-filter {
     flex-direction: row;
