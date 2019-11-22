@@ -126,8 +126,7 @@ if ($arResult['ITEMS']) { ?>
                             <li class="contacts-inormation__item contacts-inormation__item-map"
                                 data-geo="<?= implode(';', $arResult['COORDINATES']) ?>">
                                 <div class="contacts-inormation__item-map-inner" id="map">
-                                    <!-- <iframe src="https://yandex.ru/map-widget/v1/-/CGHXQOPY" width="560" height="400"
-                                            frameborder="1" allowfullscreen="true"></iframe> -->
+
                                 </div>
                             </li>
                         <? } ?>
@@ -137,6 +136,5 @@ if ($arResult['ITEMS']) { ?>
         <? } ?>
     </ul>
     <div class="tabs__content"></div>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=d43a9d09-9d66-460d-b286-877ce4ac66e6&lang=ru_RU" type="text/javascript"></script>
-
+    <div id="map">
 <? } ?>

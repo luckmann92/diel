@@ -4804,14 +4804,14 @@ p {
 
 .contacts-inormation__item-map-inner {
   position: relative;
-  padding-top: 60%; }
+  padding-top: 60%;
+  width: 200px;
+  height: 200px; }
 
-.contacts-inormation__item-map-inner iframe {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%; }
+#map {
+  width: 600px;
+  height: 400px;
+  background-color: red; }
 
 .contacts__tabs,
 .contacts__tabs .tabs__item {

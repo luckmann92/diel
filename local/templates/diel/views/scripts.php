@@ -32,3 +32,5 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/slider.js
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/tabs.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/popup.js"));
 
+Asset::getInstance()->addJs("https://api-maps.yandex.ru/2.1/?apikey=d43a9d09-9d66-460d-b286-877ce4ac66e6&lang=ru_RU");
+
