@@ -52,9 +52,4 @@ function init() {
         }
         return false;
     }
-    let m = document.getElementById("map"),
-        aaa = m.cloneNode(true);
-    console.log(aaa);
-    document.body.innerHTML = "";
-    document.body.appendChild(aaa);
 }

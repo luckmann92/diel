@@ -125,9 +125,6 @@ if ($arResult['ITEMS']) { ?>
                         <? if ($arResult['COORDINATES']) { ?>
                             <li class="contacts-inormation__item contacts-inormation__item-map"
                                 data-geo="<?= implode(';', $arResult['COORDINATES']) ?>">
-                                <div class="contacts-inormation__item-map-inner" id="map">
-
-                                </div>
                             </li>
                         <? } ?>
                     </ul>
@@ -135,6 +132,10 @@ if ($arResult['ITEMS']) { ?>
             </li>
         <? } ?>
     </ul>
-    <div class="tabs__content"></div>
-    <div id="map">
+    <div class="tabs__content-wrapper">
+        <div class="tabs__content"></div>
+        <div class="map-wrapper">
+            <div id="map"></div>
+        </div>
+    </div>
 <? } ?>

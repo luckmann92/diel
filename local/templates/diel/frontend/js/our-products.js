@@ -6,7 +6,7 @@
         controlsPosition: "bottom",
         autoWidth: true,
         // items: 1.5,
-        // controls: false,
+        controls: false,
         nav: false,
         touch: true,
         speed: 1200,
