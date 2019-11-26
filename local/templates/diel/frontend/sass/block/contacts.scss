@@ -32,7 +32,11 @@
   left: 0;
   width: 100% !important;
   height: 100% !important;
-  filter: grayscale(1);
+  -ms-filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+	filter: grayscale(1);
 }
 
 .contacts__tabs {
