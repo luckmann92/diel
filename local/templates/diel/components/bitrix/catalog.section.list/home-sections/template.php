@@ -44,7 +44,9 @@ Loc::loadMessages(__FILE__);
                                                     src="<?=$arSection['PICTURE']['SRC']?>"
                                                     alt="<?=$arSection['PICTURE']['ALT']?>">
                                         </a>
-                                        <h3 class="product-card__title"><?=$arSection['NAME']?></h3>
+                                        <h3 class="product-card__title">
+                                            <a class="product-card__link" href="<?=$arSection['SECTION_PAGE_URL']?>"><?=$arSection['NAME']?></a>
+                                        </h3>
                                     <?}?>
                                 </li>
                             <? } ?>

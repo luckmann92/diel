@@ -30,6 +30,8 @@ if (document.querySelector(".diel-select")) {
   
   showSelect();
 
+  window.addEventListener("resize", showSelect);
+
   function showSelect() {
     selectWrapper.forEach(function(el) {
     if (el.querySelector(".diel-select-list") && el.querySelector(".filter__diel-option-js")) {

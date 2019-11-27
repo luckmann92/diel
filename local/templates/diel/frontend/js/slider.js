@@ -4,100 +4,102 @@
   let slider = document.querySelectorAll(".jumping-slider");
 
   slider.forEach(function(el) {
+    let max = el.querySelectorAll(".jumping-slider__item").length;
 
-    if (el.classList.contains("collections__slider")) {
-      let options = el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-slider-options"),
-          items = el.querySelectorAll(".jumping-slider__item");
-      
-      if (items.length < 3) {
-        options.style.display = "none";
-      }
+    initOptions(max, el.parentElement.parentElement.parentElement.parentElement);
+
+  // Добавить элементы
+  function initOptions(n, elem) {
+    if (n < 0) {
+      elem.style.display = "none";
+      return;
     }
 
-    let jumpingSlider = tns({
-      container: el,
-  
-      controls: false,
-      // nav: false,
-      navContainer: el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-slider-options__nav"),
-      touch: true,
-      mouseDrag: true,
-
-      speed: 1200,
-
-      responsive: {
-        "320": {
-          fixedWidth: 263,
-          gutter: 30
-        },
-        "768": {
-          fixedWidth: 296,
-        },
-        "1366": {
-          fixedWidth: 717,
-        }
-      }
+    let nav = elem.querySelector(".jumping-slider-options__nav");
+    
+    for (let i = 0; i < n; i++) {
+      let item = document.createElement("div");
+      item.classList.add("jumping-slider-options__item");
+      
+      nav.appendChild(item);
+    }
+    
+    let box = elem,
+        line = elem.querySelector(".jumping-slider-options__progress-line"),
+        navItems = elem.querySelectorAll(".jumping-slider-options__item");
+    
+    navItems.forEach(el => {
+      el.addEventListener("click", evt => {
+        removeCurrent();
+        checkActive(el.offsetLeft);
+        evt.target.classList.add("jumping-slider-options__item--current");
+        evt.target.classList.add("jumping-slider-options__item--active");
+        moveLine(el.offsetLeft);
+      });
     });
-
-    let jumpingLine = el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-line"),
-        jumpingAnimate = el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-animate"),
-        jumpingLineFrom,
-        jumpingLineTo,
-        options = el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-slider-options"),
-        items = el.querySelectorAll(".jumping-slider__item"),
-        svgJumpBtns = el.parentNode.parentNode.parentNode.parentNode.querySelectorAll(".jumping-slider-options__item");
-
-    if (items.length < 2) {
-      options.style.display = "none";
+    
+    function moveLine(X) {
+      line.style.width = X + "px";
     }
-      
-    for (let i = 0; i < svgJumpBtns.length; i++) {
-      svgJumpBtns[i].addEventListener("click", function(evt) {
-  
-        jumpingLineWidth = 16;
-        switch(i) {
-          case 0:
-            if (jumpingLineTo > 16) {
-              jumpingLineFrom = 408,
-              jumpingLineTo = 16;
-            } else {
-              jumpingLineFrom = 16,
-              jumpingLineTo = 16;
-            }
-            break;
-          case 1:
-            if (jumpingLineTo > 408) {
-              jumpingLineFrom = 808,
-              jumpingLineTo = 408;
-            } else {
-              jumpingLineFrom = 16,
-              jumpingLineTo = 408;
-            }
 
-            break;
-          case 2:
-            jumpingLineFrom = 408,
-            jumpingLineTo = 808;
-            break;
-        }
-        jumpingAnimate.setAttribute("from", jumpingLineFrom);
-        jumpingAnimate.setAttribute("to", jumpingLineTo);
-        jumpingAnimate.beginElement();
-  
-        for (let i = 0; i < svgJumpBtns.length; i++) {
-          svgJumpBtns[i].classList.remove("jumping-slider-options__item--active");
-          // if (evt.currentTarget == svgJumpBtns[i]) {
-          //   jumpingSlider.goTo(i);
-          // }
-        }
-        evt.currentTarget.classList.add("jumping-slider-options__item--active");
+    // Снять все Current
+    function removeCurrent() {
+      navItems.forEach(el => {
+        el.classList.remove("jumping-slider-options__item--current");
       });
     }
 
-    let collectionsSlider = document.querySelector(".jumping-slider");
-    collectionsSlider.addEventListener("click", function() {
-      let index = jumpingSlider.getInfo().index;
-      // console.log(index);
+    // Выделить все элементы за активным
+    function checkActive(X) {
+      let boxX = box.offsetLeft;
+
+      navItems.forEach(el => {
+        let itemX = el.offsetLeft + boxX;
+
+        el.classList.remove("jumping-slider-options__item--active");
+
+        if (itemX <= X) {
+          el.classList.add("jumping-slider-options__item--active");
+        }
+      });
+    }
+  }
+
+  let jumpingSlider = tns({
+    container: el,
+    items: 1,
+
+    controls: false,
+    nav: false,
+    navContainer: el.parentNode.parentNode.parentNode.parentNode.querySelector(".jumping-slider-options__nav"),
+    touch: true,
+    mouseDrag: true,
+
+    speed: 1200,
+
+    responsive: {
+      "320": {
+        fixedWidth: 263,
+        gutter: 30
+      },
+      "768": {
+        fixedWidth: 296,
+      },
+      "1366": {
+        fixedWidth: 717,
+      }
+    }
+  });
+
+  let navItems = el.parentElement.parentElement.parentElement.parentElement.querySelectorAll(".jumping-slider-options__item");
+
+  navItems.forEach((el, index) => {
+    el.addEventListener("click", () => {
+      console.log(el);
+      jumpingSlider.goTo(index);
     });
   });
-  })();
+
+});
+    
+})();

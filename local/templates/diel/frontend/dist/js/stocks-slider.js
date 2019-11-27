@@ -6,10 +6,11 @@
 
     controls: false,
     controlsPosition: "center",
-    navContainer: ".stocks-slider-options__nav",
+    nav: false,
     touch: true,
     speed: 1200,
     mode: "gallery",
+    mouseDrag: true,
     
     responsive: {
       "320": {
@@ -27,58 +28,5 @@
     }
   });
   
-  let sliderLine = document.querySelector(".stocks-slider-options__line"),
-      sliderAnimate = document.querySelector(".stocks-slider-options__animate"),
-      sliderLineFrom,
-      sliderLineTo,
-      options = document.querySelector(".stocks__slider-options"),
-      items = document.querySelectorAll(".stocks__slider-wrapper .stocks-slider__item"),
-      svgJumpBtns = document.querySelectorAll(".stocks-slider-options__item");
-
-  if (items.length < 2) {
-    options.style.display = "none";
-  }
-
-  for (let i = 0; i < svgJumpBtns.length; i++) {
-    svgJumpBtns[i].addEventListener("click", function(evt) {
-
-      sliderLineWidth = 16;
-      switch(i) {
-        case 0:
-          if (sliderLineTo > 16) {
-            sliderLineFrom = 408,
-            sliderLineTo = 16;
-          } else {
-            sliderLineFrom = 16,
-            sliderLineTo = 16;
-          }
-          break;
-        case 1:
-          if (sliderLineTo > 408) {
-            sliderLineFrom = 808,
-            sliderLineTo = 408;
-          } else {
-            sliderLineFrom = 16,
-            sliderLineTo = 408;
-          }
-
-          break;
-        case 2:
-          sliderLineFrom = 408,
-          sliderLineTo = 808;
-          break;
-      }
-      sliderAnimate.setAttribute("from", sliderLineFrom);
-      sliderAnimate.setAttribute("to", sliderLineTo);
-      sliderAnimate.beginElement();
-
-      for (let i = 0; i < svgJumpBtns.length; i++) {
-        svgJumpBtns[i].classList.remove("stocks-slider-options__item--active");
-        // if (evt.currentTarget == svgJumpBtns[i]) {
-        //   sliderSlider.goTo(i);
-        // }
-      }
-      evt.currentTarget.classList.add("stocks-slider-options__item--active");
-    });
-  }
+  
 })();
