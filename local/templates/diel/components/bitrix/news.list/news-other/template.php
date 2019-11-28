@@ -7,7 +7,7 @@
 <section class="page-news__other collections">
 <h2 class="collections__title section-title">Другие новости</h2>
 
-<div class="collections__slider-wrapper">
+<div class="collections__slider-wrapper jumping-slider__slider-wrapper">
     <ul class="collections__slider jumping-slider">
         <?foreach ($arResult['ITEMS'] as $arItem) {?>
         <li class="jumping-slider__item">

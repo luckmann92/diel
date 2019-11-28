@@ -4,7 +4,7 @@
  */
 ?>
 <? if (isset($arResult['MORE_IMAGES']) && !empty($arResult['MORE_IMAGES'])) { ?>
-    <div class="card-item__slider-wrapper card-item-slider-wrapper">
+    <div class="card-item__slider-wrapper card-item-slider-wrapper jumping-slider__slider-wrapper">
         <ul class="card-item-slider jumping-slider">
             <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { ?>
                 <li class="card-item-slider__item jumping-slider__item">

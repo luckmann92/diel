@@ -1919,7 +1919,8 @@ p {
   align-items: center;
   height: 17px;
   padding-right: 145px;
-  margin-top: 85px; }
+  margin-top: 85px;
+  z-index: 1; }
 
 .jumping-slider-options__progress {
   position: absolute;
@@ -1937,7 +1938,6 @@ p {
 
 .jumping-slider-options__nav {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   counter-reset: jumping; }
 
@@ -1979,6 +1979,9 @@ p {
   border-radius: 50%;
   transition: all 500ms;
   outline: none; }
+
+.jumping-slider-options__item + .jumping-slider-options__item {
+  margin-left: 15%; }
 
 .jumping-slider-options__item:first-child::after {
   left: 0; }
@@ -2768,7 +2771,8 @@ p {
 
 @media screen and (min-width: 1920px) {
   .stocks-slider__item {
-    justify-content: flex-start; }
+    justify-content: flex-start;
+    width: 100%; }
   .stocks-slider__text {
     margin-right: 85px; }
   .stocks-slider__image-wrapper {
@@ -4035,7 +4039,7 @@ p {
     position: absolute;
     left: 1065px;
     margin-top: 82px;
-    max-width: 100vh; }
+    max-width: 100%; }
   .card-item__kit {
     margin-top: 300px;
     margin-right: 110px; } }
