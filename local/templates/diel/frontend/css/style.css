@@ -4821,8 +4821,7 @@ p {
       width: 100%; }
     .reviews-item--big .reviews-item__content,
     .reviews-item--big .reviews-item__text {
-      width: calc((100% - 40px) / 2);
-      color: red; }
+      width: calc((100% - 40px) / 2); }
       .reviews-item--big .reviews-item__content p:first-of-type,
       .reviews-item--big .reviews-item__text p:first-of-type {
         margin-top: 0; } }
