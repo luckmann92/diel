@@ -10,10 +10,10 @@
 
     <div class="certificates__slider-wrapper">
         <ul class="certificates__slider certificates-slider">
-            <li class="certificates-slider__item jumping-slider__slider-wrapper">
+            <li class="certificates-slider__item">
                 <?foreach ($arResult['ITEMS'] as $key => $arItems) {?>
                     <?$type = $key % 2 ? 'top' : 'left'?>
-
+                <div class="certificates-list-wrapper">
                 <ul class="certificates__list certificates-list">
                     <?foreach ($arItems as $k => $arItem) {
                         if ($k == 0) {
@@ -38,6 +38,7 @@
                         </li>
                     <?}?>
                 </ul>
+                </div>
                 <?}?>
             </li>
         </ul>

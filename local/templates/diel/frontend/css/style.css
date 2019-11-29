@@ -358,6 +358,7 @@ p {
   letter-spacing: -0.191667px;
   color: #E08B66;
   list-style-type: none;
+  text-decoration: none;
   cursor: pointer; }
 
 .button-second svg {

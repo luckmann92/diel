@@ -29,6 +29,7 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/form.js")
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/main.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/search.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/slider.js"));
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/cert.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/tabs.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/popup.js"));
 

@@ -13,7 +13,7 @@
 		"USE_EXTENDED_ERRORS" => "N",
 		"LINK_IS_BUTTON" => "Y",
 		"LINK_TEXT" => "Оставить отзыв",
-		"LINK_CSS_CLASS" => "reviews__button-primery button-primery",
+		"LINK_CSS_CLASS" => "reviews__button-primery button-second",
 		"FORM_TITLE" => "",
 		"FORM_DESCRIPTION" => "",
 		"BUTTON_TITLE" => "",
