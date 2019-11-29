@@ -9,11 +9,11 @@
 
   function initSlider(el) {
     let jumpingSlider = tns({
-        container: ".jumping-slider",
+        container: el.querySelector(".jumping-slider"),
         items: 1,
         controls: false,
         nav: false,
-        navContainer: ".jumping-slider-options__nav",
+        navContainer: el.querySelector(".jumping-slider-options__nav"),
         touch: true,
         mouseDrag: true,
 
