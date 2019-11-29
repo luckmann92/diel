@@ -10,7 +10,7 @@
 
     <div class="certificates__slider-wrapper">
         <ul class="certificates__slider certificates-slider">
-            <li class="certificates-slider__item">
+            <li class="certificates-slider__item jumping-slider__slider-wrapper">
                 <?foreach ($arResult['ITEMS'] as $key => $arItems) {?>
                     <?$type = $key % 2 ? 'top' : 'left'?>
 

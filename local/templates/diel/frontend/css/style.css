@@ -4775,7 +4775,7 @@ p {
   line-height: 32px;
   color: #FFFFFF; }
 
-.reviews-item__text p {
+.reviews-item__text {
   margin: 10px 0;
   font-family: "Intro Light";
   font-size: 16px;
