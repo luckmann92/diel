@@ -2014,6 +2014,11 @@ p {
   padding: 0;
   list-style-type: none; }
 
+.banner__list,
+.banner__item,
+.banner__item-inner {
+  min-height: 500px; }
+
 .banner__item-inner {
   display: flex;
   flex-direction: column;
@@ -2021,6 +2026,8 @@ p {
   padding-bottom: 45px;
   padding-left: 12px;
   padding-right: 12px;
+  height: 100%;
+  box-sizing: border-box;
   background: linear-gradient(180deg, rgba(24, 14, 9, 0) calc(100% - 100px), #190E09 100%), linear-gradient(0deg, rgba(18, 10, 6, 0.7), rgba(18, 10, 6, 0.7)); }
 
 .banner__item-bg {
@@ -2108,6 +2115,10 @@ p {
   line-height: 26px; }
 
 @media screen and (min-width: 768px) {
+  .banner__list,
+  .banner__item,
+  .banner__item-inner {
+    min-height: 800px; }
   .banner__item-inner {
     padding-top: 133px;
     padding-bottom: 135px;
@@ -2751,13 +2762,16 @@ p {
     display: flex;
     justify-content: space-between;
     width: 100%; }
+  .stocks-slider__text {
+    padding-right: 20px; }
   .stocks-slider__image-wrapper {
     order: 1;
     padding-right: 0;
     width: 750px;
     height: 550px; }
   .stocks-slider__image {
-    width: initial;
+    width: 100%;
+    height: 100%;
     object-fit: cover; }
   .stocks-slider__title {
     margin-top: 120px;

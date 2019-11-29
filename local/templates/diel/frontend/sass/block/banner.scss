@@ -9,6 +9,12 @@
   list-style-type: none;
 }
 
+.banner__list,
+.banner__item,
+.banner__item-inner {
+  min-height: 500px;
+}
+
 .banner__item-inner {
   display: flex;
   flex-direction: column;
@@ -16,6 +22,8 @@
   padding-bottom: 45px;
   padding-left: 12px;
   padding-right: 12px;
+  height: 100%;
+  box-sizing: border-box;
   background: linear-gradient(180deg, rgba(24, 14, 9, 0) calc(100% - 100px), #190E09 100%),
               linear-gradient(0deg, rgba(18, 10, 6, 0.7), rgba(18, 10, 6, 0.7));
   
@@ -121,6 +129,12 @@
 }
   
 @media screen and (min-width: 768px) {
+  .banner__list,
+  .banner__item,
+  .banner__item-inner {
+    min-height: 800px;
+  }
+
   .banner__item-inner {
     padding-top: 133px;
     padding-bottom: 135px;

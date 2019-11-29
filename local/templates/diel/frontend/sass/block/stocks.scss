@@ -159,6 +159,10 @@
     width: 100%;
   }
 
+  .stocks-slider__text {
+    padding-right: 20px;
+  }
+
   .stocks-slider__image-wrapper {
     order: 1;
     padding-right: 0;
@@ -167,7 +171,8 @@
   }
 
   .stocks-slider__image {
-    width: initial;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 

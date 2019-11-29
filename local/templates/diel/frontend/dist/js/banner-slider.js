@@ -20,7 +20,7 @@
         // nav: false,
         items: 1,
         navContainer: ".banner-menu-circle__nav",
-        autoHeight: false,
+        // autoHeight: true,
         controls: false,
         touch: false,
         speed: 1600,
@@ -29,9 +29,9 @@
         autoplayTimeout: 10000,
       }),
 
-      bannerSliderInfo = bannerSlider.getInfo();
-      indexPrev = bannerSliderInfo.indexCached,
-      indexCurrent = bannerSliderInfo.index;
+  bannerSliderInfo = bannerSlider.getInfo();
+  indexPrev = bannerSliderInfo.indexCached,
+  indexCurrent = bannerSliderInfo.index;
 
   let time = 10000;
   let interval = setInterval(startInterval, time);

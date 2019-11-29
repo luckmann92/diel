@@ -26,9 +26,20 @@
       }
     });
 
+    let info = advantagesSlider.getInfo();
+
     let btnNext = document.querySelector(".advantages__button-next");
 
+    let flag = true;
+
     btnNext.addEventListener("click", function() {
-      advantagesSlider.goTo('next');
+      if (flag) {
+        advantagesSlider.goTo('next');
+      }
+      flag = false;
+    });
+
+    advantagesSlider.events.on('transitionEnd', function() {
+      flag = true;
     });
 })();

@@ -39,7 +39,7 @@
 
     let info, displays;
 
-    if (el.querySelector(".jumping-slider__item")) {
+    if (el.querySelector(".stocks-slider__item")) {
       info = jumpingSlider.getInfo(),
       displays = Math.ceil(info.slideCount / info.items);
     } else {
