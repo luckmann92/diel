@@ -47,46 +47,6 @@
                             </div>
                         <? } ?>
                     </li>
-                    <!-- для теста -->
-                    <li class="partners-list__item">
-                        <? if ($arItems[0]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[0]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-                        <? if ($arItems[1]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[1]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-
-                    </li>
-                    <li class="partners-list__item">
-                        <? if ($arItems[3]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[3]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-                        <? if ($arItems[5]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[5]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-                    </li>
-                    <li class="partners-list__item">
-                        <? if ($arItems[0]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[0]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-                        <? if ($arItems[1]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[1]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-
-                    </li>
-                    <!--  -->
                 </ul>
             <? } ?>
         </div>
