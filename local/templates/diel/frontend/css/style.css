@@ -4533,7 +4533,12 @@ p {
   margin-bottom: 40px; }
 
 .for-buyer__text-box {
-  order: 4; }
+  order: 4;
+  margin: 10px 0;
+  font-family: "Intro Light";
+  font-size: 16px;
+  line-height: 26px;
+  color: #F8F8F8; }
 
 .for-buyer__image-wrapper {
   order: 2;
@@ -4561,13 +4566,6 @@ p {
   text-transform: uppercase;
   color: #E08B66;
   transform: translate(-50%, 50%); }
-
-.for-buyer__p {
-  margin: 10px 0;
-  font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
-  color: #F8F8F8; }
 
 @media screen and (min-width: 768px) {
   .for-buyer__image-wrapper {
