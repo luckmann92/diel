@@ -49,4 +49,15 @@ function ajaxForm(form) {
         }
       });
   });
-};
+}
+
+if (document.querySelector('input[type=tel]')) {
+  var element = document.querySelectorAll('input[type=tel]');
+
+  for (let i = 0; i < element.length; i ++) {
+      var maskOptions = {
+      mask: '+{7}(000)000-00-00'
+      };
+      var mask = IMask(element[i], maskOptions);
+  }
+}

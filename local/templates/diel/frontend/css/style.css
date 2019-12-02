@@ -3153,7 +3153,7 @@ p {
       width: 1237px;
       height: 1237px;
       z-index: -1;
-      background-color: red; }
+      background-image: radial-gradient(618.5px at 50% 50%, rgba(227, 219, 214, 0.085) 0%, rgba(227, 219, 214, 0) 100%); }
   .footer__nav {
     justify-content: space-around;
     width: 55%; }
