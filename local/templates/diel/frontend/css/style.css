@@ -1928,6 +1928,7 @@ p {
   width: 100%;
   height: 2px;
   background-color: rgba(241, 201, 179, 0.37);
+  border-radius: 1px 0 0 1px;
   z-index: -1; }
 
 .jumping-slider-options__progress-line {
