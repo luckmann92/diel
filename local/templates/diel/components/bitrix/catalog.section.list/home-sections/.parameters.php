@@ -8,4 +8,11 @@ $arTemplateParameters = array(
         'NAME' => 'Заголовок блока',
         'TYPE' => 'STRING',
         'DEFAULT' => 'Наша продукция'
-    ));
+    ),
+    "BLOCK_LINK" => array(
+        'PARENT' => 'BASE',
+        'NAME' => 'Текст ссылки',
+        'TYPE' => 'STRING',
+        'DEFAULT' => 'Перейти в каталог'
+    )
+);

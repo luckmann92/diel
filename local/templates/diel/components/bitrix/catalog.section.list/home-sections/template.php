@@ -64,7 +64,7 @@ Loc::loadMessages(__FILE__);
 
         <div class="our-products__button-group">
             <a class="product-card__button-transition button-transition" href="/catalog/">
-                <?= Loc::getMessage('HOME_SECTIONS_BTN_LINK_TO_CATALOG') ?>
+                <?= $arParams['BLOCK_LINK'] ?>
                 <?= GetContentSvgIcon('arrow-long') ?>
             </a>
 
