@@ -10,7 +10,7 @@ Loc::loadMessages(__FILE__);
 <? if ($arResult['SECTIONS']) { ?>
 <section class="our-products section-skew">
     <div class="our-products__inner">
-        <h2 class="our-products__title section-title"><?= Loc::getMessage('HOME_SECTIONS_BLOCK_TITLE') ?></h2>
+        <h2 class="our-products__title section-title"><?= $arParams['BLOCK_TITLE'] ?></h2>
 
         <p class="our-products__description">Несколько производственных площадок в разных городах, более 300
             мастеров, современное оборудование, новейшие технологии, прототипирование, жесткая система проверок и

@@ -197,6 +197,7 @@
 	"home-sections", 
 	array(
 		"COMPONENT_TEMPLATE" => "home-sections",
+		"BLOCK_TITLE" => 'Наша продукция',
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "3",
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
