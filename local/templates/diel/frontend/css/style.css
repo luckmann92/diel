@@ -3333,14 +3333,16 @@ p {
     grid-row-end: span 2; }
   .catalog-our-products-list__item:nth-child(9n + 4) {
     grid-column-end: span 2;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: space-between; }
     .catalog-our-products-list__item:nth-child(9n + 4) .product-card__title {
       border: none; }
     .catalog-our-products-list__item:nth-child(9n + 4) .product-card__image-wrapper {
       margin-right: 30px; }
   .catalog-our-products-list__item:nth-child(9n + 7) {
     grid-column-end: span 2;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: space-between; }
     .catalog-our-products-list__item:nth-child(9n + 7) .product-card__title {
       border: none; }
     .catalog-our-products-list__item:nth-child(9n + 7) .product-card__image-wrapper {
@@ -3366,14 +3368,16 @@ p {
     grid-row-end: span 2; }
   .catalog-our-products-list__item:nth-child(9n + 6) {
     grid-column-end: span 2;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: space-between; }
     .catalog-our-products-list__item:nth-child(9n + 6) .product-card__title {
       border: none; }
     .catalog-our-products-list__item:nth-child(9n + 6) .product-card__image-wrapper {
       margin-right: 30px; }
   .catalog-our-products-list__item:nth-child(9n + 8) {
     grid-column-end: span 2;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: space-between; }
     .catalog-our-products-list__item:nth-child(9n + 8) .product-card__title {
       border: none; }
     .catalog-our-products-list__item:nth-child(9n + 8) .product-card__image-wrapper {
@@ -3402,14 +3406,16 @@ p {
     grid-row-end: span 2; }
   .catalog-our-products-list__item:nth-child(9n + 3) {
     grid-column-end: span 2;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: space-between; }
     .catalog-our-products-list__item:nth-child(9n + 3) .product-card__title {
       border: none; }
     .catalog-our-products-list__item:nth-child(9n + 3) .product-card__image-wrapper {
       margin-right: 30px; }
   .catalog-our-products-list__item:nth-child(9n + 8) {
     grid-column-end: span 2;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: space-between; }
     .catalog-our-products-list__item:nth-child(9n + 8) .product-card__title {
       border: none; }
     .catalog-our-products-list__item:nth-child(9n + 8) .product-card__image-wrapper {
