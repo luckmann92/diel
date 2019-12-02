@@ -1,6 +1,6 @@
 <?
 $sSectionName = "Контакты";
 $arDirProperties = Array(
-    'PAGE_LAYOUT' => 'contacts'
+    'PAGE_LAYOUT' => 'contacts-l'
 );
 ?>
