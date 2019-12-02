@@ -22,7 +22,7 @@
 
 .product-card__link {
   text-decoration: none;
-  height: inherit;
+  height: 0;
 }
 
 .product-card__image-wrapper {
@@ -46,7 +46,7 @@
   padding-top: 15px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 120%;
   letter-spacing: 2px;
 
@@ -77,8 +77,8 @@
 
 .product-card__price {
   display: block;
-  margin-top: 10px;
-  font-family: "Lazurski";
+  margin-top: 17px;
+  font-family: "Lazurski Bold";
   font-weight: normal;
   font-size: 18px;
   line-height: 120%;
@@ -167,6 +167,10 @@
     .product-card__text {
       width: 100%;
     }
+
+    .product-card__price {
+      font-size: 24px;
+    }
   }
 
   
@@ -196,6 +200,10 @@
 
   .product-card--view-3 .product-card__button-detail {
     margin-top: 0;
+  }
+
+  .product-card__price {
+    margin-top: 10px;
   }
 }
 

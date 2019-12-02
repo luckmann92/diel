@@ -812,7 +812,7 @@ p {
 
 .product-card__link {
   text-decoration: none;
-  height: inherit; }
+  height: 0; }
 
 .product-card__image-wrapper {
   display: flex;
@@ -833,7 +833,7 @@ p {
   padding-top: 15px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 120%;
   letter-spacing: 2px;
   color: #FFFFFF;
@@ -858,8 +858,8 @@ p {
 
 .product-card__price {
   display: block;
-  margin-top: 10px;
-  font-family: "Lazurski";
+  margin-top: 17px;
+  font-family: "Lazurski Bold";
   font-weight: normal;
   font-size: 18px;
   line-height: 120%;
@@ -917,6 +917,8 @@ p {
       height: 340px; }
     .product-card--view-3 .product-card__text {
       width: 100%; }
+    .product-card--view-3 .product-card__price {
+      font-size: 24px; }
   .product-card__description,
   .product-card__button-detail {
     display: block; }
@@ -930,7 +932,9 @@ p {
   .product-card__button-detail {
     margin-top: 30px; }
   .product-card--view-3 .product-card__button-detail {
-    margin-top: 0; } }
+    margin-top: 0; }
+  .product-card__price {
+    margin-top: 10px; } }
 
 @media screen and (min-width: 1366px) {
   .product-card--view-3 {
@@ -3457,8 +3461,7 @@ p {
   .product-card__footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 30px; } }
+    align-items: center; } }
 
 @media screen and (min-width: 1366px) {
   .section-card {
@@ -3511,8 +3514,8 @@ p {
     .section-card-list__item.product-card--view-3 {
       width: 100%;
       box-sizing: border-box; }
-  .product-card__footer {
-    margin-top: 30px; } }
+      .section-card-list__item.product-card--view-3 .product-card__footer {
+        margin-top: 30px; } }
 
 @media screen and (min-width: 1366px) {
   .section-card__list {
@@ -3526,7 +3529,6 @@ p {
     box-sizing: border-box; }
     .section-card-list__item .product-card {
       justify-content: flex-start;
-      align-items: center;
       width: 100%;
       height: calc((100% - 30px) / 2); }
     .section-card-list__item.product-card--view-3 {
