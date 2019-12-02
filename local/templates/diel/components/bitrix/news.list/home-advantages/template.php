@@ -9,7 +9,7 @@ Loc::loadMessages(__FILE__);
 if ($arResult['ITEMS']) { ?>
     <section class="advantages">
         <div class="advantages-title-wrapper">
-            <h2 class="advantages__title section-title"><?= Loc::getMessage('HOME_ADVANTAGES_BLOCK_TITLE') ?></h2>
+            <h2 class="advantages__title section-title"><?= $arParams['BLOCK_TITLE'] ?></h2>
             <button class="advantages__button-next button-next">
                 <?=GetContentSvgIcon('button-next-big')?>
             </button>

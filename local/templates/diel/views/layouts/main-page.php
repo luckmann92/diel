@@ -134,6 +134,7 @@
         array(
             "COMPONENT_TEMPLATE" => "home-advantages",
             "IBLOCK_TYPE" => "content",
+            "BLOCK_TITLE" => 'Преимущества',
             "IBLOCK_ID" => "2",
             "NEWS_COUNT" => "20",
             "SORT_BY1" => "ACTIVE_FROM",
