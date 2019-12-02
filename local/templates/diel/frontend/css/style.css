@@ -3151,16 +3151,17 @@ p {
     padding-right: 50px;
     padding-top: 120px;
     padding-bottom: 170px; }
-    .footer::after {
-      content: "";
-      position: absolute;
-      left: -30%;
-      top: -100%;
-      display: block;
-      width: 1237px;
-      height: 1237px;
-      z-index: -1;
-      background-image: radial-gradient(618.5px at 50% 50%, rgba(227, 219, 214, 0.085) 0%, rgba(227, 219, 214, 0) 100%); }
+  .main-page .footer::after {
+    content: "";
+    position: absolute;
+    left: -30%;
+    top: -100%;
+    display: block;
+    width: 1237px;
+    height: 1237px;
+    z-index: -2;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(227, 219, 214, 0.085) 0%, rgba(227, 219, 214, 0) 100%);
+    opacity: .5; }
   .footer__nav {
     justify-content: space-around;
     width: 55%; }
@@ -6629,9 +6630,6 @@ p {
 
 .page .header {
   position: relative; }
-
-.page .footer::after {
-  display: none; }
 
 .page__breadcrumbs {
   position: relative;

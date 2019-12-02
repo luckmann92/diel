@@ -133,7 +133,9 @@
     padding-right: 50px;
     padding-top: 120px;
     padding-bottom: 170px;
+  }
 
+  .main-page .footer {
     &::after {
       content: "";
       position: absolute;
@@ -142,8 +144,9 @@
       display: block;
       width: 1237px;
       height: 1237px;
-      z-index: -1;
-      background-image: radial-gradient(618.50px at 50% 50%, rgba(227, 219, 214, 0.085) 0%, rgba(227, 219, 214, 0) 100%);
+      z-index: -2;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(227, 219, 214, 0.085) 0%, rgba(227, 219, 214, 0) 100%);
+      opacity: .5;
       // background-color: red;
     }
   }
