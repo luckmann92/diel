@@ -10,6 +10,7 @@ $APPLICATION->SetTitle("Покупателям");
 		"COMPONENT_TEMPLATE" => "customers",
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => "19",
+		"IBLOCK_SUBTITLE" => "FAQ",
 		"NEWS_COUNT" => "20",
 		"SORT_BY1" => "ID",
 		"SORT_ORDER1" => "ASC",
@@ -68,7 +69,9 @@ $APPLICATION->SetTitle("Покупателям");
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
-		"MESSAGE_404" => ""
+		"MESSAGE_404" => "",
+		"BLOCK_SUBTITLE" => "FAQ",
+		"BLOCK_IMG" => "/upload/medialibrary/b52/b52976c7d2fad216c5518b9bf84827c3.png"
 	),
 	false
 );?>

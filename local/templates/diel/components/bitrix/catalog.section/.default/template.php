@@ -26,7 +26,7 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
 ?>
 
     <div class="section-card__filter page-filter">
-<?if (count($arResult['ITEMS']) > 0) {?>
+
         <div class="page-filter__left">
             <span class="page-filter__label ">Сортировать по</span>
 
@@ -67,7 +67,7 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
                 </select>
             </div>
         </div>
-<?}?>
+
 
     </div>
 

@@ -18,7 +18,9 @@
     </div>
 
     <div class="for-buyer__image-wrapper">
-        <img class="for-buyer__image" src="/local/templates/diel/frontend/img/advantages_img_1.png" alt="">
+        <?if ($arParams['BLOCK_IMG']) {?>
+        <img class="for-buyer__image" src="<?=$arParams['BLOCK_IMG']?>" alt="">
+    <?}?>
         <h3 class="for-buyer__image-title"><? $APPLICATION->IncludeFile("/include/customers/faq_title.php",
                 array(),
                 array(
