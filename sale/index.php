@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Скидки и акции");
 	"bitrix:news", 
 	"collections_stocks", 
 	array(
-		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
@@ -75,7 +75,7 @@ $APPLICATION->SetTitle("Скидки и акции");
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
@@ -84,6 +84,15 @@ $APPLICATION->SetTitle("Скидки и акции");
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "collections_stocks",
 		"SEF_FOLDER" => "/sale/",
+		"FILTER_NAME" => "",
+		"FILTER_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

@@ -11,23 +11,24 @@ global $arSetting;
             <?= GetContentSvgIcon('logo') ?>
         </a>
         <? $APPLICATION->IncludeComponent(
-            "bitrix:menu",
-            "top",
-            array(
-                "COMPONENT_TEMPLATE" => "top",
-                "ROOT_MENU_TYPE" => "top",
-                "MENU_CACHE_TYPE" => "N",
-                "MENU_CACHE_TIME" => "3600",
-                "MENU_CACHE_USE_GROUPS" => "Y",
-                "MENU_CACHE_GET_VARS" => array(),
-                "MAX_LEVEL" => "1",
-                "CHILD_MENU_TYPE" => "",
-                "USE_EXT" => "N",
-                "DELAY" => "N",
-                "ALLOW_MULTI_SELECT" => "N"
-            ),
-            false
-        ); ?>
+	"bitrix:menu", 
+	"top", 
+	array(
+		"COMPONENT_TEMPLATE" => "top",
+		"ROOT_MENU_TYPE" => "top",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MAX_LEVEL" => "1",
+		"CHILD_MENU_TYPE" => "",
+		"USE_EXT" => "N",
+		"DELAY" => "N",
+		"ALLOW_MULTI_SELECT" => "N"
+	),
+	false
+); ?>
         <ul class="user-menu">
             <li class="user-menu__item">
                 <a class="user-menu__link user-menu__link-search icon-search" href="<?=SITE_DIR?>search/">

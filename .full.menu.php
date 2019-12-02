@@ -29,15 +29,22 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Акции", 
+		"/sale/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"Покупателям", 
-		"/customers/",
+		"/customers/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Доставка и оплата", 
-		"/delivery/",
+		"/delivery/", 
 		Array(), 
 		Array(), 
 		"" 
