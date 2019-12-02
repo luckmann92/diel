@@ -12,9 +12,14 @@ Loc::loadMessages(__FILE__);
     <div class="our-products__inner">
         <h2 class="our-products__title section-title"><?= $arParams['BLOCK_TITLE'] ?></h2>
 
-        <p class="our-products__description">Несколько производственных площадок в разных городах, более 300
-            мастеров, современное оборудование, новейшие технологии, прототипирование, жесткая система проверок и
-            многоступенчатый</p>
+        <p class="our-products__description">
+            <?$APPLICATION->IncludeFile("/include/home/catalog-desc.php",
+                array(), array(
+                    "SHOW_BORDER" => true,
+                    "MODE" => "text"
+                )
+            );?>
+            </p>
 
         <div class="our-products__list-wrapper">
             <ul class="our-products__list">
