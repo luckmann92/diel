@@ -72,6 +72,7 @@
             "COMPONENT_TEMPLATE" => "home-slider",
             "IBLOCK_TYPE" => "content",
             "IBLOCK_ID" => "1",
+            "AUTOPLAY_TIME" => 5000,
             "NEWS_COUNT" => "20",
             "SORT_BY1" => "ACTIVE_FROM",
             "SORT_ORDER1" => "DESC",

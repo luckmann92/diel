@@ -154,7 +154,7 @@ function GetBanner($urlPage = '')
         if ($res['ID']) {
             return $res;
         } else {
-            return getBannerElement($url, true);
+            return getBannerElement($url, false);
         }
 
     }
@@ -165,11 +165,7 @@ function getBannerElement($url, $isDefault = false) {
     $arBanner = array();
 
     $arFilter['IBLOCK_CODE'] = 'banners';
-    if ($isDefault) {
-        $arFilter['PROPERTY_DEFAULT.ID'] = 7;
-    } else {
-        $arFilter['?PROPERTY_URL'] = $url;
-    }
+    $arFilter['=PROPERTY_URL'] = $url;
 
     $rs = CIBlockElement::GetList(
         array(),
@@ -185,6 +181,26 @@ function getBannerElement($url, $isDefault = false) {
         }
         $arBanner['PROPS'] = $ar->GetProperties();
     }
+    if (count($arBanner) == 0) {
+        unset($arFilter['?PROPERTY_URL']);
+        $arFilter['PROPERTY_DEFAULT.ID'] = 7;
+
+        $rs = CIBlockElement::GetList(
+            array(),
+            $arFilter,
+            false,
+            false,
+            array('ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'PROPERTY_*')
+        );
+        while ($ar = $rs->GetNextElement()) {
+            $arBanner = $ar->GetFields();
+            if ($arBanner['PREVIEW_PICTURE']) {
+                $arBanner['PREVIEW_PICTURE'] = CFile::GetPath($arBanner['PREVIEW_PICTURE']);
+            }
+            $arBanner['PROPS'] = $ar->GetProperties();
+        }
+    }
+
     return $arBanner;
 }
 

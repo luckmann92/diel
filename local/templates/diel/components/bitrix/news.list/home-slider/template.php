@@ -8,7 +8,7 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) { ?>
-    <section class="banner">
+    <section class="banner" data-time-autoplay="<?= $arParams['AUTOPLAY_TIME'] ?>">
         <ul class="banner__list">
             <? foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
                 <li class="banner__item banner__item--slide-<?= $key ?>">
