@@ -39,7 +39,7 @@ $this->setFrameMode(true);
 <?if ($arResult['ITEMS']) {?>
 <?$this->SetViewTarget('collection_products')?>
 <section class="page-collection__products collection-products">
-    <h2 class="collection-products__title section-title"><span class="section-title__span-white">Список</span> товаров</h2>
+    <h2 class="collection-products__title section-title">Список товаров</h2>
     <?
     $APPLICATION->IncludeComponent(
         "bitrix:catalog.smart.filter",

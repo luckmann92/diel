@@ -57,9 +57,9 @@ if ($_REQUEST['ACTION']) {
                         <?if ($arProduct['PREVIEW_PICTURE']) {?>
                             <img class="popup-product-card__image-left" src="<?=$arProduct['PREVIEW_PICTURE']['SRC']?>" alt="">
                         <?}?>
-                        <?if ($arProduct['DETAIL_PICTURE']) {?>
+                        <!-- <?if ($arProduct['DETAIL_PICTURE']) {?>
                             <img class="popup-product-card__image-right" src="<?=$arProduct['DETAIL_PICTURE']['SRC']?>" alt="">
-                        <?}?>
+                        <?}?> -->
                     </div>
 
                     <div class="popup-product-card__middle">

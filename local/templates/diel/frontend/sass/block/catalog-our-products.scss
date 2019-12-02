@@ -88,6 +88,11 @@
   display: grid;
   grid-gap: 30px;
 }
+
+.catalog-our-products__list .product-card {
+  justify-content: center;
+}
+
 .product-card__description {
   max-height: 225px;
   overflow: hidden;

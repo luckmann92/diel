@@ -19,6 +19,9 @@
 
 .popup-product-card__image-wrapper {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
   height: 160px;
   overflow: hidden;
@@ -26,8 +29,10 @@
 
 .popup-product-card__image-left,
 .popup-product-card__image-right {
-  position: absolute;
+  // position: absolute;
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .popup-product-card__to-favorites {

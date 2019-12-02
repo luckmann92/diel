@@ -164,7 +164,7 @@
     box-sizing: border-box;
 
     .product-card {
-      justify-content: flex-start;
+      justify-content:space-between;
       width: 100%;
       height: calc((100% - 30px) / 2);
       // max-height: calc((100% - 30px) / 2);
@@ -196,7 +196,7 @@
 
   & .product-card:not(.product-card--view-3) .product-card__fast {
     right: 15px;
-    bottom: 30px;
+    bottom: 5px;
     padding: 5px;
     
     &::before {
