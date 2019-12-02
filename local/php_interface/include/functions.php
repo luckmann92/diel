@@ -266,21 +266,20 @@ function addBannerInContent($urlPage = '')
 
 function isFavorites($productID)
 {
-    if (isset($_SESSION['favorites']) && isset($_SESSION['favorites'][$productID])) {
+    if (isset($_COOKIE['favorites']) && isset($_COOKIE['favorites'][$productID]) && $_COOKIE['favorites'][$productID] == $productID) {
         return 'product-card__to-favorites--active';
     }
     return '';
 }
 
 if (isset($_REQUEST['add_favorites']) && $_REQUEST['add_favorites'] == 'Y') {
-    session_start();
-   $result = array();
+    $result = array();
     if ($_REQUEST['product_id']) {
-        if (isset($_SESSION['favorites']) && $_SESSION[$_REQUEST['product_id']] == $_REQUEST['product_id']) {
+        if (isset($_COOKIE['favorites'][$_REQUEST['product_id']]) && $_COOKIE['favorites'][$_REQUEST['product_id']] == $_REQUEST['product_id']) {
             $result['message'] = 'Товар был ранее добавлен';
             $result['result'] = 'false';
         } else {
-            $_SESSION['favorites'][$_REQUEST['product_id']] = $_REQUEST['product_id'];
+            setcookie('favorites[' .$_REQUEST['product_id'].']', $_REQUEST['product_id']);
             $result['message'] = 'Товар успешно добавлен';
             $result['result'] = 'true';
         }
@@ -291,11 +290,13 @@ if (isset($_REQUEST['add_favorites']) && $_REQUEST['add_favorites'] == 'Y') {
 }
 
 if (isset($_REQUEST['del_favorites']) && $_REQUEST['del_favorites'] == 'Y') {
-    $result = array();
-    if ($_REQUEST['product_id']) {
-        if (isset($_SESSION['favorites']) && $_SESSION['favorites'][$_REQUEST['product_id']] == $_REQUEST['product_id']) {
-            unset($_SESSION['favorites'][$_SESSION['product_id']]);
 
+    $result = array();
+
+    if ($_REQUEST['product_id']) {
+        if (isset($_COOKIE['favorites'][$_REQUEST['product_id']]) && $_COOKIE['favorites'][$_REQUEST['product_id']] == $_REQUEST['product_id']) {
+            unset($_COOKIE['favorites'][$_COOKIE['product_id']]);
+            setcookie('favorites[' .$_REQUEST['product_id'].']', '');
             $result['message'] = 'Товар был удален из избранного';
             $result['result'] = 'true';
         } else {
