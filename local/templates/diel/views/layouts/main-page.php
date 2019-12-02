@@ -229,6 +229,7 @@
 	array(
 		"COMPONENT_TEMPLATE" => "home-collection",
 		"IBLOCK_TYPE" => "content",
+		"BLOCK_TITLE" => 'Коллекции',
 		"IBLOCK_ID" => "5",
 		"NEWS_COUNT" => "20",
 		"SORT_BY1" => "ACTIVE_FROM",

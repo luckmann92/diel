@@ -9,7 +9,7 @@ Loc::loadMessages(__FILE__);
 ?>
 
 <section class="collections">
-    <h2 class="collections__title section-title"><?= Loc::getMessage('HOME_COLLECTION_BLOCK_TITLE') ?></h2>
+    <h2 class="collections__title section-title"><?= $arParams['BLOCK_TITLE'] ?></h2>
 
     <div class="collections__slider-wrapper jumping-slider__slider-wrapper">
         <ul class="collections__slider jumping-slider">
