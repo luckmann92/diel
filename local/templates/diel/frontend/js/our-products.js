@@ -11,17 +11,17 @@
         touch: true,
         speed: 1200,
   
-        responsive: {
-          "320": {
-            fixedWidth: 265,
-          },
-          "768": {
-            fixedWidth: 680,
-          },
-          "1366": {
-            fixedWidth: 760,
-          }
-        }
+        // responsive: {
+        //   "320": {
+        //     fixedWidth: 265,
+        //   },
+        //   "768": {
+        //     fixedWidth: 680,
+        //   },
+        //   "1366": {
+        //     fixedWidth: 760,
+        //   }
+        // }
       });
 
     let info = ourProductsSlider.getInfo();
