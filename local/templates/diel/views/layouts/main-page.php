@@ -192,6 +192,9 @@
         ),
         false
     ); ?>
+    <?global $sectionFilter;
+    $sectionFilter = array('UF_SECTION_ON_HOME' => '1');
+    ?>
     <? $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list", 
 	"home-sections", 
