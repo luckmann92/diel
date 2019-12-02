@@ -258,9 +258,9 @@
 );?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"news", 
+	"news-about",
 	array(
-		"COMPONENT_TEMPLATE" => "news",
+		"COMPONENT_TEMPLATE" => "news-about",
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => "7",
 		"NEWS_COUNT" => "20",
