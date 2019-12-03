@@ -27,57 +27,59 @@ if (document.querySelector(".diel-select")) {
         el.querySelector(".diel-select__button-text").textContent = option[0].textContent;
       }
     });
-  
-  showSelect();
+
+  window.addEventListener("load", showSelect);
 
   window.addEventListener("resize", showSelect);
 
   function showSelect() {
     selectWrapper.forEach(function(el) {
-    if (el.querySelector(".diel-select-list") && el.querySelector(".filter__diel-option-js")) {
+      if (el.querySelector(".diel-select-list") && el.querySelector(".filter__diel-option-js")) {
 
-      let option = el.querySelectorAll(".filter__diel-option-js");
-  
-      el.querySelector(".diel-select-list").innerHTML = "";
-      for (let i = 0; i < option.length; i++) {
-        let li = document.createElement("li");
-  
-        li.classList.add("diel-select-list__item");
-        li.textContent = option[i].textContent;
+        let option = el.querySelectorAll(".filter__diel-option-js");
+    
+        el.querySelector(".diel-select-list").innerHTML = "";
+        for (let i = 0; i < option.length; i++) {
+          let li = document.createElement("li");
+    
+          li.classList.add("diel-select-list__item");
+          li.textContent = option[i].textContent;
 
-        el.querySelector(".diel-select-list").appendChild(li);
-      }
+          el.querySelector(".diel-select-list").appendChild(li);
+        }
 
-      el.querySelectorAll(".diel-select-list__item").forEach(function(el, index) {
-        el.dataset.id = index;
+        el.querySelectorAll(".diel-select-list__item").forEach(function(el, index) {
+          el.dataset.id = index;
 
-        el.addEventListener("click", function() {
-          this.parentElement.parentElement.querySelector(".filter__diel-js").selectedIndex = this.dataset.id;
+          el.addEventListener("click", function() {
+            this.parentElement.parentElement.querySelector(".filter__diel-js").selectedIndex = this.dataset.id;
 
-          this.parentElement.parentElement.querySelector(".diel-select__button-text").textContent = option[this.dataset.id].textContent;
+            this.parentElement.parentElement.querySelector(".diel-select__button-text").textContent = option[this.dataset.id].textContent;
 
-          this.parentElement.parentElement.querySelector(".filter__diel-js").dispatchEvent(new Event('change'));
+            this.parentElement.parentElement.querySelector(".filter__diel-js").dispatchEvent(new Event('change'));
+          });
         });
-      });
 
-      let btn = el.querySelector(".diel-select__button"),
-          btnText = btn.querySelector(".diel-select__button-text"),
-          li = el.querySelectorAll(".diel-select-list__item");
+        let btn = el.querySelector(".diel-select__button"),
+            btnText = btn.querySelector(".diel-select__button-text"),
+            li = el.querySelectorAll(".diel-select-list__item");
 
-      let width = 0;
+        let width = 0;
 
-      li.forEach(function(el) {
-        btnText.textContent = el.textContent;
+        li.forEach(function(el) {
+          btnText.textContent = el.textContent;
 
-        if (btn.offsetWidth > width) width = btn.offsetWidth;
-      });
+          if (btn.offsetWidth > width) width = btn.offsetWidth;
+        });
 
-      el.querySelector(".diel-select__button").style.width = width + 17 + "px";
+        el.querySelector(".diel-select__button").style.width = width + 17 + "px";
 
-      if (option.length > 0) {
-        el.querySelector(".diel-select__button-text").textContent = option[0].textContent;
+        let selectedIndex = el.querySelector(".filter__diel-js").selectedIndex;
+
+        if (option.length > 0) {
+          el.querySelector(".diel-select__button-text").textContent = option[selectedIndex].textContent;
+        }
       }
-    }
     });
   }
 
