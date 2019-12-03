@@ -108,8 +108,10 @@ if (document.querySelector(".diel-select")) {
     selectWrapper.forEach(function(el) {
       let option = el.querySelectorAll(".filter__diel-option-js");
 
+      let selectedIndex = el.querySelector(".filter__diel-js").selectedIndex;
+
       if (option.length > 0) {
-        el.querySelector(".diel-select__button-text").textContent = option[0].textContent;
+        el.querySelector(".diel-select__button-text").textContent = option[selectedIndex].textContent;
       }
     });
   });
