@@ -4,7 +4,7 @@
  */
 ?>
 <? if ($arResult['ITEMS']) { ?>
-    <section class="page-about__partners partners">
+
         <h2 class="partners__title section-title">наши партнеры</h2>
         <? $APPLICATION->IncludeFile("/include/about/team.php",
                 array(), array(
@@ -50,5 +50,5 @@
                 </ul>
             <? } ?>
         </div>
-    </section>
+
 <? } ?>

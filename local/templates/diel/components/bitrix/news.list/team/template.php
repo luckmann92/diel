@@ -4,7 +4,7 @@
  */
 ?>
 <? if ($arResult['ITEMS']) { ?>
-    <section class="stocks">
+
         <h2 class="stocks__title section-title">команда</h2>
 
         <div class="stocks__slider-wrapper">
@@ -43,5 +43,5 @@
             О нашей команде
             <?=GetContentSvgIcon('arrow-long')?>
         </a> -->
-    </section>
+
 <? } ?>

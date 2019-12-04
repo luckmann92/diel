@@ -4,7 +4,7 @@
  */
 ?>
 <?if ($arResult['ITEMS']) {?>
-<section class="page-about__certificates certificates">
+
     <h2 class="certificates__title section-title"><span class="section-title__span-white">сертификаты</span> и лицензии
     </h2>
 
@@ -43,5 +43,5 @@
             </li>
         </ul>
     </div>
-</section>
+
 <?}?>

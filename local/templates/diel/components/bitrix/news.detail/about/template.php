@@ -72,7 +72,7 @@
         </li>
     </ul>
 </section>
-
+<section class="collections">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"achievements", 
@@ -134,6 +134,8 @@
 	),
 	false
 );?>
+</section>
+<section class="stocks">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"team", 
@@ -195,6 +197,8 @@
 	),
 	false
 );?>
+</section>
+<section class="page-about__certificates certificates">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"certificates", 
@@ -256,6 +260,8 @@
 	),
 	false
 );?>
+</section>
+<section class="all-collections all-collections--block">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"news-about",
@@ -319,6 +325,8 @@
 	),
 	false
 );?>
+</section>
+<section class="page-about__partners partners">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"partners", 
@@ -380,7 +388,7 @@
 	),
 	false
 );?>
-
+</section>
 
 
 
