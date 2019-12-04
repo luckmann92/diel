@@ -54,6 +54,6 @@ $APPLICATION->SetTitle("О компании");
 	),
 $component,
 Array(
-	'HIDE_ICONS' => '={true}'
+	'HIDE_ICONS' => true
 )
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

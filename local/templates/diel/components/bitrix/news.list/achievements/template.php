@@ -8,7 +8,7 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 ?>
 <? if ($arResult['ITEMS']) { ?>
-    <section class="collections">
+
         <h2 class="collections__title section-title"><?= Loc::getMessage('ACHIEVEMENTS_BLOCK_TITLE') ?></h2>
 
         <div class="collections__slider-wrapper jumping-slider__slider-wrapper">
@@ -40,5 +40,5 @@ Loc::loadMessages(__FILE__);
                 <div class="jumping-slider-options__nav"></div>
             </div>
         </div>
-    </section>
+
 <? } ?>
