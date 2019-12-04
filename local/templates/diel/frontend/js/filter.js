@@ -102,8 +102,8 @@ if (document.querySelector(".diel-select")) {
   //   });
   // });
 
-  window.addEventListener("reset", function() {
-    let selectWrapper = document.querySelectorAll(".diel-select");
+  window.addEventListener("reset", function(evt) {
+    let selectWrapper = evt.target.querySelectorAll(".diel-select");
 
     selectWrapper.forEach(function(el) {
       let option = el.querySelectorAll(".filter__diel-option-js");
