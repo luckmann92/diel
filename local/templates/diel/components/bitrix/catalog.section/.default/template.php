@@ -90,14 +90,16 @@ if ($arResult['ITEMS']) {?>
                 <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
                 <?}?>
-                <div class="product-card__image-wrapper">
+                <a class="product-card__image-wrapper product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
                     <img class="product-card__image"
                          src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
                          alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
-                </div>
+                </a>
 
                 <div class="product-card__text">
-                    <h3 class="product-card__title"><?=$arItem['NAME']?></h3>
+                    <h3 class="product-card__title">
+                        <a class="product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?=$arItem['NAME']?></a>
+                    </h3>
                     <?if ($arItem['PREVIEW_TEXT']) {?>
                         <p class="product-card__description"><?= $arItem['PREVIEW_TEXT'] ?></p>
                     <?}?>
@@ -135,6 +137,12 @@ if ($arResult['ITEMS']) {?>
                         <h3 class="product-card__title"><?=$arItem['NAME']?></h3>
 
                         <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
+                    
+                        <div class="product-card__footer">
+                            <a data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second">
+                                <?= GetContentSvgIcon('eye') ?>
+                            </a>
+                    </div>
                     </div>
                 </a>
 
