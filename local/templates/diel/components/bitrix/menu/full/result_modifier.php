@@ -37,5 +37,26 @@ if (!empty($arResult)) {
     $arResult = $arMenu;
 
 }
-
+foreach ($arResult['ITEMS'] as $key => $arItem) {
+    if ($arItem['DEPTH_LEVEL'] == 1) {
+        $code = trim(str_replace('/', '', $arItem['LINK']));
+        $rs = CIBlockElement::GetList(
+            array(),
+            array(
+                'IBLOCK_CODE' => $code,
+                'ACTIVE' => 'Y'
+            ),
+            false, false,
+            array('ID', 'IBLOCK_ID', 'IBLOCK_CODE', 'NAME', 'DETAIL_PAGE_URL')
+        );
+        while ($ar = $rs->GetNext()) {
+            if ($ar['IBLOCK_CODE'] == 'collections' || $ar['IBLOCK_CODE'] == 'sale') {
+                $arResult['ITEMS'][$key]['ITEMS'][] = array(
+                    'LINK' => $ar['DETAIL_PAGE_URL'],
+                    'TEXT' => $ar['NAME']
+                );
+            }
+        }
+    }
+}
 $arResult['ITEMS'] = array_chunk($arResult['ITEMS'], 3);
