@@ -4,9 +4,9 @@ $APPLICATION->SetTitle("Избранное");
 ?>
 
 <?
-if ($_SESSION['favorites']) {
-	$GLOBALS['arrFilter']['ID'] = array_keys($_SESSION['favorites']);
-}
+
+$GLOBALS['arrFilter']['ID'] = array_keys($_SESSION['favorites']) ?: false;
+
 
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog.top", 
@@ -24,7 +24,7 @@ $APPLICATION->IncludeComponent(
 		"PRICE_CODE" => array(
 			0 => "BASE",
 		),
-		"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
+		//"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
 		"ELEMENT_SORT_FIELD2" => "id",
