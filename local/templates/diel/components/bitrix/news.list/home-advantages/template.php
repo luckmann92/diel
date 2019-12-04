@@ -21,7 +21,7 @@ if ($arResult['ITEMS']) { ?>
                 ?>
                 <li class="advantages-list__item advantages-article">
                     <div class="advantages-article__inner">
-                        <div class="advantages-article__image-wrapper">
+                        <a class="advantages-article__image-wrapper" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
                             <? if ($arItem['PREVIEW_PICTURE']) { ?>
                                 <img class="advantages-article__image"
                                      src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
@@ -34,7 +34,7 @@ if ($arResult['ITEMS']) { ?>
                             <button class="advantages-article__button-next">
                                 <?= GetContentSvgIcon('button-next') ?>
                             </button>
-                        </div>
+                        </a>
 
                         <h3 class="advantages-article__title"><?= $arItem['NAME'] ?></h3>
                         <? if ($arItem['PREVIEW_TEXT']) { ?>
