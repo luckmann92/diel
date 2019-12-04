@@ -45,7 +45,7 @@ Loc::loadMessages(__FILE__);
     </div>
 
     <a class="collections__button-transition button-transition" href="/collections/">
-        <?= Loc::getMessage('HOME_COLLECTION_BTN_LINK_TO_COLLECTION') ?>
+        <?= $arParams['LINK_TITLE'] ?>
         <?= GetContentSvgIcon('arrow-long') ?>
     </a>
 </section>

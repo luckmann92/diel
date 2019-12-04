@@ -7,12 +7,12 @@ $arTemplateParameters = array(
         'PARENT' => 'BASE',
         'NAME' => 'Заголовок блока',
         'TYPE' => 'STRING',
-        'DEFAULT' => 'Коллекции'
+        'DEFAULT' => 'Акции'
     ),
     "LINK_TITLE" => array(
         'PARENT' => 'BASE',
         'NAME' => 'Текст ссылки',
         'TYPE' => 'STRING',
-        'DEFAULT' => 'Все коллекции'
+        'DEFAULT' => 'Все акции'
     )
 );

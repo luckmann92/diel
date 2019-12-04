@@ -5,7 +5,7 @@
 ?>
 <?if ($arResult['ITEMS']) {?>
 <section class="stocks">
-    <h2 class="stocks__title section-title">Акции</h2>
+    <h2 class="stocks__title section-title"><?=$arParams['BLOCK_TITLE']?></h2>
 
     <div class="stocks__slider-wrapper">
         <ul class="stocks__slider stocks-slider jumping-slider">
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <a class="stocks__button-transition button-transition" href="<?=SITE_DIR?>sale/">Все акции
+    <a class="stocks__button-transition button-transition" href="<?=SITE_DIR?>sale/"><?=$arParams['LINK_TITLE']?>
         <?=GetContentSvgIcon('arrow-long')?>
     </a>
 </section>

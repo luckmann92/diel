@@ -48,6 +48,9 @@
             <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
         </div>
 <?}?>
+        <?if ($arItem['PROPERTIES']['LINK_VIDEO']['VALUE']) {?>
+            <iframe width="560" height="315" src="<?=$arItem['PROPERTIES']['LINK_VIDEO']['VALUE']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <?}?>
         <div class="reviews-item__text">
             <?=$arItem['PREVIEW_TEXT']?>
         </div>
