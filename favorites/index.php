@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Избранное");
 
 <?
 
-$GLOBALS['arrFilter']['ID'] = array_keys($_SESSION['favorites']) ?: false;
+$GLOBALS['arrFilter']['ID'] = array_keys($_COOKIE['favorites']) ?: false;
 
 
 $APPLICATION->IncludeComponent(

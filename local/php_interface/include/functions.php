@@ -295,7 +295,7 @@ if (isset($_REQUEST['add_favorites']) && $_REQUEST['add_favorites'] == 'Y') {
             $result['message'] = 'Товар был ранее добавлен';
             $result['result'] = 'false';
         } else {
-            setcookie('favorites[' .$_REQUEST['product_id'].']', $_REQUEST['product_id']);
+            setcookie('favorites[' .$_REQUEST['product_id'].']', $_REQUEST['product_id'], time()+3600, '/');
             $result['message'] = 'Товар успешно добавлен';
             $result['result'] = 'true';
         }
@@ -325,6 +325,3 @@ if (isset($_REQUEST['del_favorites']) && $_REQUEST['del_favorites'] == 'Y') {
     die();
 }
 
-if ($_COOKIE['favorites']) {
-    $_SESSION['favorites'] = $_COOKIE['favorites'];
-}
