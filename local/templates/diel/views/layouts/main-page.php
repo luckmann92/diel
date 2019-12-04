@@ -192,7 +192,8 @@
         ),
         false
     ); ?>
-    <?global $sectionFilter;
+    <?
+    global $sectionFilter;
     $sectionFilter = array('UF_SECTION_ON_HOME' => '1');
     ?>
     <? $APPLICATION->IncludeComponent(
@@ -206,6 +207,7 @@
 		"IBLOCK_ID" => "3",
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_CODE" => "",
+		"USE_FILTER" => "Y",
 		"COUNT_ELEMENTS" => "Y",
 		"TOP_DEPTH" => "1",
 		"SECTION_FIELDS" => array(
@@ -213,10 +215,10 @@
 			1 => "",
 		),
 		"SECTION_USER_FIELDS" => array(
-			0 => "",
+			0 => "UF_SECTION_ON_HOME",
 			1 => "",
 		),
-		"FILTER_NAME" => "sectionsFilter",
+		"FILTER_NAME" => "sectionFilter",
 		"SECTION_URL" => "",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
