@@ -15,7 +15,7 @@ $this->SetViewTarget('type_page');
 echo 'products';
 $this->EndViewTarget();
 
-
+/*
 if (count($arResult['ITEMS']) > 0 && count($arResult['ITEMS']) < 5) {
     for ($index = 0; $index < 5; $index++) {
         if (!isset($arResult['ITEMS'][$index])) {
@@ -26,21 +26,22 @@ if (count($arResult['ITEMS']) > 0 && count($arResult['ITEMS']) < 5) {
 }
 
 $arResult['ITEMS'] = array_chunk($arResult['ITEMS'], 5);
-
-$type_block = 1;
+*/
+//$type_block = 1;
 
 $arBlocks = array();
 
-foreach ($arResult['ITEMS'] as $key => $arItems) {
-    foreach ($arItems as $k => $arItem) {
-        foreach ($arItem['OFFERS'] as $arOffer) {
+foreach ($arResult['ITEMS'] as $key => $arItem) {
+
+        foreach ($arItem['OFFERS'] as $k => $arOffer) {
             if ($arOffer['ITEM_PRICES']) {
-                $arItems[$k]['PRICES'][] = $arOffer['ITEM_PRICES'][0]['PRICE'];
+                $arItem[$key]['PRICES'][] = $arOffer['ITEM_PRICES'][0]['PRICE'];
             }
         }
-        sort($arItems[$k]['PRICES']);
-        $arResult['ITEMS'][$key][$k]['PRICES'] = $arItems[$k]['PRICES'];
-    }
+        sort($arItem[$key]['PRICES']);
+        $arResult['ITEMS'][$key]['PRICES'] = $arItem[$key]['PRICES'];
+}
+    /*
     foreach ($arItems as $k => $arItem) {
         switch ($type_block) {
             case '1':
@@ -78,11 +79,11 @@ foreach ($arResult['ITEMS'] as $key => $arItems) {
                 }
                 break;
         }
-    }
-
+    }*/
+/*
     $type_block++;
     if ($type_block > 3) {
         $type_block = 1;
-    }
-}
-$arResult['ITEMS'] = $arBlocks;
+    }*/
+
+//$arResult['ITEMS'] = $arBlocks;

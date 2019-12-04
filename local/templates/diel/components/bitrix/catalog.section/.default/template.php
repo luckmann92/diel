@@ -81,89 +81,72 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
     )
 )?>
 <?
-$type = 1;
-if ($arResult['ITEMS']) {
-foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
-
-    <ol class="section-card__list" id="catalog-sort-panel">
-        <?
-        $i = 1;
-        foreach ($arItems as $k => $arItem) {
-
-            $isBigBlock = $i == $type;
-            ?>
-            <? if ($isBigBlock || (count($arItem) == 2)) { ?>
-                <li class="section-card-list__item <?= $isBigBlock ? 'product-card product-card--view-3' : '' ?>">
-            <? } ?>
-            <? foreach ($arItem as $ind => $item) { ?>
-                <? if (!$isBigBlock) { ?>
-                    <div class="product-card" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
-                    <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>"></a>
-                <? } ?>
-                <? if ($item['PROPERTIES']['IS_NEW']['VALUE']) { ?>
+//$type = 1;
+if ($arResult['ITEMS']) {?>
+    <ol class="section-card__list">
+        <?foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
+            <?if ($key == 0 || $key % 6 == 0) {?>
+            <li class="product-card product-card--view-3">
+                <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
-                <? } ?>
-                <a class="product-card__image-wrapper" <?=!isset($item['ID']) ? 'style="display:none"' : ''?> href="<?= $item['DETAIL_PAGE_URL'] ?>">
+                <?}?>
+                <div class="product-card__image-wrapper">
                     <img class="product-card__image"
-                         src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>"
-                         alt="<?= $item['PREVIEW_PICTURE']['ALT'] ?>">
-                </a>
+                         src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
+                         alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
+                </div>
 
-                <div class="product-card__text" <?=!isset($item['ID']) ? 'style="display:none"' : ''?>>
-                    <h3 class="product-card__title">
-                        <a class="product-card__link" href="<?= $item['DETAIL_PAGE_URL'] ?>"> <?= $item['NAME'] ?></a>
-                    </h3>
-                    <? if ($isBigBlock) { ?>
-                        <p class="product-card__description"><?= $item['PREVIEW_TEXT'] ?></p>
-                    <? } ?>
+                <div class="product-card__text">
+                    <h3 class="product-card__title"><?=$arItem['NAME']?></h3>
+                    <?if ($arItem['PREVIEW_TEXT']) {?>
+                        <p class="product-card__description"><?= $arItem['PREVIEW_TEXT'] ?></p>
+                    <?}?>
+                    <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
 
-                    <b class="product-card__price"><?= number_format($item['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
                     <div class="product-card__footer">
-                        <? if ($isBigBlock) { ?>
-                            <a class="product-card__button-detail link-detail" href="<?= $item['DETAIL_PAGE_URL'] ?>">Подробнее
-                                <?= GetContentSvgIcon('arrow-long') ?>
-                            </a>
-                        <? } ?>
-                            <a data-product-id="<?=$item['ID']?>" class="product-card__fast button-second js-init-fast-show" hidden>
-                                <span>Быстрый просмотр</span>
-                                <?= GetContentSvgIcon('eye') ?>
-                            </a>
+                        <a class="product-card__button-detail link-detail" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее
+                            <?= GetContentSvgIcon('arrow-long') ?>
+                        </a>
+
+                        <a data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second">Быстрый просмотр
+                            <?= GetContentSvgIcon('eye') ?>
+                        </a>
                     </div>
                 </div>
-                <? if (!$isBigBlock) { ?>
-                    </a>
-                    <a data-product-id="<?= $item['ID'] ?>" class="<?=isFavorites($item['ID'])?> product-card__to-favorites icon-favorites js-init-add-favorites"
-                       href="#">
-                        <?= GetContentSvgIcon('favorites') ?>
-                    </a>
-                    </div>
-                <? } ?>
-                <? unset($arItem[$ind]) ?>
-            <? } ?>
-            <? if ($isBigBlock) { ?>
-                <a data-product-id="<?= $item['ID'] ?>" class="<?=isFavorites($item['ID'])?> product-card__to-favorites icon-favorites js-init-add-favorites"
-                   href="#">
+
+                <a data-product-id="<?= $arItem['ID'] ?>" class="js-init-add-favorites product-card__to-favorites <?=isFavorites($arItem['ID'])?>" href="">
                     <?= GetContentSvgIcon('favorites') ?>
                 </a>
-            <? } ?>
-            <? if ($isBigBlock || (count($arItem) < 2)) { ?>
-                </li>
-            <? } ?>
-            <?
-            $i++;
-            if ($i > 3) {
-                $i = 1;
-            }
-        } ?>
+            </li>
+            <?} else {?>
 
+            <li class="product-card">
+                <a class="product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
+                    <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
+                        <span class="product-card__novelty">Новинка</span>
+                    <? } ?>
+                    <div class="product-card__image-wrapper">
+                        <img class="product-card__image"
+                             src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
+                             alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
+                    </div>
+
+                    <div class="product-card__text">
+                        <h3 class="product-card__title"><?=$arItem['NAME']?></h3>
+
+                        <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
+                    </div>
+                </a>
+
+                <a data-product-id="<?= $arItem['ID'] ?>" class="js-init-add-favorites product-card__to-favorites <?=isFavorites($arItem['ID'])?>" href="#">
+                    <?= GetContentSvgIcon('favorites') ?>
+                </a>
+            </li>
+            <?}?>
+        <?}?>
     </ol>
-    <?
-    $type++;
-    if ($type > 3) {
-        $type = 1;
-    } ?>
-<? }
-} else {?>
+
+<?} else {?>
     <p style="padding-top: 40px" class="catalog-section__text-empty">К сожалению в данном разделе товаров нет</p>
     <br>
     <br>
