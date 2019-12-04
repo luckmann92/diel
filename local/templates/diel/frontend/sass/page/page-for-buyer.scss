@@ -13,7 +13,17 @@
   // padding-bottom: 60px;
 
   &::before {
-    background-color: transparent;
+    // background-color: transparent;
+    background: linear-gradient(to top, #1C0F0A 0%, #130A07 5%, transparent 100%);
+    z-index: 1;
+  }
+
+  &::after {
+    z-index: 2;
+  }
+
+  & > * {
+    z-index: 3;
   }
 }
 
@@ -107,7 +117,7 @@
 
   #tns2-item1 {
     .jumping-slider__image-wrapper::before {
-      border: 1px solid #E08B66;
+      // border: 1px solid #E08B66;
     }
   }
 

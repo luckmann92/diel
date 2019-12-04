@@ -70,18 +70,37 @@
     position: relative;
     flex-direction: row-reverse;
     justify-content: space-between;
+
+    display: grid;
+    grid-template-columns: 1fr 860px;
+    grid-template-rows: max-content;
+    column-gap: 160px;
     padding-bottom: 100px;
   }
 
+  .collection-information__slider-wrapper {
+    order: 2;
+    grid-row-end: span 2;
+  }
+
+  .page-collection__information {
+    &::after,
+    &::before {
+      order: 5;
+    }
+  }
+
   .collection-information__title {
-    position: absolute;
-    left: 310px;
+    // position: absolute;
+    // left: 310px;
+    order: 1;
     margin-bottom: 50px;
     width: 590px;
   }
 
   .collection-information__description {
-    padding-top: 220px;
+    // padding-top: 220px;
+    order: 3;
     width: 585px;
   }
 
@@ -89,5 +108,6 @@
     margin-right: -120px;
     margin-bottom: 70px;
     width: 860px;
+    width: initial !important;
   }
 }
