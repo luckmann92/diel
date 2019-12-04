@@ -68,12 +68,12 @@ use Bitrix\Main\Page\Asset;
             </div>
         </div>
     </div>
-
+<?if ($arResult['ITEMS']) {?>
     <ol class="favorites__list favorites-list" id="catalog-sort-panel">
         <? foreach ($arResult['ITEMS'] as $key => $arItem) {?>
             <li class="favorites__item product-card">
                 <!-- <a class="product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"> -->
-                    <? if ($item['PROPERTIES']['IS_NEW']['VALUE']) { ?>
+                    <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                         <span class="product-card__novelty">Новинка</span>
                     <? } ?>
                     <? if ($arItem['PREVIEW_PICTURE']) { ?>
@@ -91,5 +91,8 @@ use Bitrix\Main\Page\Asset;
             </li>
         <? } ?>
     </ol>
+    <?}else {?>
+    <p>Выбранных товаров нет</p>
+    <?}?>
     <hr class="demarcation-line">
 <?= $arResult['NAV_STRING'] ?>

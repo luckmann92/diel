@@ -324,3 +324,7 @@ if (isset($_REQUEST['del_favorites']) && $_REQUEST['del_favorites'] == 'Y') {
     echo json_encode($result);
     die();
 }
+
+if ($_COOKIE['favorites']) {
+    $_SESSION['favorites'] = $_COOKIE['favorites'];
+}
