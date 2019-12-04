@@ -1873,6 +1873,11 @@ p {
   margin-top: 20px; }
 
 @media screen and (min-width: 768px) {
+  .jumping-slider__image-wrapper {
+    background-image: linear-gradient(0deg, rgba(23, 13, 8, 0.9) 25.69%, rgba(23, 13, 8, 0) 100%);
+    background-image: linear-gradient(180deg, rgba(17, 17, 17, 0) 38.43%, rgba(0, 0, 0, 0.94) 100%); }
+  .jumping-slider__image {
+    z-index: -1; }
   .jumping-slider__item {
     width: 300px; }
   .jumping-slider__link-detail {
@@ -4203,19 +4208,28 @@ p {
     position: relative;
     flex-direction: row-reverse;
     justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 860px;
+    grid-template-rows: max-content;
+    column-gap: 160px;
     padding-bottom: 100px; }
+  .collection-information__slider-wrapper {
+    order: 2;
+    grid-row-end: span 2; }
+  .page-collection__information::after, .page-collection__information::before {
+    order: 5; }
   .collection-information__title {
-    position: absolute;
-    left: 310px;
+    order: 1;
     margin-bottom: 50px;
     width: 590px; }
   .collection-information__description {
-    padding-top: 220px;
+    order: 3;
     width: 585px; }
   .collection-information__slider-wrapper {
     margin-right: -120px;
     margin-bottom: 70px;
-    width: 860px; } }
+    width: 860px;
+    width: initial !important; } }
 
 .collection-products {
   padding-left: 12px;
@@ -4350,7 +4364,7 @@ p {
     margin-top: -8%; }
   .all-collections-item:last-child {
     margin-bottom: -4%;
-    padding-bottom: 12%; }
+    padding-bottom: 12% !important; }
     .all-collections-item:last-child .all-collections-item__image-wrapper {
       margin-bottom: -4%; }
   .all-collections-item__description {
@@ -6755,9 +6769,6 @@ p {
 @media screen and (min-width: 1920px) {
   .page-for-buyer__work-process {
     padding-bottom: 245px; } }
-
-.section-faq__slider #tns2-item1 .jumping-slider__image-wrapper::before {
-  border: 1px solid #E08B66; }
 
 .section-faq__slider .jumping-slider__image-wrapper {
   position: relative; }
