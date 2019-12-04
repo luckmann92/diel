@@ -3512,7 +3512,7 @@ p {
 .section-card__list {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(15, 1fr);
+  grid-template-rows: repeat(15, max-content);
   gap: 20px; }
 
 @media screen and (min-width: 768px) {
