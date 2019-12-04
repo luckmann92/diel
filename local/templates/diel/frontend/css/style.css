@@ -3987,6 +3987,9 @@ p {
 .card-item__slider-wrapper {
   margin-top: 40px; }
 
+.card-item__slider-wrapper .jumping-slider__image {
+  object-fit: contain; }
+
 .card-item-kit__slider {
   margin: 0;
   padding: 0;
