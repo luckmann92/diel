@@ -40,6 +40,10 @@
   .footer::after {
     display: none;
   }
+
+  .footer::before {
+    height: 110%;
+  }
 }
 
 .page__breadcrumbs {
