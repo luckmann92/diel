@@ -53,12 +53,18 @@ btnModal.on('click', function (e) {
                         data: $(this).serialize(),
                         dataType: 'json',
                         success: function (res) {
-                            console.log(res.result);
+                            console.log(formID);
                             if (res.result) {
-                                let result = '<div class="popup-successful__inner">' +
-                                    '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
-                                    '<div class="popup-successful__message">Менеджер свяжется с вами в ближайшее время. </div> <button class="popup-successful__close popup__close js-init-form-close"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path> </svg></button></div>';
-                                $('#form_id_' + formID).parent('.popup').addClass('popup-successful').html(result);
+                                // let result = '<div class="popup-successful__inner">' +
+                                //     '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
+                                //     '<div class="popup-successful__message">Менеджер свяжется с вами в ближайшее время. </div> <button class="popup-successful__close popup__close js-init-form-close"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path> </svg></button></div>';
+                                
+                                let result = '<section class="popup popup-request-call popup--active arcticmodal-overlay"> <div class="popup-successful__inner">' +
+                                '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
+                                '<div class="popup-successful__message">Менеджер свяжется с вами в ближайшее время. </div> <button class="popup-successful__close popup__close js-init-form-close"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path> </svg></button></div>';
+
+                                
+                                $('#form_id_' + formID).parent().parent().parent().addClass('popup-successful').html(result);
                             } else {
                                 if (res.error === true) {
                                     $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
