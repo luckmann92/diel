@@ -14,7 +14,8 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/app.js"));
 
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/tiny-slider.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/swiper.min.js"));
-Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/imask.js"));
+// Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/imask.js"));
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/jquery.inputmask.bundle.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/flow-menu.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/banner-slider.js"));
 // Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/collections-slider.js"));

@@ -64,22 +64,35 @@ if (document.querySelector(".diel-select")) {
             btnText = btn.querySelector(".diel-select__button-text"),
             li = el.querySelectorAll(".diel-select-list__item");
 
-        let width = 0;
-
-        li.forEach(function(el) {
-          btnText.textContent = el.textContent;
-
-          if (btn.offsetWidth > width) width = btn.offsetWidth;
-        });
-
-        el.querySelector(".diel-select__button").style.width = width + 17 + "px";
-
-        let selectedIndex = el.querySelector(".filter__diel-js").selectedIndex;
-
-        if (option.length > 0) {
-          el.querySelector(".diel-select__button-text").textContent = option[selectedIndex].textContent;
-        }
+        setSize();
       }
+    });
+  }
+
+  function setSize() {
+    console.log("ffff");
+    selectWrapper.forEach(function(el) {
+      let btn = el.querySelector(".diel-select__button"),
+          btnText = btn.querySelector(".diel-select__button-text"),
+          li = el.querySelectorAll(".diel-select-list__item"),
+          option = el.querySelectorAll(".filter__diel-option-js"),
+          selectedIndex = el.querySelector(".filter__diel-js").selectedIndex;
+
+      let width = 0;
+
+      li.forEach(function(el) {
+        if (el.textContent.length > width) {
+          width = el.textContent.length;
+          btnText.textContent = el.textContent;
+        }
+      });
+
+      width = btn.offsetWidth;
+  
+      console.log(width);
+      btn.style.width = `${width}px`;
+
+      btnText.textContent = option[selectedIndex].textContent;
     });
   }
 

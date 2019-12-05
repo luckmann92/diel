@@ -21,18 +21,18 @@ btnModal.on('click', function (e) {
                 opacity: 0
             }
         },
-        afterOpen: function(data, el) {
-            if (document.querySelector('input[type=tel]')) {
-                var element = document.querySelectorAll('input[type=tel]');
+        // afterOpen: function(data, el) {
+        //     if (document.querySelector('input[type=tel]')) {
+        //         var element = document.querySelectorAll('input[type=tel]');
             
-                for (let i = 0; i < element.length; i ++) {
-                    var maskOptions = {
-                    mask: '+{7}(000)000-00-00'
-                    };
-                    var mask = IMask(element[i], maskOptions);
-                }
-            }
-        },
+        //         for (let i = 0; i < element.length; i ++) {
+        //             var maskOptions = {
+        //             mask: '+{7}(000)000-00-00'
+        //             };
+        //             var mask = IMask(element[i], maskOptions);
+        //         }
+        //     }
+        // },
         ajax: {
             type: 'GET',
             cache: false,
@@ -53,7 +53,6 @@ btnModal.on('click', function (e) {
                         data: $(this).serialize(),
                         dataType: 'json',
                         success: function (res) {
-                            console.log(formID);
                             if (res.result) {
                                 // let result = '<div class="popup-successful__inner">' +
                                 //     '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +

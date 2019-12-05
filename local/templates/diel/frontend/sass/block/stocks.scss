@@ -125,9 +125,13 @@
   color: #FFFFFF;
 }
 
+.stocks-slider__position {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .stocks-slider__description {
   margin: 0;
-  margin-top: 20px;
   font-family: "Intro Light";
   font-size: 16px;
   line-height: 26px;
@@ -182,7 +186,6 @@
   }
 
   .stocks-slider__description {
-    margin-top: 30px;
     width: 363px;
   }
 

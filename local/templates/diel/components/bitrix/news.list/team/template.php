@@ -6,7 +6,6 @@
 <? if ($arResult['ITEMS']) { ?>
 
         <h2 class="stocks__title section-title">команда</h2>
-
         <div class="stocks__slider-wrapper">
             <ul class="stocks__slider stocks-slider">
                 <? foreach ($arResult['ITEMS'] as $arItem) { ?>
@@ -20,7 +19,8 @@
                             <div class="stocks-slider__text">
                                 <h3 class="stocks-slider__title"><?= $arItem['NAME'] ?></h3>
 
-                                <p class="stocks-slider__description"><?= $arItem['PREVIEW_TEXT'] ?></p>
+                                <p class="stocks-slider__position"><?= $arItem['PROPERTIES']['POSITION']['VALUE'] ?></p>
+                                <div class="stocks-slider__description"><?= $arItem['PREVIEW_TEXT'] ?></div>
 
                                 <a style="display: none;" class="stocks-slider__link-detail link-detail" href="#">Подробнее
                                     <?= GetContentSvgIcon('arrow-long') ?>
