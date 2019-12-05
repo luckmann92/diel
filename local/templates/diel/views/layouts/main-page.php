@@ -360,7 +360,7 @@
 	"home-about", 
 	array(
 		"BLOCK_TITLE" => "О компании",
-		"BLOCK_YEAR" => "1994",
+		"BLOCK_YEAR" => "DIEL",
 		"COMPONENT_TEMPLATE" => "home-about",
 		"IBLOCK_TYPE" => "-",
 		"IBLOCK_ID" => $_REQUEST["ID"],
