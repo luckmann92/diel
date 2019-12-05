@@ -60,17 +60,12 @@ if (document.querySelector(".diel-select")) {
           });
         });
 
-        let btn = el.querySelector(".diel-select__button"),
-            btnText = btn.querySelector(".diel-select__button-text"),
-            li = el.querySelectorAll(".diel-select-list__item");
-
         setSize();
       }
     });
   }
 
   function setSize() {
-    console.log("ffff");
     selectWrapper.forEach(function(el) {
       let btn = el.querySelector(".diel-select__button"),
           btnText = btn.querySelector(".diel-select__button-text"),
@@ -87,10 +82,10 @@ if (document.querySelector(".diel-select")) {
         }
       });
 
-      width = btn.offsetWidth;
-  
+      width = getComputedStyle(btn).width;
       console.log(width);
-      btn.style.width = `${width}px`;
+            
+      btn.style.width = `${width + 17}px`;
 
       btnText.textContent = option[selectedIndex].textContent;
     });

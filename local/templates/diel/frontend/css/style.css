@@ -4874,7 +4874,8 @@ p {
 
 .contacts {
   padding-left: 12px;
-  padding-right: 12px; }
+  padding-right: 12px;
+  padding-bottom: 8%; }
   @media screen and (min-width: 768px) {
     .contacts {
       padding-left: 20px;
@@ -4902,6 +4903,10 @@ p {
 
 .contacts-inormation__item {
   margin-bottom: 30px; }
+
+.contacts-inormation__item:nth-last-child(2),
+.contacts-inormation__item:last-child {
+  margin-bottom: 0; }
 
 .contacts-inormation__item-requisites {
   margin-left: 40px; }
@@ -4951,6 +4956,8 @@ p {
       background-repeat: no-repeat;
       opacity: .1;
       z-index: -1; }
+  .contacts {
+    min-height: 565px; }
   .map-wrapper {
     position: absolute;
     top: 0;

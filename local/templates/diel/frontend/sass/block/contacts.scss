@@ -1,5 +1,7 @@
 .contacts {
   @include section-position;
+
+  padding-bottom: 8%;
 }
 
 .contacts__title {
@@ -15,6 +17,11 @@
 
 .contacts-inormation__item {
   margin-bottom: 30px;
+}
+
+.contacts-inormation__item:nth-last-child(2),
+.contacts-inormation__item:last-child {
+  margin-bottom: 0;
 }
 
 .contacts-inormation__item-requisites {
@@ -79,6 +86,10 @@
       opacity: .1;
       z-index: -1;
     }
+  }
+
+  .contacts {
+    min-height: 565px;
   }
 
   .map-wrapper {
