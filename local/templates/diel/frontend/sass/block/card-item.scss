@@ -162,7 +162,7 @@
   position: absolute;
   visibility: hidden;
 
-  & ~ span::before {
+  & ~ .span__before {
     transition: all 200ms;
   }
 }
@@ -171,7 +171,7 @@
 .card-item-form__color-radio:focus ~ span {
   border-color: #E08B66;
 
-  &::before {
+  .span__before {
     content: "";
     position: absolute;
     width: 26px;
@@ -186,7 +186,7 @@
 .card-item-form__color-radio:checked ~ span {
   // border-color: #E08B66;
   
-  &::before {
+  .span__before {
     content: "";
     position: absolute;
     background-color: #EDBD4E;
@@ -209,7 +209,7 @@
   border-radius: 50%;
   border: 2px solid transparent;
 
-  &::before {
+  .span__before {
     content: "";
     position: absolute;
     width: 100%;
@@ -221,7 +221,7 @@
 
 .card-item-form__color-item:nth-child(3) > span,
 .card-item-form__color-item:nth-child(4) > span {
-  &::before {
+  .span__before {
     background-color: #8F7D63;
   }
 }

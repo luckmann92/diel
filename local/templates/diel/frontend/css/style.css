@@ -3865,14 +3865,14 @@ h2 {
 .card-item-form__color-radio {
   position: absolute;
   visibility: hidden; }
-  .card-item-form__color-radio ~ span::before {
+  .card-item-form__color-radio ~ .span__before {
     transition: all 200ms; }
 
 .card-item-form__color-radio:hover ~ span,
 .card-item-form__color-radio:focus ~ span {
   border-color: #E08B66; }
-  .card-item-form__color-radio:hover ~ span::before,
-  .card-item-form__color-radio:focus ~ span::before {
+  .card-item-form__color-radio:hover ~ span .span__before,
+  .card-item-form__color-radio:focus ~ span .span__before {
     content: "";
     position: absolute;
     width: 26px;
@@ -3882,7 +3882,7 @@ h2 {
     background-position: 50%;
     border-radius: 50%; }
 
-.card-item-form__color-radio:checked ~ span::before {
+.card-item-form__color-radio:checked ~ span .span__before {
   content: "";
   position: absolute;
   background-color: #EDBD4E;
@@ -3902,7 +3902,7 @@ h2 {
   align-items: center;
   border-radius: 50%;
   border: 2px solid transparent; }
-  .card-item-form__color-item > span::before {
+  .card-item-form__color-item > span .span__before {
     content: "";
     position: absolute;
     width: 100%;
@@ -3910,8 +3910,8 @@ h2 {
     background-color: #EDBD4E;
     border-radius: 50%; }
 
-.card-item-form__color-item:nth-child(3) > span::before,
-.card-item-form__color-item:nth-child(4) > span::before {
+.card-item-form__color-item:nth-child(3) > span .span__before,
+.card-item-form__color-item:nth-child(4) > span .span__before {
   background-color: #8F7D63; }
 
 .card-item-form__insert-wrapper {

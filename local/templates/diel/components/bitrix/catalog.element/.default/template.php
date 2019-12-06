@@ -102,9 +102,11 @@
                                        data-value="<?= $value['id'] ?>">
                                     <input class="card-item-form__color-radio" type="radio" name="color">
                                     <? if ($arProperty['type'] === 'picture' && !empty($value['picture'])) { ?>
-                                        <span style="background-image: url('<?= $value['picture'] ?>')"></span>
+                                        <span style="background-image: url('<?= $value['picture'] ?>')">
+                                            <span class="span__before" style="background-color: <?=$value[id]?>"></span>
+                                        </span>
                                     <? } else { ?>
-                                        <span></span>
+                                        <span style="background-color: black"></span>
                                     <? } ?>
                                 </label>
                             <? } ?>
