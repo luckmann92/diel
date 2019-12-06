@@ -60,6 +60,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Lazurski Bold";
   font-weight: normal; }
 
+h2 {
+  font-size: 2em; }
+
 .tns-outer {
   padding: 0 !important; }
   .tns-outer [hidden] {
