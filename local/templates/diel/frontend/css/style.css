@@ -50,6 +50,15 @@ p {
   background-color: rgba(224, 139, 102, 0.5);
   border: none; }
 
+section {
+  color: #fff;
+  font-family: "Intro Light";
+  font-size: 16px;
+  line-height: 32px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lazurski"; }
+
 .tns-outer {
   padding: 0 !important; }
   .tns-outer [hidden] {
