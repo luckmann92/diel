@@ -95,18 +95,20 @@
                         <div class="card-item-form__size-color-group">
                             <?
                             foreach ($arProperty['values'] as $value) { ?>
-                                <label class="card-item-form__color-item js-init-prop"
-                                       data-prop="color"
-                                       data-role="property.value"
-                                       data-state="hidden"
-                                       data-value="<?= $value['id'] ?>">
-                                    <input class="card-item-form__color-radio" type="radio" name="color">
-                                    <? if ($arProperty['type'] === 'picture' && !empty($value['picture'])) { ?>
-                                        <span style="background-image: url('<?= $value['picture'] ?>')">
-                                            <span class="span__before" style="background-color: <?=$value[id]?>"></span>
-                                        </span>
-                                    <? } ?>
-                                </label>
+                                <? if ($value['id']) {?>
+                                    <label class="card-item-form__color-item js-init-prop"
+                                        data-prop="color"
+                                        data-role="property.value"
+                                        data-state="hidden"
+                                        data-value="<?= $value['id'] ?>">
+                                        <input class="card-item-form__color-radio" type="radio" name="color">
+                                        <? if ($arProperty['type'] === 'picture' && !empty($value['picture'])) { ?>
+                                            <span style="background-image: url('<?= $value['picture'] ?>')">
+                                                <span class="span__before" style="background-color: <?=$value[id]?>"></span>
+                                            </span>
+                                        <? } ?>
+                                    </label>
+                                <? } ?>
                             <? } ?>
                         </div>
                     </div>
