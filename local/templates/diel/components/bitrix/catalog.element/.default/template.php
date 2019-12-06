@@ -105,8 +105,6 @@
                                         <span style="background-image: url('<?= $value['picture'] ?>')">
                                             <span class="span__before" style="background-color: <?=$value[id]?>"></span>
                                         </span>
-                                    <? } else { ?>
-                                        <span style="background-color: black"></span>
                                     <? } ?>
                                 </label>
                             <? } ?>
