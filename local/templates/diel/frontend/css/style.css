@@ -704,6 +704,7 @@ p {
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.5);
   transition: border-color 300ms;
+  z-index: 900;
   cursor: pointer; }
 
 .diel-select:hover,
