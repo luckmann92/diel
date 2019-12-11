@@ -72,22 +72,22 @@ use Bitrix\Main\Page\Asset;
     <ol class="favorites__list favorites-list" id="catalog-sort-panel">
         <? foreach ($arResult['ITEMS'] as $key => $arItem) {?>
             <li class="favorites__item product-card">
-                <!-- <a class="product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"> -->
                     <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                         <span class="product-card__novelty">Новинка</span>
                     <? } ?>
                     <? if ($arItem['PREVIEW_PICTURE']) { ?>
-                        <a class="product-card__image-wrapper product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
+                        <div class="product-card__image-wrapper">
                             <img class="product-card__image" src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
                                  alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
-                        </a>
+                        </div>
                     <? } ?>
-                    <a class="product-card__text product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
+                    <div class="product-card__text">
                         <h3 class="product-card__title"><?= $arItem['NAME'] ?></h3>
 
                         <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
-                    </a>
-                <!-- </a> -->
+                    </div>
+
+                    <a class="product-card__detail" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"></a>
             </li>
         <? } ?>
     </ol>
