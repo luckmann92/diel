@@ -37,7 +37,7 @@
 
     if (el.querySelector(".jumping-slider__item")) {
       info = jumpingSlider.getInfo(),
-      displays = Math.ceil(info.slideCount / info.items);
+      displays = info.slideCount;
     } else {
       el.querySelector(".jumping-slider-options").style.display = "none";
       return;
@@ -69,7 +69,7 @@
     jumpingSlider.events.on('transitionStart', customizedFunction);
   
     function customizedFunction(info) {
-      let i = Math.abs(Math.ceil(info.displayIndex / info.items) - 1),
+        let i = info.displayIndex - 1,
           item = navItems[i],
           X = item.offsetLeft;
   
@@ -83,7 +83,7 @@
     function initOptions() {
       navItems.forEach((el, index) => {
         el.addEventListener("click", evt => {
-          jumpingSlider.goTo(index * info.items);
+          jumpingSlider.goTo(index);
   
           removeCurrent();
           checkActive(el.offsetLeft);
@@ -99,7 +99,7 @@
       line.style.width = X + "px";
     }
   
-    // Выделить все элименты за активным
+    // Выделить все элементы за активным
     function checkActive(X) {
       navItems.forEach(el => {
         let itemX = el.offsetLeft;
