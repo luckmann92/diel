@@ -44,8 +44,8 @@ global $arSetting;
                     </li>
                     <li class="popup-menu-footer__item">
                         <a class="popup-menu-footer__address address-comp" href="/contacts/">
-                            <address class="address-comp__address">]
-                                <?= $arSetting['FILIAL']['PROPS']['CITY']['VALUE'] ? $arSetting['FILIAL']['PROPS']['PHONE']['VALUE'] . ', ' : '' ?> <?= $arSetting['FILIAL']['PROPS']['ADDRESS']['VALUE'] ?>
+                            <address class="address-comp__address">
+                                <?= $arSetting['FILIAL']['PROPS']['CITY']['VALUE'] ? 'г. ' . $arSetting['FILIAL']['PROPS']['CITY']['VALUE'] . ', ' : '' ?> <?= $arSetting['FILIAL']['PROPS']['ADDRESS']['VALUE'] ?>
                             </address>
                             <?= GetContentSvgIcon('address-comp') ?>
                         </a>
