@@ -90,15 +90,15 @@ if ($arResult['ITEMS']) {?>
                 <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
                     <span class="product-card__novelty">Новинка</span>
                 <?}?>
-                <a class="product-card__image-wrapper product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
+                <div class="product-card__image-wrapper">
                     <img class="product-card__image"
                          src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
                          alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
-                </a>
+                </div>
 
                 <div class="product-card__text">
                     <h3 class="product-card__title">
-                        <a class="product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?=$arItem['NAME']?></a>
+                        <?=$arItem['NAME']?>
                     </h3>
                     <?if ($arItem['PREVIEW_TEXT']) {?>
                         <p class="product-card__description"><?= $arItem['PREVIEW_TEXT'] ?></p>
@@ -119,36 +119,39 @@ if ($arResult['ITEMS']) {?>
                 <a data-product-id="<?= $arItem['ID'] ?>" class="js-init-add-favorites product-card__to-favorites <?=isFavorites($arItem['ID'])?>" href="">
                     <?= GetContentSvgIcon('favorites') ?>
                 </a>
+
+                <a class="product-card__detail" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"></a>
             </li>
             <?} else {?>
 
             <li class="product-card">
-                <a class="product-card__link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
-                    <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
-                        <span class="product-card__novelty">Новинка</span>
-                    <? } ?>
-                    <div class="product-card__image-wrapper">
-                        <img class="product-card__image"
-                             src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
-                             alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
-                    </div>
+                <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
+                    <span class="product-card__novelty">Новинка</span>
+                <? } ?>
+                <div class="product-card__image-wrapper">
+                    <img class="product-card__image"
+                            src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
+                            alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
+                </div>
 
-                    <div class="product-card__text">
-                        <h3 class="product-card__title"><?=$arItem['NAME']?></h3>
+                <div class="product-card__text">
+                    <h3 class="product-card__title"><?=$arItem['NAME']?></h3>
 
-                        <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
-                    
-                        <div class="product-card__footer">
-                            <a data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second">
-                                <?= GetContentSvgIcon('eye') ?>
-                            </a>
+                    <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
+                
+                    <div class="product-card__footer">
+                        <a data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second">
+                            <?= GetContentSvgIcon('eye') ?>
+                        </a>
                     </div>
-                    </div>
-                </a>
+                </div>
+                
 
                 <a data-product-id="<?= $arItem['ID'] ?>" class="js-init-add-favorites product-card__to-favorites <?=isFavorites($arItem['ID'])?>" href="#">
                     <?= GetContentSvgIcon('favorites') ?>
                 </a>
+
+                <a class="product-card__detail" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"></a>
             </li>
             <?}?>
         <?}?>

@@ -39,7 +39,9 @@
 }
 
 .product-card__footer .product-card__button-detail {
+  position: relative;
   margin: 0;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -199,6 +201,7 @@
     .product-card__fast {
       visibility: visible;
       opacity: 1;
+      z-index: 1;
     }
   }
 }

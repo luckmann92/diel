@@ -13,12 +13,12 @@ Loc::loadMessages(__FILE__);
     <ol class="catalog-our-products__list">
     <? foreach ($arResult['SECTIONS'] as $k => $arSection) { ?>
         <li class="catalog-our-products-list__item product-card">
-            <a class="product-card__image-wrapper" href="<?= $arSection['SECTION_PAGE_URL'] ?>">
+            <div class="product-card__image-wrapper">
                 <img class="product-card__image" src="<?= $arSection['PICTURE']['SRC'] ?>" alt="<?= $arSection['PICTURE']['ALT'] ?>">
-            </a>
+            </div>
 
             <div class="product-card__text">
-                <h3 class="product-card__title"><a href="<?= $arSection['SECTION_PAGE_URL'] ?>"><?= $arSection['NAME'] ?></a></h3>
+                <h3 class="product-card__title"><?= $arSection['NAME'] ?></h3>
 
                 <p class="product-card__description"><?= $arSection['PREVIEW_TEXT'] ?></p>
 
@@ -28,6 +28,8 @@ Loc::loadMessages(__FILE__);
                     </svg>
                 </a>
             </div>
+
+            <a class="product-card__detail" href="<?= $arSection['SECTION_PAGE_URL'] ?>"></a>
         </li>
 <?}?>
     </ol>

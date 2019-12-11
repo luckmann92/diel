@@ -29,13 +29,13 @@ Loc::loadMessages(__FILE__);
                             <? foreach ($arSections as $k => $arSection) { ?>
                                 <li class="product-card <?= $k == 0 ? 'product-card--view-1' : '' ?>">
                                     <? if ($k == 0) { ?>
-                                        <a class="product-card__image-wrapper" href="<?=$arSection['SECTION_PAGE_URL']?>">
+                                        <div class="product-card__image-wrapper">
                                             <img class="product-card__image"
                                                  src="<?=$arSection['PICTURE']['SRC']?>"
                                                  alt="<?=$arSection['PICTURE']['ALT']?>">
-                                        </a>
+                                        </div>
                                         <h3 class="product-card__title">
-                                            <a class="product-card__link" href="<?=$arSection['SECTION_PAGE_URL']?>"><?=$arSection['NAME']?></a>
+                                            <?=$arSection['NAME']?>
                                         </h3>
                                         <p class="product-card__description"><?=$arSection['DESCRIPTION']?></p>
 
@@ -43,15 +43,18 @@ Loc::loadMessages(__FILE__);
                                             <?=Loc::getMessage('HOME_SECTIONS_BTN_READ_MORE')?>
                                             <?=GetContentSvgIcon('detail-product')?>
                                         </a>
+
+                                        <a class="product-card__detail" href="<?=$arSection['SECTION_PAGE_URL']?>"></a>
                                     <? } else {?>
-                                        <a class="product-card__image-wrapper product-card__link" href="<?=$arSection['SECTION_PAGE_URL']?>">
+                                        <div class="product-card__image-wrapper">
                                             <img class="product-card__image"
                                                     src="<?=$arSection['PICTURE']['SRC']?>"
                                                     alt="<?=$arSection['PICTURE']['ALT']?>">
-                                        </a>
+                                        </div>
                                         <h3 class="product-card__title">
-                                            <a class="product-card__link" href="<?=$arSection['SECTION_PAGE_URL']?>"><?=$arSection['NAME']?></a>
+                                            <?=$arSection['NAME']?>
                                         </h3>
+                                        <a class="product-card__detail" href="<?=$arSection['SECTION_PAGE_URL']?>"></a>
                                     <?}?>
                                 </li>
                             <? } ?>
