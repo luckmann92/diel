@@ -28,7 +28,7 @@ if ($arResult['ITEMS']) { ?>
                         <? if ($arItem['PROPERTIES']['PHONE']['VALUE'] || $arItem['PROPERTIES']['PHONES']['VALUE']) { ?>
                             <li class="contacts-inormation__item">
                                 <? if ($arItem['PROPERTIES']['PHONE']['VALUE']) { ?>
-                                    <a class="contacts__call call"
+                                    <a class="contacts__call call js-init-modal-form"
                                        href="tel:+<?= prepareText($arItem['PROPERTIES']['PHONE']['VALUE']) ?>">
                                         <?= GetContentSvgIcon('call__icon') ?>
                                         <span class="call__phone-number"><?= $arItem['PROPERTIES']['PHONE']['VALUE'] ?></span>
