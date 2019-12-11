@@ -1703,7 +1703,7 @@ h2 {
 .header {
   position: absolute;
   width: 100%;
-  z-index: 20; }
+  z-index: 110; }
 
 .header__nav {
   display: flex;
