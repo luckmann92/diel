@@ -1562,7 +1562,12 @@ h2 {
 
 .filter__section-checkbox {
   position: relative;
+  display: flex;
+  align-items: center;
   padding-left: 30px; }
+
+.filter__section-checkbox .input-checkbox {
+  margin-top: 0; }
 
 .filter__section-radio {
   display: flex;
