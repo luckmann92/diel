@@ -115,7 +115,7 @@ if ($arResult['ITEMS']) { ?>
                                     <h4 class="requisites__title"><?= $arItem['PROPERTIES']['REQUISITES']['NAME'] ?></h4>
 
                                     <ul class="requisites__list">
-                                        <? foreach ($arItem['PROPERTIES']['WORK_HOURS']['VALUE'] as $arValue) { ?>
+                                        <? foreach ($arItem['PROPERTIES']['REQUISITES']['VALUE'] as $arValue) { ?>
                                             <li class="requisites__item"><?= $arValue ?></li>
                                         <? } ?>
                                     </ul>
