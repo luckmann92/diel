@@ -251,7 +251,6 @@
   color: #FFFFFF;
   border: 1px solid rgba(255,255,255,.5);
   transition: border-color 300ms;
-  z-index: 900;
   cursor: pointer;
 }
 
@@ -304,7 +303,7 @@
   padding: 0;
   height: 0;
   list-style-type: none;
-  z-index: 100;
+  z-index: 900;
 }
 
 .diel-select-list__item {
