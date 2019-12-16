@@ -13,42 +13,30 @@
                 )
             ); ?>
         <div class="partners__list">
-            <? foreach ($arResult['ITEMS'] as $k => $arItems) { ?>
-                <ul class="partners-list">
-                    <li class="partners-list__item">
-                        <? if ($arItems[0]) { ?>
+            <ul class="partners-list">
+                
+                <? for ($i = 0; $i < count($arResult['ITEMS']); $i++) { ?>
+                    <? if (($i + 1) % 3) { ?>
+                        <li class="partners-list__item">
+                            <? for($j = 0; $j <= 1; $j++) { ?>
+                                <? if ($i + $j < count($arResult['ITEMS'])) { ?>
+                                    <? $i = $i + $j ?>
+                                    <div class="partners-list__wrapper-pic">
+                                        <img src="<?= $arResult['ITEMS'][$i]['PREVIEW_PICTURE']['SRC'] ?>">
+                                    </div>
+                                <? } ?>
+                            <? } ?>
+                        </li>
+                    <? } else { ?>
+                        <li class="partners-list__item">
                             <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[0]['PREVIEW_PICTURE']['SRC'] ?>">
+                                <img src="<?= $arResult['ITEMS'][$i]['PREVIEW_PICTURE']['SRC'] ?>">
                             </div>
-                        <? } ?>
-                        <? if ($arItems[1]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[1]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
+                        </li>
+                    <? } ?>
+                <? } ?>
 
-                    </li>
-                    <li class="partners-list__item">
-                        <? if ($arItems[2]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[2]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-                    </li>
-                    <li class="partners-list__item">
-                        <? if ($arItems[3]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[3]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-                        <? if ($arItems[5]) { ?>
-                            <div class="partners-list__wrapper-pic">
-                                <img src="<?= $arItems[5]['PREVIEW_PICTURE']['SRC'] ?>">
-                            </div>
-                        <? } ?>
-                    </li>
-                </ul>
-            <? } ?>
+            </ul>
         </div>
 
 <? } ?>
