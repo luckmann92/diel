@@ -179,7 +179,7 @@
     transition: opacity 300ms;
   }
 
-  & .product-card:not(.product-card--view-3) .product-card__fast {
+  & .product-card .product-card__fast {
     right: 15px;
     bottom: 5px;
     padding: 5px;
@@ -202,6 +202,28 @@
       visibility: visible;
       opacity: 1;
       z-index: 1;
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .section-card__list {
+    & .product-card.product-card--view-3 .product-card__fast {
+      right: 30px;
+      bottom: initial;
+      padding: 10px 40px;
+
+      &::before {
+        display: block;
+      }
+  
+      span {
+        display: inline;
+      }
+  
+      svg {
+        padding-left: 10px;
+      }
     }
   }
 }

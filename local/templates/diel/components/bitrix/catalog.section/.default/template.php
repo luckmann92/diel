@@ -110,7 +110,7 @@ if ($arResult['ITEMS']) {?>
                             <?= GetContentSvgIcon('arrow-long') ?>
                         </a>
 
-                        <a data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second">Быстрый просмотр
+                        <a data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second"><span>Быстрый просмотр</span>
                             <?= GetContentSvgIcon('eye') ?>
                         </a>
                     </div>
