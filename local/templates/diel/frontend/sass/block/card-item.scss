@@ -26,7 +26,21 @@
   flex-wrap: wrap;
 }
 
+.card-item-form__novelty {
+  position: absolute;
+  right: 0;
+  font-family: "Intro Light";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  opacity: 0.6;
+}
+
 .card-item-form__price {
+  position: relative;
   padding-bottom: 10px;
   font-family: "Lazurski";
   font-size: 24px;
@@ -251,6 +265,13 @@
     position: relative;
   }
 
+  .card-item-form__novelty {
+    bottom: 100%;
+    left: 0;
+    right: initial;
+    padding-bottom: 10px;
+  }
+
   .card-item-form__fieldset:first-child {
     margin-top: 50px;
   }
@@ -293,6 +314,13 @@
     display: block;
   }
 }
+
+@media screen and (min-width: 1366px) {
+  .card-item-form__novelty {
+    padding-bottom: 15px;
+  }
+}
+
 
 
 

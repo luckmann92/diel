@@ -26,7 +26,10 @@
 <form class="card-item__form card-item-form" action="">
     <fieldset class="card-item-form__fieldset">
         <div class="card-item-form__price-wrapper">
-            <b class="card-item-form__price offer-item"><span id="offer-price"><?=number_format($arResult['PRICE'][0], 0, ' ', ' ') ?> ₽</span> </b>
+            <b class="card-item-form__price offer-item">
+                <span id="offer-price"><?=number_format($arResult['PRICE'][0], 0, ' ', ' ') ?> ₽</span> 
+                <span class="card-item-form__novelty">Новинка</span>
+            </b>
             <? if ($arResult['COLLECTION']) { ?>
                 <? foreach ($arResult['COLLECTION'] as $arItem) { ?>
                     <a class="card-item-form__collection"

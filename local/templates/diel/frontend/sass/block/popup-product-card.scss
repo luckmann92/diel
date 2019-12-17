@@ -63,6 +63,7 @@
   display: block;
   padding: 10px 0;
   padding-right: 40px;
+  max-width: 340px;
 }
 
 .popup-product-card__price {
@@ -72,6 +73,22 @@
 
 .popup-product-card__link-detail {
   margin-top: 30px;
+}
+
+.popup-product-card__novelty {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  right: 45px;
+  font-family: "Intro Light";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  text-transform: capitalize;
+  opacity: 0.6;
 }
 
 @media screen and (min-width: 605px) {

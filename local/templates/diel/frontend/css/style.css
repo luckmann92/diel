@@ -3783,7 +3783,20 @@ h2 {
   flex-direction: column;
   flex-wrap: wrap; }
 
+.card-item-form__novelty {
+  position: absolute;
+  right: 0;
+  font-family: "Intro Light";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  opacity: 0.6; }
+
 .card-item-form__price {
+  position: relative;
   padding-bottom: 10px;
   font-family: "Lazurski";
   font-size: 24px;
@@ -3960,6 +3973,11 @@ h2 {
     width: 100%; }
   .card-item-form__price-wrapper {
     position: relative; }
+  .card-item-form__novelty {
+    bottom: 100%;
+    left: 0;
+    right: initial;
+    padding-bottom: 10px; }
   .card-item-form__fieldset:first-child {
     margin-top: 50px; }
   .card-item-form__fieldset:nth-child(2) {
@@ -3986,6 +4004,10 @@ h2 {
     top: 5px;
     right: 0;
     display: block; } }
+
+@media screen and (min-width: 1366px) {
+  .card-item-form__novelty {
+    padding-bottom: 15px; } }
 
 .card-item-information__characteristic {
   margin-bottom: -10px;
@@ -6328,7 +6350,8 @@ h2 {
 .popup-product-card__collection {
   display: block;
   padding: 10px 0;
-  padding-right: 40px; }
+  padding-right: 40px;
+  max-width: 340px; }
 
 .popup-product-card__price {
   margin: 0;
@@ -6336,6 +6359,21 @@ h2 {
 
 .popup-product-card__link-detail {
   margin-top: 30px; }
+
+.popup-product-card__novelty {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  right: 45px;
+  font-family: "Intro Light";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  text-transform: capitalize;
+  opacity: 0.6; }
 
 @media screen and (min-width: 605px) {
   .popup-product-card {
