@@ -7,8 +7,8 @@ $arTemplateParameters = array(
         'TYPE' => 'LIST',
         'NAME' => 'Тип отображения',
         'VALUES' => array(
-            'TABLE' => "Таблица",
-            'СПИСОК' => 'Список'
+            'LIST' => "Таблица",
+            'TABLE' => 'Список'
         )
 
     ),
