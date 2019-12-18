@@ -72,7 +72,7 @@ if ($_REQUEST['ACTION']) {
             <? if ($arProduct['PROPS']['IS_NEW']['VALUE']) { ?>
                         <span class="popup-product-card__novelty">Новинка</span>
                 <?}?>
-                        <a class="popup-product-card__to-favorites icon-favorites <?=isFavorites($arProduct['ID'])?> js-init-add-favorites" href="#">
+                        <a data-product-id="<?=$arProduct['ID']?>" class="popup-product-card__to-favorites icon-favorites <?=isFavorites($arProduct['ID'])?> js-init-add-favorites" href="#">
                             <?=GetContentSvgIcon('favorites')?>
                         </a>
                     </div>
@@ -103,6 +103,51 @@ if ($_REQUEST['ACTION']) {
             <?
         }
     }
+    ?>
+    <script>
+        let addFavorites = $('.js-init-add-favorites');
+
+        addFavorites.on('click', function (e) {
+            e.preventDefault();
+            let data = {},
+                product_id = $(this).attr('data-product-id'),
+                type = '';
+
+            if ($(this).hasClass('product-card__to-favorites--active')) {
+                data = {
+                    'del_favorites': 'Y',
+                    'product_id': product_id
+                };
+                type = 'del';
+            } else {
+                data = {
+                    'add_favorites': 'Y',
+                    'product_id': product_id
+                };
+                type = 'add';
+            }
+
+            e.preventDefault();
+            $.ajax({
+                method: 'get',
+                data: data,
+                url: '/',
+                dataType: 'json',
+                success: function (response) {
+                    let btn = $('[data-product-id="' + product_id + '"]');
+                    if (response.result == 'true') {
+                        if (type == 'del') {
+                            btn.removeClass('product-card__to-favorites--active');
+                        } else {
+                            btn.addClass('product-card__to-favorites--active');
+                        }
+                    }
+                }
+            });
+            return false;
+        });
+    </script>
+<?
     die();
 }
 ?>
