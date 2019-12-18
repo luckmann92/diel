@@ -69,7 +69,9 @@ if ($_REQUEST['ACTION']) {
                         <?if ($arProduct['PROPS']['COLLECTION']) {?>
                         <a class="popup-product-card__collection" href="<?=$arProduct['PROPS']['COLLECTION']['DETAIL_PAGE_URL']?>"><?=$arProduct['PROPS']['COLLECTION']['NAME']?></a>
                 <?}?>
+            <? if ($arProduct['PROPS']['IS_NEW']['VALUE']) { ?>
                         <span class="popup-product-card__novelty">Новинка</span>
+                <?}?>
                         <a class="popup-product-card__to-favorites icon-favorites <?=isFavorites($arProduct['ID'])?> js-init-add-favorites" href="#">
                             <?=GetContentSvgIcon('favorites')?>
                         </a>

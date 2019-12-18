@@ -25,7 +25,7 @@
             </button>
 
             <div class="filter__section filter__section-reset">
-                <button class="filter__reset" type="reset">Сбросить фильтр</button>
+                <a href="<?=$APPLICATION->GetCurPage()?>" style="display: inline-block;text-decoration: none" class="filter__reset" type="reset">Сбросить фильтр</a>
             </div>
             <? foreach ($arResult["ITEMS"] as $k => $arFilterItem) {
                 if ($arFilterItem['VALUES']) { ?>

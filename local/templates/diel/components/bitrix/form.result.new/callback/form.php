@@ -11,7 +11,6 @@
  */
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-
 if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' || isset($_REQUEST['formresult'])) {
     $APPLICATION->RestartBuffer();
     if ($arResult['FORM_ERRORS']) {
@@ -76,6 +75,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                        type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                             </label>
                         <? } ?>
+
                     <? } ?>
 
 
@@ -102,6 +102,79 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
             </form>
 
         </section>
+    <? } elseif ($arParams['PRICE_LIST'] == 'Y') {?>
+        <section class="price-list section-skew--left">
+            <h2 class="price-list__title section-title">запросить прайс-лист</h2>
+
+            <form class="price-list__form price-list-form" id="form_id_<?= $arResult['arForm']['ID'] ?>" enctype="multipart/form-data" action="<?= POST_FORM_ACTION_URI; ?>">
+                <?= bitrix_sessid_post(); ?>
+                <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
+                <input type="hidden" name="web_form_submit" value="Y">
+                <ul class="price-list-form__list">
+                    <?foreach ($arResult["arAnswers"] as $SID => $arAnswer) {?>
+                    <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
+                    <li class="price-list-form__item">
+                        <div class="input-text-wrapper">
+                            <input class="input-text" id="<?= $SID ?>"
+                                   type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
+                                   name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
+                                   placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
+                        </div>
+                    </li>
+                    <?}?>
+                        <? if ($arAnswer[0]['FIELD_TYPE'] == 'checkbox') { ?>
+                            <li class="price-list-form__item">
+                                <label class="price-list-form__label">
+                                    <input class="input-checkbox" id="<?= $SID ?>"
+                                           name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
+                                           value="<?= $arAnswer[0]['ID'] ?>"
+                                           type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
+                                </label>
+                            </li>
+                        <?}?>
+                    <?}?>
+
+
+
+                    <li class="price-list-form__item price-list-form__item--submit">
+                        <div class="input-submit-wrapper">
+                            <input class="input-submit js-init-form-send" type="submit" value="Запросить">
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </section>
+        <script>
+            $('#form_id_' + <?= $arResult['arForm']['ID'] ?>).off('submit.ajax-form').on('submit.ajax-form', function (e) {
+                $('.popup-error').css('display','none').html('');
+                e.preventDefault();
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'GET',
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res.error === true) {
+                            $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                        } else {
+                            let result = '<section class="popup popup-request-call popup--active arcticmodal-overlay"> <div class="popup-successful__inner">' +
+                                '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
+                                '<div class="popup-successful__message">Менеджер свяжется с вами в ближайшее время. </div> <button class="popup-successful__close popup__close js-init-form-close"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path> </svg></button></div>';
+                            $('#form_id_' + <?= $arResult['arForm']['ID'] ?>).addClass('popup-successful').html(result);
+                            $.arcticmodal({
+                                content: result
+                            });
+                        }
+                    }
+                });
+                return false;
+            });
+            $('.js-init-form-close').click(function (e) {
+                e.preventDefault();
+                $('.popup-request-call').css('display', 'none');
+                return false;
+            });
+        </script>
     <? } elseif ($arParams['ADD_REVIEWS'] == 'Y') {?>
 
         <section class="popup popup-leave-feedback popup--active">

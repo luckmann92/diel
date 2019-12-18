@@ -312,7 +312,7 @@ if (isset($_REQUEST['del_favorites']) && $_REQUEST['del_favorites'] == 'Y') {
     if ($_REQUEST['product_id']) {
         if (isset($_COOKIE['favorites'][$_REQUEST['product_id']]) && $_COOKIE['favorites'][$_REQUEST['product_id']] == $_REQUEST['product_id']) {
             unset($_COOKIE['favorites'][$_COOKIE['product_id']]);
-            setcookie('favorites[' .$_REQUEST['product_id'].']', '');
+            setcookie('favorites[' .$_REQUEST['product_id'].']', '', time()+3600, '/');
             $result['message'] = 'Товар был удален из избранного';
             $result['result'] = 'true';
         } else {

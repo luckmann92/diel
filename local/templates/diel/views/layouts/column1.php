@@ -19,6 +19,7 @@ $search_result = $APPLICATION->GetViewContent('search_result');
 $search = $APPLICATION->GetViewContent('search');
 $other_news = $APPLICATION->GetViewContent('other_news');
 $title = $APPLICATION->GetViewContent('title');
+$form = $APPLICATION->GetViewContent('form');
 
 ?>
 <div class="catalog-top-wrapper">
@@ -85,6 +86,36 @@ $title = $APPLICATION->GetViewContent('title');
                 <?= $arParams['CONTENT'] ?>
             <? } ?>
             <?= $banner ?>
+            <?= $APPLICATION->IncludeComponent(
+	"bitrix:form.result.new", 
+	"callback", 
+	array(
+		"COMPONENT_TEMPLATE" => "callback",
+		"WEB_FORM_ID" => "5",
+		"IGNORE_CUSTOM_TEMPLATE" => "N",
+		"USE_EXTENDED_ERRORS" => "N",
+		"LINK_IS_BUTTON" => "N",
+		"LINK_TEXT" => "",
+		"LINK_CSS_CLASS" => "",
+		"FORM_TITLE" => "",
+		"FORM_DESCRIPTION" => "",
+		"BUTTON_TITLE" => "",
+		"SEF_MODE" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"LIST_URL" => "result_list.php",
+		"EDIT_URL" => "result_edit.php",
+		"SUCCESS_URL" => "",
+		"CHAIN_ITEM_TEXT" => "",
+		"PRICE_LIST" => "Y",
+		"CHAIN_ITEM_LINK" => "",
+		"VARIABLE_ALIASES" => array(
+			"WEB_FORM_ID" => "WEB_FORM_ID",
+			"RESULT_ID" => "RESULT_ID",
+		)
+	),
+	false
+);?>
         <? } ?>
     </main>
 </div>
