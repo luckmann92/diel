@@ -24,6 +24,7 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "OPTIONS_2",
 			2 => "OPTIONS_3",
 			3 => "OPTIONS_4",
+			4 => "METAL",
 		),
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
