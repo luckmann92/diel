@@ -10,7 +10,7 @@
         </li>
         <? foreach ($arResult as $arItem) { ?>
             <li class="main-menu__item">
-                <a class="main-menu__link" href="<?= $arItem['LINK'] ?>"><?= $arItem['TEXT'] ?></a>
+                <a class="main-menu__link <?= $arItem['SELECTED'] ? 'main-menu__link-active' : '' ?>" href="<?= $arItem['LINK'] ?>"><?= $arItem['TEXT'] ?></a>
             </li>
         <? } ?>
     </ul>

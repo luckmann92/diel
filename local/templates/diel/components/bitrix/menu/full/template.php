@@ -14,7 +14,7 @@
             </li>
             <? if ($arItem['ITEMS']) { ?>
                 <? foreach ($arItem['ITEMS'] as $item) { ?>
-                    <li class="popup-menu__item">
+                    <li class="popup-menu__item <?= $arItem['SELECTED'] ? 'popup-menu__item-active' : '' ?>">
                         <a class="popup-menu__link" href="<?= $item['LINK'] ?>"><?= $item['TEXT'] ?></a>
                     </li>
                 <? } ?>

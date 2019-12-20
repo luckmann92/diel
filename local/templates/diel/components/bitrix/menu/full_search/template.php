@@ -11,7 +11,7 @@
         </li>
         <? if ($arItem['ITEMS']) { ?>
             <? foreach ($arItem['ITEMS'] as $item) { ?>
-                <li class="main-search-result__item">
+                <li class="main-search-result__item <?= $arItem['SELECTED'] ? 'popup-menu__item-active' : '' ?>">
                     <a class="main-search-result__link" href="<?= $item['LINK'] ?>"><?= $item['TEXT'] ?></a>
                 </li>
             <? } ?>

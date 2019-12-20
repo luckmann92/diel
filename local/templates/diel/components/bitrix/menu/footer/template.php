@@ -10,7 +10,7 @@
                 <? foreach ($arItems as $k => $item) { ?>
                     <li class="footer-menu__item <?= $item['PARAMS']['CLASS'] ?>">
                         <? if ($item['LINK']) { ?>
-                        <a class="footer-menu__link" href="<?= $item['LINK'] ?>">
+                        <a class="footer-menu__link <?= $item['SELECTED'] ? 'footer-menu__link-active' : '' ?>" href="<?= $item['LINK'] ?>">
                             <? } ?>
                             <?= $item['TEXT'] ?>
                             <? if ($item['LINK']) { ?>
