@@ -293,7 +293,6 @@
 
 .result-list {
   margin: 0;
-  margin-bottom: 20px;
   padding: 0;
   list-style-type: none;
   font-family: "Intro Light";
@@ -302,6 +301,10 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #FFFFFF;
+}
+
+.result-list + .result-list {
+  margin-bottom: 30px;
 }
 
 .result-list li {
