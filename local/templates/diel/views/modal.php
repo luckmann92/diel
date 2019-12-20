@@ -87,11 +87,17 @@ global $arSetting;
                 </a>
             </div>
             <div class="popup-search__right">
-                <form class="main-search" action="<?=SITE_DIR?>search/?q=">
-                    <input class="main-search__input" type="text" placeholder="ПОИСК">
-                    <button class="main-search__button">
-                        <?= GetContentSvgIcon('search-button') ?></button>
-                </form>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:search.suggest.input",
+                    "",
+                    Array(
+                        "DROPDOWN_SIZE" => "10",
+                        "INPUT_SIZE" => "40",
+                        "NAME" => "q",
+                        "VALUE" => "ПОИСК"
+                    )
+                );?>
+
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "full_search",
