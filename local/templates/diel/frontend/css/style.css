@@ -6140,6 +6140,14 @@ h2 {
   margin-top: 10px;
   margin-bottom: 10px; }
 
+.result-list li a {
+  color: #fff;
+  text-transform: none;
+  transition: color 300ms; }
+
+.result-list li a:hover {
+  color: #E08B66; }
+
 .popup-request-call--hidden {
   visibility: hidden;
   opacity: 0; }
