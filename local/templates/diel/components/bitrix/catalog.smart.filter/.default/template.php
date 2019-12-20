@@ -40,7 +40,7 @@
                                         <input type="text"
                                                data-<?= mb_strtolower($code) ?>="<?= $value['VALUE'] ?>"
                                                name="<?= $value['CONTROL_NAME'] ?>"
-                                               class="filter__price-<?= strtolower($code) ?>"
+                                               class="filter__price-<?= strtolower($code) ?> js-init-filter"
                                                id="<?= $value['CONTROL_ID'] ?>"
                                                value="<?= $value['HTML_VALUE'] ?: $value['VALUE'] ?>">
                                         <?= $code == 'MIN' ? '<span>-</span>' : '' ?>
@@ -57,7 +57,7 @@
                                     </button>
                                     <ol class="diel-select__list diel-select-list"></ol>
 
-                                    <select class="filter__diel-js" name="<?= $arParams["FILTER_NAME"] ?>_<?= $arFilterItem["ID"] ?>"
+                                    <select class="filter__diel-js js-init-filter" name="<?= $arParams["FILTER_NAME"] ?>_<?= $arFilterItem["ID"] ?>"
                                             id="<?= $arParams["FILTER_NAME"] ?>_<?= $arFilterItem["ID"] ?>" hidden>
                                         <?
                                         $isChecked = false;
@@ -78,7 +78,7 @@
                                 foreach ($arFilterItem['VALUES'] as $value) {
                                     ?>
                                     <label class="filter__section-checkbox">
-                                        <input class="input-checkbox"
+                                        <input class="input-checkbox js-init-filter"
                                                name="<?= $value['CONTROL_NAME'] ?>"
                                                id="<?= $value['CONTROL_ID'] ?>"
                                                value="<?= $value['HTML_VALUE'] ?>"
@@ -91,7 +91,7 @@
                                 //dump($value);
                                 foreach ($arFilterItem['VALUES'] as $value) { ?>
                                     <label class="filter__section-radio" for="<?= $value['CONTROL_ID'] ?>">
-                                        <input id="<?= $value['CONTROL_ID'] ?>"
+                                        <input id="<?= $value['CONTROL_ID'] ?> js-init-filter"
                                                class="input-radio"
                                                type="radio"
                                                value="<?= $value['HTML_VALUE'] ?>"
@@ -115,3 +115,98 @@
     </section>
 
 <? } ?>
+<script>
+    $('.js-init-filter').on('change', function (e) {
+        let params = '',
+            block = $('.f-count');
+
+        if (block.length > 0) {
+            block.remove();
+        }
+        $(this).closest('form').find('.js-init-filter').each(function (i) {
+            let val = $(this).val();
+
+            if (i !== 0) {
+                params = params + '&';
+            }
+            if (val !== undefined) {
+                params = params + $(this).attr('name') + '=' + $(this).val();
+            }
+        });
+        $.arcticmodal({
+            type: 'ajax',
+            url: '<?=$APPLICATION->GetCurPage()?>?filter_use=y&ajax=y',
+            ajax: {
+                type: 'get',
+                dataType: 'html',
+                data: $(this).closest('form').serialize(),
+                success: function (response) {
+                    let obj = JSON.parse(JSON.stringify(response));
+
+                    $.ajax({
+                        url: '/local/tools/getJson.php',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            json: obj['ajax_request']['responseText']
+                        },
+                        success: function (res) {
+                            let form = $('.filter-form');
+
+                            let h = '<div class="f-count" style="left:' + form.innerWidth()+ 'px">Найдено ' + res.ELEMENT_COUNT + ' элементов<br><a href="' + res.FILTER_URL + '">Показать</a></div>';
+                            form.append(h);
+                          // alert($(this).attr('name'));
+                        }
+                    });
+
+                }
+            }
+        });
+
+    });
+
+    /*function ajaxFilter(el) {
+        let params = '',
+            value = el.val(),
+            name = el.attr('name');
+
+        el.closest('form').find('.js-init-filter').each(function (i) {
+            let val = $(this).val();
+
+            if (i !== 0) {
+                params = params + '&';
+            }
+            if (val !== undefined) {
+                params = params + $(this).attr('name') + '=' + $(this).val();
+            }
+        });
+        params = params.substring(0, params.length - 1);
+
+
+            alert(json);
+
+        });
+    }*/
+</script>
+<style>
+    .f-count {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        top:calc(50% - 50px);
+        background: #160d08;
+        padding: 4px 8px;
+        border: 1px solid #a4664a;
+    }
+    .f-count a {
+        color:#fff;
+        transition: 300ms;
+    }
+    .f-count a:hover,
+    .f-count a:active,
+    .f-count a:focus {
+        color: #E08B66;
+    }
+</style>

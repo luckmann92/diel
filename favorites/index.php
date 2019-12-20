@@ -9,7 +9,7 @@ $APPLICATION->IncludeComponent(
 	"text", 
 	array(
 		"COMPONENT_TEMPLATE" => "text",
-		"VALUE" => "СПИСОК"
+		"VALUE" => "TABLE"
 	),
 	false
 );?>
