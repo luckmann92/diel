@@ -311,10 +311,15 @@
 
 .result-list li a {
   color: #fff;
-  text-transform: none;
+  text-decoration: none;
+  text-transform: uppercase;
   transition: color 300ms;
 }
 
 .result-list li a:hover {
   color: #E08B66;
+}
+
+.result-list li a b {
+  font-weight: normal;
 }
