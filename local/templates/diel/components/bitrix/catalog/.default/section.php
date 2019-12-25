@@ -15,6 +15,7 @@ use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);
 
+dump($arParams["ELEMENT_SORT_FIELD"]);
 if (isset($_GET["sort"]) && isset($_GET["method"])) {
 	$arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"] == 'price' ? 'catalog_PRICE_1' : $_GET["sort"] == 'price';
 	$arParams["ELEMENT_SORT_ORDER"] = $_GET["method"] == 'desc' ? 'desc' : 'asc';
