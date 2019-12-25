@@ -98,7 +98,7 @@ if ($_REQUEST['ACTION']) {
                         <caption class="characteristics__caption">Характеристики</caption>
                         <tbody>
                         <?foreach ($arProduct['PROPS'] as $CODE => $arProp) {
-                            if (!is_array($arProp['VALUE'])) {?>
+                            if (!is_array($arProp['VALUE']) && !empty($arProp['VALUE'])) {?>
 
                         <tr class="characteristics__row">
                             <td class="characteristics__col"><?=$arProp['NAME']?></td>
