@@ -16,14 +16,14 @@ use Bitrix\Main\ModuleManager;
 $this->setFrameMode(true);
 
 if (isset($_GET["sort"]) && isset($_GET["method"])) {
-	if ($_GET["sort"] == 'name' || $_GET["sort"] == 'price') {
-		$arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"] == 'name' ? 'name' : 'catalog_PRICE_1';
-		$arParams["ELEMENT_SORT_ORDER"] = $_GET["method"] == 'desc' ? 'desc' : 'asc';
+
+	if ($_GET["sort"] == 'price') {
+		$arParams["ELEMENT_SORT_FIELD"] = 'catalog_PRICE_1';
 	}
 
 }
-if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] == 24 || $_GET['list_num'] == 36)) {
-	$arParams['PAGE_ELEMENT_COUNT'] = $_GET['list_num'];
+if (isset($_GET['list_num']) && ($_GET['list_num'] == 15 || $_GET['list_num'] == 30 || $_GET['list_num'] == 60 || $_GET['list_num'] == 'all')) {
+	$arParams['PAGE_ELEMENT_COUNT'] = $_GET['list_num'] == 'all' ? 999999 : $_GET['list_num'];
 }
 if (!isset($arParams['FILTER_VIEW_MODE']) || (string)$arParams['FILTER_VIEW_MODE'] == '')
 	$arParams['FILTER_VIEW_MODE'] = 'VERTICAL';
