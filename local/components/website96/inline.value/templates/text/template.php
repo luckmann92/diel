@@ -10,6 +10,28 @@ if ($arParams["VALUE"] == 'TABLE') {
     $GLOBALS['arrFilter']['ID'] = array_keys($_COOKIE['favorites']) ?: false;
 
 
+    if (isset($_GET["method"])) {
+        $arParams["ELEMENT_SORT_ORDER"] = $_GET['method'] == 'desc' ? 'desc' : 'asc';
+    }
+
+
+    if (isset($_GET["sort"])) {
+        switch ($_GET["sort"]) {
+            case 'shows':
+                $arParams["ELEMENT_SORT_ORDER"] = 'desc';
+                break;
+            case 'price':
+                $arParams["ELEMENT_SORT_FIELD"] = 'catalog_PRICE_1';
+                break;
+            case 'created':
+                $arParams["ELEMENT_SORT_FIELD"] = 'property_IS_NEW';
+                $arParams["ELEMENT_SORT_ORDER"] = 'desc';
+                break;
+            default:
+                $arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"] ?: 'desc';
+        }
+    }
+
     $APPLICATION->IncludeComponent(
         "bitrix:catalog.top",
         "favorites",
@@ -20,9 +42,9 @@ if ($arParams["VALUE"] == 'TABLE') {
             "SECTION_CODE" => "",
             "USE_FILTER" => "Y",
             "FILTER_NAME" => "arrFilter",
-            "ELEMENT_SORT_FIELD" => $_GET["sort"]=="price"?"catalog_PRICE_1":$_GET["sort"],
-            "ELEMENT_SORT_ORDER" => $_GET["method"]=="desc"?"desc":"asc",
-            "PAGE_ELEMENT_COUNT" => $_GET["list_num"]?:12,
+            "ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"] ?: 'shows',
+            "ELEMENT_SORT_ORDER" =>$arParams["ELEMENT_SORT_ORDER"] ?: "asc",
+            "PAGE_ELEMENT_COUNT" => $_GET["list_num"]?:15,
             "PRICE_CODE" => array(
                 0 => "BASE",
             ),
