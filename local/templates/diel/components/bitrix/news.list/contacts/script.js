@@ -13,12 +13,24 @@ function init() {
         zoom: 7
     });
 
+    myMap.behaviors.disable(['scrollZoom','drag','dblClickZoom','multiTouch']);
+
     let coord = getGeoArr();
 
-    myMap.setCenter([coord[0].x, coord[0].y], 15);
-    myMap.geoObjects.add(new ymaps.Placemark([coord[0].x, coord[0].y], {}, {
-        iconColor: '#000'
-    }));
+    let myPlacemark = new ymaps.Placemark([coord[0].x, coord[0].y], {
+        hintContent: 'Ювелирный дом Diel',
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'icon.svg',
+        // Размеры метки.
+        iconImageSize: [48, 48],
+    });
+
+    myMap.setCenter([coord[0].x, coord[0].y], 16);
+    myMap.geoObjects.add(myPlacemark);
 
     onClickTabs();
 
@@ -29,10 +41,20 @@ function init() {
             tabs.forEach(function(el, index) {
                 el.addEventListener("click", function(evt) {
                     if (el = evt.target) {
-                        myMap.setCenter([coord[index].x, coord[[index]].y], 15);
-                        myMap.geoObjects.add(new ymaps.Placemark([coord[index].x, coord[index].y], {}, {
-                            iconColor: '#000'
-                        }));
+                        let myPlacemark = new ymaps.Placemark([coord[index].x, coord[index].y], {
+                            hintContent: 'Ювелирный дом Diel',
+                        }, {
+                            // Опции.
+                            // Необходимо указать данный тип макета.
+                            iconLayout: 'default#image',
+                            // Своё изображение иконки метки.
+                            iconImageHref: 'icon.svg',
+                            // Размеры метки.
+                            iconImageSize: [48, 48],
+                        });
+
+                        myMap.setCenter([coord[index].x, coord[[index]].y], 16);
+                        myMap.geoObjects.add(myPlacemark);
                     }
                 });
             });

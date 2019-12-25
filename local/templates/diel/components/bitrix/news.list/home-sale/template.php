@@ -14,13 +14,17 @@
                 <div class="stocks-slider__inner">
                     <?if ($arItem['PREVIEW_PICTURE']) {?>
                     <div class="stocks-slider__image-wrapper">
-                        <img class="stocks-slider__image" src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
+                        <a href="<?=$arItem['DETAIL_PAGE_URL']?>">
+                            <img class="stocks-slider__image" src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
+                        </a>
                     </div>
 <?}?>
                     <div class="stocks-slider__text">
-                        <h3 class="stocks-slider__title"><?=$arItem['NAME']?></h3>
+                        <h3 class="stocks-slider__title">
+                            <a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem['NAME']?></a>
+                        </h3>
 
-                        <p class="stocks-slider__description"><?=$arItem['PREVIEW_TEXT']?></p>
+                        <a class="stocks-slider__description" href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem['PREVIEW_TEXT']?></a>
 
                         <a class="stocks-slider__link-detail link-detail" href="<?=$arItem['DETAIL_PAGE_URL']?>">Подробнее
                             <?=GetContentSvgIcon('link-detail__image')?>

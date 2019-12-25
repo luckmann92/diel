@@ -119,10 +119,17 @@
 .stocks-slider__title {
   margin: 0;
   margin-top: 30px;
+  margin-bottom: 20px;
   font-family: "Lazurski Bold";
   font-size: 18px;
   line-height: 26px;
   color: #FFFFFF;
+}
+
+.stocks-slider__title  a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
 }
 
 .stocks-slider__position {
@@ -131,11 +138,13 @@
 }
 
 .stocks-slider__description {
+  display: block;
   margin: 0;
   font-family: "Intro Light";
   font-size: 16px;
   line-height: 26px;
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .stocks-slider__link-detail {
@@ -182,6 +191,7 @@
 
   .stocks-slider__title {
     margin-top: 120px;
+    margin-bottom: 30px;
     font-size: 24px;
   }
 
