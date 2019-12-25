@@ -152,15 +152,6 @@
   display: block;
 }
 
-.input-checkbox a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.input-checkbox a:hover {
-  text-decoration: underline;
-}
-
 .input-radio {
   position: relative;
   display: flex;
@@ -252,11 +243,13 @@
   color: #FFFFFF;
 }
 
+label a,
 .label a {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   text-decoration: none;
 }
 
+label a:hover,
 .label a:hover {
   text-decoration: underline;
 }
