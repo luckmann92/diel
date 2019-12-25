@@ -20,7 +20,7 @@ if ($arParams["VALUE"] == 'TABLE') {
             "SECTION_CODE" => "",
             "USE_FILTER" => "Y",
             "FILTER_NAME" => "arrFilter",
-            "ELEMENT_SORT_FIELD" => $_GET["sort"]=="name"?"name":"catalog_PRICE_1",
+            "ELEMENT_SORT_FIELD" => $_GET["sort"]=="price"?"catalog_PRICE_1":$_GET["sort"],
             "ELEMENT_SORT_ORDER" => $_GET["method"]=="desc"?"desc":"asc",
             "PAGE_ELEMENT_COUNT" => $_GET["list_num"]?:12,
             "PRICE_CODE" => array(
