@@ -28,12 +28,12 @@ if (isset($_GET["sort"])) {
 		case 'created':
 			$arParams["ELEMENT_SORT_FIELD"] = 'property_IS_NEW';
 			break;
+		default:
+			$arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"];
 	}
-
-	$arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"] == 'price' ? 'catalog_PRICE_1' : $_GET["sort"];
 }
 
-var_dump($arParams["ELEMENT_SORT_FIELD"]);
+//var_dump($arParams["ELEMENT_SORT_FIELD"]);
 
 
 if (isset($_GET['list_num']) && ($_GET['list_num'] == 15 || $_GET['list_num'] == 30 || $_GET['list_num'] == 60 || $_GET['list_num'] == 'all')) {
