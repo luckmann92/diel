@@ -44,13 +44,10 @@ if ($_REQUEST['ACTION']) {
             $arProperties = $ar->GetProperties();
 
             $arProduct['PROPS'] = array();
+
             if (is_array($arProps) && count($arProps) > 0) {
-                foreach ($arProperties as $k => $prop) {
-                    foreach ($arProps as $key => $code) {
-                        if ($prop['CODE'] == $code) {
-                            $arProduct['PROPS'][$code] = $prop;
-                        }
-                    }
+                foreach ($arProps as $CODE) {
+                    $arProduct['PROPS'][$CODE] = $arProperties[$CODE];
                 }
             } else {
                 $arProduct['PROPS'] = $arProperties;
@@ -101,12 +98,12 @@ if ($_REQUEST['ACTION']) {
                         <caption class="characteristics__caption">Характеристики</caption>
                         <tbody>
                         <?foreach ($arProduct['PROPS'] as $CODE => $arProp) {?>
-                            <?if (stripos($CODE, 'OPTIONS_') !== false && $arProp['VALUE'] && !is_array($arProp['VALUE'])) {?>
+
                         <tr class="characteristics__row">
                             <td class="characteristics__col"><?=$arProp['NAME']?></td>
                             <td class="characteristics__col"><?=$arProp['VALUE']?></td>
                         </tr>
-                        <?}?>
+
                     <?}?>
 
                         </tbody></table>
