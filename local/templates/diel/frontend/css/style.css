@@ -641,6 +641,13 @@ h2 {
 .input-checkbox:checked::after {
   display: block; }
 
+.input-checkbox a {
+  color: #fff;
+  text-decoration: none; }
+
+.input-checkbox a:hover {
+  text-decoration: underline; }
+
 .input-radio {
   position: relative;
   display: flex;
