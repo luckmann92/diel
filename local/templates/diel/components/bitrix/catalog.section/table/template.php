@@ -61,7 +61,8 @@
 <?}?>
 <?if (count($arResult['ITEMS']) > 0) {?>
 <ol class="section-card__list--view-list">
-    <? foreach ($arResult['ITEMS'] as $k => $arItem) {?>
+    <? foreach ($arResult['ITEMS'] as $k => $arItem) {
+        dump($arItem['PROPERTIES']);?>
         <li class="section-card-list__item">
             <div class="product-card__image-wrapper">
                 <img class="product-card__image" src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
