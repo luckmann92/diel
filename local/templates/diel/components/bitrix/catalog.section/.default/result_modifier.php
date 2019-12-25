@@ -32,6 +32,11 @@ $arResult['ITEMS'] = array_chunk($arResult['ITEMS'], 5);
 $arBlocks = array();
 
 foreach ($arResult['ITEMS'] as $key => $arItem) {
+	$rs = CIBlockElement::GetList(array(), array('ID' => $arItem['ID'], 'IBLOCK_ID' => $arParams['IBLOCK_ID']), false, false, array());
+
+	while ($ar = $rs->GetNextElement()) {
+		$arResult['ITEMS'][$key]['PROPERTIES'] = $ar->GetProperties();
+	}
 
         foreach ($arItem['OFFERS'] as $k => $arOffer) {
             if ($arOffer['ITEM_PRICES']) {

@@ -68,7 +68,8 @@
   transition: color 200ms;
 }
 
-.main-menu__link:hover {
+.main-menu__link:hover,
+.main-menu__link.main-menu__link-active {
   color: #E08B66;
 }
 

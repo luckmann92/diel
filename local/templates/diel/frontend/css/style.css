@@ -1757,7 +1757,8 @@ h2 {
 .main-menu__link {
   transition: color 200ms; }
 
-.main-menu__link:hover {
+.main-menu__link:hover,
+.main-menu__link.main-menu__link-active {
   color: #E08B66; }
 
 .user-menu {
@@ -6122,6 +6123,36 @@ h2 {
     padding-right: 320px; }
   .popup-search__close {
     right: 150px; } }
+
+.result-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: "Intro Light";
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #FFFFFF; }
+
+.result-list + .result-list {
+  margin-top: 30px; }
+
+.result-list li {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.result-list li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 300ms; }
+
+.result-list li a:hover {
+  color: #E08B66; }
+
+.result-list li a b {
+  font-weight: normal; }
 
 .popup-request-call--hidden {
   visibility: hidden;
