@@ -9,6 +9,11 @@ use \Bitrix\Highloadblock as HL;
 Loader::IncludeModule('highloadblock');
 
 foreach ($arResult['ITEMS'] as $k => $arItem) {
+    $rs = CIBlockElement::GetList(array(), array('ID' => $arItem['ID'], 'IBLOCK_ID' => $arParams['IBLOCK_ID']), false, false, array());
+
+    while ($ar = $rs->GetNextElement()) {
+        $arResult['ITEMS'][$key]['PROPERTIES'] = $ar->GetProperties();
+    }
     foreach ($arItem['OFFERS'] as $arOffer) {
             if ($arOffer['ITEM_PRICES']) {
                 $arItem[$k]['PRICES'][] = $arOffer['ITEM_PRICES'][0]['PRICE'];

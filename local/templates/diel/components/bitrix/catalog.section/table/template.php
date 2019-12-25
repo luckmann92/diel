@@ -61,8 +61,7 @@
 <?}?>
 <?if (count($arResult['ITEMS']) > 0) {?>
 <ol class="section-card__list--view-list">
-    <? foreach ($arResult['ITEMS'] as $k => $arItem) {
-        dump($arItem['PROPERTIES']);?>
+    <? foreach ($arResult['ITEMS'] as $k => $arItem) {?>
         <li class="section-card-list__item">
             <div class="product-card__image-wrapper">
                 <img class="product-card__image" src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
@@ -114,21 +113,17 @@
                 </div>
             <? } ?>
             <?if ($arItem['PROPERTIES']) {
-                $k = 1;
-                foreach ($arItem['PROPERTIES'] as $CODE => $arProp) {
-                    if ($k > 2) {
-                        continue;
-                    }
-                    if (stripos( $CODE, 'OPTIONS_') !== false && $arProp['VALUE'] && !is_array($arProp['VALUE'])) {
+                foreach ($arParams['DETAIL_PROPERTY_CODE'] as $CODE) {
+                    if (!is_array($arItem['PROPERTIES'][$CODE]['VALUE']) && !empty($arItem['PROPERTIES'][$CODE]['VALUE'])) {
                     ?>
             <div class="product-card__weight-wrapper">
-                <p class="product-card__weight-title"><?=$arProp['NAME']?></p>
+                <p class="product-card__weight-title"><?=$arItem['PROPERTIES'][$CODE]['NAME']?></p>
 
-                <p class="product-card__weight"><?=$arProp['VALUE']?></p>
+                <p class="product-card__weight"><?=$arItem['PROPERTIES'][$CODE]['VALUE']?></p>
             </div>
 <?}?>
 <?
-    $k++;            }?>
+           }?>
 <?}?>
             <? if ($arItem['PRICES']) { ?>
                 <? sort($arItem['PRICES']) ?>
