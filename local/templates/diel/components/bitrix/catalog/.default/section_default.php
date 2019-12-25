@@ -35,6 +35,7 @@ if ($isFilter || $isSidebar) {
 		"PRICE_CODE" => array(
 			0 => "BASE",
 		),
+		"DETAIL_PROPERTY_CODE" => $arParams['DETAIL_PROPERTY_CODE'],
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => $arParams["CACHE_TIME"],
 		"CACHE_GROUPS" => "N",
@@ -91,6 +92,7 @@ if ($isFilter || $isSidebar) {
 				array(
 					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                    "DETAIL_PROPERTY_CODE" => $arParams['DETAIL_PROPERTY_CODE'],
 					"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
 					"ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
 					"ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
@@ -119,7 +121,7 @@ if ($isFilter || $isSidebar) {
 					"SHOW_404" => $arParams["SHOW_404"],
 					"FILE_404" => $arParams["FILE_404"],
 					"DISPLAY_COMPARE" => $arParams["USE_COMPARE"],
-					"PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
+					"PAGE_ELEMENT_COUNT" => intval($_GET['list_num']) > 0 ? intval($_GET['list_num']) : $arParams["PAGE_ELEMENT_COUNT"],
 					"LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
 					"PRICE_CODE" => $arParams["~PRICE_CODE"],
 					"USE_PRICE_COUNT" => $arParams["USE_PRICE_COUNT"],

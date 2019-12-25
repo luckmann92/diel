@@ -17,9 +17,15 @@ if ($_REQUEST['ACTION']) {
     $APPLICATION->RestartBuffer();
     if ($_REQUEST['ACTION'] == 'fast_show' && $_REQUEST['ID'] > 0) {
         $arProduct = array();
+        $arFilter = array(
+            'ID' => $_REQUEST['ID']
+        );
+        if ($_REQUEST['PROPS']) {
+            $arProps = unserialize(str_replace("'", '"', $_REQUEST['PROPS']));
+        }
         $rs = CIBlockElement::GetList(
             array(),
-            array('ID' => $_REQUEST['ID']),
+            $arFilter,
             false,
             false,
             array(
@@ -35,7 +41,21 @@ if ($_REQUEST['ACTION']) {
                     'SRC' => CFile::GetPath($arProduct['DETAIL_PICTURE'])
                 );
             }
-            $arProduct['PROPS'] = $ar->GetProperties();
+            $arProperties = $ar->GetProperties();
+
+            $arProduct['PROPS'] = array();
+            if (is_array($arProps) && count($arProps) > 0) {
+                foreach ($arProperties as $k => $prop) {
+                    foreach ($arProps as $key => $code) {
+                        if ($prop['CODE'] == $code) {
+                            $arProduct['PROPS'][$code] = $prop;
+                        }
+                    }
+                }
+            } else {
+                $arProduct['PROPS'] = $arProperties;
+            }
+
 
             $rsCollection = CIBlockElement::GetList(
                 array(),

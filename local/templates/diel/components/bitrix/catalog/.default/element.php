@@ -34,6 +34,7 @@ $isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEB
 			'IBLOCK_ID' => $arParams['IBLOCK_ID'],
 			'PROPERTY_CODE' => (isset($arParams['DETAIL_PROPERTY_CODE']) ? $arParams['DETAIL_PROPERTY_CODE'] : []),
 			'META_KEYWORDS' => $arParams['DETAIL_META_KEYWORDS'],
+            "DETAIL_PROPERTY_CODE" => $arParams['DETAIL_PROPERTY_CODE'],
 			'META_DESCRIPTION' => $arParams['DETAIL_META_DESCRIPTION'],
 			'BROWSER_TITLE' => $arParams['DETAIL_BROWSER_TITLE'],
 			'SET_CANONICAL_URL' => $arParams['DETAIL_SET_CANONICAL_URL'],

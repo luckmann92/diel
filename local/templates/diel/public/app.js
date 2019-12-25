@@ -3,7 +3,8 @@ let btnFastShow = $('.js-init-fast-show'),
 
 btnFastShow.on('click', function (e) {
     e.preventDefault();
-    let productId = $(this).attr('data-product-id');
+    let productId = $(this).attr('data-product-id'),
+        props = $(this).attr('data-props');
 
     $.arcticmodal({
         type: 'ajax',
@@ -19,7 +20,8 @@ btnFastShow.on('click', function (e) {
             cache: false,
             data: {
                 'ACTION': 'fast_show',
-                'ID': productId
+                'ID': productId,
+                'PROPS': props
             },
             dataType: 'html',
             success: function (data, el, response) {

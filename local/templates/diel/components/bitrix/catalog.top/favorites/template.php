@@ -20,19 +20,11 @@ use Bitrix\Main\Page\Asset;
                 <ol class="diel-select__list diel-select-list"></ol>
 
                 <select class="filter__diel-js" hidden>
-                    <option class="filter__diel-option-js no-selected" value="" <?if ($_GET["sort"] != "name"  && $_GET["sort"] != "price"):?> selected <?endif;?>>Не выбрано</option>
-                    <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('sort=name&method=asc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["sort"] == "name"): ?> selected <? endif; ?>>
-                        По названию
-                    </option>
-                    <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('sort=price&method=asc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["sort"] == "price" && $_GET["method"] == "asc"): ?> selected <? endif; ?>>
-                        По возрастанию цены
-                    </option>
-                    <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('sort=price&method=desc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["sort"] == "price" && $_GET["method"] == "desc"): ?> selected <? endif; ?>>
-                        По убыванию цены
-                    </option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=shows&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["shows"] == "created"):?> selected <?endif;?>>По популярности</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=created&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "created"):?> selected <?endif;?>>По новизне</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=name&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "name"):?> selected <?endif;?>>По названию</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=price&method=asc', array('sort', 'method'))?>#catalog-sort-panel" <?if ($_GET["sort"] == "price" && $_GET["method"] == "asc"):?> selected <?endif;?>>По возрастанию цены</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('sort=price&method=desc', array('sort', 'method'))?>#catalog-sort-panel" <?if($_GET["sort"] == "price" && $_GET["method"] == "desc"):?> selected <?endif;?>>По убыванию цены</option>
                 </select>
             </div>
         </div>
@@ -46,24 +38,16 @@ use Bitrix\Main\Page\Asset;
 
             <div class="filter__diel-select diel-select">
                 <button class="diel-select__button">
-                    <span class="diel-select__button-text">12</span>
+                    <span class="diel-select__button-text">15</span>
                 </button>
 
                 <ol class="diel-select__list diel-select-list"></ol>
 
                 <select class="filter__diel-js" hidden>
-                    <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('list_num=12', array('list_num')) ?>#catalog-sort-panel" <? if ($_GET["list_num"] == "12" || !isset($_GET['list_num'])): ?> selected <? endif; ?>>
-                        12
-                    </option>
-                    <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('list_num=24', array('list_num')) ?>#catalog-sort-panel" <? if ($_GET["list_num"] == "24"): ?> selected <? endif; ?>>
-                        24
-                    </option>
-                    <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('list_num=36', array('list_num')) ?>#catalog-sort-panel" <? if ($_GET["list_num"] == "36"): ?> selected <? endif; ?>>
-                        36
-                    </option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('list_num=15', array('list_num'))?>#catalog-sort-panel" <?if ($_GET["list_num"] == "15" || !isset($_GET['list_num'])):?> selected <?endif;?>>15</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('list_num=30', array('list_num'))?>#catalog-sort-panel" <?if ($_GET["list_num"] == "30"):?> selected <?endif;?>>30</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('list_num=60', array('list_num'))?>#catalog-sort-panel" <?if($_GET["list_num"] == "60"):?> selected <?endif;?>>60</option>
+                    <option class="filter__diel-option-js" value="<?=$APPLICATION->GetCurPageParam('list_num=all', array('list_num'))?>#catalog-sort-panel" <?if($_GET["list_num"] == "all"):?> selected <?endif;?>>Все</option>
                 </select>
             </div>
         </div>
