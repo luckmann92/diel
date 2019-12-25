@@ -5,6 +5,11 @@
 ?>
 <nav class="flow-menu-nav">
     <ul class="flow-menu">
+        <li class="flow-menu__item flow-menu__logo">
+            <a href="/">
+                <?= GetContentSvgIcon('logo') ?>
+            </a>
+        </li>
         <li class="flow-menu__item">
             <button class="main-menu-button flow-button-menu button-menu"></button>
         </li>
