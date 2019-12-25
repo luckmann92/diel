@@ -27,6 +27,7 @@ if (isset($_GET["sort"])) {
 			break;
 		case 'created':
 			$arParams["ELEMENT_SORT_FIELD"] = 'property_IS_NEW';
+			$arParams["ELEMENT_SORT_ORDER"] = 'desc';
 			break;
 		default:
 			$arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"];
