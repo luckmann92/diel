@@ -72,7 +72,9 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                        id="<?= $SID ?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
                                        value="<?= $arAnswer[0]['ID'] ?>"
-                                       type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
+                                       type="checkbox">
+                                       
+                                       <?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                             </label>
                         <? } ?>
 

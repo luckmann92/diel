@@ -243,6 +243,15 @@
   color: #FFFFFF;
 }
 
+.label a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.label a:hover {
+  text-decoration: underline;
+}
+
 
 
 .diel-select {
