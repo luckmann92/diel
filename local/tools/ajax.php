@@ -97,13 +97,14 @@ if ($_REQUEST['ACTION']) {
                     <table class="characteristics">
                         <caption class="characteristics__caption">Характеристики</caption>
                         <tbody>
-                        <?foreach ($arProduct['PROPS'] as $CODE => $arProp) {?>
+                        <?foreach ($arProduct['PROPS'] as $CODE => $arProp) {
+                            if (!is_array($arProp['VALUE'])) {?>
 
                         <tr class="characteristics__row">
                             <td class="characteristics__col"><?=$arProp['NAME']?></td>
                             <td class="characteristics__col"><?=$arProp['VALUE']?></td>
                         </tr>
-
+<?}?>
                     <?}?>
 
                         </tbody></table>
