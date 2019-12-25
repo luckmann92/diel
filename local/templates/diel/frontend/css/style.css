@@ -1283,7 +1283,9 @@ h2 {
     display: block;
     width: 1px;
     height: 15px;
-    background-color: rgba(248, 248, 248, 0.8); } }
+    background-color: rgba(248, 248, 248, 0.8); }
+  .flow-menu__logo {
+    transform: translateX(-32%); } }
 
 .breadcrumbs {
   display: flex;
