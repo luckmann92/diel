@@ -14,6 +14,13 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_be
 CModule::IncludeModule("iblock");
 CModule::IncludeModule('search');
 
+
+$rs = CIBlockElement::GetList(array(), array(
+    'IBLOCK_ID' => 3,
+    '?NAME' => urldecode($_REQUEST['q'])
+), false, array('nTopCount' => 5), array('ID', 'NAME', 'DETAIL_PAGE_URL')
+    );
+/*
 $arSearch = array(
     "QUERY" => urldecode($_REQUEST['q']),
     "SITE_ID" => LANG,
@@ -23,15 +30,20 @@ $arSearch = array(
 
 $obSearch = new CSearch;
 $obSearch->Search($arSearch);
-
+*/
 $arResult = array();
 
-$i = 0;
-while ($ar_res = $obSearch->GetNext()) {
-    if ($i <= 5) {
-        $arResult[] = $ar_res;
+while ($ar_res = $rs->GetNext()) {
+//while ($ar_res = $obSearch->GetNext()) {
+
+    if ($ar_res['DETAIL_PAGE_URL']) {
+        $ar_res['URL'] = $ar_res['DETAIL_PAGE_URL'];
     }
-    $i++;
+    if ($ar_res['NAME']) {
+        $ar_res['TITLE_FORMATED'] = $ar_res['NAME'];
+    }
+    $arResult[] = $ar_res;
+
 }
 
 echo json_encode($arResult);
