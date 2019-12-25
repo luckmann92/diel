@@ -1,8 +1,10 @@
 .link-search {
+  & > svg,
   & > .link-search__image {
     transition: transform 300ms;
   }
 
+  &:hover > svg,
   &:hover > .link-search__image {
     transform: scale(1.1);
   }
@@ -42,6 +44,7 @@
     }
   }
 
+  &:hover > svg,
   &:hover > .link-phone__image {
     animation-name: buzz-out;
     animation-duration: 1s;
@@ -57,6 +60,8 @@
       transform: scale(0.9);
     }
   }
+
+  &:hover > svg,
   &:hover > .link-favorites__image {
     animation-name: pulse;
     animation-duration: 500ms;

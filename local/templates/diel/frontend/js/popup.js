@@ -18,6 +18,10 @@ function Popup(popupClass) {
     that.showPopup = function() {
       popup.classList.add("popup--active");
       document.body.style.overflow = "hidden";
+
+      if (popup.classList.contains("popup-search")) {
+        popup.querySelector(".main-search__input").focus();
+      }
     }
 
     that.closePopup = function() {

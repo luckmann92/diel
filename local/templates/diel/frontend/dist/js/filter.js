@@ -84,7 +84,6 @@ if (document.querySelector(".diel-select")) {
 
       // width = getComputedStyle(btn).width;
       width = btn.offsetWidth;
-      console.log(width);
       btn.style.minWidth = `${width}px`;
 
       btnText.textContent = option[selectedIndex].textContent;
