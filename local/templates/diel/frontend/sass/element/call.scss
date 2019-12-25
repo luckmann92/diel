@@ -11,10 +11,17 @@
 
 .call__phone-number {
   display: block;
+  color: #fff;
+  text-decoration: none;
 }
 
-.call:hover .call__description {
+.call__phone-number:hover {
+  text-decoration: underline;
+}
+
+.call__description:hover {
   border-color: #E08B66;
+  cursor: pointer;
 }
 
 .call__icon {

@@ -28,10 +28,10 @@ if ($arResult['ITEMS']) { ?>
                         <? if ($arItem['PROPERTIES']['PHONE']['VALUE'] || $arItem['PROPERTIES']['PHONES']['VALUE']) { ?>
                             <li class="contacts-inormation__item">
                                 <? if ($arItem['PROPERTIES']['PHONE']['VALUE']) { ?>
-                                    <a class="contacts__call call js-init-modal-form"
+                                    <div class="contacts__call call"
                                        href="tel:+<?= prepareText($arItem['PROPERTIES']['PHONE']['VALUE']) ?>">
                                         <?= GetContentSvgIcon('call__icon') ?>
-                                        <span class="call__phone-number"><?= $arItem['PROPERTIES']['PHONE']['VALUE'] ?></span>
+                                        <a class="call__phone-number" href="tel:<?= $arItem['PROPERTIES']['PHONE']['VALUE'] ?>"><?= $arItem['PROPERTIES']['PHONE']['VALUE'] ?></a>
                                         <?
                                         $APPLICATION->IncludeComponent(
                                             "bitrix:form.result.new",
@@ -62,7 +62,7 @@ if ($arResult['ITEMS']) { ?>
                                             ),
                                             false
                                         ); ?>
-                                    </a>
+                                    </div>
                                 <?
                                 }
                                 if ($arItem['PROPERTIES']['PHONES']['VALUE']) {
