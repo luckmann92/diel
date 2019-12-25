@@ -20,6 +20,7 @@ $search = $APPLICATION->GetViewContent('search');
 $other_news = $APPLICATION->GetViewContent('other_news');
 $title = $APPLICATION->GetViewContent('title');
 $form = $APPLICATION->GetViewContent('form');
+$detail_page = $APPLICATION->GetViewContent('catalog_detail');
 
 ?>
 <div class="catalog-top-wrapper">
@@ -86,6 +87,7 @@ $form = $APPLICATION->GetViewContent('form');
                 <?= $arParams['CONTENT'] ?>
             <? } ?>
             <?= $banner ?>
+            <?if ($detail_page != 'Y') {?>
             <?= $APPLICATION->IncludeComponent(
 	"bitrix:form.result.new", 
 	"callback", 
@@ -116,6 +118,7 @@ $form = $APPLICATION->GetViewContent('form');
 	),
 	false
 );?>
+        <? } ?>
         <? } ?>
     </main>
 </div>

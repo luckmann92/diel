@@ -47,6 +47,10 @@ $this->SetViewTarget('class_wrapper');
 echo 'card-item ';
 $this->EndViewTarget();
 
+$this->SetViewTarget('catalog_detail');
+echo 'Y';
+$this->EndViewTarget();
+
 $this->SetViewTarget('class_title');
 echo 'card-item__title section-title ';
 $this->EndViewTarget();

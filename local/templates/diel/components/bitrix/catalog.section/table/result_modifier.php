@@ -32,13 +32,15 @@ foreach ($arResult['ITEMS'] as $k => $arItem) {
                     'UF_XML_ID' => $arHighloadProperty["VALUE"]
                 ],
             ]);
+
             foreach ($arRecords as $record) {
-                if ($arOffer['PROPERTIES']['COLOR']['ID'] == $record['ID']) {
+
+                if ($arOffer['PROPERTIES']['COLOR']['VALUE'] == $record['UF_XML_ID']) {
                     $arOffer['PROPERTIES']['COLOR']['UF_NAME'] = $record['UF_NAME'];
                     $arOffer['PROPERTIES']['COLOR']['UF_FILE'] = $record['UF_FILE'];
                 }
             }
-            $arResult['ITEMS'][$k]['COLORS'][] = $arOffer['PROPERTIES']['COLOR'];
+            $arResult['ITEMS'][$k]['COLORS'][$arOffer['PROPERTIES']['COLOR']['VALUE']] = $arOffer['PROPERTIES']['COLOR'];
         }
 
         if ($arOffer['PROPERTIES']['INSERTS']['VALUE']) {
@@ -64,9 +66,10 @@ foreach ($arResult['ITEMS'] as $k => $arItem) {
                 if ($arOffer['PROPERTIES']['INSERTS']['VALUE'] == $record['UF_XML_ID']) {
                     $arOffer['PROPERTIES']['INSERTS']['UF_NAME'] = $record['UF_NAME'];
                     $arOffer['PROPERTIES']['INSERTS']['UF_FILE'] = $record['UF_FILE'];
+                    $arOffer['PROPERTIES']['INSERTS']['ID'] = $record['ID'];
                 }
             }
-            $arResult['ITEMS'][$k]['INSERTS'][] = $arOffer['PROPERTIES']['INSERTS'];
+            $arResult['ITEMS'][$k]['INSERTS'][$arOffer['PROPERTIES']['INSERTS']['VALUE']] = $arOffer['PROPERTIES']['INSERTS'];
         }
     }
     sort($arItem[$k]['PRICES']);
