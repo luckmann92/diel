@@ -15,7 +15,10 @@ use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);
 
-$arParams["ELEMENT_SORT_ORDER"] = isset($_GET["method"]) && $_GET['method'] == 'desc' ? 'desc' : 'asc';
+if (isset($_GET["method"])) {
+	$arParams["ELEMENT_SORT_ORDER"] = $_GET['method'] == 'desc' ? 'desc' : 'asc';
+}
+
 
 if (isset($_GET["sort"])) {
 	switch ($_GET["sort"]) {
@@ -30,7 +33,7 @@ if (isset($_GET["sort"])) {
 	$arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"] == 'price' ? 'catalog_PRICE_1' : $_GET["sort"];
 }
 
-
+var_dump($arParams["ELEMENT_SORT_FIELD"]);
 
 
 if (isset($_GET['list_num']) && ($_GET['list_num'] == 15 || $_GET['list_num'] == 30 || $_GET['list_num'] == 60 || $_GET['list_num'] == 'all')) {
