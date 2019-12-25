@@ -21,6 +21,7 @@ if (isset($_GET["sort"]) && isset($_GET["method"])) {
 	$arParams["ELEMENT_SORT_ORDER"] = $_GET["method"] == 'desc' ? 'desc' : 'asc';
 
 }
+dump($arParams["ELEMENT_SORT_FIELD"]);
 if (isset($_GET['list_num']) && ($_GET['list_num'] == 15 || $_GET['list_num'] == 30 || $_GET['list_num'] == 60 || $_GET['list_num'] == 'all')) {
 	$arParams['PAGE_ELEMENT_COUNT'] = $_GET['list_num'] == 'all' ? 999999 : $_GET['list_num'];
 }
