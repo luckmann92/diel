@@ -72,7 +72,7 @@ global $arSetting;
                 <ul class="social-menu">
                     <?foreach ($arSetting['SOCIAL'] as $arSocial) {?>
                     <li class="social-menu__item">
-                        <a class="social-menu__link" href="<?=$arSocial['NAME']?>">
+                        <a class="social-menu__link" href="<?=$arSocial['NAME']?>" target="_blank">
                             <?if ($arSocial['PROPS']['ICON']['VALUE']) {?>
                                 <?=file_get_contents($_SERVER['DOCUMENT_ROOT'] . CFile::GetPath($arSocial['PROPS']['ICON']['VALUE']))?>
                             <?} else {?>
