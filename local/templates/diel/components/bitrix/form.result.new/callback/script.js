@@ -68,19 +68,14 @@ btnModal.on('click', function (e) {
                     }
                 }
             }
+
+            $("input[type=tel]").focus(function(){
+                $("input[type=tel]").inputmask({
+                    mask: "+7(999)-999-99-99",
+                    showMaskOnHover: false
+                });
+            });
         },
-        // afterOpen: function(data, el) {
-        //     if (document.querySelector('input[type=tel]')) {
-        //         var element = document.querySelectorAll('input[type=tel]');
-            
-        //         for (let i = 0; i < element.length; i ++) {
-        //             var maskOptions = {
-        //             mask: '+{7}(000)000-00-00'
-        //             };
-        //             var mask = IMask(element[i], maskOptions);
-        //         }
-        //     }
-        // },
         ajax: {
             type: 'GET',
             cache: false,
