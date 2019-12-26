@@ -13,7 +13,32 @@ function init() {
         zoom: 7
     });
 
-    myMap.behaviors.disable(['scrollZoom','drag','dblClickZoom','multiTouch']);
+    // разрешить запретить скрол и зум
+    let behaviors = ['scrollZoom','drag','dblClickZoom','multiTouch'];
+    myMap.behaviors.disable(behaviors);
+
+    let flag = false;
+
+    window.addEventListener("click", behaviorFalse);
+    document.querySelector("#map").addEventListener("click", behaviorTrue);
+
+    function behaviorTrue() {
+        if (flag) {
+            myMap.behaviors.disable(behaviors);
+        } else {
+            myMap.behaviors.enable(behaviors);
+        }
+        flag = false;
+    }
+    function behaviorFalse() {
+        if (flag) {
+            myMap.behaviors.disable(behaviors);
+        } else {
+            myMap.behaviors.enable(behaviors);
+        }
+        flag = true;
+    }
+    //
 
     let coord = getGeoArr();
 
