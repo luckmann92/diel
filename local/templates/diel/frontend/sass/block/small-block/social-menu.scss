@@ -18,6 +18,12 @@
   padding-right: 13px;
 }
 
+.social-menu__link svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
 .social-menu__link path {
   transition: fill 300ms;
 }

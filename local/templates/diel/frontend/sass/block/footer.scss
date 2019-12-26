@@ -20,6 +20,12 @@
   width: 296px
 }
 
+.footer-menu,
+.footer-info__menu {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer-info-menu__item--social {
   position: absolute;
   bottom: 170px;
@@ -35,7 +41,12 @@
 }
 
 .footer-info-menu__item--development {
-  margin-top: 355px
+  // margin-top: 355px;
+  margin-top: 235px;
+}
+
+.footer-menu__item:last-child .footer-menu__link {
+  padding-bottom: 0;
 }
 
 .footer-menu__item--privacy-policy {
@@ -111,7 +122,7 @@
   }
 
   .footer-info-menu__item--address {
-    margin-top: 70px;
+    margin-top: 80px;
   }
 
   .footer-info-menu__item--development {
@@ -165,6 +176,11 @@
 
   .footer-menu__item--copyright {
     bottom: 10px;
+  }
+
+  .footer-menu,
+  .footer-info__menu {
+    flex-grow: 1;
   }
 }
 
@@ -257,7 +273,80 @@
 }
 
 
+// футер сетка
+@media screen and (min-width: 768px) {
+  .footer__nav,
+  .footer__info {
+    width: 100%;
+  }
+  
+  .footer-menu,
+  .footer-info__menu {
+    width: 50%;
+    margin-right: 150px;
+  }
 
+  .footer-menu:last-child,
+  .footer-info__menu:last-child {
+    margin-right: 0;
+  }
+
+  .footer-menu__item:last-child,
+  .footer-info-menu__item:last-child {
+    margin-top: auto;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .footer {
+    align-items: stretch;
+  }
+
+  .footer__nav,
+  .footer__info {
+    width: 50%;
+  }
+
+  .footer-menu,
+  .footer-info__menu {
+    width: 50%;
+    margin-right: 50px;
+  }
+
+  .footer-menu:nth-child(n) {
+    margin-right: 50px;
+  }
+
+  .footer-info__menu:last-child {
+    margin-right: 0;
+  }
+
+  .footer-menu__item:last-child,
+  .footer-info-menu__item:last-child {
+    position: static;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .footer__nav,
+  .footer__info {
+    flex-grow: 1;
+    width: inherit;
+  }
+
+  .footer-menu,
+  .footer-info__menu {
+    margin-right: 65px;
+  }
+
+  .footer-menu:nth-child(n) {
+    margin-right: 65px;
+  }
+
+  .footer-info__menu:last-child {
+    margin-right: 0;
+  }
+}
 
 
 
@@ -290,4 +379,10 @@
 .footer-development a:hover,
 .footer-development a:focus {
   color: #E08B66;
+}
+
+@media screen and (min-width: 1366px) {
+  .footer-development {
+    position: static;
+  }
 }

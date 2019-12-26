@@ -72,7 +72,7 @@ global $arSetting;
                 <ul class="social-menu">
                     <?foreach ($arSetting['SOCIAL'] as $arSocial) {?>
                     <li class="social-menu__item">
-                        <a class="social-menu__link social-menu__link-twitter" href="<?=$arSocial['NAME']?>">
+                        <a class="social-menu__link" href="<?=$arSocial['NAME']?>">
                             <?if ($arSocial['PROPS']['ICON']['VALUE']) {?>
                                 <?=file_get_contents($_SERVER['DOCUMENT_ROOT'] . CFile::GetPath($arSocial['PROPS']['ICON']['VALUE']))?>
                             <?} else {?>
@@ -87,7 +87,7 @@ global $arSetting;
         </ul>
 
         <ul class="footer-info__menu footer-info-menu">
-            <li class="footer-info-menu__item footer-info-menu__item--payment">
+            <li class="footer-info-menu__item footer-info-menu__item--payment" hidden>
                 <ul class="payment-methods">
                     <li class="payment-methods__item"><?= GetContentSvgIcon('paypal') ?></li>
                     <li class="payment-methods__item"><?= GetContentSvgIcon('mastercard') ?></li>
