@@ -41,6 +41,7 @@ $this->setFrameMode(true);
 <section class="page-collection__products collection-products">
     <h2 class="collection-products__title section-title">Список товаров</h2>
     <?
+
     $APPLICATION->IncludeComponent(
         "bitrix:catalog.smart.filter",
         "",
@@ -72,6 +73,28 @@ $this->setFrameMode(true);
         array('HIDE_ICONS' => 'Y')
     );
 
+    if (isset($_GET["method"])) {
+        $arParams["ELEMENT_SORT_ORDER"] = $_GET['method'] == 'desc' ? 'desc' : 'asc';
+    }
+
+
+    if (isset($_GET["sort"])) {
+        switch ($_GET["sort"]) {
+            case 'shows':
+                $arParams["ELEMENT_SORT_ORDER"] = 'desc';
+                break;
+            case 'price':
+                $arParams["ELEMENT_SORT_FIELD"] = 'catalog_PRICE_1';
+                break;
+            case 'created':
+                $arParams["ELEMENT_SORT_FIELD"] = 'property_IS_NEW';
+                $arParams["ELEMENT_SORT_ORDER"] = 'desc';
+                break;
+            default:
+                $arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"] ?: 'desc';
+        }
+    }
+
     $GLOBALS['arrFilter']['ID'] = array_keys($arResult['ITEMS']);
 
     $APPLICATION->IncludeComponent(
@@ -86,8 +109,8 @@ $this->setFrameMode(true);
 		"USE_FILTER" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"ELEMENT_SORT_FIELD" => $_GET["sort"]=="name"?"name":"catalog_PRICE_1",
-		"ELEMENT_SORT_ORDER" => $_GET["method"]=="desc"?"desc":"asc",
+		"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
+		"ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"OFFERS_SORT_FIELD" => "sort",

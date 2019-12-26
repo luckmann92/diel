@@ -143,7 +143,8 @@ if ($arResult['ITEMS']) {?>
                     <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
                 
                     <div class="product-card__footer">
-                        <a data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second">
+                        <a data-props="<?=str_replace('"', "'", serialize($arParams['DETAIL_PROPERTY_CODE']))?>"
+                           data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second">
                             <?= GetContentSvgIcon('eye') ?>
                         </a>
                     </div>
