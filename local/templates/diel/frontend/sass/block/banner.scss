@@ -12,7 +12,7 @@
 .banner__list,
 .banner__item,
 .banner__item-inner {
-  min-height: 500px;
+  height: 500px;
 }
 
 .banner__item-inner {
@@ -132,7 +132,7 @@
   .banner__list,
   .banner__item,
   .banner__item-inner {
-    min-height: 800px;
+    height: 800px;
   }
 
   .banner__item-inner {
@@ -187,6 +187,12 @@
 }
   
 @media screen and (min-width: 1366px) {
+  .banner__list,
+  .banner__item,
+  .banner__item-inner {
+    height: 940px;
+  }
+
   .banner__item-inner {
     position: relative;
     padding-left: 55px;

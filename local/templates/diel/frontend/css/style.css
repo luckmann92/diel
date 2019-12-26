@@ -70,6 +70,13 @@ h2 {
   width: 100%;
   height: 100%; }
 
+.popup-error a {
+  color: #fff;
+  text-decoration: none; }
+
+.popup-error a:hover {
+  text-decoration: underline; }
+
 .tns-outer {
   padding: 0 !important; }
   .tns-outer [hidden] {
@@ -2083,7 +2090,7 @@ label a:hover,
 .banner__list,
 .banner__item,
 .banner__item-inner {
-  min-height: 500px; }
+  height: 500px; }
 
 .banner__item-inner {
   display: flex;
@@ -2184,7 +2191,7 @@ label a:hover,
   .banner__list,
   .banner__item,
   .banner__item-inner {
-    min-height: 800px; }
+    height: 800px; }
   .banner__item-inner {
     padding-top: 133px;
     padding-bottom: 135px;
@@ -2215,6 +2222,10 @@ label a:hover,
     transform: scale(1.3); } }
 
 @media screen and (min-width: 1366px) {
+  .banner__list,
+  .banner__item,
+  .banner__item-inner {
+    height: 940px; }
   .banner__item-inner {
     position: relative;
     padding-left: 55px;
