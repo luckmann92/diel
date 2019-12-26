@@ -50,3 +50,58 @@ function ajaxForm(form) {
       });
   });
 }
+
+
+
+initTextarea();
+
+function initTextarea() {
+let textarea = document.querySelectorAll(".textarea");
+
+    for (let i = 0; i < textarea.length; i++) {
+    addDiv(textarea[i]);
+    }
+
+    function addDiv(node) {
+        let div = document.createElement("div");
+        
+        div.classList.add("textarea-box");
+        div.setAttribute("contenteditable", "true");
+        div.innerText = node.placeholder;
+        
+        div.addEventListener("focus", focusDiv);
+        div.addEventListener("blur", blurDiv);
+        
+        div.addEventListener("input", inputDiv);
+        
+        node.insertAdjacentElement("afterEnd", div);
+        node.hidden = true;
+
+        function focusDiv() {
+            if (div.innerText == node.placeholder) {
+                div.innerText = "";
+                div.classList.add("textarea-box--focus");
+                div.classList.remove("textarea-box--blur");
+            }
+        }
+        
+        function blurDiv() {
+            if (div.innerText.length === 0) {
+                div.innerText = node.placeholder;
+                div.classList.add("textarea-box--blur");
+                div.classList.remove("textarea-box--focus");
+            }
+        }
+        
+        function inputDiv() {
+            node.value = div.innerText;
+        }
+    }
+}
+
+$("input[type=tel]").focus(function(){
+    $("input[type=tel]").inputmask({
+        mask: "+7(999)-999-99-99",
+        showMaskOnHover: false
+    });
+});
