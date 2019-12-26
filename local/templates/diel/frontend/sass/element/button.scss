@@ -159,10 +159,20 @@
 
 
 .button-up {
+  position: fixed;
+  right: 12px;
+  bottom: -150px;
+  transition: bottom 400ms, transform 300ms;
   background-color: transparent;
   border: none;
-  transition: transform 300ms;
+  transition: 300ms;
   cursor: pointer;
+}
+
+.button-up.button-up--float {
+  bottom: 100px;
+  z-index: 900;
+  transition: bottom 300ms;
 }
 
 .button-up:hover {
@@ -171,4 +181,22 @@
 
 .button-up:focus {
   outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .button-up {
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .button-up {
+    right: 50px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .button-up {
+    right: 90px;
+  }
 }

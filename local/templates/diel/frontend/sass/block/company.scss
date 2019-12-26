@@ -40,19 +40,6 @@
   margin-top: 30px;
 }
 
-.company__button-up {
-  position: absolute;
-  right: 12px;
-  bottom: -150px;
-  transition: bottom 400ms, transform 300ms;
-}
-
-.company__button-up.company__button-up--float {
-  position: fixed;
-  bottom: 100px;
-  z-index: 900;
-}
-
 @media screen and (min-width: 768px) {
   .company {
     padding: 20px;
@@ -77,11 +64,6 @@
 
   .company__link-detail {
     margin-top: 40px;
-  }
-
-  .company__button-up {
-    // bottom: 80px;
-    right: 20px;
   }
 }
 
@@ -110,11 +92,6 @@
     margin-top: 70px;
     width: 600px;
   }
-
-  .company__button-up {
-    // bottom: 205px;
-    right: 50px;
-  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -136,11 +113,6 @@
   .company__title {
     position: absolute;
     left: 310px;
-  }
-
-  .company__button-up {
-    // bottom: 280px;
-    right: 90px;
   }
 
   .company__image {

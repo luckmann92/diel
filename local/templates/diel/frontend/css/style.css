@@ -467,16 +467,37 @@ h2 {
   margin-left: 20px; }
 
 .button-up {
+  position: fixed;
+  right: 12px;
+  bottom: -150px;
+  transition: bottom 400ms, transform 300ms;
   background-color: transparent;
   border: none;
-  transition: transform 300ms;
+  transition: 300ms;
   cursor: pointer; }
+
+.button-up.button-up--float {
+  bottom: 100px;
+  z-index: 900;
+  transition: bottom 300ms; }
 
 .button-up:hover {
   transform: scale(1.4); }
 
 .button-up:focus {
   outline: none; }
+
+@media screen and (min-width: 768px) {
+  .button-up {
+    right: 20px; } }
+
+@media screen and (min-width: 1366px) {
+  .button-up {
+    right: 50px; } }
+
+@media screen and (min-width: 1920px) {
+  .button-up {
+    right: 90px; } }
 
 .icon-search svg {
   transition: transform 300ms; }
@@ -2965,17 +2986,6 @@ label a:hover,
 .company__link-detail {
   margin-top: 30px; }
 
-.company__button-up {
-  position: absolute;
-  right: 12px;
-  bottom: -150px;
-  transition: bottom 400ms, transform 300ms; }
-
-.company__button-up.company__button-up--float {
-  position: fixed;
-  bottom: 100px;
-  z-index: 900; }
-
 @media screen and (min-width: 768px) {
   .company {
     padding: 20px;
@@ -2991,9 +3001,7 @@ label a:hover,
   .company__description {
     margin-top: 130px; }
   .company__link-detail {
-    margin-top: 40px; }
-  .company__button-up {
-    right: 20px; } }
+    margin-top: 40px; } }
 
 @media screen and (min-width: 1366px) {
   .company {
@@ -3012,9 +3020,7 @@ label a:hover,
     text-align: right; }
   .company__description {
     margin-top: 70px;
-    width: 600px; }
-  .company__button-up {
-    right: 50px; } }
+    width: 600px; } }
 
 @media screen and (min-width: 1440px) {
   .company {
@@ -3030,8 +3036,6 @@ label a:hover,
   .company__title {
     position: absolute;
     left: 310px; }
-  .company__button-up {
-    right: 90px; }
   .company__image {
     min-height: 300px; } }
 
