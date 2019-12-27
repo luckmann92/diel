@@ -49,6 +49,7 @@
                 if (typeof res === "object") {
                     let h = '<ul class="result-list"></ul>',
                         main_search = $('.main-search');
+                    $('.result-list').remove();
                     main_search.after(h);
                     let result = $('.result-list');
                     $.each( res, function( key, value ) {
