@@ -3,6 +3,8 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 ?>
+<div class="main-search__box-secondary"></div>
+<div class="main-search__box-primary">
 <? foreach ($arResult['ITEMS'] as $key => $arItems) { ?>
 <ul class="main-search-result">
     <? foreach ($arItems as $k => $arItem) { ?>
@@ -19,3 +21,4 @@
     <? } ?>
 </ul>
 <? } ?>
+</div>

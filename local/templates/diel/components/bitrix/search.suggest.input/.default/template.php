@@ -47,13 +47,14 @@
             dataType: 'json',
             success: function (res) {
                 if (typeof res === "object") {
-                    let h = '<ul class="result-list"></ul>',
+                    let h = '<ul class="main-search-result"></ul>',
                         main_search = $('.main-search');
                     $('.result-list').remove();
                     main_search.after(h);
-                    let result = $('.result-list');
+                    let result = $('.main-search-result');
+                    result.append('<li class="main-search-result__item main-search-result__item--title"><a class="main-search-result__link" href="">Товары</a></li>')
                     $.each( res, function( key, value ) {
-                        result.append('<li><a href="' + value.URL + '">' + value.TITLE_FORMATED + '</a></li>')
+                        result.append('<li class="main-search-result__item"><a class="main-search-result__link" href="' + value.URL + '">' + value.TITLE_FORMATED + '</a></li>')
                     });
                 }
             }
