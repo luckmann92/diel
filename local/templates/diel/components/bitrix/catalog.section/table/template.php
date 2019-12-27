@@ -61,7 +61,9 @@
 <?}?>
 <?if (count($arResult['ITEMS']) > 0) {?>
 <ol class="section-card__list--view-list">
-    <? foreach ($arResult['ITEMS'] as $k => $arItem) {?>
+    <? foreach ($arResult['ITEMS'] as $k => $arItem) {
+        $i = 1;
+        ?>
         <li class="section-card-list__item">
             <div class="product-card__image-wrapper">
                 <img class="product-card__image" src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
@@ -86,6 +88,7 @@
                         <li class="product-card__metal-item"><?= $arItem['PROPERTIES']['METAL']['VALUE'] ?></li>
                     </ul>
                 </div>
+                <?$i++?>
             <? } ?>
             <? if ($arItem['COLORS']) { ?>
                 <div class="product-card__color-wrapper">
@@ -100,6 +103,7 @@
                         <? } ?>
                     </ul>
                 </div>
+                <?$i++?>
             <? } ?>
             <? if ($arItem['INSERTS']) { ?>
                 <div class="product-card__insert-wrapper">
@@ -111,9 +115,9 @@
                         <? } ?>
                     </ul>
                 </div>
+                <?$i++?>
             <? } ?>
             <?if ($arItem['PROPERTIES']) {
-                $i = 1;
                 foreach ($arParams['DETAIL_PROPERTY_CODE'] as $CODE) {
                     if (!is_array($arItem['PROPERTIES'][$CODE]['VALUE']) && !empty($arItem['PROPERTIES'][$CODE]['VALUE']) && $i <= 4) {
                     ?>
