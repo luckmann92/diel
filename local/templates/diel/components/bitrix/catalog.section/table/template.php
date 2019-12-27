@@ -113,15 +113,18 @@
                 </div>
             <? } ?>
             <?if ($arItem['PROPERTIES']) {
+                $i = 1;
                 foreach ($arParams['DETAIL_PROPERTY_CODE'] as $CODE) {
-                    if (!is_array($arItem['PROPERTIES'][$CODE]['VALUE']) && !empty($arItem['PROPERTIES'][$CODE]['VALUE'])) {
+                    if (!is_array($arItem['PROPERTIES'][$CODE]['VALUE']) && !empty($arItem['PROPERTIES'][$CODE]['VALUE']) && $i <= 4) {
                     ?>
             <div class="product-card__weight-wrapper">
                 <p class="product-card__weight-title"><?=$arItem['PROPERTIES'][$CODE]['NAME']?></p>
 
                 <p class="product-card__weight"><?=$arItem['PROPERTIES'][$CODE]['VALUE']?></p>
             </div>
-<?}?>
+<?
+                    $i++;
+                    }?>
 <?
            }?>
 <?}?>
