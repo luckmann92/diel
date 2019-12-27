@@ -123,6 +123,35 @@
   color: #fff;
 }
 
+.textarea-box {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Lazurski";
+  font-size: 18px;
+  min-height: 26px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  outline: none;
+  word-wrap: break-word;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    min-height: 29px;
+    line-height: 29px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.textarea-box--focus {
+  color: #fff;
+}
+
+.textarea-box--blur {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .input-checkbox::before {
   content: "";
   position: absolute;
