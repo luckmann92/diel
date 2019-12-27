@@ -48,7 +48,7 @@ btnModal.on('click', function (e) {
                     node.hidden = true;
 
                     function focusDiv() {
-                        if (div.innerText == node.placeholder) {
+                        if (div.textContent == node.placeholder) {
                             div.innerText = "";
                             div.classList.add("textarea-box--focus");
                             div.classList.remove("textarea-box--blur");
@@ -56,7 +56,7 @@ btnModal.on('click', function (e) {
                     }
                     
                     function blurDiv() {
-                        if (div.innerText.length === 0) {
+                        if (div.textContent.length === 0) {
                             div.innerText = node.placeholder;
                             div.classList.add("textarea-box--blur");
                             div.classList.remove("textarea-box--focus");
