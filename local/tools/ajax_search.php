@@ -14,12 +14,28 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_be
 CModule::IncludeModule("iblock");
 CModule::IncludeModule('search');
 
+$res = CIBlockSection::GetList(array(), array(
+    'IBLOCK_ID' => 3,
+    '?NAME' => urldecode($_REQUEST['q'])
+), false, array('nTopCount' => 5), array('ID', 'NAME', 'SECTION_PAGE_URL')
+);
+
+while ($ar = $res->GetNext()) {
+    if ($ar['SECTION_PAGE_URL']) {
+        $ar['URL'] = $ar['SECTION_PAGE_URL'];
+    }
+    if ($ar['NAME']) {
+        $ar['TITLE_FORMATED'] = $ar['NAME'];
+    }
+    $arResult[] = $ar;
+}
 
 $rs = CIBlockElement::GetList(array(), array(
     'IBLOCK_ID' => 3,
     '?NAME' => urldecode($_REQUEST['q'])
 ), false, array('nTopCount' => 5), array('ID', 'NAME', 'DETAIL_PAGE_URL')
     );
+
 /*
 $arSearch = array(
     "QUERY" => urldecode($_REQUEST['q']),
