@@ -3830,6 +3830,8 @@ label a:hover,
   .section-card__list--view-list .product-card__insert-wrapper,
   .section-card__list--view-list .product-card__weight-wrapper {
     display: none; }
+  .section-card__list--view-list .product-card__text .product-card__button-detail {
+    display: block; }
   @media screen and (min-width: 1920px) {
     .section-card__list--view-list .product-card__insert-wrapper,
     .section-card__list--view-list .product-card__weight-wrapper {

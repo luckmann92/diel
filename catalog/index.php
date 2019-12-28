@@ -22,9 +22,7 @@ $APPLICATION->SetTitle("Каталог");
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "OPTIONS_1",
 			1 => "OPTIONS_2",
-			2 => "OPTIONS_3",
-			3 => "OPTIONS_4",
-			4 => "METAL",
+			2 => "METAL",
 		),
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
@@ -231,7 +229,7 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "SIZE",
 			2 => "INSERTS",
 		),
-		"TYPE_SECTION" => "TABLE",
+		"TYPE_SECTION" => "LIST",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
