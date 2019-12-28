@@ -3770,7 +3770,8 @@ label a:hover,
     display: table-row;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid rgba(224, 139, 102, 0.2); }
+    border-bottom: 1px solid rgba(224, 139, 102, 0.2);
+    cursor: pointer; }
   .section-card__list--view-list .section-card-list__item > * {
     display: table-cell;
     vertical-align: middle; }
