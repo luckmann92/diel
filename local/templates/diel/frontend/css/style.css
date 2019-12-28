@@ -1665,12 +1665,124 @@ label a:hover,
 
 .filter__section-radio {
   display: flex;
+  align-items: center;
   margin-bottom: 15px; }
 
 @media screen and (min-width: 768px) {
   .filter-form {
     display: inline-block;
     min-width: 333px; } }
+
+.horizontal-filter {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family: "Lazurski";
+  background: #160D08;
+  border: 1px solid rgba(224, 139, 102, 0.3); }
+
+.horizontal-filter__close {
+  position: absolute;
+  top: 35px;
+  right: 25px; }
+  .horizontal-filter__close svg {
+    width: 16px !important;
+    height: 16px !important; }
+
+.horizontal-filter__left {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border-right: 1px solid rgba(224, 139, 102, 0.3); }
+
+.horizontal-filter__title {
+  font-family: "Lazurski Bold";
+  margin: 30px;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  color: #F8F8F8; }
+
+.horizontal-filter__reset {
+  padding: 30px;
+  padding-left: 28px;
+  margin-right: -2px;
+  transform: translate(-1px, 1px);
+  font-family: "Lazurski Bold";
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  color: #E08B66;
+  background-color: transparent;
+  border: 1px solid rgba(224, 139, 102, 0.7);
+  transition: color 300ms;
+  outline: none; }
+
+.horizontal-filter__reset:hover {
+  color: #fff;
+  cursor: pointer; }
+
+.horizontal-filter__right {
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+  padding: 30px; }
+
+.horizontal-filter__field {
+  flex-shrink: 0; }
+
+.horizontal-filter__field + .horizontal-filter__field {
+  margin-left: 60px; }
+
+.horizontal-filter__field-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: "Lazurski";
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 2px;
+  color: #F8F8F8; }
+
+.horizontal-filter__submit {
+  padding: 30px;
+  position: absolute;
+  top: 100%;
+  right: -1px;
+  font-family: "Lazurski Bold";
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  color: #E08B66;
+  background-color: #160D08;
+  border: 1px solid rgba(224, 139, 102, 0.7);
+  transition: color 300ms;
+  outline: none; }
+
+.horizontal-filter__submit:hover {
+  color: #fff;
+  cursor: pointer; }
+
+.horizontal-filter__field-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -50px;
+  margin-bottom: -16px;
+  max-width: 250px; }
+  .horizontal-filter__field-box .filter__section-checkbox,
+  .horizontal-filter__field-box .filter__section-radio {
+    margin-right: 50px;
+    margin-bottom: 16px; }
+
+@media screen and (min-width: 1920px) {
+  .horizontal-filter {
+    margin: 20px auto;
+    max-width: 1490px; }
+  .horizontal-filter__right {
+    padding: 30px 50px; } }
 
 .tabs {
   display: flex;
