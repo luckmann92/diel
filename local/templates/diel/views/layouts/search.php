@@ -42,11 +42,13 @@ $search_result = $APPLICATION->GetViewContent('search_result');
         ); ?>
         <section class="page__card section-card">
             <form class="search-section__header">
-                <button class="search-section__header-submit" type="submit">
-                    <?=GetContentSvgIcon('search-header-img')?>
-                </button>
+                <div class="search-section__left">
+                    <button class="search-section__header-submit" type="submit">
+                        <?=GetContentSvgIcon('search-header-img')?>
+                    </button>
 
-                <input class="search-section__title section-title" name="q" value="<?=$_REQUEST['q'] ?: $APPLICATION->GetTitle(false)?>">
+                    <input class="search-section__title section-title" name="q" value="<?=$_REQUEST['q'] ?: $APPLICATION->GetTitle(false)?>">
+                </div>
 
                 <?if ($search_result) {?>
                 <p class="search-section__header-result">
