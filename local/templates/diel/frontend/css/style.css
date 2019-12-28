@@ -5224,7 +5224,6 @@ label a:hover,
 .search-section__title {
   position: relative;
   width: 100%;
-  margin-right: 20px;
   padding-left: 47px;
   box-sizing: border-box;
   background-color: transparent;
@@ -5271,12 +5270,16 @@ label a:hover,
   flex-grow: 1;
   position: relative; }
 
+.search-section__span {
+  display: inline;
+  position: absolute;
+  white-space: nowrap;
+  visibility: hidden; }
+
 @media screen and (min-width: 768px) {
   .search-section__header {
     justify-content: flex-start;
     margin-bottom: 50px; }
-  .search-section__title {
-    margin-right: 30px; }
   .search-section__header-image {
     transform: scale(0.8);
     transform-origin: bottom; }
@@ -5292,7 +5295,6 @@ label a:hover,
     margin-right: 15px;
     transform: scale(1.5) translateY(8px); }
   .search-section__title {
-    margin-right: 100px;
     padding-left: 62px; } }
 
 .order-section {
@@ -6089,6 +6091,7 @@ label a:hover,
 
 .main-search__input {
   padding-bottom: 15px;
+  padding-right: 30px;
   width: 100%;
   box-sizing: border-box;
   color: #fff;
