@@ -4,9 +4,9 @@
 
 .horizontal-filter {
     display: flex;
-    margin-top: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
+    flex-direction: column;
+    margin: 12px;
+    width: 300px;
     font-family: "Lazurski";
     background: #160D08;
     border: 1px solid rgba(224, 139, 102, 0.3);
@@ -42,10 +42,11 @@
 }
 
 .horizontal-filter__reset {
-    padding: 30px;
+    padding: 30px 25px;
     padding-left: 28px;
     margin-right: -2px;
     transform: translate(-1px, 1px);
+    text-align: left;
     font-family: "Lazurski Bold";
     font-size: 24px;
     line-height: 32px;
@@ -66,8 +67,9 @@
 .horizontal-filter__right {
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     position: relative;
-    padding: 30px;
+    padding: 50px 25px;
 }
 
 .horizontal-filter__field {
@@ -75,7 +77,7 @@
 }
 
 .horizontal-filter__field + .horizontal-filter__field {
-    margin-left: 60px;
+    margin-top: 70px;
 }
 
 .horizontal-filter__field-title {
@@ -90,11 +92,12 @@
 }
 
 .horizontal-filter__submit {
-    padding: 30px;
+    padding: 30px 25px;
     position: absolute;
     top: 100%;
     right: -1px;
-    
+    text-align: left;
+    width: 302px;
     font-family: "Lazurski Bold";
     font-size: 24px;
     line-height: 32px;
@@ -111,29 +114,82 @@
     cursor: pointer;
 }
 
-.horizontal-filter__field-box {
+.horizontal-filter .filter__price-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    margin-right: -50px;
-    margin-bottom: -16px;
-    max-width: 250px;
 
-    .filter__section-checkbox,
-    .filter__section-radio {
-        margin-right: 50px;
-        margin-bottom: 16px;
+    .filter__price-min,
+    .filter__price-max {
+        width: 40%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .horizontal-filter {
+        flex-direction: row;
+        margin: 20px auto;
+        width: 1390px;
+    }
+
+    .horizontal-filter__right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 30px 50px;
+        padding-top: 0;
+    }
+
+    .horizontal-filter .filter__price-wrapper {
+        .filter__price-min,
+        .filter__price-max {
+            width: 100px;
+        }
+    }
+
+    .horizontal-filter__field {
+        margin-top: 30px;
+        margin-right: 60px;
+    }
+
+    .horizontal-filter__field:last-of-type {
+        margin-right: 0;
+    }
+
+    .horizontal-filter__field + .horizontal-filter__field {
+        margin-top: 30px;
+    }
+
+    .horizontal-filter__field-box {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -50px;
+        margin-bottom: -16px;
+        max-width: 250px;
+    
+        .filter__section-checkbox,
+        .filter__section-radio {
+            margin-right: 50px;
+            margin-bottom: 16px;
+        }
+    }
+
+    .horizontal-filter__reset,
+    .horizontal-filter__submit {
+        padding: 30px;
+        width: auto;
     }
 }
 
 @media screen and (min-width: 1920px) {
     .horizontal-filter {
-        margin: 20px auto;
-        max-width: 1490px;
+        width: 1490px;
     }
 
     .horizontal-filter__right {
         padding: 30px 50px;
+        padding-top: 0;
     }
 
-
+    .horizontal-filter__field {
+        margin-right: 80px;
+    }
 }
