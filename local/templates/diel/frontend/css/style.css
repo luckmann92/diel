@@ -1652,7 +1652,17 @@ label a:hover,
   color: #F8F8F8;
   opacity: 0.8;
   background-color: transparent;
-  border: 1px solid rgba(248, 248, 248, 0.2); }
+  border: 1px solid rgba(248, 248, 248, 0.2);
+  transition: all 300ms;
+  outline: none; }
+
+.filter__price-min:hover,
+.filter__price-max:hover {
+  border-color: #fff; }
+
+.filter__price-min:focus,
+.filter__price-max:focus {
+  border-color: #E08B66; }
 
 .filter__section-checkbox {
   position: relative;
