@@ -27,6 +27,7 @@ while ($ar = $res->GetNext()) {
     if ($ar['NAME']) {
         $ar['TITLE_FORMATED'] = $ar['NAME'];
     }
+    $ar['TYPE'] = 'CATEGORY';
     $arResult[] = $ar;
 }
 
@@ -58,6 +59,7 @@ while ($ar_res = $rs->GetNext()) {
     if ($ar_res['NAME']) {
         $ar_res['TITLE_FORMATED'] = $ar_res['NAME'];
     }
+    $ar_res['TYPE'] = 'PRODUCT';
     $arResult[] = $ar_res;
 
 }
