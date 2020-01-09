@@ -107,8 +107,8 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
     <? } elseif ($arParams['PRICE_LIST'] == 'Y') {?>
         <section class="price-list section-skew--left">
             <h2 class="price-list__title section-title">запросить прайс-лист</h2>
-            <div class="popup-error" style="display: none;"></div>
             <form class="price-list__form price-list-form" id="form_id_<?= $arResult['arForm']['ID'] ?>" enctype="multipart/form-data" action="/local/tools/ajax.web.form.php?ajax_form=<?= $arResult['arForm']['ID'] ?>&sign=<?=$arResult['JSON_SIGN']?>">
+                <div class="popup-error" style="display: none;"></div>
                 <?= bitrix_sessid_post(); ?>
                 <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
                 <input type="hidden" name="web_form_submit" value="Y">
