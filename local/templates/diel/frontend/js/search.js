@@ -33,12 +33,15 @@ if (document.querySelector(".search-section__title")) {
   span.textContent = input.value;
   input.title = input.value;
 
-  for (let i = 1; i <= len; i++) {
-    span.textContent = input.value.slice(0, -i);
-    
-    if (span.offsetWidth < input.offsetWidth) {
-      input.value = span.textContent.slice(0, -3) + "...";
-      break;
-    }  
+  if (span.offsetWidth > input.offsetWidth) {
+    for (let i = 1; i <= len; i++) {
+      span.textContent = input.value.slice(0, -i);
+      
+      if (span.offsetWidth < input.offsetWidth) {
+        input.value = span.textContent.slice(0, -3) + "...";
+        break;
+      }  
+    }
   }
+
 }
