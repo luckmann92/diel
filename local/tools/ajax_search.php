@@ -13,7 +13,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_be
 
 CModule::IncludeModule("iblock");
 CModule::IncludeModule('search');
-
+$arResult = array();
 $res = CIBlockSection::GetList(array(), array(
     'IBLOCK_ID' => 3,
     '?NAME' => urldecode($_REQUEST['q'])
@@ -48,7 +48,7 @@ $arSearch = array(
 $obSearch = new CSearch;
 $obSearch->Search($arSearch);
 */
-$arResult = array();
+
 
 while ($ar_res = $rs->GetNext()) {
 //while ($ar_res = $obSearch->GetNext()) {
