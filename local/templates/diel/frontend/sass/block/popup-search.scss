@@ -166,6 +166,7 @@
 }
 
 .main-search-result__all-result {
+  position: relative;
   margin-top: 40px;
   padding-top: 30px;
   color: #E08B66;
@@ -181,12 +182,12 @@
   }
 }
 
-.main-search-result__all-result:hover .main-search-result__all-result-image,
-.main-search-result__all-result:focus .main-search-result__all-result-image {
+.main-search-result__all-result:hover svg,
+.main-search-result__all-result:focus svg {
   margin-left: 25px;
 }
 
-.main-search-result__all-result-image {
+.main-search-result__all-result svg {
   margin-left: 5px;
   transition: margin 300ms;
 }
