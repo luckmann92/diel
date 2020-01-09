@@ -25,16 +25,18 @@ $this->setFrameMode(true);
                 </a>
 
                 <h3 class="all-collections-item__title">
-                    <span><?=$arItem['NAME']?></span>
-                    <?if ($arItem['PROPERTIES']['SUBTITLE']['VALUE']) {?>
-                    <span class="all-collections-item__title-bigger"><?=$arItem['PROPERTIES']['SUBTITLE']['VALUE']?></span>
-                    <?}?>
+                    <a href="<?=$arItem['DETAIL_PAGE_URL']?>">
+                        <span><?=$arItem['NAME']?></span>
+                        <?if ($arItem['PROPERTIES']['SUBTITLE']['VALUE']) {?>
+                        <span class="all-collections-item__title-bigger"><?=$arItem['PROPERTIES']['SUBTITLE']['VALUE']?></span>
+                        <?}?>
+                    </a>
                 </h3>
             </div>
     <?if ($arItem['PREVIEW_PICTURE']) {?>
-            <div class="all-collections-item__image-wrapper">
+            <a class="all-collections-item__image-wrapper" href="<?=$arItem['DETAIL_PAGE_URL']?>">
                 <img class="all-collections-item__image" src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
-            </div>
+            </a>
             <?}?>
         </div>
     </li>
