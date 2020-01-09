@@ -4,6 +4,13 @@ if (document.querySelector(".main-search__input")) {
   input.addEventListener("focus", function() {
     this.parentElement.classList.add("main-search--focus");
     this.placeholder = "";
+
+    let primary = document.querySelector(".main-search__box-primary"),
+        secondary = document.querySelector(".main-search__box-secondary");
+
+    primary.style.display = "block";
+    secondary.style.display = "none";
+    this.value = "";
   });
 
   input.addEventListener("blur", function() {
