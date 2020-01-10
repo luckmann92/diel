@@ -64,7 +64,7 @@
                 </svg>
             </a>
         </li>
-        <li class="flow-menu__item flow-menu__item--description">
+        <li class="flow-menu__item flow-menu__item--description" style="display: none;">
             <svg class="flow-menu__item-image" width="32" height="32" viewBox="0 0 32 32" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
