@@ -1344,11 +1344,12 @@ label a:hover,
     padding: 30px 10px; }
   .flow-menu__item--description {
     position: relative;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: auto;
-    height: 300px; }
+    height: 300px;
+    width: 32px; }
   .flow-menu__item-text {
     position: absolute;
     top: 200px;
