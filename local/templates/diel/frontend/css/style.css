@@ -1670,7 +1670,8 @@ label a:hover,
   position: relative;
   display: flex;
   align-items: center;
-  padding-left: 30px; }
+  padding-left: 30px;
+  font-family: "Intro Light"; }
 
 .filter__section-checkbox .input-checkbox {
   margin-top: 0; }
