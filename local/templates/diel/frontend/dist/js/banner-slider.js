@@ -127,7 +127,19 @@
 
 
 if (document.querySelector(".banner-menu-circle")) {
-  let item = document.querySelector(".banner__item");
+  let item = document.querySelectorAll(".banner__item");
+
+  if (item.length <= 0) {
+    document.querySelector(".banner-menu-circle").style.display = "none";
+  }
+
+  // создать список навигации
+  let circleList = document.querySelector(".banner-menu-circle__list");
+  for (let i = 0; i < item.length; i++) {
+    let div = document.createElement("div");
+    div.classList.add("banner-menu-circle__item");
+    circleList.appendChild(div);
+  }
 
   let bannerSlider = tns({
       container: ".banner__list",
@@ -144,19 +156,7 @@ if (document.querySelector(".banner-menu-circle")) {
       // autoplay: true,
       autoplayTimeout: 10000,
     });
-
-  if (item.length <= 0) {
-    document.querySelector(".banner-menu-circle").style.display = "none";
-  }
-
-  // создать список навигации
-  let circleList = document.querySelector(".banner-menu-circle__list");
-  for (let i = 0; i < item.length; i++) {
-    let div = document.createElement("div");
-    div.classList.add(".banner-menu-circle__item");
-    circleList.appendChild(div);
-  }
-
+  
   let circle = document.querySelectorAll(".banner-menu-circle__item"),
       container = document.querySelector(".banner-menu-circle__progress");
 
@@ -179,7 +179,7 @@ if (document.querySelector(".banner-menu-circle")) {
       time = 10000;
     });
     
-    fi += Math.PI / 6;
+    fi += Math.PI / 8;
     x = r * Math.cos(fi);
     y = r * Math.sin(fi);
   }
@@ -192,18 +192,20 @@ if (document.querySelector(".banner-menu-circle")) {
 
   let time = 10000,
       interval = setInterval(startInterval, time),
-      index = 0;
+      ix = 0;
 
   function startInterval() {
-    bannerSlider.goTo('next');
-    if (index >= circle.length - 1) {
-      index = 0;
-    } else {
-      index++;
+    let index = bannerSlider.getInfo().displayIndex;
+    console.log(index);
+    bannerSlider.goTo(index);
+    ix = index;
+    if (ix === circle.length) {
+      ix = 0;
+      bannerSlider.goTo(0);
     }
     clearActive();
-    circle[index].classList.add("banner-menu-circle__item--current");
-    container.style.transform = circle[index].dataset.rotate;
+    circle[ix].classList.add("banner-menu-circle__item--current");
+    container.style.transform = circle[ix].dataset.rotate;
     container.style.transition = "transform .3s";
   }
 
