@@ -196,7 +196,6 @@ if (document.querySelector(".banner-menu-circle")) {
 
   function startInterval() {
     let index = bannerSlider.getInfo().displayIndex;
-    console.log(index);
     bannerSlider.goTo(index);
     ix = index;
     if (ix === circle.length) {
