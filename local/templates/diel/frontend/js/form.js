@@ -104,7 +104,6 @@ window.addEventListener("load", function() {
 
   for (let i = 0; i < subm.length; i++) {
     subm[i].addEventListener('click', function(e) {
-      e.preventDefault();
       if (this.form.querySelector("input[type=tel]")) {
         let n = this.form.querySelector("input[type=tel]"),
             index = 0;
@@ -115,8 +114,9 @@ window.addEventListener("load", function() {
           }
         }
 
-        console.log(index);
-  
+        if (index < 11) {
+          e.preventDefault();
+        }
       }
 
     });
