@@ -4,11 +4,13 @@
  */
 ?>
 <? if ($arResult["ITEMS"]) { ?>
+    <section class="popup popup-horizontal-filter">
+
     <form class="popup-horizontal-filter__form horizontal-filter" action="<?= POST_FORM_ACTION_URI ?>">
         <div class="horizontal-filter__left">
             <h2 class="horizontal-filter__title">Фильтр</h2>
             <input type="hidden" name="set_filter" value="y"/>
-            <a href="<?=$APPLICATION->GetCurPage()?>" style="display: inline-block;text-decoration: none" class="filter__reset" type="reset">Сбросить фильтр</a>
+            <a href="<?=$APPLICATION->GetCurPage()?>" class="horizontal-filter__reset" type="reset">Сбросить фильтр</a>
 
             <button class="popup__close horizontal-filter__close" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -102,6 +104,8 @@
             <button class="horizontal-filter__submit" type="submit" >Применить фильтр</button>
         </div>
     </form>
+
+    </section>
 <?}?>
 <script>
     $('.js-init-filter').on('change', function (e) {

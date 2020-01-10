@@ -92,6 +92,16 @@ if (document.querySelector(".filter") && document.querySelector(".button-picture
   // filter.addElement("diel-select-list__item");
 }
 
+if (document.querySelector(".popup-horizontal-filter") && document.querySelector(".button-picture--filter")) {
+  let filter = new Popup(".popup-horizontal-filter"),
+      btn = document.querySelector(".button-picture--filter");
+
+      btn.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        filter.showPopup();
+      });
+}
+
 if (document.querySelector(".popup-main-menu") && document.querySelector(".main-menu-button")) {
   let mainMenu = new Popup(".popup-main-menu");
   document.querySelector(".main-menu-button").addEventListener("click", function(evt) {

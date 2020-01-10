@@ -52,6 +52,7 @@
     line-height: 32px;
     letter-spacing: 1px;
     color: #E08B66;
+    text-decoration: none;
     background-color: transparent;
     border: 1px solid rgba(224, 139, 102, 0.7);
     transition: color 300ms;
@@ -181,7 +182,7 @@
 
 @media screen and (min-width: 1920px) {
     .horizontal-filter {
-        width: 1490px;
+        width: 1510px;
     }
 
     .horizontal-filter__right {
@@ -191,5 +192,9 @@
 
     .horizontal-filter__field {
         margin-right: 80px;
+    }
+
+    .popup-horizontal-filter__form {
+        transform: translateX(105px);
     }
 }

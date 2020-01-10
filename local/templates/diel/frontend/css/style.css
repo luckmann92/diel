@@ -1729,6 +1729,7 @@ label a:hover,
   line-height: 32px;
   letter-spacing: 1px;
   color: #E08B66;
+  text-decoration: none;
   background-color: transparent;
   border: 1px solid rgba(224, 139, 102, 0.7);
   transition: color 300ms;
@@ -1826,12 +1827,14 @@ label a:hover,
 
 @media screen and (min-width: 1920px) {
   .horizontal-filter {
-    width: 1490px; }
+    width: 1510px; }
   .horizontal-filter__right {
     padding: 30px 50px;
     padding-top: 0; }
   .horizontal-filter__field {
-    margin-right: 80px; } }
+    margin-right: 80px; }
+  .popup-horizontal-filter__form {
+    transform: translateX(105px); } }
 
 .tabs {
   display: flex;
