@@ -100,7 +100,7 @@
                         <div class="card-item-form__size-color-group">
                             <?
                             foreach ($arProperty['values'] as $value) { ?>
-                                <? if ($value['id']) {?>
+                                <? if ($value['id'] && $value['name'] != '-') {?>
                                     <label class="card-item-form__color-item js-init-prop"
                                         data-prop="color"
                                         data-role="property.value"
@@ -133,7 +133,8 @@
 
                         <div class="card-item-form__size-item-group">
                             <?
-                            foreach ($arProperty['values'] as $value) { ?>
+                            foreach ($arProperty['values'] as $value) {
+                                if ($value['name'] != '-') {?>
                                 <label class="card-item-form__size-item js-init-prop"
                                        data-role="property.value"
                                        data-state="hidden"
@@ -142,7 +143,7 @@
                                     <input class="card-item-form__size-radio" type="radio" name="size">
                                     <span><?= $value['name'] ?></span>
                                 </label>
-                                <?
+                                <?}
                             } ?>
                         </div>
                     </div>
@@ -166,13 +167,14 @@
                             <ol class="diel-select__list diel-select-list"></ol>
                             <select class="filter__diel-js" hidden>
                             <?
-                                foreach ($arProperty['values'] as $value) { ?>
+                                foreach ($arProperty['values'] as $value) {
+                                    if ($value['name'] != '-') {?>
                                     <option class="filter__diel-option-js"
                                         data-role="property.value"
                                         data-state="hidden"
                                         data-prop="inserts"
                                         data-value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
-                                    <?
+                                    <?}
                                 } ?>
                             </select>
                         </div>
