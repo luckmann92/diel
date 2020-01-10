@@ -16,6 +16,15 @@ $arTemplateParameters = array(
              'LIST' => 'Списком'
          ),
          'DEFAULT' => 'TABLE'
+    ),
+    'TYPE_FILTER' => array(
+        'PARENT' => 'BASE',
+        'NAME' => 'Тип фильтра',
+        'TYPE' => 'LIST',
+        'VALUES' => array(
+            'horizontal' => 'Горизонтальный',
+            '.default' => 'Вертикальный'
+        )
     )
 );
 
