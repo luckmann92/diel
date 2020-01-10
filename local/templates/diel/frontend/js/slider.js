@@ -28,10 +28,17 @@
             fixedWidth: 296,
           },
           "1366": {
-            fixedWidth: 717,
+            fixedWidth: 450,
+            gutter: 0
           }
         }
     });
+
+    var customizedFunction = function (info, eventName) {
+      console.log(info);
+    }
+  
+    jumpingSlider.events.on('indexChanged', customizedFunction);
 
     let info, displays;
 
