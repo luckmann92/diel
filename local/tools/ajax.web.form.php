@@ -24,11 +24,12 @@ catch (\Bitrix\Main\Security\Sign\BadSignatureException $e) {
 }
 
 $componentName = "bitrix:form.result.new";
-
+$a = "dsds";
 $APPLICATION->IncludeComponent(
     $componentName,
     $arParams["COMPONENT_TEMPLATE"],
     $arParams,
+    $a,
     false
 );
 
