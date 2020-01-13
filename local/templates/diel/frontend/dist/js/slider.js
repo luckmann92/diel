@@ -34,11 +34,61 @@
         }
     });
 
-    var customizedFunction = function (info, eventName) {
-      console.log(info);
-    }
+    // var customizedFunction = function (info, eventName) {
+    //   console.log(info);
+    //   let n = document.querySelector(".jumping-slider__item.tns-slide-active"),
+    //       n2 = document.querySelector(".jumping-slider__item.tns-slide-active:nth-child(2n)");
+
+    //   n.style.zIndex = "1";
+    //   n2.style.zIndex = "2";
+    // }
   
-    jumpingSlider.events.on('indexChanged', customizedFunction);
+    // jumpingSlider.events.on('indexChanged', customizedFunction);
+    // setInterval(function() {
+    //   let n = document.querySelectorAll(".jumping-slider__item.tns-slide-active");
+
+    //   for (let i = 0; i < n.length; i++) {
+    //     if (i % 2) {
+    //       n[i].style.zIndex = "2";
+    //     } else {
+    //       n[i].style.zIndex = "1";
+    //     }
+    //   }
+    // }, 1);
+
+    jumpingSlider.events.on('transitionEnd', function(info, eventName) {
+      let n = document.querySelectorAll(".jumping-slider__slider-wrapper .jumping-slider__item.tns-slide-active");
+
+      for (let i = 0; i < n.length; i++) {
+        if (i == 1) {
+          n[i].style.zIndex = "2";
+          n[i].style.marginTop = "20px";
+        } else if (i == 3) {
+          n[i].style.zIndex = "0";
+          n[i].style.marginTop = "20px";
+        } else {
+          n[i].style.zIndex = "1";
+          n[i].style.marginTop = "140px";
+        }
+      }
+
+      if (document.querySelector(".collection-information__slider-wrapper") || document.querySelector(".card-item__slider-wrapper")) {
+        for (let i = 0; i < n.length; i++) {
+          if (i == 1) {
+            n[i].style.zIndex = "1";
+            n[i].style.marginTop = "140px";
+            n[i].style.opacity = ".6";
+          } else if (i == 3) {
+            n[i].style.zIndex = "0";
+            n[i].style.marginTop = "140px";
+          } else {
+            n[i].style.zIndex = "2";
+            n[i].style.marginTop = "20px";
+            n[i].style.opacity = "1";
+          }
+        }
+      }
+    });
 
     let info, displays;
 
