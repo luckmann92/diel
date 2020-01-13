@@ -111,3 +111,14 @@
     width: initial !important;
   }
 }
+
+
+.collection-information__slider-wrapper {
+  .jumping-slider__item.tns-slide-active:nth-child(n) {
+    margin-top: 20px;
+  }
+  
+  .jumping-slider__item.tns-slide-active:nth-child(2n) {
+    margin-top: 140px;
+  }
+}

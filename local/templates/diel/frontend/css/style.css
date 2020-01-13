@@ -2169,7 +2169,7 @@ label a:hover,
   .jumping-slider {
     height: 590px; }
   .jumping-slider__image-wrapper {
-    width: 717px;
+    width: inherit;
     height: 100%; }
   .jumping-slider__image {
     height: 100%; }
@@ -2294,6 +2294,33 @@ label a:hover,
 @media screen and (min-width: 1366px) {
   .jumping-slider-options {
     display: flex; } }
+
+.jumping-slider__slider-wrapper .jumping-slider__item {
+  width: 450px;
+  height: 300px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 300ms; }
+  .jumping-slider__slider-wrapper .jumping-slider__item .jumping-slider__text {
+    width: 100%;
+    transform: scale(0.8);
+    transform-origin: left bottom; }
+
+.jumping-slider__slider-wrapper .jumping-slider__item.tns-slide-active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 300ms; }
+
+.jumping-slider__slider-wrapper .jumping-slider__item.tns-slide-active:nth-child(n) {
+  margin-top: 140px;
+  transform: scale(1.2); }
+
+.jumping-slider__slider-wrapper .jumping-slider__item.tns-slide-active:nth-child(2n) {
+  margin-top: 20px; }
+
+@media screen and (min-width: 1920px) {
+  .jumping-slider__slider-wrapper .jumping-slider-options {
+    margin-top: 0; } }
 
 .banner {
   position: relative; }
@@ -3028,9 +3055,7 @@ label a:hover,
 @media screen and (min-width: 1440px) {
   .collections {
     padding-left: 270px;
-    background: url(../img/background_diamond.png) no-repeat -457px 200px, linear-gradient(#0F0805, #110A07); }
-  .collections__slider-wrapper {
-    width: 1428px !important; } }
+    background: url(../img/background_diamond.png) no-repeat -457px 200px, linear-gradient(#0F0805, #110A07); } }
 
 @media screen and (min-width: 1920px) {
   .collections {
@@ -4537,7 +4562,9 @@ label a:hover,
     position: absolute;
     left: 1065px;
     margin-top: 82px;
-    max-width: 100%; }
+    max-width: 100%;
+    max-width: unset;
+    width: 840px; }
   .card-item__kit {
     margin-right: 110px; } }
 
@@ -4709,6 +4736,12 @@ label a:hover,
     margin-bottom: 70px;
     width: 860px;
     width: initial !important; } }
+
+.collection-information__slider-wrapper .jumping-slider__item.tns-slide-active:nth-child(n) {
+  margin-top: 20px; }
+
+.collection-information__slider-wrapper .jumping-slider__item.tns-slide-active:nth-child(2n) {
+  margin-top: 140px; }
 
 .collection-products {
   padding-left: 12px;

@@ -54,7 +54,7 @@
   }
 
   .collections__slider-wrapper {
-    width: 1428px !important;
+    // width: 100% !important;
   }
 }
 
@@ -63,5 +63,9 @@
     padding-top: 227px;
     padding-bottom: 100px;
     padding-left: 310px;
+  }
+
+  .collections .jumping-slider__slider-wrapper {
+    // width: 800px;
   }
 }
