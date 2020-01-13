@@ -78,11 +78,11 @@ if ($arResult["RENDER_FORM"] == "Y") {
         $arQuestion["JS_CODE"] = [];
         if (in_array($arQuestion["SYSTEM_CODE"], ["telefon"])) {
             $arQuestion["JS_CODE"][] = <<<JS
-(function($){
-    $(function () {
-        $("#{$arQuestion["VARNAME"]}").mask("+7 (999) 999-99-99");
-    });
-})(jQuery);
+// (function($){
+//     $(function () {
+//         $("#{$arQuestion["VARNAME"]}").mask("+7 (999) 999-99-99");
+//     });
+// })(jQuery);
 JS;
         }
         $arQuestion["JS_CODE"] = implode(";", $arQuestion["JS_CODE"]);
