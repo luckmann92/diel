@@ -310,7 +310,26 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                     dataType: 'json',
                     success: function (res) {
                         if (res.error === true) {
-                            $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                            if (e.target.querySelector("input[type=tel]")) {
+                                let n = e.target.querySelector("input[type=tel]"),
+                                index = 0;
+
+                                for (let i = 0; i < n.value.length; i++) {
+                                    if (Number.isInteger(parseInt(n.value[i]))) {
+                                        index++;
+                                    }
+                                }
+
+                                if (index < 11) {
+                                    if (res["message"].indexOf("Телефон") === -1) {
+                                        $('.popup-error').css('display','block').html('<p>' + res["message"] + '<br>&nbsp;&nbsp;» "Телефон"' + '</p>');
+                                    } else {
+                                        $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                                    }
+                                } else {
+                                    $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                                }
+                            }
                         } else {
                             let result = '<section class="popup popup-request-call popup--active arcticmodal-overlay"> <div class="popup-successful__inner">' +
                                 '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +

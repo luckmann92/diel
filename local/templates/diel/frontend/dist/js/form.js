@@ -59,7 +59,7 @@ function initTextarea() {
 let textarea = document.querySelectorAll(".textarea");
 
     for (let i = 0; i < textarea.length; i++) {
-    addDiv(textarea[i]);
+      addDiv(textarea[i]);
     }
 
     function addDiv(node) {
@@ -98,32 +98,6 @@ let textarea = document.querySelectorAll(".textarea");
         }
     }
 }
-
-window.addEventListener("load", function() {
-  let subm = document.querySelectorAll("input[type=submit]");
-
-  for (let i = 0; i < subm.length; i++) {
-    subm[i].addEventListener('click', function(e) {
-      if (this.form.querySelector("input[type=tel]")) {
-        let n = this.form.querySelector("input[type=tel]"),
-            index = 0;
-
-        for (let i = 0; i < n.value.length; i++) {
-          if (Number.isInteger(parseInt(n.value[i]))) {
-            index++;
-          }
-        }
-
-        if (index < 11) {
-          e.preventDefault();
-        }
-      }
-
-    });
-  }
-  
-});
-
 
 
 $("input[type=tel]").focus(function(){

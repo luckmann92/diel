@@ -113,7 +113,26 @@ btnModal.on('click', function (e) {
                                // $('#form_id_' + formID).parent().parent().parent().addClass('popup-successful').html(result);
                             } else {
                                 if (res.error === true) {
-                                    $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
+                                    if (e.target.querySelector("input[type=tel]")) {
+                                        let n = e.target.querySelector("input[type=tel]"),
+                                        index = 0;
+        
+                                        for (let i = 0; i < n.value.length; i++) {
+                                            if (Number.isInteger(parseInt(n.value[i]))) {
+                                                index++;
+                                            }
+                                        }
+        
+                                        if (index < 11) {
+                                            if (res["message"].indexOf("Телефон") === -1) {
+                                                $('.popup-error').css('display','block').html('<p>' + res["message"] + '<br>&nbsp;&nbsp;» "Телефон"' + '</p>');
+                                            } else {
+                                                $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                                            }
+                                        } else {
+                                            $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                                        }
+                                    }
                                 }
                             }
                         }
