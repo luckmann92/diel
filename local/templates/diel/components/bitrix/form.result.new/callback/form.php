@@ -14,8 +14,29 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' || isset($_REQUEST['formresult'])) {
     $APPLICATION->RestartBuffer();
     if ($arResult['FORM_ERRORS']) {
+        $arResult['FORM_ERRORS'] = str_replace('Не заполнены следующие обязательные поля:', 'Ошибка при отправке формы', $arResult['FORM_ERRORS']);
+        $arResult['FORM_ERRORS'] = str_replace('&nbsp;', '', $arResult['FORM_ERRORS']);
+        foreach ($arResult['arrVALUES'] as $code => $arrVALUE) {
+            foreach ($arResult['arAnswers'] as $SID => $arAnswer) {
+                if ('form_' . $arAnswer[0]['FIELD_TYPE'] . '_' . $arAnswer[0]['ID'] == $code) {
+                    if ($arResult['QUESTIONS'][$SID]['REQUIRED'] == 'Y') {
+                        if (strpos($SID, 'PHONE') !== false) {
+                            $phone = preg_replace("/[^,.0-9]/", '', $arrVALUE);
+                            if (strlen($phone) < 11) {
+                                $mess = 'Некорректный номер телефона';
+                                if (strpos($arResult['FORM_ERRORS'], 'Телефон') !== false) {
+                                    $arResult['FORM_ERRORS'] = str_replace('Телефон', $mess, $arResult['FORM_ERRORS']);
+                                } else {
+                                    $arResult['FORM_ERRORS'] .= '  <br />» "' . $mess . '"';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         $arResponse = array(
-                'error' => true,
+            'error' => true,
             'result' => false,
             'message' => $arResult['FORM_ERRORS']
         );
@@ -41,7 +62,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                         <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
                             <div class="popup-order-form__name input-text-wrapper">
                                 <input class="input-text"
-                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
+                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text' ?>"
                                        id="<?= $SID ?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                        placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
@@ -73,8 +94,8 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
                                        value="<?= $arAnswer[0]['ID'] ?>"
                                        type="checkbox">
-                                       
-                                       <?= $arResult["arQuestions"][$SID]['TITLE'] ?>
+
+                                <?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                             </label>
                         <? } ?>
 
@@ -93,7 +114,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                         <img class="popup-order-form__image" src="<?= $arParams['PRODUCT']['PICTURE'] ?>" alt="">
                     </div>
 
-                    <h3 class="popup-order-form__title"><?= htmlspecialchars_decode($arParams['PRODUCT']['NAME'])?></h3>
+                    <h3 class="popup-order-form__title"><?= htmlspecialchars_decode($arParams['PRODUCT']['NAME']) ?></h3>
                     <p class="popup-order-form__price" id="modal_form_product_price"></p>
                 </div>
 
@@ -104,26 +125,28 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
             </form>
 
         </section>
-    <? } elseif ($arParams['PRICE_LIST'] == 'Y') {?>
+    <? } elseif ($arParams['PRICE_LIST'] == 'Y') { ?>
         <section class="price-list section-skew--left">
             <h2 class="price-list__title section-title">запросить прайс-лист</h2>
-            <form class="price-list__form price-list-form" id="form_id_<?= $arResult['arForm']['ID'] ?>" enctype="multipart/form-data" action="/local/tools/ajax.web.form.php?ajax_form=<?= $arResult['arForm']['ID'] ?>&sign=<?=$arResult['JSON_SIGN']?>">
+            <form class="price-list__form price-list-form" id="form_id_<?= $arResult['arForm']['ID'] ?>"
+                  enctype="multipart/form-data"
+                  action="/local/tools/ajax.web.form.php?ajax_form=<?= $arResult['arForm']['ID'] ?>&sign=<?= $arResult['JSON_SIGN'] ?>">
                 <div class="popup-error" style="display: none;"></div>
                 <?= bitrix_sessid_post(); ?>
                 <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
                 <input type="hidden" name="web_form_submit" value="Y">
                 <ul class="price-list-form__list">
-                    <?foreach ($arResult["arAnswers"] as $SID => $arAnswer) {?>
-                    <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
-                    <li class="price-list-form__item">
-                        <div class="input-text-wrapper">
-                            <input class="input-text" id="<?= $SID ?>"
-                                   type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
-                                   name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
-                                   placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
-                        </div>
-                    </li>
-                    <?}?>
+                    <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
+                        <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
+                            <li class="price-list-form__item">
+                                <div class="input-text-wrapper">
+                                    <input class="input-text" id="<?= $SID ?>"
+                                           type="<?= $SID == 'PHONE' ? 'tel' : 'text' ?>"
+                                           name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
+                                           placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
+                                </div>
+                            </li>
+                        <? } ?>
                         <? if ($arAnswer[0]['FIELD_TYPE'] == 'checkbox') { ?>
                             <li class="price-list-form__item">
                                 <label class="price-list-form__label">
@@ -133,9 +156,8 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                            type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                                 </label>
                             </li>
-                        <?}?>
-                    <?}?>
-
+                        <? } ?>
+                    <? } ?>
 
 
                     <li class="price-list-form__item price-list-form__item--submit">
@@ -148,7 +170,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
         </section>
         <script>
             $('#form_id_' + <?= $arResult['arForm']['ID'] ?>).off('submit.ajax-form').on('submit.ajax-form', function (e) {
-                $('.popup-error').css('display','none').html('');
+                $('.popup-error').css('display', 'none').html('');
                 e.preventDefault();
                 $.ajax({
                     url: $(this).attr('action'),
@@ -157,7 +179,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                     dataType: 'json',
                     success: function (res) {
                         if (res.error === true) {
-                            $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                            $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
                         } else {
                             let result = '<section class="popup popup-request-call popup--active arcticmodal-overlay"> <div class="popup-successful__inner">' +
                                 '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
@@ -171,37 +193,38 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 });
                 return false;
             });
-           /* $('.js-init-form-close').click(function (e) {
-                e.preventDefault();
-                $('.popup.arcticmodal-overlay').css('display', 'none');
-                $('.popup.arcticmodal-overlay').css('display', 'none');
-                return false;
-            });*/
+            /* $('.js-init-form-close').click(function (e) {
+                 e.preventDefault();
+                 $('.popup.arcticmodal-overlay').css('display', 'none');
+                 $('.popup.arcticmodal-overlay').css('display', 'none');
+                 return false;
+             });*/
         </script>
-    <? } elseif ($arParams['ADD_REVIEWS'] == 'Y') {?>
+    <? } elseif ($arParams['ADD_REVIEWS'] == 'Y') { ?>
 
         <section class="popup popup-leave-feedback popup--active">
-            <form class="popup-leave-feedback__form" id="form_id_<?= $arResult['arForm']['ID'] ?>" enctype="multipart/form-data" action="<?= POST_FORM_ACTION_URI; ?>">
+            <form class="popup-leave-feedback__form" id="form_id_<?= $arResult['arForm']['ID'] ?>"
+                  enctype="multipart/form-data" action="<?= POST_FORM_ACTION_URI; ?>">
                 <h2 class="popup-leave-feedback__title section-title">Оставить отзыв</h2>
                 <?= bitrix_sessid_post(); ?>
                 <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
                 <input type="hidden" name="web_form_submit" value="Y">
                 <div class="popup-leave-feedback__form-top">
                     <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
-                        <?if ($SID == 'PHONE' || $SID == 'NAME') {?>
-                            <?$class = $SID == 'PHONE' ? 'popup-request-call__phone' : 'popup-request-call__username';?>
+                        <? if ($SID == 'PHONE' || $SID == 'NAME') { ?>
+                            <? $class = $SID == 'PHONE' ? 'popup-request-call__phone' : 'popup-request-call__username'; ?>
                             <div class="popup-leave-feedback__form-name input-text-wrapper">
                                 <input class="input-text"
-                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
+                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text' ?>"
                                        id="<?= $SID ?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                        placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
                             </div>
-                        <?}?>
-                    <?}?>
+                        <? } ?>
+                    <? } ?>
                 </div>
-                <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) {?>
-                    <?if ($SID != 'PHONE' && $SID != 'NAME') {?>
+                <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
+                    <? if ($SID != 'PHONE' && $SID != 'NAME') { ?>
                         <? if ($arAnswer[0]['FIELD_TYPE'] == 'textarea') { ?>
                             <div class="popup-leave-feedback__form-review textarea-wrapper">
                                 <textarea class="textarea"
@@ -214,13 +237,13 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                             <div class="popup-leave-feedback__form-email input-text-wrapper">
                                 <input class="input-text"
                                        id="<?= $SID ?>"
-                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
+                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text' ?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                        placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
                             </div>
-                        <?}?>
-                    <?}?>
-                <?}?>
+                        <? } ?>
+                    <? } ?>
+                <? } ?>
 
                 <div class="popup-leave-feedback__form-bottom">
                     <div class="popup-leave-feedback__form-bottom-right">
@@ -235,7 +258,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                            type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                                 </label>
                             <? } ?>
-                        <?}?>
+                        <? } ?>
                         <div class="popup-leave-feedback__form-submit input-submit-wrapper">
                             <input class="input-submit" type="submit" value="Оставить отзыв">
                         </div>
@@ -243,30 +266,32 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 </div>
 
                 <button class="popup-leave-feedback__close popup__close js-init-form-close" type="button">
-                    <?=GetContentSvgIcon('close')?>
+                    <?= GetContentSvgIcon('close') ?>
                 </button>
                 <div class="popup-error" style="display: none;"></div>
             </form>
         </section>
     <? } elseif ($arParams['INDIVIDUAL_ORDER'] == 'Y') { ?>
-        <form class="order-section__form price-list-form" method="POST" id="form_id_<?= $arResult['arForm']['ID'] ?>" enctype="multipart/form-data" action="/local/tools/ajax.web.form.php?ajax_form=<?= $arResult['arForm']['ID'] ?>&sign=<?=$arResult['JSON_SIGN']?>">
+        <form class="order-section__form price-list-form" method="POST" id="form_id_<?= $arResult['arForm']['ID'] ?>"
+              enctype="multipart/form-data"
+              action="/local/tools/ajax.web.form.php?ajax_form=<?= $arResult['arForm']['ID'] ?>&sign=<?= $arResult['JSON_SIGN'] ?>">
             <?= bitrix_sessid_post(); ?>
             <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
             <input type="hidden" name="web_form_submit" value="Y">
             <ul class="price-list-form__list">
-                <?foreach ($arResult["arAnswers"] as $SID => $arAnswer) {?>
-            <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
-                <li class="price-list-form__item">
-                    <div class="input-text-wrapper">
-                        <input class="input-text"
-                               type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
-                               id="<?= $SID ?>"
-                               name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
-                               placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
-                    </div>
-                </li>
-                    <?}?>
-            <? if ($arAnswer[0]['FIELD_TYPE'] == 'textarea') { ?>
+                <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
+                    <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
+                        <li class="price-list-form__item">
+                            <div class="input-text-wrapper">
+                                <input class="input-text"
+                                       type="<?= $SID == 'PHONE' ? 'tel' : 'text' ?>"
+                                       id="<?= $SID ?>"
+                                       name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
+                                       placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
+                            </div>
+                        </li>
+                    <? } ?>
+                    <? if ($arAnswer[0]['FIELD_TYPE'] == 'textarea') { ?>
                         <li class="price-list-form__item">
                             <div class="textarea-wrapper">
                                 <textarea class="textarea"
@@ -275,8 +300,8 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                           placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>"></textarea>
                             </div>
                         </li>
-                <?}?>
-            <? if ($arAnswer[0]['FIELD_TYPE'] == 'checkbox') { ?>
+                    <? } ?>
+                    <? if ($arAnswer[0]['FIELD_TYPE'] == 'checkbox') { ?>
                         <li class="price-list-form__item">
                             <label class="price-list-form__label">
                                 <input class="input-checkbox"
@@ -287,8 +312,8 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                        type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                             </label>
                         </li>
-                <?}?>
-<?}?>
+                    <? } ?>
+                <? } ?>
 
 
                 <li class="order-section__form-submit price-list-form__item price-list-form__item--submit">
@@ -301,7 +326,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
         </form>
         <script>
             $('#form_id_' + <?= $arResult['arForm']['ID'] ?>).off('submit.ajax-form').on('submit.ajax-form', function (e) {
-                $('.popup-error').css('display','none').html('');
+                $('.popup-error').css('display', 'none').html('');
                 e.preventDefault();
                 $.ajax({
                     url: $(this).attr('action'),
@@ -312,7 +337,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                         if (res.error === true) {
                             if (e.target.querySelector("input[type=tel]")) {
                                 let n = e.target.querySelector("input[type=tel]"),
-                                index = 0;
+                                    index = 0;
 
                                 for (let i = 0; i < n.value.length; i++) {
                                     if (Number.isInteger(parseInt(n.value[i]))) {
@@ -322,12 +347,12 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
 
                                 if (index < 11) {
                                     if (res["message"].indexOf("Телефон") === -1) {
-                                        $('.popup-error').css('display','block').html('<p>' + res["message"] + '<br>&nbsp;&nbsp;» "Телефон"' + '</p>');
+                                        $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '<br>&nbsp;&nbsp;» "Телефон"' + '</p>');
                                     } else {
-                                        $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                                        $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
                                     }
                                 } else {
-                                    $('.popup-error').css('display','block').html('<p>' + res["message"] + '</p>');
+                                    $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
                                 }
                             }
                         } else {
@@ -344,7 +369,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 return false;
             });
         </script>
-        <?} else {?>
+    <? } else { ?>
         <section class="popup popup-request-call popup--active arcticmodal-overlay">
             <div class="popup-request-call__inner">
                 <h2 class="popup-request-call__title section-title"><?= $arResult['arForm']['NAME'] ?></h2>
@@ -359,7 +384,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                             <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
                                 <div class="input-text-wrapper <?= $arResult["arQuestions"][$SID]['CSS_CLASSES'] ?>">
                                     <input class="popup-request-call__username input-text"
-                                           type="<?= $SID == 'PHONE' ? 'tel' : 'text'?>"
+                                           type="<?= $SID == 'PHONE' ? 'tel' : 'text' ?>"
                                            id="<?= $SID ?>"
                                            name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $arAnswer[0]['ID'] ?>"
                                            placeholder="<?= $arResult["arQuestions"][$SID]['TITLE'] ?>">
