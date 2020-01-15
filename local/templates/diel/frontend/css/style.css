@@ -6631,7 +6631,8 @@ label a:hover,
   border: 2px solid rgba(224, 139, 102, 0.3); }
 
 .popup-request-call__title {
-  padding-right: 40px; }
+  padding-right: 40px;
+  min-width: 250px }
 
 .popup-request-call__lable {
   font-family: "Intro Light";
@@ -7561,3 +7562,5 @@ label a:hover,
   .footer::before {
     background-color: #0D0705;
     z-index: -1; }
+
+  .page-order__order-section

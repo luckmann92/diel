@@ -93,6 +93,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                        id="<?= $SID ?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
                                        value="<?= $arAnswer[0]['ID'] ?>"
+                                    <?= $arAnswer[0]["FIELD_PARAM"] == 'checked' ? 'checked' : '' ?>
                                        type="checkbox">
 
                                 <?= $arResult["arQuestions"][$SID]['TITLE'] ?>
@@ -153,6 +154,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                     <input class="input-checkbox" id="<?= $SID ?>"
                                            name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
                                            value="<?= $arAnswer[0]['ID'] ?>"
+                                        <?= $arAnswer[0]["FIELD_PARAM"] == 'checked' ? 'checked' : '' ?>
                                            type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                                 </label>
                             </li>
@@ -255,6 +257,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                            id="<?= $SID ?>"
                                            name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
                                            value="<?= $arAnswer[0]['ID'] ?>"
+                                        <?= $arAnswer[0]["FIELD_PARAM"] == 'checked' ? 'checked' : '' ?>
                                            type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                                 </label>
                             <? } ?>
@@ -308,7 +311,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                        id="<?= $SID ?>"
                                        name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
                                        value="<?= $arAnswer[0]['ID'] ?>"
-                                       checked="checked"
+                                        <?= $arAnswer[0]["FIELD_PARAM"] == 'checked' ? 'checked' : '' ?>
                                        type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                             </label>
                         </li>
@@ -402,6 +405,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                                id="<?= $SID ?>"
                                                name="form_<?= $arAnswer[0]['FIELD_TYPE'] ?>_<?= $SID ?>[]"
                                                value="<?= $arAnswer[0]['ID'] ?>"
+                                            <?= $arAnswer[0]["FIELD_PARAM"] == 'checked' ? 'checked' : '' ?>
                                                type="checkbox"><?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                                     </label>
                                 <? } ?>
