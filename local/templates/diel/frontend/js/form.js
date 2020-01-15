@@ -99,12 +99,13 @@ let textarea = document.querySelectorAll(".textarea");
     }
 }
 
-
-$("input[type=tel]").focus(function(){
-  $("input[type=tel]").inputmask({
-      mask: "+7(999)-999-99-99",
-      showMaskOnHover: false
-  });
-
+$(document).ready(function () {
+    $("input[type=tel]").live('focus', function(){
+        $("input[type=tel]").inputmask({
+            mask: "+7(999)-999-99-99",
+            showMaskOnHover: false
+        });
+    });
 });
+
 // $("input[type=tel]").attr("pattern", "\+\d{1}\(\d{3}\)\-\d{3}-\d{2}-\d{2}");
