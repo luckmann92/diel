@@ -17,7 +17,6 @@
         <? } else { ?>
         <img src="<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $arResult['PREVIEW_PICTURE']['ALT'] ?>">
         <?}?>
-
     </div>
 <? $this->EndViewTarget() ?>
 
