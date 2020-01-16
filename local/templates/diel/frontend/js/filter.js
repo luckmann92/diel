@@ -1,21 +1,24 @@
-if (document.querySelector(".diel-select__button")) {
-  document.querySelectorAll(".diel-select__button").forEach(function(el) {
-    for (let i = el.firstElementChild; i !== null; i = i.nextElementSibling) {
-      el.addEventListener("click", function() {
-        this.parentElement.classList.add("diel-select--active");
-      });
-    }
+$(document).ready(function () {
+  let selectBtn = $(".diel-select__button");
 
-    document.addEventListener("click", function(evt) {
-      for (let i = el.firstElementChild; i !== null; i = i.nextElementSibling) {
-        if (evt.target !== i && evt.target !== el) {
-          el.parentElement.classList.remove("diel-select--active");
-          break;
+  $(document).on("click", function (evt) {
+    let target = $(evt.target);
+
+    selectBtn.each(function () {
+      if (target.is($(this)) || target.is($(this).find('*'))) {
+        if ($(this).parent().hasClass('diel-select--active')) {
+          $(this).parent().removeClass("diel-select--active");
+        } else {
+          $(this).parent().addClass("diel-select--active");
         }
+      } else {
+        $(this).parent().removeClass("diel-select--active");
       }
     });
   });
-}
+});
+
+
 
 if (document.querySelector(".diel-select")) {
   let selectWrapper = document.querySelectorAll(".diel-select");

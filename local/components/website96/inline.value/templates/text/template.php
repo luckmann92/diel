@@ -33,9 +33,10 @@ if ($arParams["VALUE"] == 'TABLE') {
     }
 
     $APPLICATION->IncludeComponent(
-        "bitrix:catalog.top",
+        "bitrix:catalog.section",
         "favorites",
         array(
+            "SHOW_ALL_WO_SECTION" => "Y",
             "COMPONENT_TEMPLATE" => "favorites",
             "IBLOCK_TYPE" => "catalog",
             "IBLOCK_ID" => "3",
@@ -44,7 +45,7 @@ if ($arParams["VALUE"] == 'TABLE') {
             "FILTER_NAME" => "arrFilter",
             "ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"] ?: 'shows',
             "ELEMENT_SORT_ORDER" =>$arParams["ELEMENT_SORT_ORDER"] ?: "asc",
-            "PAGE_ELEMENT_COUNT" => $_GET["list_num"]?:15,
+            "PAGE_ELEMENT_COUNT" => $_GET["list_num"]?:12,
             "PRICE_CODE" => array(
                 0 => "BASE",
             ),
@@ -94,10 +95,11 @@ if ($arParams["VALUE"] == 'TABLE') {
 
 
     $APPLICATION->IncludeComponent(
-        "bitrix:catalog.top",
+        "bitrix:catalog.section",
         "favorites_list",
         array(
             "COMPONENT_TEMPLATE" => "favorites_list",
+            "SHOW_ALL_WO_SECTION" => "Y",
             "IBLOCK_TYPE" => "catalog",
             "IBLOCK_ID" => "3",
             "SECTION_CODE" => "",
