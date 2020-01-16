@@ -68,13 +68,6 @@ btnModal.on('click', function (e) {
                     }
                 }
             }
-
-            $("input[type=tel]").focus(function(){
-                $("input[type=tel]").inputmask({
-                    mask: "+7(999)-999-99-99",
-                    showMaskOnHover: false
-                });
-            });
         },
         ajax: {
             type: 'GET',
