@@ -29,7 +29,6 @@ $APPLICATION->IncludeComponent(
     $componentName,
     $arParams["COMPONENT_TEMPLATE"],
     $arParams,
-    $a,
     false
 );
 

@@ -404,7 +404,10 @@ h2 {
   right: 0;
   bottom: 0;
   left: 0;
-  transition: top 300ms,  right 300ms, bottom 300ms, left 300ms;
+  transition: top 300ms, 
+ right 300ms,
+ bottom 300ms,
+ left 300ms;
   border: 1px solid rgba(224, 139, 102, 0.5);
   z-index: -1; }
 
@@ -6224,14 +6227,15 @@ label a:hover,
     position: static; }
   .popup-main-menu__right {
     padding-left: 175px;
-    padding-right: 250px;
+    padding-right: 120px;
     padding-bottom: 130px; }
   .popup-menu__item--title::before,
   .popup-menu__item--title:hover::after,
   .popup-menu__item--title:focus::after {
     width: 310px; }
   .popup-menu__item--title {
-    margin-top: 80px; }
+    margin-top: 80px;
+    min-width: 250px; }
   .popup-menu:first-of-type {
     margin-right: 130px; }
   .popup-menu-footer {
@@ -6253,7 +6257,15 @@ label a:hover,
   .popup-main-menu__search {
     top: 155px;
     left: 217px;
-    right: auto; } }
+    right: auto; }
+  .popup-menu {
+    margin-right: 130px;
+    width: 150px; }
+  .popup-menu:nth-of-type(3) {
+    width: 150px !important;
+    margin-right: 0;
+    flex-shrink: 0; }
+}
 
 @media screen and (min-width: 1440px) {
   .popup-main-menu__left {
@@ -6619,7 +6631,8 @@ label a:hover,
   border: 2px solid rgba(224, 139, 102, 0.3); }
 
 .popup-request-call__title {
-  padding-right: 40px; }
+  padding-right: 40px;
+  min-width: 250px }
 
 .popup-request-call__lable {
   font-family: "Intro Light";
@@ -7549,3 +7562,5 @@ label a:hover,
   .footer::before {
     background-color: #0D0705;
     z-index: -1; }
+
+  .page-order__order-section
