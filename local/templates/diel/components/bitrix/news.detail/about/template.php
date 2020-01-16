@@ -10,7 +10,14 @@
 	</p>
 </div>
     <div class="about-company__video">
+        <? if (!empty($arResult["PROPERTIES"]["VIDEO"]["VALUE"])) { ?>
+            <video width="100%" height="100%" autoplay loop muted>
+                <source src="<?= $arResult["PROPERTIES"]["VIDEO"]["VALUE"]["path"] ?>" type='video/mp4'>
+            </video>
+        <? } else { ?>
         <img src="<?= $arResult['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $arResult['PREVIEW_PICTURE']['ALT'] ?>">
+        <?}?>
+
     </div>
 <? $this->EndViewTarget() ?>
 

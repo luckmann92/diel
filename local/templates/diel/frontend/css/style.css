@@ -5727,7 +5727,8 @@ label a:hover,
   padding-top: 45%;
   border: 1px solid #E08B66; }
   .about-company__video img,
-  .about-company__video iframe {
+  .about-company__video iframe,
+  .about-company__video video {
     position: absolute;
     top: 0;
     left: 0;
