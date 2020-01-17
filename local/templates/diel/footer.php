@@ -32,6 +32,7 @@ $pageLayoutClass = $APPLICATION->GetViewContent('page_layout_class');
     }
 
     \Bitrix\Main\Page\Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/css/style.css"));
+    \Bitrix\Main\Page\Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/css/slick.css"));
     ?>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

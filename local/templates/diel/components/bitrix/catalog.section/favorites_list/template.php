@@ -34,7 +34,7 @@
 
             <div class="filter__diel-select diel-select">
                 <button class="diel-select__button">
-                    <span class="diel-select__button-text">15span>
+                    <span class="diel-select__button-text">12<span>
                 </button>
 
                 <ol class="diel-select__list diel-select-list"></ol>

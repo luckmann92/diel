@@ -3,34 +3,53 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 ?>
-<? if (isset($arResult['MORE_IMAGES']) && !empty($arResult['MORE_IMAGES'])) { ?>
-    <div class="card-item__slider-wrapper card-item-slider-wrapper jumping-slider__slider-wrapper">
-        <ul class="card-item-slider jumping-slider">
-            <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { ?>
-                <li class="card-item-slider__item jumping-slider__item">
-                    <div class="jumping-slider__image-wrapper">
-                        <img class="jumping-slider__image" src="<?= $arItem['SRC'] ?>" alt="<?= $arItem['ALT'] ?>">
-                    </div>
-                </li>
-            <? } ?>
-        </ul>
+<?
+if (count($arResult['MORE_IMAGES']) < 3) { ?>
+    <style>
+        .product-slider-nav .slick-track {
+            transform: translate3d(0px, 0px, 0px) !important;
+        }
+    </style>
+<? } ?>
 
-        <div class="card-item-slider__options jumping-slider-options">
-            <div class="jumping-slider-options__progress">
-                <div class="jumping-slider-options__progress-line"></div>
+<? $i = 0 ?>
+<div class="product-slider__cont">
+    <div class="product-slider">
+        <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { ?>
+            <div class="product-slide">
+                <div class="product-slide__img">
+                    <img src="<?= $arItem['SRC'] ?>"
+                         alt="<?= $arItem['ALT'] ?>">
+                    <? if ($i++ == 0) { ?>
+                        <div class="prev"></div>
+                        <div class="next"></div>
+                    <? } ?>
+                </div>
             </div>
-            <div class="jumping-slider-options__nav"></div>
+        <? } ?>
+    </div>
+    <? $i = 1 ?>
+    <div class="product-slider-cont">
+        <div class="product-slider-nav">
+            <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { ?>
+                <div class="product-slider-nav__item-wrap">
+                    <div class="product-slider-nav__item">
+                        0<?= $i++ ?>
+                    </div>
+                </div>
+            <? } ?>
         </div>
     </div>
-<? }?>
+</div>
+
 <form class="card-item__form card-item-form" action="">
     <fieldset class="card-item-form__fieldset">
         <div class="card-item-form__price-wrapper">
             <b class="card-item-form__price offer-item">
-                <span id="offer-price"><?=number_format($arResult['PRICE'][0], 0, ' ', ' ') ?> ₽</span>
-                <?if ($arResult['PROPERTIES']['IS_NEW']['VALUE']) {?>
-                <span class="card-item-form__novelty">Новинка</span>
-                <?}?>
+                <span id="offer-price"><?= number_format($arResult['PRICE'][0], 0, ' ', ' ') ?> ₽</span>
+                <? if ($arResult['PROPERTIES']['IS_NEW']['VALUE']) { ?>
+                    <span class="card-item-form__novelty">Новинка</span>
+                <? } ?>
             </b>
             <? if ($arResult['COLLECTION']) { ?>
                 <? foreach ($arResult['COLLECTION'] as $arItem) { ?>
@@ -39,48 +58,48 @@
                 <? } ?>
             <? } ?>
             <div class="card-item-form__price-button-group">
-                <button class="card-item-form__in-favorite icon-favorites <?=isFavorites($arResult['ID'])?> js-init-add-favorites"
+                <button class="card-item-form__in-favorite icon-favorites <?= isFavorites($arResult['ID']) ?> js-init-add-favorites"
                         data-product-id="<?= $arResult['ID'] ?>" type="button">
                     <?= GetContentSvgIcon('favorites') ?>
                 </button>
                 <div class="input-submit-wrapper">
-                    <?$APPLICATION->IncludeComponent(
-	"bitrix:form.result.new", 
-	"callback", 
-	array(
-		"COMPONENT_TEMPLATE" => "callback",
-		"WEB_FORM_ID" => "2",
-		"IGNORE_CUSTOM_TEMPLATE" => "N",
-		"USE_EXTENDED_ERRORS" => "N",
-		"LINK_TEXT" => "Оформить заказ",
-		"LINK_CSS_CLASS" => "",
-		"FORM_TITLE" => "",
-		"FORM_DESCRIPTION" => "",
-		"BUTTON_TITLE" => "",
-		"SEF_MODE" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
-		"LIST_URL" => "",
-		"EDIT_URL" => "",
-		"SUCCESS_URL" => "",
-		"CHAIN_ITEM_TEXT" => "",
-		"FAST_ORDER" => "Y",
-		"LINK_IS_BUTTON" => "Y",
-		"PRODUCT" => array(
-		        'ID' => $arResult['ID'],
-		        "PICTURE" => $arResult['PREVIEW_PICTURE']['SRC'],
-		        'NAME' => $arResult['NAME'],
-		        'PRICE' => $arResult['NAME'],
-            'URL' => $arResult['DETAIL_PAGE_URL']
-		),
-		"CHAIN_ITEM_LINK" => "",
-		"VARIABLE_ALIASES" => array(
-			"WEB_FORM_ID" => "WEB_FORM_ID",
-			"RESULT_ID" => "RESULT_ID",
-		)
-	),
-	false
-);?>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:form.result.new",
+                        "callback",
+                        array(
+                            "COMPONENT_TEMPLATE" => "callback",
+                            "WEB_FORM_ID" => "2",
+                            "IGNORE_CUSTOM_TEMPLATE" => "N",
+                            "USE_EXTENDED_ERRORS" => "N",
+                            "LINK_TEXT" => "Оформить заказ",
+                            "LINK_CSS_CLASS" => "",
+                            "FORM_TITLE" => "",
+                            "FORM_DESCRIPTION" => "",
+                            "BUTTON_TITLE" => "",
+                            "SEF_MODE" => "N",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "3600",
+                            "LIST_URL" => "",
+                            "EDIT_URL" => "",
+                            "SUCCESS_URL" => "",
+                            "CHAIN_ITEM_TEXT" => "",
+                            "FAST_ORDER" => "Y",
+                            "LINK_IS_BUTTON" => "Y",
+                            "PRODUCT" => array(
+                                'ID' => $arResult['ID'],
+                                "PICTURE" => $arResult['PREVIEW_PICTURE']['SRC'],
+                                'NAME' => $arResult['NAME'],
+                                'PRICE' => $arResult['NAME'],
+                                'URL' => $arResult['DETAIL_PAGE_URL']
+                            ),
+                            "CHAIN_ITEM_LINK" => "",
+                            "VARIABLE_ALIASES" => array(
+                                "WEB_FORM_ID" => "WEB_FORM_ID",
+                                "RESULT_ID" => "RESULT_ID",
+                            )
+                        ),
+                        false
+                    ); ?>
 
                 </div>
             </div>
@@ -100,16 +119,17 @@
                         <div class="card-item-form__size-color-group">
                             <?
                             foreach ($arProperty['values'] as $value) { ?>
-                                <? if ($value['id'] && $value['name'] != '-') {?>
+                                <? if ($value['id'] && $value['name'] != '-') { ?>
                                     <label class="card-item-form__color-item js-init-prop"
-                                        data-prop="color"
-                                        data-role="property.value"
-                                        data-state="hidden"
-                                        data-value="<?= $value['id'] ?>">
+                                           data-prop="color"
+                                           data-role="property.value"
+                                           data-state="hidden"
+                                           data-value="<?= $value['id'] ?>">
                                         <input class="card-item-form__color-radio" type="radio" name="color">
                                         <? if ($arProperty['type'] === 'picture' && !empty($value['picture'])) { ?>
                                             <span style="background-image: url('<?= $value['picture'] ?>')">
-                                                <span class="span__before" style="background-color: <?=$value[id]?>"></span>
+                                                <span class="span__before"
+                                                      style="background-color: <?= $value[id] ?>"></span>
                                             </span>
                                         <? } ?>
                                     </label>
@@ -134,16 +154,17 @@
                         <div class="card-item-form__size-item-group">
                             <?
                             foreach ($arProperty['values'] as $value) {
-                                if ($value['name'] != '-') {?>
-                                <label class="card-item-form__size-item js-init-prop"
-                                       data-role="property.value"
-                                       data-state="hidden"
-                                       data-prop="size"
-                                       data-value="<?= $value['id'] ?>">
-                                    <input class="card-item-form__size-radio" type="radio" name="size">
-                                    <span><?= $value['name'] ?></span>
-                                </label>
-                                <?}
+                                if ($value['name'] != '-') { ?>
+                                    <label class="card-item-form__size-item js-init-prop"
+                                           data-role="property.value"
+                                           data-state="hidden"
+                                           data-prop="size"
+                                           data-value="<?= $value['id'] ?>">
+                                        <input class="card-item-form__size-radio" type="radio" name="size">
+                                        <span><?= $value['name'] ?></span>
+                                    </label>
+                                    <?
+                                }
                             } ?>
                         </div>
                     </div>
@@ -166,15 +187,16 @@
 
                             <ol class="diel-select__list diel-select-list"></ol>
                             <select class="filter__diel-js" hidden>
-                            <?
+                                <?
                                 foreach ($arProperty['values'] as $value) {
-                                    if ($value['name'] != '-') {?>
-                                    <option class="filter__diel-option-js"
-                                        data-role="property.value"
-                                        data-state="hidden"
-                                        data-prop="inserts"
-                                        data-value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
-                                    <?}
+                                    if ($value['name'] != '-') { ?>
+                                        <option class="filter__diel-option-js"
+                                                data-role="property.value"
+                                                data-state="hidden"
+                                                data-prop="inserts"
+                                                data-value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+                                        <?
+                                    }
                                 } ?>
                             </select>
                         </div>
@@ -190,17 +212,17 @@ if ($arParams['PROPERTY_CODE'] || ($arResult['DETAIL_TEXT'] || $arResult['PREVIE
     <div class="card-item__information card-item-information">
     <? if ($arParams['PROPERTY_CODE']) { ?>
         <table class="card-item-information__characteristic">
-        <caption class="card-item-information__characteristic-caption section-title-small">Характеристики</caption>
-        <? foreach ($arParams['PROPERTY_CODE'] as $CODE) { ?>
+            <caption class="card-item-information__characteristic-caption section-title-small">Характеристики</caption>
+            <? foreach ($arParams['PROPERTY_CODE'] as $CODE) { ?>
 
-            <?if ( $arResult['PROPERTIES'][$CODE]['VALUE']) {?>
+                <? if ($arResult['PROPERTIES'][$CODE]['VALUE']) { ?>
                     <tr class="card-item-information__tr">
                         <td class="card-item-information__td"><?= $arResult['PROPERTIES'][$CODE]['NAME'] ?></td>
                         <td class="card-item-information__td"><?= $arResult['PROPERTIES'][$CODE]['VALUE'] ?></td>
                     </tr>
-        <? } ?>
-        <? } ?>
-            </table>
+                <? } ?>
+            <? } ?>
+        </table>
 
     <? } ?>
     <? if ($arResult['DETAIL_TEXT'] || $arResult['PREVIEW_TEXT']) { ?>
@@ -218,64 +240,63 @@ if ($arParams['PROPERTY_CODE'] || ($arResult['DETAIL_TEXT'] || $arResult['PREVIE
         <h3 class="section-title-small">Комплект</h3>
 
         <div class="card-item-kit__slider-wrapper">
-    <?
-    global $arrFilter;
-    $GLOBALS['arrFilter']['ID'] = array_keys($arResult['AR_KITS']);
-    $APPLICATION->IncludeComponent(
-        "bitrix:catalog.top",
-        ".default",
-        array(
-            "COMPONENT_TEMPLATE" => ".default",
-            "IBLOCK_TYPE" => "catalog",
-            "IBLOCK_ID" => "3",
-            "FILTER_NAME" => "arrFilter",
-            "CUSTOM_FILTER" => "",
-            "USE_FILTER" => "Y",
-            "HIDE_NOT_AVAILABLE" => "N",
-            "HIDE_NOT_AVAILABLE_OFFERS" => "N",
-            "ELEMENT_SORT_FIELD" => $_GET["sort"]=="name"?"name":"catalog_PRICE_1",
-            "ELEMENT_SORT_ORDER" => $_GET["method"]=="desc"?"desc":"asc",
-            "ELEMENT_SORT_FIELD2" => "id",
-            "ELEMENT_SORT_ORDER2" => "desc",
-            "OFFERS_SORT_FIELD" => "sort",
-            "OFFERS_SORT_ORDER" => "asc",
-            "OFFERS_SORT_FIELD2" => "id",
-            "OFFERS_SORT_ORDER2" => "desc",
-            "ELEMENT_COUNT" => "9",
-            "LINE_ELEMENT_COUNT" => "3",
-            "OFFERS_FIELD_CODE" => array(
-                0 => "",
-                1 => "",
-            ),
-            "OFFERS_LIMIT" => "5",
-            "SECTION_URL" => "",
-            "DETAIL_URL" => "",
-            "PRODUCT_QUANTITY_VARIABLE" => "quantity",
-            "SEF_MODE" => "N",
-            "CACHE_TYPE" => "A",
-            "CACHE_TIME" => "36000000",
-            "CACHE_GROUPS" => "Y",
-            "CACHE_FILTER" => "N",
-            "ACTION_VARIABLE" => "action",
-            "PRODUCT_ID_VARIABLE" => "id",
-            "PRICE_CODE" => array(
-                0 => "BASE",
-            ),
-            "USE_PRICE_COUNT" => "N",
-            "SHOW_PRICE_COUNT" => "1",
-            "PRICE_VAT_INCLUDE" => "Y",
-            "CONVERT_CURRENCY" => "N",
-            "BASKET_URL" => "/personal/basket.php",
-            "USE_PRODUCT_QUANTITY" => "N",
-            "ADD_PROPERTIES_TO_BASKET" => "Y",
-            "PRODUCT_PROPS_VARIABLE" => "prop",
-            "PARTIAL_PRODUCT_PROPERTIES" => "N",
-            "DISPLAY_COMPARE" => "N",
-            "COMPATIBLE_MODE" => "Y"
-        ),
-        false
-    );?>
-
+            <?
+            global $arrFilter;
+            $GLOBALS['arrFilter']['ID'] = array_keys($arResult['AR_KITS']);
+            $APPLICATION->IncludeComponent(
+                "bitrix:catalog.top",
+                ".default",
+                array(
+                    "COMPONENT_TEMPLATE" => ".default",
+                    "IBLOCK_TYPE" => "catalog",
+                    "IBLOCK_ID" => "3",
+                    "FILTER_NAME" => "arrFilter",
+                    "CUSTOM_FILTER" => "",
+                    "USE_FILTER" => "Y",
+                    "HIDE_NOT_AVAILABLE" => "N",
+                    "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+                    "ELEMENT_SORT_FIELD" => $_GET["sort"] == "name" ? "name" : "catalog_PRICE_1",
+                    "ELEMENT_SORT_ORDER" => $_GET["method"] == "desc" ? "desc" : "asc",
+                    "ELEMENT_SORT_FIELD2" => "id",
+                    "ELEMENT_SORT_ORDER2" => "desc",
+                    "OFFERS_SORT_FIELD" => "sort",
+                    "OFFERS_SORT_ORDER" => "asc",
+                    "OFFERS_SORT_FIELD2" => "id",
+                    "OFFERS_SORT_ORDER2" => "desc",
+                    "ELEMENT_COUNT" => "9",
+                    "LINE_ELEMENT_COUNT" => "3",
+                    "OFFERS_FIELD_CODE" => array(
+                        0 => "",
+                        1 => "",
+                    ),
+                    "OFFERS_LIMIT" => "5",
+                    "SECTION_URL" => "",
+                    "DETAIL_URL" => "",
+                    "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+                    "SEF_MODE" => "N",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_GROUPS" => "Y",
+                    "CACHE_FILTER" => "N",
+                    "ACTION_VARIABLE" => "action",
+                    "PRODUCT_ID_VARIABLE" => "id",
+                    "PRICE_CODE" => array(
+                        0 => "BASE",
+                    ),
+                    "USE_PRICE_COUNT" => "N",
+                    "SHOW_PRICE_COUNT" => "1",
+                    "PRICE_VAT_INCLUDE" => "Y",
+                    "CONVERT_CURRENCY" => "N",
+                    "BASKET_URL" => "/personal/basket.php",
+                    "USE_PRODUCT_QUANTITY" => "N",
+                    "ADD_PROPERTIES_TO_BASKET" => "Y",
+                    "PRODUCT_PROPS_VARIABLE" => "prop",
+                    "PARTIAL_PRODUCT_PROPERTIES" => "N",
+                    "DISPLAY_COMPARE" => "N",
+                    "COMPATIBLE_MODE" => "Y"
+                ),
+                false
+            ); ?>
 
 
             <div class="jumping-slider-options hidden">

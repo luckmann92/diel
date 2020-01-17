@@ -9,29 +9,29 @@
 
   function initSlider(el) {
     let jumpingSlider = tns({
-        container: el.querySelector(".jumping-slider"),
-        items: 1,
-        controls: false,
-        nav: false,
-        navContainer: el.querySelector(".jumping-slider-options__nav"),
-        touch: true,
-        mouseDrag: true,
+      container: el.querySelector(".jumping-slider"),
+      items: 1,
+      controls: false,
+      nav: false,
+      navContainer: el.querySelector(".jumping-slider-options__nav"),
+      touch: true,
+      mouseDrag: true,
 
-        speed: 1200,
+      speed: 1200,
 
-        responsive: {
-          "320": {
-            fixedWidth: 263,
-            gutter: 30
-          },
-          "768": {
-            fixedWidth: 296,
-          },
-          "1366": {
-            fixedWidth: 450,
-            gutter: 0
-          }
+      responsive: {
+        "320": {
+          fixedWidth: 263,
+          gutter: 30
+        },
+        "768": {
+          fixedWidth: 296,
+        },
+        "1366": {
+          fixedWidth: 450,
+          gutter: 0
         }
+      }
     });
 
     // var customizedFunction = function (info, eventName) {
@@ -42,7 +42,7 @@
     //   n.style.zIndex = "1";
     //   n2.style.zIndex = "2";
     // }
-  
+
     // jumpingSlider.events.on('indexChanged', customizedFunction);
     // setInterval(function() {
     //   let n = document.querySelectorAll(".jumping-slider__item.tns-slide-active");
@@ -94,7 +94,7 @@
 
     if (el.querySelector(".jumping-slider__item")) {
       info = jumpingSlider.getInfo(),
-      displays = info.slideCount;
+          displays = info.slideCount;
     } else {
       el.querySelector(".jumping-slider-options").style.display = "none";
       return;
@@ -103,45 +103,45 @@
     if (displays <= 1) {
       el.querySelector(".jumping-slider-options").style.display = "none";
     }
-  
-  
+
+
     // Добавить элементы
     let nav = el.querySelector(".jumping-slider-options__nav");
-      
+
     for (let i = 0; i < displays; i++) {
       let item = document.createElement("div");
       item.classList.add("jumping-slider-options__item");
-      
+
       nav.appendChild(item);
     }
-  
+
     let box = el.querySelector(".jumping-slider-options"),
         line = el.querySelector(".jumping-slider-options__progress-line"),
         navItems = el.querySelectorAll(".jumping-slider-options__item");
-  
-  
+
+
     initOptions();
-  
-  
+
+
     jumpingSlider.events.on('transitionStart', customizedFunction);
-  
+
     function customizedFunction(info) {
-        let i = info.displayIndex - 1,
+      let i = info.displayIndex - 1,
           item = navItems[i],
           X = item.offsetLeft;
-  
+
       removeCurrent();
       checkActive(X);
       item.classList.add("jumping-slider-options__item--current");
       item.classList.add("jumping-slider-options__item--active");
       moveLine(X);
     }
-  
+
     function initOptions() {
       navItems.forEach((el, index) => {
         el.addEventListener("click", evt => {
           jumpingSlider.goTo(index);
-  
+
           removeCurrent();
           checkActive(el.offsetLeft);
           evt.target.classList.add("jumping-slider-options__item--current");
@@ -150,25 +150,25 @@
         });
       });
     }
-  
-  
+
+
     function moveLine(X) {
       line.style.width = X + "px";
     }
-  
+
     // Выделить все элементы за активным
     function checkActive(X) {
       navItems.forEach(el => {
         let itemX = el.offsetLeft;
-  
+
         el.classList.remove("jumping-slider-options__item--active");
-  
+
         if (itemX <= X) {
           el.classList.add("jumping-slider-options__item--active");
         }
       });
     }
-  
+
     // Снять все Current
     function removeCurrent() {
       navItems.forEach(el => {
@@ -177,4 +177,91 @@
     }
   }
 })();
-  
+
+
+$(document).ready(function () {
+  let slider = $('.product-slider'),
+      sliderNav = $('.product-slider-nav');
+  slider.slick({
+    dots: false,
+    arrows: false,
+    variableWidth: true,
+    infinite: false,
+    asNavFor: '.product-slider-nav'
+  });
+  sliderNav.slick({
+    dots: false,
+    arrows: false,
+    asNavFor: '.product-slider',
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: false,
+    focusOnSelect: true,
+    centerMode: true,
+    draggable: false,
+    responsive: [
+      {
+        breakpoint: 1700,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
+  });
+
+  $(document).on('click', function (e) {
+    let target = $(e.target),
+        prevArrow = $('.prev'),
+        nextArrow = $('.next');
+
+    if (target.is(prevArrow)) {
+      slider.slick('slickPrev');
+    }
+    if (target.is(nextArrow)) {
+      slider.slick('slickNext');
+    }
+  });
+
+  slider.on('afterChange', function () {
+    $('.product-slide.slick-current').children().append('<div class="prev"></div><div class="next"></div>')
+  });
+
+  slider.on('beforeChange', function () {
+    $('.next').remove();
+    $('.prev').remove();
+  });
+
+
+  let navItem = $('.product-slider-nav__item');
+
+  navItem.eq(0).addClass('active');
+  $('.product-slide').each(function () {
+    $(this).show();
+  });
+
+  navItem.on('click', function () {
+    $(this).addClass('active');
+    $(this).parent().prev().children().addClass('active');
+    $(this).parent().next().children().removeClass('active');
+    $(this).parent().prev().addClass('active');
+    $(this).parent().removeClass('active');
+  });
+
+  navItem.hover(function () {
+    $(this).parent().prev().addClass('active');
+  }, function () {
+    if (!$(this).hasClass('active')) {
+      $(this).parent().prev().removeClass('active');
+    }
+  });
+
+  sliderNav.on('afterChange', function () {
+    let curSlideNav = $('.product-slider-nav__item-wrap.slick-current');
+
+    curSlideNav.prev().addClass('active');
+    curSlideNav.removeClass('active');
+
+    curSlideNav.children().addClass('active');
+    curSlideNav.next().children().removeClass('active');
+  });
+});
