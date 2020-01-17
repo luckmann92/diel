@@ -75,18 +75,6 @@ if ($arResult["RENDER_FORM"] == "Y") {
         $arQuestion["INPUT_CSS_CLASSES"] = implode(" ", $inputCssClasses);
         $arQuestion["INPUT_WRAP_CLASSES"] = implode(" ", $inputWrapClasses);
 
-        $arQuestion["JS_CODE"] = [];
-        if (in_array($arQuestion["SYSTEM_CODE"], ["telefon"])) {
-            $arQuestion["JS_CODE"][] = <<<JS
-// (function($){
-//     $(function () {
-//         $("#{$arQuestion["VARNAME"]}").mask("+7 (999) 999-99-99");
-//     });
-// })(jQuery);
-JS;
-        }
-        $arQuestion["JS_CODE"] = implode(";", $arQuestion["JS_CODE"]);
-
         if (isset($arResult["arrVALUES"][ $fieldID ])) {
             $arQuestion["VALUE"] = $arResult["arrVALUES"][ $fieldID ];
         }

@@ -12,6 +12,7 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/libs/arcticmod
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/add-favorites.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/app.js"));
 
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/slick.min.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/tiny-slider.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/swiper.min.js"));
 // Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/imask.js"));
