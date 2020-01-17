@@ -14,27 +14,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' || isset($_REQUEST['formresult'])) {
     $APPLICATION->RestartBuffer();
     if ($arResult['FORM_ERRORS']) {
-        $arResult['FORM_ERRORS'] = str_replace('Не заполнены следующие обязательные поля:', 'Ошибка при отправке формы', $arResult['FORM_ERRORS']);
-        $arResult['FORM_ERRORS'] = str_replace('&nbsp;', '', $arResult['FORM_ERRORS']);
-        foreach ($arResult['arrVALUES'] as $code => $arrVALUE) {
-            foreach ($arResult['arAnswers'] as $SID => $arAnswer) {
-                if ('form_' . $arAnswer[0]['FIELD_TYPE'] . '_' . $arAnswer[0]['ID'] == $code) {
-                    if ($arResult['QUESTIONS'][$SID]['REQUIRED'] == 'Y') {
-                        if (strpos($SID, 'PHONE') !== false) {
-                            $phone = preg_replace("/[^,.0-9]/", '', $arrVALUE);
-                            if (strlen($phone) < 11) {
-                                $mess = 'Некорректный номер телефона';
-                                if (strpos($arResult['FORM_ERRORS'], 'Телефон') !== false) {
-                                    $arResult['FORM_ERRORS'] = str_replace('Телефон', $mess, $arResult['FORM_ERRORS']);
-                                } else {
-                                    $arResult['FORM_ERRORS'] .= '  <br />» "' . $mess . '"';
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
         $arResponse = array(
             'error' => true,
             'result' => false,
@@ -174,11 +153,19 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
             $('#form_id_' + <?= $arResult['arForm']['ID'] ?>).off('submit.ajax-form').on('submit.ajax-form', function (e) {
                 $('.popup-error').css('display', 'none').html('');
                 e.preventDefault();
+                let form = $(this);
+
                 $.ajax({
                     url: $(this).attr('action'),
                     type: 'POST',
                     data: $(this).serialize(),
                     dataType: 'json',
+                    beforeSend: function () {
+                        console.log(formValidate(form, false, true));
+                        if(!formValidate(form, false, true)) {
+                            return false;
+                        }
+                    },
                     success: function (res) {
                         if (res.error === true) {
                             $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
@@ -186,7 +173,6 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                             let result = '<section class="popup popup-request-call popup--active arcticmodal-overlay"> <div class="popup-successful__inner">' +
                                 '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
                                 '<div class="popup-successful__message">Менеджер свяжется с вами в ближайшее время. </div> <button class="popup-successful__close popup__close js-init-form-close"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path> </svg></button></div>';
-                            //$('#form_id_' + <?= $arResult['arForm']['ID'] ?>).addClass('popup-successful').html(result);
                             $.arcticmodal({
                                 content: result
                             });
@@ -195,12 +181,6 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 });
                 return false;
             });
-            /* $('.js-init-form-close').click(function (e) {
-                 e.preventDefault();
-                 $('.popup.arcticmodal-overlay').css('display', 'none');
-                 $('.popup.arcticmodal-overlay').css('display', 'none');
-                 return false;
-             });*/
         </script>
     <? } elseif ($arParams['ADD_REVIEWS'] == 'Y') { ?>
 
@@ -331,11 +311,18 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
             $('#form_id_' + <?= $arResult['arForm']['ID'] ?>).off('submit.ajax-form').on('submit.ajax-form', function (e) {
                 $('.popup-error').css('display', 'none').html('');
                 e.preventDefault();
+                let form = $(this);
+
                 $.ajax({
                     url: $(this).attr('action'),
                     type: 'POST',
                     data: $(this).serialize(),
                     dataType: 'json',
+                    beforeSend: function () {
+                        if(!formValidate(form)) {
+                            return false;
+                        }
+                    },
                     success: function (res) {
                         if (res.error === true) {
                             if (e.target.querySelector("input[type=tel]")) {
@@ -362,7 +349,6 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                             let result = '<section class="popup popup-request-call popup--active arcticmodal-overlay"> <div class="popup-successful__inner">' +
                                 '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
                                 '<div class="popup-successful__message">Менеджер свяжется с вами в ближайшее время. </div> <button class="popup-successful__close popup__close js-init-form-close"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path> </svg></button></div>';
-                            //$('#form_id_' + <?= $arResult['arForm']['ID'] ?>).addClass('popup-successful').html(result);
                             $.arcticmodal({
                                 content: result
                             });

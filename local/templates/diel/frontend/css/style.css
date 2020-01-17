@@ -6683,6 +6683,10 @@ label a:hover,
 .popup-order__title {
   margin-bottom: 30px; }
 
+.popup-order-form .popup-error {
+  width: 100%;
+}
+
 .popup-order-form__left {
   order: 1; }
 
