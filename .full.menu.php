@@ -48,6 +48,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Индивидуальный заказ", 
+		"/individual/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>
