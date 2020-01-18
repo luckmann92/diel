@@ -47,16 +47,6 @@
                 </select>
             </div>
         </div>
-
-        <?/*$APPLICATION->IncludeComponent(
-                'bitrix:catalog.section.list',
-                'catalog-sub',
-                array(
-                    'IBLOCK_ID' => $arParams["IBLOCK_ID"],
-                    'SECTION_ID' => $arResult['ORIGINAL_PARAMETERS']['SECTION_ID'],
-                    'SECTION_CODE' => $arResult['CODE']
-                )
-        )*/?>
     </div>
 <?}?>
 <?if (count($arResult['ITEMS']) > 0) {?>
@@ -126,11 +116,8 @@
 
                 <p class="product-card__weight"><?=$arItem['PROPERTIES'][$CODE]['VALUE']?></p>
             </div>
-<?
-                    $i++;
-                    }?>
-<?
-           }?>
+<? $i++; }?>
+<? }?>
 <?}?>
             <? if ($arItem['PRICES']) { ?>
                 <? sort($arItem['PRICES']) ?>
@@ -145,9 +132,107 @@
         </li>
     <? } ?>
 </ol>
+
+    <ol class="section-card__list" style="display: none; margin-top: 16px;">
+        <?foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
+            <?if ($key == 0 || $key % 6 == 0) {?>
+                <li class="product-card product-card--view-3">
+                    <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
+                        <span class="product-card__novelty">Новинка</span>
+                    <?}?>
+                    <div class="product-card__image-wrapper">
+                        <img class="product-card__image"
+                             src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
+                             alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
+                    </div>
+
+                    <div class="product-card__text">
+                        <h3 class="product-card__title">
+                            <?=$arItem['NAME']?>
+                        </h3>
+                        <?if ($arItem['PREVIEW_TEXT']) {?>
+                            <p class="product-card__description"><?= $arItem['PREVIEW_TEXT'] ?></p>
+                        <?}?>
+                        <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
+
+                        <div class="product-card__footer">
+                            <a class="product-card__button-detail link-detail" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее
+                                <?= GetContentSvgIcon('arrow-long') ?>
+                            </a>
+                            <a data-product-id="<?=$arItem['ID']?>"
+                               data-props="<?=str_replace('"', "'", serialize($arParams['DETAIL_PROPERTY_CODE']))?>"
+                               class="js-init-fast-show product-card__fast button-second"><span>Быстрый просмотр</span>
+                                <?= GetContentSvgIcon('eye') ?>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a data-product-id="<?= $arItem['ID'] ?>" class="js-init-add-favorites product-card__to-favorites <?=isFavorites($arItem['ID'])?>" href="">
+                        <?= GetContentSvgIcon('favorites') ?>
+                    </a>
+
+                    <a class="product-card__detail" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"></a>
+                </li>
+            <?} else {?>
+
+                <li class="product-card">
+                    <? if ($arItem['PROPERTIES']['IS_NEW']['VALUE']) { ?>
+                        <span class="product-card__novelty">Новинка</span>
+                    <? } ?>
+                    <div class="product-card__image-wrapper">
+                        <img class="product-card__image"
+                             src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
+                             alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
+                    </div>
+
+                    <div class="product-card__text">
+                        <h3 class="product-card__title"><?=$arItem['NAME']?></h3>
+
+                        <b class="product-card__price"><?= number_format($arItem['PRICES'][0], 0, ' ', ' ') ?> ₽</b>
+
+                        <div class="product-card__footer">
+                            <a data-props="<?=str_replace('"', "'", serialize($arParams['DETAIL_PROPERTY_CODE']))?>"
+                               data-product-id="<?=$arItem['ID']?>" class="js-init-fast-show product-card__fast button-second">
+                                <?= GetContentSvgIcon('eye') ?>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <a data-product-id="<?= $arItem['ID'] ?>" class="js-init-add-favorites product-card__to-favorites <?=isFavorites($arItem['ID'])?>" href="#">
+                        <?= GetContentSvgIcon('favorites') ?>
+                    </a>
+
+                    <a class="product-card__detail" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"></a>
+                </li>
+            <?}?>
+        <?}?>
+    </ol>
 <?} else {?>
-<div class="search-result">
-            Ничего не найдено
-        </div>
+    <p style="padding-top: 40px" class="catalog-section__text-empty">К сожалению в данном разделе товаров нет</p>
+    <br>
+    <br>
+    <a class="product-card__button-transition button-transition" href="/catalog/">
+        Перейти в каталог
+        <?=GetContentSvgIcon('arrow-long')?></a>
 <?}?>
 <?=$arResult['NAV_STRING']?>
+
+<script>
+    $(document).ready(function () {
+        if ($(window).width() < 1200) {
+            $('.section-card__list--view-list').css('display', 'none');
+            $('.section-card__list').css('display', 'grid');
+        }
+
+        $( window ).resize(function() {
+            if ($(window).width() < 1200) {
+                $('.section-card__list--view-list').css('display', 'none');
+                $('.section-card__list').css('display', 'grid');
+            } else {
+                $('.section-card__list--view-list').css('display', 'table');
+                $('.section-card__list').css('display', 'none');
+            }
+        });
+    });
+</script>

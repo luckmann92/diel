@@ -107,5 +107,3 @@ $(document).ready(function () {
         });
     });
 });
-
-// $("input[type=tel]").attr("pattern", "\+\d{1}\(\d{3}\)\-\d{3}-\d{2}-\d{2}");
