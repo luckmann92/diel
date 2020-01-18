@@ -167,7 +167,6 @@ if ($arResult['ITEMS']) {?>
     <br>
     <a class="product-card__button-transition button-transition" href="/catalog/">
         Перейти в каталог
-
     <?=GetContentSvgIcon('arrow-long')?></a>
 <?}?>
 <?=$arResult['NAV_STRING']?>

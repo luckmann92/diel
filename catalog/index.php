@@ -96,7 +96,7 @@ $APPLICATION->SetTitle("Каталог");
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
-		"TYPE_FILTER" => 'horizontal',
+		"TYPE_FILTER" => "horizontal",
 		"LABEL_PROP" => "",
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
@@ -230,7 +230,7 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "SIZE",
 			2 => "INSERTS",
 		),
-		"TYPE_SECTION" => "TABLE",
+		"TYPE_SECTION" => "LIST",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
