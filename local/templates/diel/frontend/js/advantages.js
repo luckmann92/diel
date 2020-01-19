@@ -19,7 +19,7 @@
           fixedWidth: 400,
           gutter: 50
         },
-        "1366": {
+        "1200": {
           fixedWidth: 550,
           gutter: 60
         }
