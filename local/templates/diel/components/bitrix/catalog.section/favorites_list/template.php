@@ -47,16 +47,6 @@
                 </select>
             </div>
         </div>
-
-        <?/*$APPLICATION->IncludeComponent(
-                'bitrix:catalog.section.list',
-                'catalog-sub',
-                array(
-                    'IBLOCK_ID' => $arParams["IBLOCK_ID"],
-                    'SECTION_ID' => $arResult['ORIGINAL_PARAMETERS']['SECTION_ID'],
-                    'SECTION_CODE' => $arResult['CODE']
-                )
-        )*/?>
     </div>
 <?}?>
 <?if (count($arResult['ITEMS']) > 0) {?>
