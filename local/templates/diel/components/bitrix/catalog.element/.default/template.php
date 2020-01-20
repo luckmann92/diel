@@ -20,7 +20,7 @@ if (count($arResult['MORE_IMAGES']) < 3) { ?>
                 <div class="product-slide__img">
                     <img src="<?= $arItem['SRC'] ?>"
                          alt="<?= $arItem['ALT'] ?>">
-                    <? if ($i++ == 0) { ?>
+                    <? if ($i++ == 0 && count($arResult['MORE_IMAGES']) != 1) { ?>
                         <div class="prev"></div>
                         <div class="next"></div>
                     <? } ?>
@@ -29,6 +29,7 @@ if (count($arResult['MORE_IMAGES']) < 3) { ?>
         <? } ?>
     </div>
     <? $i = 1 ?>
+    <? if (count($arResult['MORE_IMAGES']) != 1) { ?>
     <div class="product-slider-cont">
         <div class="product-slider-nav">
             <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { ?>
@@ -40,6 +41,7 @@ if (count($arResult['MORE_IMAGES']) < 3) { ?>
             <? } ?>
         </div>
     </div>
+    <?}?>
 </div>
 
 <form class="card-item__form card-item-form" action="">
