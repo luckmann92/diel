@@ -29,7 +29,7 @@ if ($_REQUEST['ACTION']) {
             false,
             false,
             array(
-                'ID', 'IBLOCK_ID', 'PREVIEW_PICTURE', 'DETAIL_PICTURE', 'DETAIL_PAGE_URL', 'NAME', 'PROPERTY_*')
+                'ID', 'IBLOCK_ID', 'PREVIEW_PICTURE', 'DETAIL_PICTURE', 'DETAIL_PAGE_URL', 'NAME', 'PROPERTY_*', 'PROPERTY_MORE_IMAGES')
         );
         while ($ar = $rs->GetNextElement()) {
             $arProduct = $ar->GetFields();
@@ -42,6 +42,7 @@ if ($_REQUEST['ACTION']) {
                 );
             }
             $arProperties = $ar->GetProperties();
+            $arProduct['PROPERTIES'] = $arProperties;
 
             $arProduct['PROPS'] = array();
 
@@ -52,7 +53,6 @@ if ($_REQUEST['ACTION']) {
             } else {
                 $arProduct['PROPS'] = $arProperties;
             }
-
 
             $rsCollection = CIBlockElement::GetList(
                 array(),
@@ -69,15 +69,30 @@ if ($_REQUEST['ACTION']) {
             <section class="popup popup-product-card popup--active">
                 <div class="popup-product-card__inner">
                     <h2 class="popup-product-card__title section-title"><?=$arProduct['NAME']?></h2>
-
-                    <div class="popup-product-card__image-wrapper">
-                        <?if ($arProduct['PREVIEW_PICTURE']) {?>
-                            <img class="popup-product-card__image-left" src="<?=$arProduct['PREVIEW_PICTURE']['SRC']?>" alt="">
-                        <?}?>
-                        <!-- <?if ($arProduct['DETAIL_PICTURE']) {?>
-                            <img class="popup-product-card__image-right" src="<?=$arProduct['DETAIL_PICTURE']['SRC']?>" alt="">
-                        <?}?> -->
+                    <div class="product-slider__cont">
+                        <div class="product-slider">
+                            <div class="product-slide">
+                                <div class="product-slide__img">
+                                    <img src="<?= $arProduct["PREVIEW_PICTURE"]['SRC'] ?>">
+                                        <div class="prev"></div>
+                                        <div class="next"></div>
+                                </div>
+                            </div>
+                            <? foreach ($arProduct['PROPERTIES']['MORE_IMAGES']['VALUE'] as $arItem) { ?>
+                                <div class="product-slide">
+                                    <div class="product-slide__img">
+                                        <img src="<?= CFile::GetPath($arItem) ?>">
+                                    </div>
+                                </div>
+                            <? } ?>
+                        </div>
                     </div>
+
+                    <!--<div class="popup-product-card__image-wrapper">
+                        <?/*if ($arProduct['PREVIEW_PICTURE']) {*/?>
+                            <img class="popup-product-card__image-left" src="<?/*=$arProduct['PREVIEW_PICTURE']['SRC']*/?>" alt="">
+                        <?/*}*/?>
+                    </div>-->
 
                     <div class="popup-product-card__middle">
                         <?if ($price) {?>
@@ -164,6 +179,41 @@ if ($_REQUEST['ACTION']) {
             });
             return false;
         });
+
+
+        $(document).ready(function () {
+            let slider = $('.product-slider');
+            slider.slick({
+                dots: false,
+                arrows: false,
+                variableWidth: true,
+                infinite: false,
+                speed: 500
+            });
+
+            $(document).on('click', function (e) {
+                let target = $(e.target),
+                    prevArrow = $('.prev'),
+                    nextArrow = $('.next');
+
+                if (target.is(prevArrow)) {
+                    slider.slick('slickPrev');
+                }
+                if (target.is(nextArrow)) {
+                    slider.slick('slickNext');
+                }
+            });
+
+            slider.on('afterChange', function () {
+                $('.product-slide.slick-current').children().append('<div class="prev"></div><div class="next"></div>')
+            });
+
+            slider.on('beforeChange', function () {
+                $('.next').remove();
+                $('.prev').remove();
+            });
+        });
+
     </script>
 <?
     die();

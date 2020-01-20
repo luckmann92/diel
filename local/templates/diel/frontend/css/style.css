@@ -1459,7 +1459,7 @@ label a:hover,
     font-size: 16px;
     line-height: 120%; }
   .filter__diel-select {
-    margin-right: 25px !important; }
+    margin-right: 20px !important; }
   .page-filter__right {
     margin-top: 0; }
   .filter__tag-list {
@@ -1804,12 +1804,11 @@ label a:hover,
   .horizontal-filter {
     flex-direction: row;
     margin: 20px auto;
-    width: 1390px; }
+    width: 100%; }
   .horizontal-filter__right {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 30px 50px;
-    padding-top: 0; }
+    padding: 0 30px 30px; }
   .horizontal-filter .filter__price-wrapper .filter__price-min,
   .horizontal-filter .filter__price-wrapper .filter__price-max {
     width: 100px; }
@@ -2640,7 +2639,7 @@ label a:hover,
     margin-top: 50px;
     max-width: 100%; }
   .product-card-list {
-    height: 597px; } }
+    height: 590px; } }
 
 @media screen and (min-width: 1200px) {
   .our-products__inner {
@@ -2651,13 +2650,13 @@ label a:hover,
   .our-products .product-card.product-card--view-1 .product-card__image-wrapper {
     height: 200px; }
   .our-products__button-next {
-    display: block; } }
+    display: block; }
+  .product-card-list {
+    height: 670px; }}
 
 @media screen and (min-width: 1200px) {
   .our-products__inner {
-    padding-left: 270px; }
-  .product-card-list {
-    height: 675px; } }
+    padding-left: 270px; } }
 
 @media screen and (min-width: 1920px) {
   .our-products__inner {
@@ -2772,11 +2771,11 @@ label a:hover,
       height: 285px; }
       .our-products .product-card .product-card__image-wrapper {
         height: 126px; } }
-  @media screen and (min-width: 1366px) {
+  @media screen and (min-width: 1200px) {
     .our-products .product-card {
       width: calc((100% - 30px * 2) / 2);
       width: 350px; } }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1200px) {
     .our-products .product-card {
       padding: 35px 40px;
       width: 350px;
@@ -7317,6 +7316,7 @@ label a:hover,
     background-color: #0D0705;
     z-index: -1; }
 
+
 .product-slider {
   height: 80vw; }
 .product-slider .slick-list {
@@ -7325,9 +7325,10 @@ label a:hover,
 .product-slide {
   display: none;
   position: relative;
+  top: 0;
   height: 150px;
   opacity: 0.6;
-  transition: top 0.3s, opacity 0.3s; }
+  transition: top 0.7s, opacity 0.7s; }
 .product-slide__img {
   position: relative;
   height: 700px }
@@ -7375,7 +7376,8 @@ label a:hover,
   overflow: hidden; }
 
 .product-slider-nav {
-  overflow: visible; }
+  overflow: visible;
+  padding-left: 20px; }
 
 .product-slider-nav__item-wrap {
   position: relative;
@@ -7473,13 +7475,10 @@ label a:hover,
   height: 1px;
   overflow: visible; }
 
-@media screen and (max-width: 768px) {
-
-   }
-
 @media screen and (min-width: 320px) {
   .product-slide {
     top: 50px;
+    transition: top 0.7s, opacity 0.7s;
     width: 60vw; }
   .product-slide img {
     min-width: 0;
@@ -7487,8 +7486,8 @@ label a:hover,
 }
 @media screen and (min-width: 768px) {
   .product-slide {
-    position: relative;
     top: 160px;
+    transition: top 0.7s, opacity 0.7s;
     width: 550px;
     height: 700px }
   .product-slide__img {
@@ -7516,26 +7515,35 @@ label a:hover,
     height: 90%; }
 }
 @media screen and (min-width: 1700px) {
-  .product-slider__cont {
+  .card-item .product-slider__cont {
     position: absolute;
     left: 900px;
     width: 1200px;
   }
 }
 @media screen and (min-width: 1920px) {
-  .product-slider__cont {
+  .card-item .product-slider__cont {
     left: 1096px;
   }
 }
 
-/*@media screen and (min-width: 1200px) {
-body {
-    zoom: 1.2;
-    transform: scale(1.2);
-    transform-origin: 0 0; } }
+.popup .product-slide__img {
+  width: 380px;
+  height: 300px;
+}
 
-@media screen and (min-width: 1440px) {
-body {
-    zoom: 1;
-    transform: scale(1);
-    transform-origin: 0 0; } }*/
+.popup .product-slide {
+  width: 120px;
+  position: relative;
+  left: 0;
+  transition: left 0.7s, top 0.7s, opacity 0.7s;
+}
+
+.popup .product-slider {
+  height: 500px;
+}
+
+.popup .slick-current ~ .product-slide ~ .product-slide {
+  left: 270px;
+  transition: left 0.7s;
+}

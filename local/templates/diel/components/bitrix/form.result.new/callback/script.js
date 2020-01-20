@@ -133,7 +133,7 @@ function formValidate(form, reqPhone = true, reqEmail = false) {
         errors = false;
 
     popupError.empty().css('display', 'none');
-    if (name.length < 4) {
+    if (name.length < 2) {
         popupError.css('display', 'block').append('<p>Указано слишком короткое имя</p>');
         errors = true;
     } else if (!nameValid.test(name)) {
