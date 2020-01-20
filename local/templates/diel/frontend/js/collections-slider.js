@@ -3,9 +3,8 @@
 
   let jumpingSlider = tns({
       container: ".collections__slider",
-  
+      items: 2,
       controls: false,
-      // nav: false,
       navContainer: ".jumping-slider-options__nav",
       touch: true,
       mouseDrag: true,
@@ -20,7 +19,7 @@
         "768": {
           fixedWidth: 296,
         },
-        "1366": {
+        "1200": {
           fixedWidth: 717,
         }
       }

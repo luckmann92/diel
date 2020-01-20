@@ -197,7 +197,6 @@ $(document).ready(function () {
     slidesToScroll: 1,
     infinite: false,
     focusOnSelect: true,
-    centerMode: true,
     draggable: false,
     responsive: [
       {
