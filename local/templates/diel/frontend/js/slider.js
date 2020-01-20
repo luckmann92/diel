@@ -181,7 +181,9 @@
 
 $(document).ready(function () {
   let slider = $('.product-slider'),
-      sliderNav = $('.product-slider-nav');
+      sliderNav = $('.product-slider-nav'),
+      slides = $('.product-slide');
+
   slider.slick({
     dots: false,
     arrows: false,
@@ -193,19 +195,20 @@ $(document).ready(function () {
     dots: false,
     arrows: false,
     asNavFor: '.product-slider',
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: slides.length,
+    slidesToScroll: slides.length,
     infinite: false,
     focusOnSelect: true,
-    draggable: false,
-    responsive: [
+    draggable: false
+    /*responsive: [
       {
-        breakpoint: 1700,
+        breakpoint: 1920,
         settings: {
-          slidesToShow: 2
+          slidesToShow: slides.length,
+          slidesToScroll: slides.length
         }
       }
-    ]
+    ]*/
   });
 
   $(document).on('click', function (e) {
@@ -228,6 +231,7 @@ $(document).ready(function () {
   slider.on('beforeChange', function () {
     $('.next').remove();
     $('.prev').remove();
+
   });
 
 
@@ -240,9 +244,10 @@ $(document).ready(function () {
 
   navItem.on('click', function () {
     $(this).addClass('active');
-    $(this).parent().prev().children().addClass('active');
-    $(this).parent().next().children().removeClass('active');
-    $(this).parent().prev().addClass('active');
+    $(this).parent().prevAll().children().addClass('active');
+    $(this).parent().nextAll().children().removeClass('active');
+    $(this).parent().prevAll('.product-slider-nav__item-wrap').addClass('active');
+    $(this).parent().nextAll('.product-slider-nav__item-wrap').removeClass('active');
     $(this).parent().removeClass('active');
   });
 
@@ -261,6 +266,7 @@ $(document).ready(function () {
     curSlideNav.removeClass('active');
 
     curSlideNav.children().addClass('active');
-    curSlideNav.next().children().removeClass('active');
+    curSlideNav.children().addClass('active');
+    curSlideNav.nextAll().children().removeClass('active');
   });
 });
