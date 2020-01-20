@@ -27,7 +27,7 @@
         "768": {
           fixedWidth: 296,
         },
-        "1366": {
+        "1200": {
           fixedWidth: 450,
           gutter: 0
         }
