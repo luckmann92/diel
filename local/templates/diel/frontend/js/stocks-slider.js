@@ -57,6 +57,10 @@
       
     for (let i = 0; i < displays; i++) {
       let item = document.createElement("div");
+      if (i == 0) {
+        item.classList.add("jumping-slider-options__item--active");
+        item.classList.add("jumping-slider-options__item--current");
+      }
       item.classList.add("jumping-slider-options__item");
       
       nav.appendChild(item);
