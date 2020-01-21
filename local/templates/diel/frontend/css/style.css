@@ -7629,7 +7629,10 @@ label a:hover,
 
 @media screen and (min-width: 1200px) {
   .jumping-slider {
-    height: 590px; }
+    height: 470px; }
+  .section-faq__slider.jumping-slider {
+    height: 800px;
+  }
   .jumping-slider__image-wrapper {
     width: inherit;
     height: 100%; }

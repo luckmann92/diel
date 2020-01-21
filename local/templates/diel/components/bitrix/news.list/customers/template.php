@@ -137,7 +137,7 @@
 <section class="page-for-buyer__section-faq section-faq">
     <h2 class="section-faq__title section-title">частые вопросы</h2>
 
-    <div class="section-faq__slider-wrapper jumping-slider__slider-wrapper">
+    <div class="section-faq__slider-wrapper jumping-slider__slider-wrapper-faq">
         <ul class="section-faq__slider jumping-slider">
             <?foreach ($arResult['ITEMS'] as $arItem) {?>
             <li class="jumping-slider__item">
