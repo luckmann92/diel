@@ -1,0 +1,32 @@
+.collection-block {
+    display: flex;
+}
+.collection-block__left {
+    width: 40%;
+    padding-right: 15px;
+}
+.collection-block__right {
+    display: flex;
+    width: 60%;
+    padding-left: 100px;
+}
+.collection-information__slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.collection-block .different-slider__item .slider__item {
+    /*width: 700px;*/
+}
+.collection-block .different-slider__item {
+    z-index: auto;
+}
+.collection-products__head .collections__button-transition {
+    top:15px;
+    right:0;
+}
+.collection-products__head {
+    display: flex;
+    width: 100%;
+    position: relative;
+}

@@ -10,16 +10,16 @@ if ($arResult['ITEMS']) { ?>
     <section class="advantages">
         <div class="advantages-title-wrapper">
             <h2 class="advantages__title section-title"><?= $arParams['BLOCK_TITLE'] ?></h2>
-            <button class="advantages__button-next button-next">
+            <button class="advantages__button-next button-next js-init-home-slider-advantages__next">
                 <?=GetContentSvgIcon('button-next-big')?>
             </button>
         </div>
 
-        <ul class="advantages__list advantages-list">
+        <ul class="advantages__list advantages-list js-init-home-slider-advantages">
             <? foreach ($arResult['ITEMS'] as $key => $arItem) {
                 // dump($arItem);
                 ?>
-                <li class="advantages-list__item advantages-article">
+                <li class="advantages-list__item advantages-article <?=$key%2?'even':'odd'?>">
                     <div class="advantages-article__inner">
                         <a class="advantages-article__image-wrapper" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
                             <? if ($arItem['PREVIEW_PICTURE']) { ?>

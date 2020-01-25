@@ -6,7 +6,7 @@
 <? if ($arResult) { ?>
     <ul class="main-menu">
         <li class="main-menu__item main-menu__item-button">
-            <button class="main-menu-button"></button>
+            <button class="main-menu-button js-init-open-menu"></button>
         </li>
         <? foreach ($arResult as $arItem) { ?>
             <li class="main-menu__item">

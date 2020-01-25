@@ -1,14 +1,16 @@
-if (document.querySelector(".page-filter")) {
-  let select = document.querySelectorAll(".page-filter .filter__diel-js");
+$(document).ready(function () {
+  if (document.querySelector(".page-filter")) {
+    let select = document.querySelectorAll(".page-filter .filter__diel-js");
 
-  select.forEach(el => {
-    el.addEventListener("change", () => {
-      fetch(window.location.origin + el.value);
-      window.location = el.value;
+    select.forEach(el => {
+      el.addEventListener("change", () => {
+        fetch(window.location.origin + el.value);
+        window.location = el.value;
+      });
+
     });
+  }
 
-  });
-}
 
 window.addEventListener("load", function() {
   let div = document.querySelectorAll(".filter__diel-select");
@@ -22,4 +24,5 @@ window.addEventListener("load", function() {
       el.querySelector(".diel-select__button-text").textContent = el.querySelectorAll(".filter__diel-option-js")[id].textContent;
     }
   });
+});
 });

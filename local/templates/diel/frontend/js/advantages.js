@@ -1,45 +1,47 @@
-(function() {
-  if (!document.querySelector(".advantages__list")) return;
+$(document).ready(function () {
+    (function() {
+        if (!document.querySelector(".advantages__list")) return;
 
-  let advantagesSlider = tns({
-      container: ".advantages__list",
-      controlsPosition: "bottom",
-  
-      controls: false,
-      nav: false,
-      touch: true,
-      speed: 1200,
+        let advantagesSlider = tns({
+            container: ".advantages__list",
+            controlsPosition: "bottom",
 
-      responsive: {
-        "320": {
-          fixedWidth: 235,
-          gutter: 30
-        },
-        "768": {
-          fixedWidth: 400,
-          gutter: 50
-        },
-        "1200": {
-          fixedWidth: 550,
-          gutter: 60
-        }
-      }
-    });
+            controls: false,
+            nav: false,
+            touch: true,
+            speed: 1200,
 
-    let info = advantagesSlider.getInfo();
+            responsive: {
+                "320": {
+                    fixedWidth: 235,
+                    gutter: 30
+                },
+                "768": {
+                    fixedWidth: 400,
+                    gutter: 50
+                },
+                "1200": {
+                    fixedWidth: 550,
+                    gutter: 60
+                }
+            }
+        });
 
-    let btnNext = document.querySelector(".advantages__button-next");
+        let info = advantagesSlider.getInfo();
 
-    let flag = true;
+        let btnNext = document.querySelector(".advantages__button-next");
 
-    btnNext.addEventListener("click", function() {
-      if (flag) {
-        advantagesSlider.goTo('next');
-      }
-      flag = false;
-    });
+        let flag = true;
 
-    advantagesSlider.events.on('transitionEnd', function() {
-      flag = true;
-    });
-})();
+        btnNext.addEventListener("click", function() {
+            if (flag) {
+                advantagesSlider.goTo('next');
+            }
+            flag = false;
+        });
+
+        advantagesSlider.events.on('transitionEnd', function() {
+            flag = true;
+        });
+    })();
+});

@@ -49,7 +49,7 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
 
         <div class="page-filter__right">
             <div class="filter__diel-select">
-                <button class="button-picture button-picture--filter"><span>Фильтр</<span></button>
+                <button class="button-picture button-picture--filter js-init-smart-filter"><span>Фильтр</<span></button>
             </div>
 
             <span class="page-filter__label page-filter__label-sum">Показывать товаров на странице</span>

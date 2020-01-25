@@ -1,4 +1,5 @@
-if (document.querySelector(".certificates-slider__item")) {
+$(document).ready(function(){
+	if (document.querySelector(".certificates-slider__item")) {
   let jumpingSlider = tns({
     container: document.querySelector(".certificates-slider__item"),
     items: 2,
@@ -24,4 +25,6 @@ if (document.querySelector(".certificates-slider__item")) {
     // }
   });
 }
+});
+
 

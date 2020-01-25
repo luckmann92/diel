@@ -1,0 +1,95 @@
+.banner__list {
+    height:100%;
+}
+.banner__item {
+    position: relative;
+}
+.banner-menu-circle__progress {
+    transform: rotate(-34deg);
+    transition: 1s ease-out;
+}
+.banner-menu-circle__circle, .banner-menu-circle__list  {
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.banner-menu-circle__list {
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+}
+.banner-menu-circle__list .dot__item.active__prev {
+    color:#AF6A4D;
+}
+.banner-menu-circle__list .dot__item {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Lazurski', sans-serif;
+    font-size: 1.15em;
+    line-height: 2;
+    font-weight: 400;
+    width:90px;
+    height:30px;
+    padding-right: 15px;
+    transition: 150ms;
+    cursor: pointer;
+}
+.banner-menu-circle__list .dot__item:hover,
+.banner-menu-circle__list .dot__item:focus,
+.banner-menu-circle__list .dot__item:active,
+.banner-menu-circle__list .dot__item.dot__active {
+    font-size: 1.5em;
+    padding-right: 65px;
+    color:#AF6A4D;
+}
+.banner-menu-circle__list .dot__item.active__prev:before {
+    background: #AF6A4D;
+}
+.banner-menu-circle__list .dot__item:hover span:before,
+.banner-menu-circle__list .dot__item:active span:before,
+.banner-menu-circle__list .dot__item:focus span:before,
+.banner-menu-circle__list .dot__item.dot__active span:before {
+    right: 20px;
+    top: calc(50% - 1px);
+    height: 2px;
+    width:28px;
+    background: #AF6A4D;
+
+}
+.banner-menu-circle__list .dot__item span:before,
+.banner-menu-circle__list .dot__item:before,
+.banner-menu-circle__list .dot__item:after {
+    content: '';
+    position: absolute;
+    display: flex;
+    box-sizing: border-box;
+}
+.banner-menu-circle__list .dot__item:before {
+    width: 9px;
+    top: calc(50% - 4.5px);
+    right: -4.5px;
+    height: 9px;
+    border-radius: 50%;
+    background: #775C4B;
+    transition: 50ms;
+}
+.banner-menu-circle__list .dot__item.dot__active:before {
+    background: #AF6A4D;
+    width:12px;
+    height:12px;
+    top: calc(50% - 6px);
+    right: -6px;
+}
+
+.banner-menu-circle__list .dot__item.dot__active:after {
+    border:1px solid #AF6A4D;
+    border-radius: 50%;
+    width:18px;
+    height:18px;
+    top: calc(50% - 9px);
+    right: -9px;
+}

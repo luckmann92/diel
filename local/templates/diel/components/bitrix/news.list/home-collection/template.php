@@ -12,37 +12,31 @@ Loc::loadMessages(__FILE__);
     <h2 class="collections__title section-title"><?= $arParams['BLOCK_TITLE'] ?></h2>
 
     <div class="collections__slider-wrapper jumping-slider__slider-wrapper">
-        <ul class="collections__slider jumping-slider">
+        <ul class="different-slider__list js-init-slider-collections">
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
-                <li class="jumping-slider__item">
-                    <? if ($arItem['PREVIEW_PICTURE']) { ?>
-                        <div class="jumping-slider__image-wrapper">
-                            <img class="jumping-slider__image"
-                                 src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
-                                 alt="<?= $arItem['PREVIEW_PICTURE']['ALT'] ?>">
+                <li class="different-slider__item">
+                    <div class="slider__item" style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>);min-height:<?= $arItem['PREVIEW_PICTURE']['HEIGHT'] ?>px">
+                        <div class="slider__item-desc">
+                            <h3 class="slider__item-desc-title"><?= $arItem['NAME'] ?></h3>
+                            <? if ($arItem['PREVIEW_TEXT']) { ?>
+                                <div class="slider__item-desc-content"><?= $arItem['PREVIEW_TEXT'] ?></div>
+                            <? } ?>
+                            <a class="slider__item-desc-link link-detail"
+                               href="<?=$arItem['DETAIL_PAGE_URL']?>">
+                                <?= Loc::getMessage('HOME_COLLECTION_BTN_READ_MORE') ?>
+                                <?= GetContentSvgIcon('arrow-long') ?>
+                            </a>
                         </div>
-                    <? } ?>
-                    <div class="jumping-slider__text">
-                        <h3 class="jumping-slider__title"><?= $arItem['NAME'] ?></h3>
-                        <? if ($arItem['PREVIEW_TEXT']) { ?>
-                            <p class="jumping-slider__description"><?= $arItem['PREVIEW_TEXT'] ?></p>
-                        <? } ?>
-                        <a class="jumping-slider__link-detail link-detail" href="<?=$arItem['DETAIL_PAGE_URL']?>">
-                            <?= Loc::getMessage('HOME_COLLECTION_BTN_READ_MORE') ?>
-                            <?= GetContentSvgIcon('arrow-long') ?>
-                        </a>
                     </div>
-                    <a class="absolute-link" href="<?=$arItem['DETAIL_PAGE_URL']?>"></a>
                 </li>
             <? } ?>
         </ul>
 
-        <div class="collections__slider-options jumping-slider-options">
-            <div class="jumping-slider-options__progress">
-                <div class="jumping-slider-options__progress-line"></div>
-            </div>
-            <div class="jumping-slider-options__nav"></div>
+        <div class="different-slider__nav">
+            <div class="slider__nav-list"></div>
+            <div class="slider__nav-progress"></div>
         </div>
+
     </div>
 
     <a class="collections__button-transition button-transition" href="/collections/">

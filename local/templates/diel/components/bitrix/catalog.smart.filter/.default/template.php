@@ -13,11 +13,11 @@
 
 ?>
 <? if ($arResult["ITEMS"]) { ?>
-    <section class="popup filter" style="display: block;">
-        <form class="filter__form filter-form" action="<?= POST_FORM_ACTION_URI ?>">
+    <section class="popup popup-smart-filter filter" style="display: block;">
+        <form class="filter__form filter-form" action="<?= POST_FORM_ACTION_URI ?>" data-url="<?=$APPLICATION->GetCurPage()?>">
             <h2 class="filter__title">Фильтр</h2>
             <input type="hidden" name="set_filter" value="y"/>
-            <button class="popup__close filter__close" type="button">
+            <button class="popup__close filter__close js-init-close-menu" type="button">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z"
                           fill="rgba(255, 255, 255, 0.5)"/>
@@ -116,54 +116,7 @@
 
 <? } ?>
 <script>
-    $('.js-init-filter').on('change', function (e) {
-        let params = '',
-            block = $('.f-count');
 
-        if (block.length > 0) {
-            block.remove();
-        }
-        $(this).closest('form').find('.js-init-filter').each(function (i) {
-            let val = $(this).val();
-
-            if (i !== 0) {
-                params = params + '&';
-            }
-            if (val !== undefined) {
-                params = params + $(this).attr('name') + '=' + $(this).val();
-            }
-        });
-        $.arcticmodal({
-            type: 'ajax',
-            url: '<?=$APPLICATION->GetCurPage()?>?filter_use=y&ajax=y',
-            ajax: {
-                type: 'get',
-                dataType: 'html',
-                data: $(this).closest('form').serialize(),
-                success: function (response) {
-                    let obj = JSON.parse(JSON.stringify(response));
-
-                    $.ajax({
-                        url: '/local/tools/getJson.php',
-                        type: 'post',
-                        dataType: 'json',
-                        data: {
-                            json: obj['ajax_request']['responseText']
-                        },
-                        success: function (res) {
-                            let form = $('.filter-form');
-
-                            let h = '<div class="f-count" style="left:' + form.innerWidth()+ 'px">Найдено ' + res.ELEMENT_COUNT + ' элементов<br><a href="' + res.FILTER_URL + '">Показать</a></div>';
-                            form.append(h);
-                          // alert($(this).attr('name'));
-                        }
-                    });
-
-                }
-            }
-        });
-
-    });
 
     /*function ajaxFilter(el) {
         let params = '',

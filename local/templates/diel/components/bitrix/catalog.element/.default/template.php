@@ -151,7 +151,7 @@ if (count($arResult['MORE_IMAGES']) < 3) { ?>
                     <legend class="card-item-form__fieldset-legend section-title-small"><?= $arProperty['name'] ?></legend>
 
                     <div class="card-item-form__size-wrapper">
-                        <a class="card-item-form__size-link" href="#">Как определить размер?</a>
+                        <a class="card-item-form__size-link js-init-open-form-size" href="#">Как определить размер?</a>
 
                         <div class="card-item-form__size-item-group">
                             <?

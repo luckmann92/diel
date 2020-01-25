@@ -1,6 +1,6 @@
 <?
 $sSectionName = "Коллекции";
 $arDirProperties = Array(
-    'PAGE_LAYOUT' => 'column1'
+    'PAGE_LAYOUT' => 'collections_page'
 );
 ?>

@@ -16,6 +16,7 @@ html {
   background-image: linear-gradient(117.15deg, #220F06 27.07%, #0D0704 87.12%); }
 
 body {
+  font-size:16px;
   margin: 0;
   padding: 0; }
 
@@ -2539,9 +2540,9 @@ label a:hover,
     background-position: bottom -150px right -320px; }
   .advantages-article__inner {
     width: 550px; }
-  .advantages-list__item:nth-child(n) > .advantages-article__inner {
+  .advantages-list__item.odd .advantages-article__inner {
     margin-top: 40px; }
-  .advantages-list__item:nth-child(2n+1) > .advantages-article__inner {
+  .advantages-list__item.even .advantages-article__inner {
     margin-top: 180px; }
   .advantages__button-next {
     display: block;
@@ -4479,15 +4480,6 @@ label a:hover,
     margin-bottom: 70px; } }
 
 @media screen and (min-width: 1920px) {
-  .collection-information {
-    position: relative;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    display: grid;
-    grid-template-columns: 1fr 860px;
-    grid-template-rows: max-content;
-    column-gap: 160px;
-    padding-bottom: 100px; }
   .collection-information__slider-wrapper {
     order: 2;
     grid-row-end: span 2; }
@@ -5766,6 +5758,12 @@ label a:hover,
   overflow-y: auto;
   z-index: 1000;
   transition: opacity 300ms; }
+
+.popup.popup_active {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
 
 .popup--active {
   visibility: visible;

@@ -27,9 +27,7 @@ $pageLayoutClass = $APPLICATION->GetViewContent('page_layout_class');
 <html lang="<?= $arLang['LANGUAGE_ID'] ?>">
 <head>
     <?
-    if ($USER->IsAdmin()) {
-        CJSCore::Init(['jquery2']);
-    }
+    CJSCore::Init(['jquery2']);
 
     \Bitrix\Main\Page\Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/css/style.css"));
     \Bitrix\Main\Page\Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/css/slick.css"));

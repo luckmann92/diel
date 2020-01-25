@@ -70,10 +70,10 @@ global $arSetting;
                     <? } ?>
                 </ul>
             </div>
-            <button class="popup-main-menu__close popup-main-menu__button popup__close popup-main-menu__button--close">
+            <button class="popup-main-menu__close popup-main-menu__button popup__close popup-main-menu__button--close js-init-close-menu">
                 <?= GetContentSvgIcon('close') ?>
             </button>
-            <a class="popup-main-menu__search button-serch" href="#">
+            <a class="popup-main-menu__search button-search js-init-open-search-menu" href="#">
                 <?= GetContentSvgIcon('search-button') ?>
             </a>
         </div>
@@ -118,7 +118,7 @@ global $arSetting;
                 ); ?>
             </div>
         </div>
-        <button class="popup-search__close popup__close">
+        <button class="popup-search__close popup__close js-init-close-menu">
             <?= GetContentSvgIcon('close') ?>
         </button>
     </div>
@@ -187,7 +187,7 @@ global $arSetting;
                       </li>
         </ul>
 
-        <button class="popup-ring-size__close popup__close">
+        <button class="popup-ring-size__close popup__close js-init-close-menu">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 0.908974L19.091 0L10 9.09103L0.908974 0L0 0.908974L9.09103 10L0 19.091L0.908974 20L10 10.909L19.091 20L20 19.091L10.909 10L20 0.908974Z" fill="#D7825D"></path>
           </svg>

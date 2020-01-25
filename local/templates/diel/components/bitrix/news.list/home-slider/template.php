@@ -9,7 +9,7 @@ Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) { ?>
     <section class="banner" data-time-autoplay="<?= $arParams['AUTOPLAY_TIME'] ?>">
-        <ul class="banner__list">
+        <ul class="banner__list js-init-home-slider">
             <? foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
                 <li class="banner__item banner__item--slide-<?= $key ?>">
                     <img class="banner__item-bg" src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="">
@@ -50,7 +50,13 @@ if ($arResult['ITEMS']) { ?>
             <div class="banner-menu-circle">
                 <div class="banner-menu-circle__box">
                     <div class="banner-menu-circle__progress"></div>
-                    <div class="banner-menu-circle__list"></div>
+                    <div class="banner-menu-circle__circle"></div>
+                    <div class="banner-menu-circle__list">
+                        <? foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
+                            <? $index = $key < 10 ? '0' . ++$key : ++$key ?>
+                            <div class="dot__item" data-slide-index="<?= $key ?>"><span></span><?= $index ?></div>
+                        <? } ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -21,23 +21,23 @@ use Bitrix\Main\Page\Asset;
 
                 <select class="filter__diel-js" hidden>
                     <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('sort=shows&method=asc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["shows"] == "created"): ?> selected <? endif; ?>>
+                            value="<?= $APPLICATION->GetCurPageParam('sort=shows&method=asc', array('sort', 'method')) ?>" <? if ($_GET["shows"] == "created"): ?> selected <? endif; ?>>
                         По популярности
                     </option>
                     <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('sort=created&method=asc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["sort"] == "created"): ?> selected <? endif; ?>>
+                            value="<?= $APPLICATION->GetCurPageParam('sort=created&method=asc', array('sort', 'method')) ?>" <? if ($_GET["sort"] == "created"): ?> selected <? endif; ?>>
                         По новизне
                     </option>
                     <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('sort=name&method=asc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["sort"] == "name"): ?> selected <? endif; ?>>
+                            value="<?= $APPLICATION->GetCurPageParam('sort=name&method=asc', array('sort', 'method')) ?>" <? if ($_GET["sort"] == "name"): ?> selected <? endif; ?>>
                         По названию
                     </option>
                     <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('sort=price&method=asc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["sort"] == "price" && $_GET["method"] == "asc"): ?> selected <? endif; ?>>
+                            value="<?= $APPLICATION->GetCurPageParam('sort=price&method=asc', array('sort', 'method')) ?>" <? if ($_GET["sort"] == "price" && $_GET["method"] == "asc"): ?> selected <? endif; ?>>
                         По возрастанию цены
                     </option>
                     <option class="filter__diel-option-js"
-                            value="<?= $APPLICATION->GetCurPageParam('sort=price&method=desc', array('sort', 'method')) ?>#catalog-sort-panel" <? if ($_GET["sort"] == "price" && $_GET["method"] == "desc"): ?> selected <? endif; ?>>
+                            value="<?= $APPLICATION->GetCurPageParam('sort=price&method=desc', array('sort', 'method')) ?>" <? if ($_GET["sort"] == "price" && $_GET["method"] == "desc"): ?> selected <? endif; ?>>
                         По убыванию цены
                     </option>
                 </select>
@@ -46,7 +46,7 @@ use Bitrix\Main\Page\Asset;
 
         <div class="page-filter__right">
             <div class="filter__diel-select" style="display: none;">
-                <button class="button-picture button-picture--filter"><span>Фильтр</<span></button>
+                <button class="button-picture button-picture--filter js-init-smart-filter"><span>Фильтр</<span></button>
             </div>
 
             <span class="page-filter__label page-filter__label-sum">Показывать товаров на странице</span>

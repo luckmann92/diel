@@ -1,0 +1,37 @@
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .page-for-buyer__work-process {
+        padding-bottom: 0;
+    }
+    .work-process__slider-wrapper .different-slider__item,
+    .section-faq__slider-wrapper .different-slider__item {
+        width:100%;
+        height:auto;
+        padding: 15px 0;
+    }
+    .work-process__slider-wrapper .different-slider__item .slider__item,
+    .section-faq .different-slider__item .slider__item {
+        position: relative;
+        width:100%;
+        top:0;
+    }
+    .different-slider__nav.different-slider__nav {
+        display: none;
+    }
+    .page-for-buyer .page-for-buyer__section-faq {
+        padding-top: 40px;
+        padding-bottom: 45px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .page-for-buyer .page-for-buyer__work-process {
+        padding-bottom: 100px;
+    }
+    .page-for-buyer .section-faq {
+        padding-top: 185px;
+    }
+}
+.work-process__slider-wrapper .different-slider__item .slider__item,
+.section-faq .different-slider__item .slider__item,
+.section-faq .slider__item {
+    max-height: none;
+}

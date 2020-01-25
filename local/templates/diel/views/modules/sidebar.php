@@ -11,7 +11,7 @@
             </a>
         </li>
         <li class="flow-menu__item">
-            <button class="main-menu-button flow-button-menu button-menu"></button>
+            <button class="main-menu-button flow-button-menu button-menu js-init-open-menu"></button>
         </li>
         <li class="flow-menu__item">
             <?$APPLICATION->IncludeComponent(

@@ -4,15 +4,15 @@
  */
 ?>
 <? if ($arResult["ITEMS"]) { ?>
-    <section class="popup popup-horizontal-filter">
+    <section class="popup popup-smart-filter popup-horizontal-filter">
 
-    <form class="popup-horizontal-filter__form horizontal-filter" action="<?= POST_FORM_ACTION_URI ?>">
+    <form class="popup-horizontal-filter__form horizontal-filter" data-url="<?=$APPLICATION->GetCurPage()?>" action="<?= POST_FORM_ACTION_URI ?>">
         <div class="horizontal-filter__left">
             <h2 class="horizontal-filter__title">Фильтр</h2>
             <input type="hidden" name="set_filter" value="y"/>
             <a href="<?=$APPLICATION->GetCurPage()?>" class="horizontal-filter__reset" type="reset">Сбросить фильтр</a>
 
-            <button class="popup__close horizontal-filter__close" type="button">
+            <button class="popup__close horizontal-filter__close js-init-close-menu" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z" fill="#969696"/>
                 </svg>
@@ -107,79 +107,6 @@
 
     </section>
 <?}?>
-<script>
-    $('.js-init-filter').on('change', function (e) {
-        let params = '',
-            block = $('.f-count');
-
-        if (block.length > 0) {
-            block.remove();
-        }
-        $(this).closest('form').find('.js-init-filter').each(function (i) {
-            let val = $(this).val();
-
-            if (i !== 0) {
-                params = params + '&';
-            }
-            if (val !== undefined) {
-                params = params + $(this).attr('name') + '=' + $(this).val();
-            }
-        });
-        $.arcticmodal({
-            type: 'ajax',
-            url: '<?=$APPLICATION->GetCurPage()?>?filter_use=y&ajax=y',
-            ajax: {
-                type: 'get',
-                dataType: 'html',
-                data: $(this).closest('form').serialize(),
-                success: function (response) {
-                    let obj = JSON.parse(JSON.stringify(response));
-
-                    $.ajax({
-                        url: '/local/tools/getJson.php',
-                        type: 'post',
-                        dataType: 'json',
-                        data: {
-                            json: obj['ajax_request']['responseText']
-                        },
-                        success: function (res) {
-                            let form = $('.filter-form');
-
-                            let h = '<div class="f-count" style="left:' + form.innerWidth()+ 'px">Найдено ' + res.ELEMENT_COUNT + ' элементов<br><a href="' + res.FILTER_URL + '">Показать</a></div>';
-                            form.append(h);
-                            // alert($(this).attr('name'));
-                        }
-                    });
-
-                }
-            }
-        });
-
-    });
-
-    /*function ajaxFilter(el) {
-        let params = '',
-            value = el.val(),
-            name = el.attr('name');
-
-        el.closest('form').find('.js-init-filter').each(function (i) {
-            let val = $(this).val();
-
-            if (i !== 0) {
-                params = params + '&';
-            }
-            if (val !== undefined) {
-                params = params + $(this).attr('name') + '=' + $(this).val();
-            }
-        });
-        params = params.substring(0, params.length - 1);
-
-
-            alert(json);
-
-        });
-    }*/
-</script>
 <style>
     .f-count {
         position: fixed;
