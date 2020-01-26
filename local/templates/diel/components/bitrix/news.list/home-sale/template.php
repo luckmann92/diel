@@ -8,38 +8,48 @@
     <h2 class="stocks__title section-title"><?=$arParams['BLOCK_TITLE']?></h2>
 
     <div class="stocks__slider-wrapper">
-        <ul class="stocks__slider stocks-slider jumping-slider">
-            <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
-            <li class="stocks-slider__item jumping-slider__item">
-                <div class="stocks-slider__inner">
-                    <?if ($arItem['PREVIEW_PICTURE']) {?>
-                    <div class="stocks-slider__image-wrapper">
-                        <a href="<?=$arItem['DETAIL_PAGE_URL']?>">
-                            <img class="stocks-slider__image" src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
-                        </a>
-                    </div>
-<?}?>
-                    <div class="stocks-slider__text">
-                        <h3 class="stocks-slider__title">
-                            <a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem['NAME']?></a>
-                        </h3>
+        <? foreach ($arResult['ITEMS'] as $k => $arItem) { ?>
+            <div class="stocks-slider__text">
+                <h3 class="stocks-slider__title">
+                    <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?= $arItem['NAME'] ?></a>
+                </h3>
 
-                        <a class="stocks-slider__description" href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem['PREVIEW_TEXT']?></a>
+                <a class="stocks-slider__description"
+                   href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?= $arItem['PREVIEW_TEXT'] ?></a>
 
-                        <a class="stocks-slider__link-detail link-detail" href="<?=$arItem['DETAIL_PAGE_URL']?>">Подробнее
-                            <?=GetContentSvgIcon('link-detail__image')?>
-                        </a>
-                    </div>
-                </div>
-            </li>
-<?}?>
-        </ul>
-
-        <div class="stocks__slider-options jumping-slider-options">
-            <div class="jumping-slider-options__progress">
-                <div class="jumping-slider-options__progress-line"></div>
+                <a class="stocks-slider__link-detail link-detail"
+                   href="<?= $arItem['DETAIL_PAGE_URL']  ?>">Подробнее
+                    <?= GetContentSvgIcon('link-detail__image')  ?>
+                </a>
             </div>
-            <div class="jumping-slider-options__nav"></div>
+        <? } ?>
+        <div class="stocks__slider js-init-slider-stocks">
+            <? foreach ($arResult['ITEMS'] as $k => $arItem) { ?>
+                <? if ($arItem['PREVIEW_PICTURE']) { ?>
+                    <div class="stocks__slide-item">
+                        <div class="stocks__slide" style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>)">
+                            <div class="stocks-slider__item-desc">
+                                <h3 class="stocks-slider__title">
+                                    <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?= $arItem['NAME'] ?></a>
+                                </h3>
+
+                                <a class="stocks-slider__description"
+                                   href="<?= $arItem['DETAIL_PAGE_URL'] ?>"><?= $arItem['PREVIEW_TEXT'] ?></a>
+
+                                <a class="stocks-slider__link-detail link-detail"
+                                   href="<?= $arItem['DETAIL_PAGE_URL']  ?>">Подробнее
+                                    <?= GetContentSvgIcon('link-detail__image')  ?>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <? } ?>
+            <? } ?>
+        </div>
+
+        <div class="stocks-slider__nav">
+            <div class="stocks-slider__nav-list js-init-slider-stocks-nav"></div>
+            <div class="stocks-slider__nav-progress"></div>
         </div>
     </div>
 

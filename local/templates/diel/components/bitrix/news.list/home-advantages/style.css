@@ -5,3 +5,9 @@
 .advantages-list__item {
     padding:0 20px;
 }
+.advantages__button-next {
+    cursor: pointer;
+}
+.advantages {
+    user-select: none;
+}

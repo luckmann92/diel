@@ -17,6 +17,7 @@ $collection_desc = $APPLICATION->GetViewContent('collection_desc');
 $other_news = $APPLICATION->GetViewContent('other_news');
 $title = $APPLICATION->GetViewContent('title');
 $collection_detail_page = $APPLICATION->GetViewContent('collection_detail_page');
+$title_section = explode(' ', $APPLICATION->GetTitle(false));
 
 ?>
 <div class="catalog-top-wrapper">
@@ -51,18 +52,27 @@ $collection_detail_page = $APPLICATION->GetViewContent('collection_detail_page')
 
 
         <section class="<?= $class_wrapper ?>">
-            <?if ($collection_detail_page == 'Y') {?>
-            <div class="collection-block">
-                <div class="collection-block__left">
-                    <h2 class="<?= $class_title ?>"><?= $title ?: $APPLICATION->GetTitle(false) ?></h2>
-                    <?=$collection_desc?>
+            <? if ($collection_detail_page == 'Y') { ?>
+                <div class="collection-block">
+                    <div class="<?= $class_title ?>">
+                        <span class="white-title"><?= $title ?: $title_section[0] ?></span>
+                        <? if (!$title) { ?>
+                            <? foreach ($title_section as $k => $word) { ?>
+                                <? if ($k > 0) { ?>
+                                    <?= $word . ' ' ?>
+                                <? } ?>
+                            <? } ?>
+                        <? } ?>
+                    </div>
+                    <div class="collection-block__right"><?= $arParams['CONTENT'] ?></div>
+                    <div class="collection-block__left">
+                        <?= $collection_desc ?>
+                    </div>
                 </div>
-                <div class="collection-block__right"><?= $arParams['CONTENT'] ?></div>
-            </div>
-                <?} else {?>
+            <? } else { ?>
                 <h2 class="<?= $class_title ?>"><?= $title ?: $APPLICATION->GetTitle(false) ?></h2>
                 <?= $arParams['CONTENT'] ?>
-            <?}?>
+            <? } ?>
         </section>
         <?= $collection_products ?>
 

@@ -68,7 +68,9 @@
                 </a>
             </div>
 
-            <h3 class="product-card__title"><?= $arItem['NAME'] ?></h3>
+            <div class="product-card__title">
+                <?= $arItem['NAME'] ?>
+            </div>
 
             <? if ($arItem['PROPERTIES']['METAL']['VALUE']) { ?>
                 <div class="product-card__metal-wrapper">

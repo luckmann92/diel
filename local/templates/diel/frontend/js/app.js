@@ -45,8 +45,8 @@ $(document).ready(function () {
                             success: function (res) {
                                 if (typeof res !== 'undefined') {
                                     let hint = $('.f-count'),
-                                        left = verticalFilter === true ? form.innerWidth() : 20,
-                                        top = form.innerHeight() / 2 - 50;
+                                        left = verticalFilter === true ? form.innerWidth() : 84,
+                                        top = verticalFilter === true ? form.innerHeight() / 2 - 50 : 500;
                                     if (hint.length > 0) {
                                         hint.remove();
                                     }

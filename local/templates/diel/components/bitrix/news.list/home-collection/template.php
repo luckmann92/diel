@@ -11,7 +11,7 @@ Loc::loadMessages(__FILE__);
 <section class="collections">
     <h2 class="collections__title section-title"><?= $arParams['BLOCK_TITLE'] ?></h2>
 
-    <div class="collections__slider-wrapper jumping-slider__slider-wrapper">
+    <div class="collections__slider-wrapper">
         <ul class="different-slider__list js-init-slider-collections">
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
                 <li class="different-slider__item">

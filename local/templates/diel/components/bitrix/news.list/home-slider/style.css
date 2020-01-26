@@ -17,7 +17,6 @@
 }
 .banner-menu-circle__list {
     position: absolute;
-    z-index: 10;
     border-radius: 50%;
 }
 .banner-menu-circle__list .dot__item.active__prev {
@@ -32,11 +31,13 @@
     font-size: 1.15em;
     line-height: 2;
     font-weight: 400;
+    color: #765B4A;
     width:90px;
     height:30px;
     padding-right: 15px;
     transition: 150ms;
     cursor: pointer;
+    z-index: 10;
 }
 .banner-menu-circle__list .dot__item:hover,
 .banner-menu-circle__list .dot__item:focus,
@@ -92,4 +93,7 @@
     height:18px;
     top: calc(50% - 9px);
     right: -9px;
+}
+.banner-menu-circle__list {
+    user-select: none;
 }

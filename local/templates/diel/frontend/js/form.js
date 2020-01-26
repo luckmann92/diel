@@ -51,12 +51,8 @@ function ajaxForm(form) {
   });
 }
 
-
-
-initTextarea();
-
-function initTextarea() {
-let textarea = document.querySelectorAll(".textarea");
+function initTextarea(formID) {
+    let textarea = document.querySelectorAll('#form_id_' + formID + " .textarea");
 
     for (let i = 0; i < textarea.length; i++) {
       addDiv(textarea[i]);

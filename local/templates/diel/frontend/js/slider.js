@@ -407,8 +407,9 @@ $(document).ready(function () {
 
   navItem.on('click', function () {
     $(this).addClass('active');
-    $(this).parent().prevAll().children().addClass('active');
+    $(this).parent().prevAll().children().removeClass('active');
     $(this).parent().nextAll().children().removeClass('active');
+    $(this).parent().prevAll().children().addClass('prev_active');
     $(this).parent().prevAll('.product-slider-nav__item-wrap').addClass('active');
     $(this).parent().nextAll('.product-slider-nav__item-wrap').removeClass('active');
     $(this).parent().removeClass('active');
@@ -417,7 +418,7 @@ $(document).ready(function () {
   navItem.hover(function () {
     $(this).parent().prev().addClass('active');
   }, function () {
-    if (!$(this).hasClass('active')) {
+    if (!$(this).hasClass('prev_active') && !$(this).hasClass('active')) {
       $(this).parent().prev().removeClass('active');
     }
   });
@@ -429,7 +430,8 @@ $(document).ready(function () {
     curSlideNav.removeClass('active');
 
     curSlideNav.children().addClass('active');
-    curSlideNav.children().addClass('active');
     curSlideNav.nextAll().children().removeClass('active');
+    curSlideNav.prevAll().children().removeClass('active');
+    curSlideNav.prevAll().children().addClass('prev_active');
   });
 });

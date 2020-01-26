@@ -36,11 +36,42 @@ global $arSetting;
 
                 <ul class="popup-main-menu__footer popup-menu-footer">
                     <li class="popup-menu-footer__item">
-                        <a class="popup-menu-footer__phone phone-comp"
-                           href="tel:<?= $arSetting['FILIAL']['PROPS']['PHONE']['VALUE'] ?>"><?= $arSetting['FILIAL']['PROPS']['PHONE']['VALUE'] ?>
-                            <span class="phone-comp__description"><?=Loc::getMessage('MODAL_FORM_CALLBACK_LINK_TITLE')?></span>
+                        <div class="popup-menu-footer__phone phone-comp">
+                            <a href="tel:<?= $arSetting['FILIAL']['PROPS']['PHONE']['VALUE'] ?>">
+                                <?= $arSetting['FILIAL']['PROPS']['PHONE']['VALUE'] ?>
+                            </a>
+                            <?$APPLICATION->IncludeComponent(
+	"bitrix:form.result.new", 
+	"callback", 
+	array(
+		"COMPONENT_TEMPLATE" => "callback",
+		"WEB_FORM_ID" => "1",
+		"IGNORE_CUSTOM_TEMPLATE" => "N",
+		"USE_EXTENDED_ERRORS" => "N",
+		"LINK_IS_BUTTON" => "N",
+		"LINK_TEXT" => "Заказать звонок",
+		"LINK_CSS_CLASS" => "phone-comp__description",
+		"SVG_CODE" => "link-phone__image",
+		"FORM_TITLE" => "",
+		"FORM_DESCRIPTION" => "",
+		"BUTTON_TITLE" => "",
+		"SEF_MODE" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"LIST_URL" => "",
+		"EDIT_URL" => "",
+		"SUCCESS_URL" => "",
+		"CHAIN_ITEM_TEXT" => "",
+		"CHAIN_ITEM_LINK" => "",
+		"VARIABLE_ALIASES" => array(
+			"WEB_FORM_ID" => "WEB_FORM_ID",
+			"RESULT_ID" => "RESULT_ID",
+		)
+	),
+	false
+);?>
                             <?= GetContentSvgIcon('phone-comp') ?>
-                        </a>
+                        </div>
                     </li>
                     <li class="popup-menu-footer__item">
                         <a class="popup-menu-footer__address address-comp" href="/contacts/">

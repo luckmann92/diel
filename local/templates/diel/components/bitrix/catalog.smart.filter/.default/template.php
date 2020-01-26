@@ -38,14 +38,20 @@
                                     <?
                                     foreach ($arFilterItem['VALUES'] as $code => $value) { ?>
                                         <input type="text"
-                                               data-<?= mb_strtolower($code) ?>="<?= $value['VALUE'] ?>"
+                                               data-<?= mb_strtolower($code) ?>="<?= round($value['VALUE']) ?>"
                                                name="<?= $value['CONTROL_NAME'] ?>"
-                                               class="filter__price-<?= strtolower($code) ?> js-init-filter"
+                                               class="filter__price-<?= strtolower($code) ?> js-init-filter filter__price-input"
                                                id="<?= $value['CONTROL_ID'] ?>"
-                                               value="<?= $value['HTML_VALUE'] ?: $value['VALUE'] ?>">
+                                               value="<?= $value['HTML_VALUE'] ? round($value['HTML_VALUE']) : round($value['VALUE']) ?>">
                                         <?= $code == 'MIN' ? '<span>-</span>' : '' ?>
-                                        <?
-                                    } ?>
+                                        <? } ?>
+                                </div>
+                                <div class="filter__price-slider-container">
+                                    <div class="filter__price-slider">
+                                        <div class="filter__price-slider-area"></div>
+                                    </div>
+                                    <div class="filter__price-slider-thumb filter__price-slider-thumb_min"></div>
+                                    <div class="filter__price-slider-thumb filter__price-slider-thumb_max"></div>
                                 </div>
                                 <?
                                 break;
@@ -115,32 +121,6 @@
     </section>
 
 <? } ?>
-<script>
-
-
-    /*function ajaxFilter(el) {
-        let params = '',
-            value = el.val(),
-            name = el.attr('name');
-
-        el.closest('form').find('.js-init-filter').each(function (i) {
-            let val = $(this).val();
-
-            if (i !== 0) {
-                params = params + '&';
-            }
-            if (val !== undefined) {
-                params = params + $(this).attr('name') + '=' + $(this).val();
-            }
-        });
-        params = params.substring(0, params.length - 1);
-
-
-            alert(json);
-
-        });
-    }*/
-</script>
 <style>
     .f-count {
         position: fixed;

@@ -1,10 +1,12 @@
 $(document).ready(function () {
     let collection_slider =  $('.js-init-slider-collections'),
-        collection_slider_dots = $('.slider__nav-list');
+        collection_slider_dots = $('.slider__nav-list'),
+        win_w = $(window).width();
 
     collection_slider.on('init', function(event, slick){
 
         let nextSlide = slick.currentSlide + 1,
+            currentSlide = slick.$slides[slick.currentSlide],
             slide = slick.$slides[nextSlide];
 
         collection_slider_dots.find('button').each(function () {
@@ -19,14 +21,16 @@ $(document).ready(function () {
 
             $(this).attr('data-x', offsetLeft);
             $(this).attr('data-slide', i - 1);
-
         });
 
-        $(slide).find('.slider__item').addClass('slider__item-active');
+        if (win_w > 1200 && win_w > 767) {
+            $(slide).find('.slider__item').addClass('slider__item-active');
+        } else {
+            $(currentSlide).find('.slider__item').addClass('slider__item-active');
+        }
     });
     collection_slider.slick({
         arrows: false,
-        slideToShow:3,
         dots: true,
         infinite: false,
         appendDots: collection_slider_dots,
