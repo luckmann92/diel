@@ -15,6 +15,7 @@ foreach (glob( $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . "/frontend/js/*.
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/libs/arcticmodal/jquery.arcticmodal-0.3.min.js"));
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/libs/arcticmodal/jquery.arcticmodal-0.3.css"));
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/css/different_slider.css"));
+Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/css/stocks_slider.css"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/swiper.min.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/jquery.inputmask.bundle.js"));
 

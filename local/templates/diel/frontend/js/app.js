@@ -110,12 +110,6 @@ $(document).ready(function () {
         $.arcticmodal({
             type: 'ajax',
             url: urlAjax,
-            closeOnOverlayClick: true,
-            overlay: {
-                css: {
-                    opacity: 0
-                }
-            },
             ajax: {
                 type: 'GET',
                 cache: false,
@@ -126,29 +120,17 @@ $(document).ready(function () {
                 },
                 dataType: 'html',
                 success: function (data, el, response) {
-
                     data.body.html(response);
-
-
                 }
             }
         });
         return false;
     });
-// $('.js-init-form-close').on('click', function () {
-//     $.arcticmodal('close');
-// });
 
     setInterval(function () {
         $('.js-init-form-close').on('click', function (e) {
             $.arcticmodal('close');
         });
-
-        // $('.popup').on('click', function(e) {
-        //     console.log(e.target);
-        //     if (e.target.classList.contains("popup"))
-        //         $.arcticmodal('close');
-        // });
     }, 100);
 
     let addFavorites = $('.js-init-add-favorites');
@@ -190,5 +172,12 @@ $(document).ready(function () {
             }
         });
         return false;
+    });
+
+    $(".slider__item-desc-content").niceScroll({
+        cursorcolor:"#E08B66",
+        cursorwidth:"2px",
+        cursorborder:"1px solid #E08B66",
+        cursorborderradius:"2px"
     });
 });

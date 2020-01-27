@@ -363,21 +363,12 @@ $(document).ready(function () {
     infinite: false,
     focusOnSelect: true,
     draggable: false
-    /*responsive: [
-      {
-        breakpoint: 1920,
-        settings: {
-          slidesToShow: slides.length,
-          slidesToScroll: slides.length
-        }
-      }
-    ]*/
   });
 
   $(document).on('click', function (e) {
     let target = $(e.target),
-        prevArrow = $('.prev'),
-        nextArrow = $('.next');
+        prevArrow = slider.find('.prev'),
+        nextArrow = slider.find('.next');
 
     if (target.is(prevArrow)) {
       slider.slick('slickPrev');
@@ -394,7 +385,6 @@ $(document).ready(function () {
   slider.on('beforeChange', function () {
     $('.next').remove();
     $('.prev').remove();
-
   });
 
 

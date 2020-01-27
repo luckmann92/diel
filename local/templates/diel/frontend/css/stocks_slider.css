@@ -14,6 +14,14 @@
     width: 650px;
 }
 
+.page-about .stocks__slide-item {
+    width: 450px;
+}
+
+.page-about .stocks__slide {
+    width: 550px;
+}
+
 .stocks__slide {
     position: absolute;
     top: 250px;
@@ -161,44 +169,50 @@
         width: 300px;
         margin-right: 30px;
         padding-bottom: 200px;
+        height: 220px;
     }
     .stocks__slide {
+        display: block;
         width: 300px;
         top: 0;
+        height: 220px;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
     .stocks-slider__item-desc {
-        position: absolute;
-        top: 100%;
+        position: relative;
+        margin-top: 200px;
+        padding: 30px 0 0;
     }
     .stocks-slider__nav {
         display: none;
     }
-    .different-slider__item {
-        height: 360px;
+    .page-about .stocks__slide-item {
+        height: 450px;
+        width: 300px;
     }
-    .different-slider__list {
-        padding:40px 0 0;
+    .page-about .stocks-slider__item-desc {
+        margin-top: 415px;
+    }
+    .page-about .stocks__slide {
+        width: 300px;
+        min-height: 445px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .different-slider__item .slider__item {
-        width: 253px;
-        top: 0;
-    }
-    .different-slider__item {
-        width: 260px;
-        padding-top: 0;
-        padding-bottom: 550px;
+    .stocks__slide-item {
+        width: 250px;
         margin-right: 30px;
+        padding-bottom: 200px;
+        height: 180px;
     }
-    .slider__item-desc {
-        position: absolute;
-        top: 100%;
-        padding: 0;
-    }
-    .slider__item-desc-content {
-        max-height: 250px;
-        overflow: hidden;
+    .stocks__slide {
+        display: block;
+        width: 250px;
+        top: 0;
+        height: 180px;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }

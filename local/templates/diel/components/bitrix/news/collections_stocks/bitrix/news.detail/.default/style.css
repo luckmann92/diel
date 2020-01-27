@@ -18,11 +18,6 @@
     flex-direction: column;
     max-width: 100%;
 }
-
-.collection-block .different-slider__item .slider__item {
-    /*width: 700px;*/
-}
-
 .collection-block .different-slider__item {
     z-index: auto;
 }
@@ -47,10 +42,6 @@
 }
 .collection-block__left {
     width: auto;
-}
-
-@media screen and (min-width: 1200px) {
-
 }
 
 @media screen and (min-width: 1920px) {
