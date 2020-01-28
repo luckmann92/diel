@@ -16,6 +16,7 @@ Loc::loadMessages(__FILE__);
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
                 <li class="different-slider__item">
                     <div class="slider__item" style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>);min-height:<?= $arItem['PREVIEW_PICTURE']['HEIGHT'] ?>px">
+                        <div class="slider__label-year label-year"><?= $arItem['PROPERTIES']['LABLE_YEAR']['VALUE'] ?></div>
                         <div class="slider__item-desc">
                             <h3 class="slider__item-desc-title"><?= $arItem['NAME'] ?></h3>
                             <? if ($arItem['PREVIEW_TEXT']) { ?>

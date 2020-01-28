@@ -254,7 +254,7 @@
 			1 => "",
 		),
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "LABLE_YEAR",
 			1 => "",
 		),
 		"CHECK_DATES" => "Y",

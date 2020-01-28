@@ -42,7 +42,8 @@ if ($arResult['ITEMS']) { ?>
         <div class="banner__options banner-options">
             <div class="banner-menu-diamond">
                 <? foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
-                    <button class="banner-menu-diamond__button <?= $key == 0 ? 'banner-menu-diamond__button--active' : '' ?>">
+                    <button class="banner-menu-diamond__button <?= $key == 0 ? 'banner-menu-diamond__button--active' : '' ?>"
+                            data-slide-index="<?= $key ?>">
                         <?= GetContentSvgIcon('diamond') ?>
                     </button>
                 <? } ?>

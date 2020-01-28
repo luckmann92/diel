@@ -12,6 +12,7 @@
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
                 <li class="all-collections__item all-collections-item">
                     <div class="all-collections-item__inner">
+
                         <div class="all-collections-item__description">
                             <p class="news__date"><?= $arItem['DISPLAY_ACTIVE_FROM'] ?></p>
                             <p class="all-collections-item__p"><?= $arItem['PREVIEW_TEXT'] ?></p>

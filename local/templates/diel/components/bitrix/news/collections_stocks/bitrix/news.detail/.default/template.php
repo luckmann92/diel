@@ -24,6 +24,7 @@ $this->setFrameMode(true);
             <li class="different-slider__item <?= $k%2 ? 'even' : 'odd' ?>">
                     <div class="slider__item"
                          style="background-image: url(<?= $arItem['src'] ?>);min-height: <?=$arItem['height']?>px">
+
                         <div class="slider__item-desc">
 
                         </div>

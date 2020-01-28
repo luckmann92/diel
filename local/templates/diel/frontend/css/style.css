@@ -13,10 +13,11 @@
   font-weight: bold; }
 
 html {
+  font-size: 16px;
   background-image: linear-gradient(117.15deg, #220F06 27.07%, #0D0704 87.12%); }
 
 body {
-  font-size:16px;
+  font-size: 16px;
   margin: 0;
   padding: 0; }
 
@@ -27,8 +28,8 @@ p {
   margin: 10px 0;
   color: #FFFFFF;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px; }
+  font-size: 1rem;
+  line-height: 1.625; }
 
 * {
   outline: none;
@@ -59,15 +60,15 @@ p {
 section {
   color: #fff;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 32px; }
+  font-size: 1rem;
+  line-height: 2; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Lazurski Bold";
   font-weight: normal; }
 
 h2 {
-  font-size: 2em; }
+  font-size: 2rem; }
 
 a {
   color: #FFF;
@@ -170,7 +171,7 @@ a:active {
 
 .tns-visually-hidden {
   position: absolute;
-  left: -10000em; }
+  left: -10000rem; }
 
 .tns-transparent {
   opacity: 0;
@@ -243,8 +244,8 @@ a:active {
   margin: 0;
   margin-left: -3px;
   color: #E08B66;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.3rem;
+  line-height: 1.5;
   font-family: "Lazurski";
   font-weight: normal;
   letter-spacing: 2px;
@@ -260,14 +261,14 @@ a:active {
     background-color: #E08B66; }
   @media screen and (min-width: 768px) {
     .section-title {
-      font-size: 36px;
-      line-height: 42px; }
+      font-size: 2rem;
+      line-height: 1.3; }
       .section-title::before {
         width: 115px; } }
   @media screen and (min-width: 1200px) {
     .section-title {
-      font-size: 64px;
-      line-height: 80px; }
+      font-size: 4rem;
+      line-height: 1.25; }
       .section-title::before {
         width: 200px; } }
 
@@ -281,8 +282,8 @@ a:active {
   padding-bottom: 5px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.33;
   letter-spacing: 2px;
   color: #F8F8F8; }
   .section-title-small::after {
@@ -347,8 +348,8 @@ a:active {
   padding-right: 65px;
   color: #E08B66;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2;
   text-decoration: none; }
   .link-detail:hover svg {
     margin-left: 30px; }
@@ -366,8 +367,8 @@ a:active {
   padding: 10px 40px;
   padding-right: 83px;
   color: #E08B66;
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2;
   font-family: "Intro Light";
   letter-spacing: -0.191667px;
   text-decoration: none;
@@ -386,8 +387,8 @@ a:active {
   display: inline-block;
   padding: 10px 40px;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2;
   letter-spacing: -0.191667px;
   text-decoration: none;
   color: #D7825D;
@@ -400,8 +401,8 @@ a:active {
   margin: 0;
   padding: 10px 40px;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2;
   letter-spacing: -0.191667px;
   color: #E08B66;
   list-style-type: none;
@@ -437,8 +438,8 @@ a:active {
   padding: 10px;
   padding-right: 20px;
   font-family: "Intro Light";
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 0.875rem;
+  line-height: 1.5;
   color: #fff;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -466,8 +467,8 @@ a:active {
 @media screen and (min-width: 768px) {
   .button-picture {
     padding: 10px 20px;
-    font-size: 16px;
-    line-height: 32px; } }
+    font-size: 1rem;
+    line-height: 2; } }
 
 .button-next {
   width: 80px;
@@ -569,8 +570,8 @@ a:active {
   padding-bottom: 10px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 1.125rem;
+  line-height: 1.44;
   letter-spacing: 2px;
   color: #FFFFFF;
   width: 100%;
@@ -579,8 +580,8 @@ a:active {
   border: none; }
   @media screen and (min-width: 768px) {
     .input-text {
-      font-size: 24px;
-      line-height: 29px;
+      font-size: 1.5rem;
+      line-height: 1.2;
       padding-top: 15px;
       padding-bottom: 15px; } }
 
@@ -647,16 +648,16 @@ a:active {
   box-sizing: border-box;
   color: #fff;
   font-family: "Lazurski";
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 1.125rem;
+  line-height: 1.44;
   letter-spacing: 2px;
   resize: vertical;
   background-color: transparent;
   border: none; }
   @media screen and (min-width: 768px) {
     .textarea {
-      font-size: 24px;
-      line-height: 29px;
+      font-size: 1.5rem;
+      line-height: 1.2;
       padding-top: 15px;
       padding-bottom: 15px; } }
 
@@ -674,17 +675,17 @@ a:active {
   padding-bottom: 10px;
   color: rgba(255, 255, 255, 0.5);
   font-family: "Lazurski";
-  font-size: 18px;
+  font-size: 1.125rem;
   min-height: 26px;
-  line-height: 26px;
+  line-height: 1.44;
   letter-spacing: 2px;
   outline: none;
   word-wrap: break-word; }
   @media screen and (min-width: 768px) {
     .textarea-box {
-      font-size: 24px;
+      font-size: 1.5rem;
       min-height: 29px;
-      line-height: 29px;
+      line-height: 1.2;
       padding-top: 15px;
       padding-bottom: 15px; } }
 
@@ -759,8 +760,8 @@ a:active {
 .input-submit {
   padding: 8px 62px;
   font-family: "Intro Light";
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.125rem;
+  line-height: 1.78;
   letter-spacing: -0.191667px;
   color: #E08B66;
   background: linear-gradient(131.58deg, #220F06 23.07%,
@@ -795,8 +796,8 @@ a:active {
 
 .label {
   font-family: "Intro Light";
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 0.875rem;
+  line-height: 1.5;
   color: #FFFFFF; }
 
 label a,
@@ -830,8 +831,8 @@ label a:hover,
   width: 100%;
   text-align: left;
   font-family: "Intro Light";
-  font-size: 12px;
-  line-height: 21px;
+  font-size: 0.75rem;
+  line-height: 1.75;
   color: #FFFFFF;
   background-color: transparent;
   background-image: url(./../img/arrow_down.svg);
@@ -844,8 +845,8 @@ label a:hover,
   @media screen and (min-width: 768px) {
     .diel-select__button {
       padding: 10px 20px;
-      font-size: 16px;
-      line-height: 32px; } }
+      font-size: 1rem;
+      line-height: 2; } }
 
 .diel-select__button:hover {
   border-color: #fff; }
@@ -868,15 +869,15 @@ label a:hover,
 .diel-select-list__item {
   padding: 10px;
   font-family: "Intro Light";
-  font-size: 12px;
-  line-height: 21px;
+  font-size: 0.75rem;
+  line-height: 1.75;
   color: #FFFFFF;
   transition: color 300ms; }
   @media screen and (min-width: 768px) {
     .diel-select-list__item {
       padding: 0 20px;
-      font-size: 16px;
-      line-height: 32px; } }
+      font-size: 1rem;
+      line-height: 2; } }
 
 .diel-select-list__item:hover {
   color: #E08B66; }
@@ -955,8 +956,8 @@ label a:hover,
   padding-top: 15px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 24px;
-  line-height: 120%;
+  font-size: 1.5rem;
+  line-height: 1.2;
   letter-spacing: 2px;
   color: #FFFFFF;
   border-top: 1px solid rgba(255, 255, 255, 0.26); }
@@ -973,8 +974,8 @@ label a:hover,
   top: 15px;
   left: 30px;
   font-family: "Intro Light";
-  font-size: 18px;
-  line-height: 120%;
+  font-size: 1.125rem;
+  line-height: 1.2;
   letter-spacing: 2px;
   color: #FFFFFF; }
 
@@ -983,8 +984,8 @@ label a:hover,
   margin-top: 17px;
   font-family: "Lazurski Bold";
   font-weight: normal;
-  font-size: 18px;
-  line-height: 120%;
+  font-size: 1.125rem;
+  line-height: 1.2;
   letter-spacing: 2px;
   color: #FFFFFF; }
 
@@ -1049,7 +1050,7 @@ label a:hover,
     .product-card--view-3 .product-card__text {
       width: 100%; }
     .product-card--view-3 .product-card__price {
-      font-size: 24px; }
+      font-size: 1.5rem; }
   .product-card__description,
   .product-card__button-detail {
     display: block; }
@@ -1057,8 +1058,8 @@ label a:hover,
     margin: 0;
     margin-top: 20px;
     font-family: "Intro Light";
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 1rem;
+    line-height: 2;
     color: #FFFFFF; }
   .product-card__button-detail {
     margin-top: 30px; }
@@ -1107,7 +1108,7 @@ label a:hover,
 
 .address__location {
   font-family: "Intro Light";
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   font-style: normal;
   color: #FFFFFF; }
@@ -1117,7 +1118,7 @@ label a:hover,
   display: block;
   padding-left: 40px;
   font-family: "Intro Light";
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   color: #fff;
   text-decoration: none; }
@@ -1156,8 +1157,8 @@ label a:hover,
   align-items: center;
   padding-left: 40px;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #FFFFFF;
   text-decoration: none;
   transition: color 300ms; }
@@ -1185,8 +1186,8 @@ label a:hover,
 
 .operating-mode__item {
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 30px;
+  font-size: 1rem;
+  line-height: 1.875;
   color: #FFFFFF; }
 
 .requisites {
@@ -1197,8 +1198,8 @@ label a:hover,
   margin-bottom: 15px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: 2px; }
 
 .requisites__list {
@@ -1220,8 +1221,8 @@ label a:hover,
   margin-bottom: 10px;
   text-align: left;
   font-family: "Lazurski";
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.125rem;
+  line-height: 1.78;
   letter-spacing: 1px;
   color: #F8F8F8;
   border-bottom: 1px solid #E08B66; }
@@ -1230,8 +1231,8 @@ label a:hover,
   padding: 10px 0;
   vertical-align: top;
   font-family: "Intro Light";
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 0.875rem;
+  line-height: 1.14;
   color: #FFFFFF; }
 
 .characteristics__col:first-child {
@@ -1250,7 +1251,7 @@ label a:hover,
   padding-top: 10px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 120%;
   letter-spacing: 2px;
   color: #FFFFFF;
@@ -1290,7 +1291,7 @@ label a:hover,
     padding: 30px; }
   .certificates-card__title {
     padding-top: 15px;
-    font-size: 18px; }
+    font-size: 1.125rem; }
   .certificates-card__description,
   .certificates-card__link-detail {
     display: block; }
@@ -1310,7 +1311,7 @@ label a:hover,
   .certificates-card__image-wrapper {
     margin-bottom: 30px; }
   .certificates-card__title {
-    font-size: 24px; }
+    font-size: 1.5rem; }
   .certificates-card--view-1 {
     padding: 60px; } }
 
@@ -1396,8 +1397,8 @@ label a:hover,
     position: absolute;
     top: 200px;
     font-family: "Intro Light";
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 0.875rem;
+    line-height: 1.5;
     letter-spacing: 3px;
     text-transform: uppercase;
     white-space: nowrap;
@@ -1436,7 +1437,7 @@ label a:hover,
   padding: 5px;
   padding-left: 7px;
   font-family: "Intro Light";
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 120%;
   letter-spacing: 2px;
   color: #FFFFFF;
@@ -1452,8 +1453,8 @@ label a:hover,
 
 .page-filter__label {
   font-family: "Intro Light";
-  font-size: 12px;
-  line-height: 21px;
+  font-size: 0.75rem;
+  line-height: 1.75;
   color: #FFFFFF; }
 
 .page-filter__label-sum {
@@ -1489,7 +1490,7 @@ label a:hover,
     flex-wrap: wrap; }
   .page-filter__label {
     margin-right: 16px;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 120%; }
   .filter__diel-select {
     margin-right: 17px !important; }
@@ -1523,7 +1524,7 @@ label a:hover,
   display: block;
   padding: 15px 20px;
   font-family: "Lazurski";
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 120%;
   letter-spacing: 2px;
   color: #FFFFFF;
@@ -1545,7 +1546,7 @@ label a:hover,
 
 @media screen and (min-width: 1200px) {
   .filter-tag-list__link {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 120%; } }
 
 .pagination {
@@ -1558,8 +1559,8 @@ label a:hover,
 .pagination__link {
   padding: 7px 10px;
   font-family: "Lazurski";
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: -0.191667px;
   color: #FFFFFF;
   text-decoration: none;
@@ -1586,7 +1587,7 @@ label a:hover,
 @media screen and (min-width: 768px) {
   .pagination__link {
     padding: 15px;
-    font-size: 36px; }
+    font-size: 2rem; }
   .pagination__link-next:hover {
     padding-left: 35px; } }
 
@@ -1625,15 +1626,15 @@ label a:hover,
 .filter__title {
   padding: 0 30px;
   font-family: "Lazurski";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: normal;
-  line-height: 32px; }
+  line-height: 1.5; }
 
 .filter__section-title {
   font-family: "Lazurski";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: normal;
-  line-height: 32px;
+  line-height: 1.5;
   letter-spacing: 2px;
   color: #F8F8F8; }
 
@@ -1655,8 +1656,8 @@ label a:hover,
   box-sizing: border-box;
   text-align: left;
   font-family: "Lazurski";
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: -0.15px;
   color: #E08B66;
   background-color: transparent;
@@ -1691,8 +1692,8 @@ label a:hover,
   padding: 5px 15px;
   width: 80px;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #F8F8F8;
   opacity: 0.8;
   background-color: transparent;
@@ -1757,8 +1758,8 @@ label a:hover,
 .horizontal-filter__title {
   font-family: "Lazurski Bold";
   margin: 30px;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: 1px;
   color: #F8F8F8; }
 
@@ -1769,8 +1770,8 @@ label a:hover,
   transform: translate(-1px, 1px);
   text-align: left;
   font-family: "Lazurski Bold";
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: 1px;
   color: #E08B66;
   text-decoration: none;
@@ -1801,8 +1802,8 @@ label a:hover,
   margin-bottom: 20px;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: 2px;
   color: #F8F8F8; }
 
@@ -1814,8 +1815,8 @@ label a:hover,
   text-align: left;
   width: 302px;
   font-family: "Lazurski Bold";
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: 1px;
   color: #E08B66;
   background-color: #160D08;
@@ -1892,8 +1893,8 @@ label a:hover,
   padding: 7px 0;
   padding-right: 30px;
   font-family: "Lazurski";
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.5);
   background-color: transparent;
@@ -2101,8 +2102,8 @@ label a:hover,
     display: none; }
   .main-menu__link {
     color: #FFFFFF;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.125rem;
+    line-height: 1.167;
     font-family: "Intro Light";
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -2192,11 +2193,14 @@ label a:hover,
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 18px;
   background-color: transparent;
   border: none;
   cursor: pointer; }
+
+.banner-menu-diamond__button svg {
+  width: 40px;
+  height: 25px;
+}
 
 .banner-menu-diamond__icon path {
   fill: rgba(255, 255, 255, 0.3);
@@ -2214,8 +2218,8 @@ label a:hover,
   margin-top: 30px;
   max-width: 335px;
   color: #fff;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 2rem;
+  line-height: 1.167;
   font-family: "Lazurski";
   font-weight: normal;
   text-transform: uppercase;
@@ -2225,6 +2229,12 @@ label a:hover,
       margin-left: auto;
       margin-right: auto;
       width: 335px; } }
+
+@media screen and (max-width: 767px) {
+  .banner-title {
+    font-size: 1.5rem;
+  }
+}
 
 .banner-title__bigger {
   display: block;
@@ -2243,8 +2253,8 @@ label a:hover,
   margin: 0;
   margin-top: 30px;
   color: #fff;
-  font-size: 16px;
-  line-height: 26px; }
+  font-size: 1rem;
+  line-height: 1.625; }
 
 @media screen and (min-width: 768px) {
   .banner__list,
@@ -2263,14 +2273,14 @@ label a:hover,
     max-width: inherit;
     width: 650px;
     margin-left: 0;
-    font-size: 64px;
-    line-height: 80px; }
+    font-size: 4rem;
+    line-height: 1.25; }
   .banner__description {
     margin-left: 0;
     width: 325px; }
   .banner-description__text {
-    font-size: 24px;
-    line-height: 36px; }
+    font-size: 1.5rem;
+    line-height: 1.5; }
   .banner-description__button {
     margin-top: 15px; }
   .banner-menu-diamond {
@@ -2328,8 +2338,8 @@ label a:hover,
 
 .banner-menu-circle__nav-text {
   font-family: "Lazurski";
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.2;
   letter-spacing: 2px;
   fill: #765B4A; }
 
@@ -2360,8 +2370,8 @@ label a:hover,
 .banner-menu-circle__nav-btn--active .banner-menu-circle__nav-text,
 .banner-menu-circle__nav-btn:hover .banner-menu-circle__nav-text {
   stroke: #AF6A4D;
-  font-size: 24px;
-  line-height: 24px; }
+  font-size: 1.5rem;
+  line-height: 1; }
 
 .banner-menu-circle__box {
   position: relative;
@@ -2435,8 +2445,8 @@ label a:hover,
   top: -14px;
   left: -65px;
   font-family: "Lazurski";
-  font-size: 18px;
-  line-height: 36px;
+  font-size: 1.25rem;
+  line-height: 1.6;
   letter-spacing: 2px;
   color: #86533C;
   transition: all 300ms; }
@@ -2530,8 +2540,8 @@ label a:hover,
   margin-top: 30px;
   color: #FFFFFF;
   font-family: "Lazurski Bold";
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.2;
   letter-spacing: 2px; }
 
 .advantages-article__text {
@@ -2539,8 +2549,8 @@ label a:hover,
   margin-top: 20px;
   color: #FFFFFF;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 30px; }
+  font-size: 1rem;
+  line-height: 1.875; }
 
 .advantages-article__button {
   margin-top: 30px; }
@@ -2580,8 +2590,8 @@ label a:hover,
     display: block;
     right: 50px; }
   .advantages-article__title {
-    font-size: 24px;
-    line-height: 29px; }
+    font-size: 1.5rem;
+    line-height: 1.2; }
   .advantages-article__image-wrapper {
     height: 285px; } }
 
@@ -2623,8 +2633,8 @@ label a:hover,
   margin-top: 45px;
   color: #FFFFFF;
   width: 100%;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   font-family: "Intro Light"; }
 
 .our-products__list {
@@ -2681,9 +2691,7 @@ label a:hover,
   .our-products .product-card.product-card--view-1 .product-card__image-wrapper {
     height: 200px; }
   .our-products__button-next {
-    display: block; }
-  .product-card-list {
-    height: 670px; }}
+    display: block; }}
 
 @media screen and (min-width: 1200px) {
   .our-products__inner {
@@ -2750,7 +2758,7 @@ label a:hover,
   margin-top: 10px;
   padding-top: 10px;
   color: #FFFFFF;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 120%;
   font-family: "Lazurski Bold";
   font-weight: normal;
@@ -2760,14 +2768,14 @@ label a:hover,
     .our-products .product-card__title {
       margin-top: 40px;
       padding-top: 15px;
-      font-size: 18px;
-      line-height: 22px; } }
+      font-size: 1.25rem;
+      line-height: 1.1; } }
   @media screen and (min-width: 1440px) {
     .our-products .product-card__title {
       margin-top: 50px;
       padding-top: 20px;
-      font-size: 24px;
-      line-height: 29px; } }
+      font-size: 1.5rem;
+      line-height: 1.2; } }
   @media screen and (min-width: 1920px) {
     .our-products .product-card__title {
       padding-top: 30px; } }
@@ -2779,8 +2787,8 @@ label a:hover,
       display: block;
       color: #FFFFFF;
       font-family: "Intro Light";
-      font-size: 16px;
-      line-height: 32px; } }
+      font-size: 1rem;
+      line-height: 2; } }
 
 .our-products .product-card__button-detail {
   position: relative;
@@ -2965,8 +2973,8 @@ label a:hover,
   margin-top: 30px;
   margin-bottom: 20px;
   font-family: "Lazurski Bold";
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 1.25rem;
+  line-height: 1.3;
   color: #FFFFFF; }
 
 .stocks-slider__title a {
@@ -2982,8 +2990,8 @@ label a:hover,
   display: block;
   margin: 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #FFFFFF;
   text-decoration: none; }
 
@@ -2999,7 +3007,7 @@ label a:hover,
   .stocks-slider__item {
     width: 296px; }
   .stocks-slider__title {
-    line-height: 36px; }
+    line-height: 1.8; }
   .stocks-slider__link-detail {
     margin-top: 40px; } }
 
@@ -3026,7 +3034,7 @@ label a:hover,
   .stocks-slider__title {
     margin-top: 180px;
     margin-bottom: 30px;
-    font-size: 24px; }
+    font-size: 1.5rem; }
   .stocks-slider__description {
     width: 300px; }
   .stocks-slider-options {
@@ -3044,8 +3052,8 @@ label a:hover,
 
 .stocks-slider-options__item-text {
   font-family: "Lazurski";
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.2;
   letter-spacing: 2px;
   fill: #765B4A; }
 
@@ -3073,8 +3081,8 @@ label a:hover,
 .stocks-slider-options__item--active .stocks-slider-options__item-text,
 .stocks-slider-options__item:hover .stocks-slider-options__item-text {
   stroke: #AF6A4D;
-  font-size: 24px;
-  line-height: 24px; }
+  font-size: 1.5rem;
+  line-height: 1; }
 
 .company {
   position: relative;
@@ -3094,9 +3102,9 @@ label a:hover,
   height: 1px;
   text-align: center;
   font-family: "Lazurski";
-  font-size: 100px;
+  font-size: 6.25rem;
   font-weight: normal;
-  line-height: 100px;
+  line-height: 1;
   letter-spacing: 5px;
   text-transform: uppercase;
   color: #E08B66;
@@ -3106,8 +3114,8 @@ label a:hover,
   margin: 0;
   margin-top: 65px;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #F8F8F8; }
 
 .company__link-detail {
@@ -3122,8 +3130,8 @@ label a:hover,
     margin-top: 50px;
     min-height: 195px; }
   .company__year-foundation {
-    font-size: 250px;
-    line-height: 300px;
+    font-size: 15.625rem;
+    line-height: 1.2;
     transform: translateY(-150px); }
   .company__description {
     margin-top: 130px; }
@@ -3185,9 +3193,9 @@ label a:hover,
   order: 1;
   margin-top: 40px;
   font-family: "Lazurski";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: normal;
-  line-height: 32px;
+  line-height: 1.5;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #FFFFFF; }
@@ -3203,8 +3211,8 @@ label a:hover,
 .new-design__description-wrapper p {
   margin: 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #FFFFFF; }
 
 .new-design__description-wrapper p:nth-of-type(n + 2) {
@@ -3220,8 +3228,8 @@ label a:hover,
   .new-design__link-detail {
     margin-top: 40px; }
   .new-design__title {
-    font-size: 42px;
-    line-height: 54px;
+    font-size: 2.625rem;
+    line-height: 1.3;
     width: 690px; } }
 
 @media screen and (min-width: 1200px) {
@@ -3247,17 +3255,17 @@ label a:hover,
   .new-design__description-wrapper {
     width: 41%; }
   .new-design__description-wrapper p {
-    line-height: 32px; }
+    line-height: 2; }
   .new-design__link-detail {
     margin-top: 65px; }
   .new-design__title {
-    font-size: 64px;
-    line-height: 80px;
+    font-size: 4rem;
+    line-height: 1.25;
     width: 100%;
     z-index: 1; }
   .new-design__title-bigger {
-    font-size: 100px;
-    line-height: 110px;
+    font-size: 6.25rem;
+    line-height: 1.1;
     text-align: right; } }
 
 @media screen and (min-width: 1200px) {
@@ -3287,8 +3295,8 @@ label a:hover,
   padding-top: 75px;
   padding-bottom: 50px;
   font-family: "Intro Light";
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 0.875rem;
+  line-height: 1.75;
   letter-spacing: 2px;
   color: #FFFFFF;
   background-color: #0D0705; }
@@ -3882,7 +3890,7 @@ label a:hover,
   .section-card__list--view-list .product-card__novelty {
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.875em;
+    font-size: 0.875rem;
 
   }
   .section-card__list--view-list .product-card__title {
@@ -3896,7 +3904,7 @@ label a:hover,
   .section-card__list--view-list .product-card__weight-wrapper {
     padding-right: 58px;
     font-family: "Intro Light";
-    font-size: 18px;
+    font-size: 1.25rem;
     line-height: 120%;
     letter-spacing: 2px;
     color: #fff; }
@@ -3951,8 +3959,8 @@ label a:hover,
   display: block;
   padding-left: 30px;
   font-family: "Intro Light";
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 0.875rem;
+  line-height: 1.75;
   color: #fff; }
 
 .price-list-form__label a {
@@ -4050,7 +4058,7 @@ label a:hover,
   font-family: "Intro Light";
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 1.25rem;
   line-height: 120%;
   letter-spacing: 2px;
   color: #FFFFFF;
@@ -4060,8 +4068,8 @@ label a:hover,
   position: relative;
   padding-bottom: 10px;
   font-family: "Lazurski";
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: 2px;
   font-weight: normal;
   color: #F8F8F8;
@@ -4087,8 +4095,8 @@ label a:hover,
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: "Lazurski";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #F8F8F8;
@@ -4105,8 +4113,8 @@ label a:hover,
 .card-item-form__size-link {
   display: none;
   font-family: "Intro Light";
-  font-size: 14px;
-  line-height: 26px;
+  font-size: 0.875rem;
+  line-height: 1.8;
   color: #F8F8F8;
   mix-blend-mode: normal;
   opacity: 0.8;
@@ -4139,8 +4147,8 @@ label a:hover,
   align-items: center;
   font-family: "Intro Light";
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 1rem;
+  line-height: 1;
   color: rgba(248, 248, 248, 0.8);
   border: 1px solid #707073; }
 
@@ -4249,8 +4257,8 @@ label a:hover,
   .card-item-form__fieldset.card-item-form__fieldset--size {
     width: 100%; }
   .card-item-form__price {
-    font-size: 36px;
-    line-height: 40px;
+    font-size: 2.25rem;
+    line-height: 1.1;
     padding-bottom: 30px; }
   .card-item-form__price-button-group {
     position: absolute;
@@ -4258,8 +4266,8 @@ label a:hover,
     right: 0;
     margin-top: 0; }
   .card-item-form__collection {
-    font-size: 18px;
-    line-height: 32px; }
+    font-size: 1.25rem;
+    line-height: 1.6; }
   .card-item-form__size-link {
     position: absolute;
     top: 5px;
@@ -4280,8 +4288,8 @@ label a:hover,
 .card-item-information__td {
   padding: 10px 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 21px;
+  font-size: 1rem;
+  line-height: 1.3;
   color: #F8F8F8;
   vertical-align: top; }
 
@@ -4297,8 +4305,8 @@ label a:hover,
 
 .card-item-information__description-p {
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #FFFFFF; }
 
 .card-item {
@@ -4503,8 +4511,8 @@ label a:hover,
 .collection-information__p {
   margin: 10px 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #FFFFFF; }
 
 @media screen and (min-width: 768px) {
@@ -4615,6 +4623,7 @@ label a:hover,
   transform: skewY(-4deg); }
 
 .all-collections-item__image-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   margin-top: -5%;
@@ -4625,10 +4634,24 @@ label a:hover,
   z-index: -1; }
 
 .all-collections-item__image {
+  position: relative;
   width: 100%;
   height: 108%;
   object-fit: contain;
   transform: skewY(-4deg); }
+
+.all-collections-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 767px) {
+  .all-collections-item__image {
+    width: auto;
+    height: auto;
+    object-fit: contain; }
+}
 
 .all-collections-item__title {
   position: absolute;
@@ -4638,9 +4661,9 @@ label a:hover,
   display: flex;
   flex-direction: column;
   font-family: "Lazurski";
-  font-size: 26px;
+  font-size: 1.2rem;
   font-weight: normal;
-  line-height: 32px;
+  line-height: 1.23;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #FFFFFF; }
@@ -4650,8 +4673,8 @@ label a:hover,
     transform: translateX(5%); }
 
 .all-collections-item__title-bigger {
-  font-size: 36px;
-  line-height: 48px;
+  font-size: 2rem;
+  line-height: 1.33;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #E08B66; }
@@ -4663,8 +4686,8 @@ label a:hover,
 .all-collections-item__p {
   margin: 12px 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2;
   color: #FFFFFF; }
 
 .all-collections-item__button-detail {
@@ -4709,15 +4732,15 @@ label a:hover,
     transform: translate(20%, calc(100% + 30px));
     width: 400px;
     text-align: right;
-    font-size: 36px;
-    line-height: 48px; }
+    font-size: 2.25rem;
+    line-height: 1; }
     .all-collections-item__title span:first-child {
       transform: translateX(0); }
   .all-collections-item__title-bigger {
     transform: translateX(10%);
     width: inherit;
-    font-size: 46px;
-    line-height: 48px; }
+    font-size: 2.875rem;
+    line-height: 1.04; }
   .all-collections-item:nth-child(n + 2) .all-collections-item__description {
     margin-top: 100px; }
   .all-collections-item:nth-child(2n + 2) .all-collections-item__image-wrapper {
@@ -4729,11 +4752,11 @@ label a:hover,
   .all-collections-item__title {
     transform: translate(20%, calc(100% + 80px));
     width: 713px;
-    font-size: 64px;
-    line-height: 80px; }
+    font-size: 4rem;
+    line-height: 1.25; }
   .all-collections-item__title-bigger {
-    font-size: 100px;
-    line-height: 80px; }
+    font-size: 6.25rem;
+    line-height: 1; }
   .all-collections-item__image-wrapper {
     margin-top: -8%;
     margin-bottom: 0;
@@ -4869,8 +4892,8 @@ label a:hover,
   order: 4;
   margin: 10px 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #F8F8F8; }
 
 .for-buyer__image-wrapper {
@@ -4882,8 +4905,8 @@ label a:hover,
   order: 3;
   margin: 10px 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #F8F8F8; }
 
 .for-buyer__image {
@@ -4897,8 +4920,8 @@ label a:hover,
   margin: 0;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 100px;
-  line-height: 100px;
+  font-size: 6.25rem;
+  line-height: 1;
   text-align: right;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -4909,8 +4932,8 @@ label a:hover,
   .for-buyer__image-wrapper {
     margin-bottom: 130px; }
   .for-buyer__image-title {
-    font-size: 250px;
-    line-height: 300px;
+    font-size: 15.625rem;
+    line-height: 1.2;
     text-align: right;
     letter-spacing: 5px; } }
 
@@ -4924,8 +4947,8 @@ label a:hover,
     margin-left: auto;
     width: 731px; }
   .for-buyer__image-title {
-    font-size: 250px;
-    line-height: 300px;
+    font-size: 15.625rem;
+    line-height: 1.2;
     text-align: right;
     letter-spacing: 5px;
     transform: translate(-90%, 30%); } }
@@ -5079,7 +5102,7 @@ label a:hover,
   margin-bottom: 30px; }
 
 .reviews__button-primery {
-  display: none; }
+  position: absolute; }
 
 .reviews__list {
   margin: 0;
@@ -5097,22 +5120,22 @@ label a:hover,
   margin: 0;
   font-family: "Lazurski";
   font-weight: normal;
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.25rem;
+  line-height: 1.6;
   letter-spacing: 2px;
   color: #FFFFFF; }
 
 .reviews-item__date {
   font-family: "Lazurski";
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.25rem;
+  line-height: 1.6;
   color: #FFFFFF; }
 
 .reviews-item__text {
   margin: 10px 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   color: #FFFFFF; }
 
 .reviews-item__content {
@@ -5120,7 +5143,20 @@ label a:hover,
   .reviews-item__content img {
     width: 100%; }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
+  .reviews__button-primery {
+    left: 15px;
+    right: auto;
+    bottom: 58px;
+    top: auto;
+  }
+}
+
+  @media screen and (min-width: 768px) {
+  .reviews__button-primery {
+    display: inline-block;
+    top: 0;
+    right: 90px; }
   .reviews__title {
     margin-bottom: 60px; }
   .reviews-item__header {
@@ -5132,10 +5168,10 @@ label a:hover,
   .reviews__item + .reviews__item {
     padding-top: 50px; }
   .reviews-item__title {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 120%; }
   .reviews-item__date {
-    line-height: 32px; } }
+    line-height: 1.6; } }
 
 @media screen and (min-width: 1200px) {
   .reviews-item {
@@ -5175,12 +5211,7 @@ label a:hover,
       margin-top: 44px;
       margin-bottom: 0; }
   .reviews-item--big {
-    width: 100%; }
-  .reviews__button-primery {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 90px; } }
+    width: 100%; } }
 
 @media screen and (min-width: 1920px) {
   .reviews-item:not(.reviews-item--big) {
@@ -5341,7 +5372,7 @@ label a:hover,
 .search-section__header-result {
   margin: 0;
   font-family: "Intro Light";
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 120%;
   letter-spacing: 2px;
   color: #FFFFFF; }
@@ -5353,7 +5384,7 @@ label a:hover,
   font-family: "Intro Light";
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 120%;
   letter-spacing: 2px;
   color: #FFFFFF; }
@@ -5378,7 +5409,7 @@ label a:hover,
   .search-section__header-result-span {
     display: inline; }
   .search-section__header-result {
-    font-size: 16px; } }
+    font-size: 1rem; } }
 
 @media screen and (min-width: 1200px) {
   .search-section__header {
@@ -5417,8 +5448,8 @@ label a:hover,
 .order-section__description-p {
   margin: 10px 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2;
   color: #F8F8F8; }
 
 .order-section__form-submit {
@@ -5684,7 +5715,7 @@ label a:hover,
   .certificates__list:nth-of-type(1) .certificates-list__item {
     display: flex;
     margin-right: 10px;
-    width: calc((100% - 10px * 2) / 2); }
+    width: 145px; }
     .certificates__list:nth-of-type(1) .certificates-list__item .certificates-card {
       margin-bottom: 10px; }
   .certificates__list:nth-of-type(1) .certificates-list__item:last-child {
@@ -5759,15 +5790,15 @@ label a:hover,
 
 .news__date {
   font-family: "Lazurski";
-  font-size: 18px;
-  line-height: 32px; }
+  font-size: 1.25rem;
+  line-height: 1.6; }
 
 @media screen and (min-width: 768px) {
   .news__image-wrapper {
     margin-bottom: 40px; }
   .news__date {
-    font-size: 24px;
-    line-height: 40px; } }
+    font-size: 1.5rem;
+    line-height: 1.67; } }
 
 @media screen and (min-width: 1200px) {
   .news__title {
@@ -5843,8 +5874,8 @@ label a:hover,
 
 @media screen and (min-width: 768px) and (max-width: 1919px) {
   .popup .section-title {
-    font-size: 36px;
-    line-height: 42px; } }
+    font-size: 2.25rem;
+    line-height: 1.167; } }
 
 .popup-main-menu {
   position: fixed;
@@ -5911,8 +5942,8 @@ label a:hover,
 
 .popup-menu__link {
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #FFFFFF;
@@ -5991,8 +6022,8 @@ label a:hover,
     padding: 0;
     width: 310px; }
   .popup-menu__link {
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 1.25rem;
+    line-height: 1.35;
     letter-spacing: 3px; }
   .popup-menu:first-of-type {
     margin-right: 40px; }
@@ -6122,8 +6153,8 @@ label a:hover,
   display: block;
   padding-left: 45px;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #FFFFFF;
@@ -6147,8 +6178,8 @@ label a:hover,
   display: block;
   padding-left: 45px;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #FFFFFF;
@@ -6200,8 +6231,8 @@ label a:hover,
   box-sizing: border-box;
   color: #fff;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   letter-spacing: 3px;
   background-color: transparent;
   border: none;
@@ -6293,8 +6324,8 @@ label a:hover,
   display: block;
   padding: 10px 0;
   font-family: "Intro Light";
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.625;
   letter-spacing: 3px;
   text-transform: uppercase;
   text-decoration: none;
@@ -6350,8 +6381,8 @@ label a:hover,
     padding-top: 60px;
     padding-bottom: 185px; }
   .main-search-result__link {
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 1.25rem;
+    line-height: 1.35;
     letter-spacing: 3px; }
   .popup-search__close {
     top: 60px;
@@ -6397,7 +6428,7 @@ label a:hover,
   padding: 0;
   list-style-type: none;
   font-family: "Intro Light";
-  font-size: 18px;
+  font-size: 1.25rem;
   line-height: 150%;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -6439,8 +6470,8 @@ label a:hover,
 
 .popup-request-call__lable {
   font-family: "Intro Light";
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 0.875rem;
+  line-height: 1.5;
   color: #FFFFFF; }
 
 .popup-request-call__fieldset {
@@ -6652,8 +6683,8 @@ label a:hover,
 .popup-product-card__middle,
 .popup-product-card__collection {
   font-family: "Lazurski";
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 1.25rem;
+  line-height: 0.9;
   letter-spacing: 1px;
   color: #F8F8F8;
   text-transform: uppercase;
@@ -6680,7 +6711,7 @@ label a:hover,
   font-family: "Intro Light";
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 1.25rem;
   line-height: 120%;
   letter-spacing: 2px;
   color: #FFFFFF;
@@ -6697,7 +6728,7 @@ label a:hover,
 width: 595px;
 box-sizing: border-box; }
 .popup-product-card__title {
-font-size: 36px;
+font-size: 2.25rem;
 line-height: 120%; }
 .popup-product-card__image-wrapper {
 height: 310px; }
@@ -6780,16 +6811,16 @@ margin: 0;
 margin-bottom: 10px;
 font-family: "Lazurski";
 font-weight: normal;
-font-size: 24px;
-line-height: 32px;
+font-size: 1.5rem;
+line-height: 1.5;
 letter-spacing: 2px;
 color: #FFFFFF; }
 
 .popup-order-form__price {
 margin: 0;
 font-family: "Lazurski";
-font-size: 18px;
-line-height: 32px;
+font-size: 1.25rem;
+line-height: 1.6;
 letter-spacing: 2px;
 color: #FFFFFF; }
 
@@ -6857,8 +6888,8 @@ margin-bottom: 40px; }
 .popup-successful__message {
 font-family: "Lazurski";
 font-weight: normal;
-font-size: 18px;
-line-height: 26px;
+font-size: 1.25rem;
+line-height: 1.3;
 letter-spacing: 2px;
 color: #FFFFFF; }
 
@@ -6908,7 +6939,7 @@ list-style-type: none; }
 font-family: "Lazurski";
 font-style: normal;
 font-weight: normal;
-font-size: 18px;
+font-size: 1.25rem;
 line-height: 150%;
 letter-spacing: 2px;
 color: #FFFFFF; }
@@ -6946,7 +6977,7 @@ text-align: center;
 font-family: "Lazurski";
 font-style: normal;
 font-weight: normal;
-font-size: 24px;
+font-size: 1.5rem;
 line-height: 120%;
 letter-spacing: 2px; }
 
@@ -6956,7 +6987,7 @@ margin-top: 15px;
 font-family: "Lazurski";
 font-style: normal;
 font-weight: normal;
-font-size: 24px;
+font-size: 1.5rem;
 line-height: 120%;
 text-align: center;
 letter-spacing: 2px;
@@ -7022,8 +7053,8 @@ right: 60px; } }
 
 @media screen and (min-width: 1200px) {
 .popup-ring-size__title {
-font-size: 36px;
-line-height: 42px; } }
+font-size: 2.25rem;
+line-height: 1.167; } }
 
 @media screen and (min-width: 1200px) {
 .page {
@@ -7468,8 +7499,8 @@ width: 40px;
 height: 30px;
 padding-top: 36px;
 font-family: Lazurski;
-font-size: 18px;
-line-height: 36px;
+font-size: 1.25rem;
+line-height: 1.8;
 letter-spacing: 2px;
 text-align: center;
 color: #86533C;
@@ -7499,12 +7530,12 @@ border-radius: 50%;
 border: 1px solid rgba(175, 106, 77, 0); }
 
 .product-slider-nav__item:hover {
-font-size: 36px;
+font-size: 2.25rem;
 color: #E08B66;
 transition: 0.5s; }
 
 .slick-current .product-slider-nav__item.active {
-font-size: 36px;
+font-size: 2.25rem;
 color: #E08B66;
 transition: 0.5s; }
 
@@ -7650,8 +7681,8 @@ margin: 0;
 margin-top: 20px;
 padding-bottom: 10px;
 font-family: "Lazurski Bold";
-font-size: 18px;
-line-height: 24px;
+font-size: 1.25rem;
+line-height: 1.2;
 letter-spacing: 2px;
 color: #FFFFFF; }
 
@@ -7668,8 +7699,8 @@ background-color: #E08B66; }
 margin: 0;
 margin-top: 15px;
 font-family: "Intro Light";
-font-size: 16px;
-line-height: 26px;
+font-size: 1rem;
+line-height: 1.625;
 color: #F8F8F8; }
 
 .jumping-slider__link-detail {
@@ -7709,8 +7740,8 @@ padding-bottom: 40px;
 padding-left: 60px;
 padding-right: 60px; }
 .jumping-slider__title {
-font-size: 24px;
-line-height: 36px; }
+font-size: 1.5rem;
+line-height: 1.5; }
 .jumping-slider__title::after {
 width: 87px; }
 .jumping-slider__description {
@@ -7810,8 +7841,8 @@ align-self: center;
 position: absolute;
 padding-top: 25px;
 font-family: "Lazurski";
-font-size: 18px;
-line-height: 36px;
+font-size: 1.25rem;
+line-height: 1.8;
 letter-spacing: 2px;
 color: #86533C;
 transition: all 300ms; }
@@ -7886,3 +7917,49 @@ background-color: #E08B66;
 .white-title {
 color: #fff;
 }
+
+.label-year {
+  position: absolute;
+  transform: rotate(90deg);
+  font-family: Lazurski;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: 10px;
+}
+
+.slider__label-year {
+  top: 68px;
+  left: -7px;
+}
+
+.all-collections-item__label-year {
+  top: 137px;
+  left: auto;
+  right: -21px;
+  z-index: 10 !important;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.all-collections-item__label-year-left {
+  top: 89px;
+  left: -21px;
+  right: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .label-year {
+    font-size: 1.125rem;
+    line-height: 1.33;
+  }
+  .slider__label-year {
+    top: 38px;
+    left: -31px;
+  }
+  .all-collections-item__label-year {
+    top: 10%;
+    left: auto;
+    right: -21px;
+  }
+}
+

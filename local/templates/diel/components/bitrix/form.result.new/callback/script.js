@@ -1,7 +1,6 @@
 $(document).ready(function () {
     let btnModal = $('.js-init-modal-form');
 
-
     btnModal.on('click', function (e) {
         e.preventDefault();
         let formID = $(this).attr('data-modal'),
@@ -77,53 +76,5 @@ $(document).ready(function () {
         return false;
     });
 
-    function formValidate(form, reqPhone = true, reqEmail = false) {
-        let popupError = $('.popup-error'),
-            phone = form.find('input[type="tel"]').val().replace(/[^\d]/g, ''),
-            policy = form.find('input[type="checkbox"]'),
-            email = form.find('input[id="EMAIL"]').val(),
-            name = form.find('input[id="NAME"]').val(),
-            nameValid = /^[A-Za-zА-Яа-я]+$/,
-            emailValid = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
-            errors = false;
 
-        popupError.empty().css('display', 'none');
-        if (name.length < 2) {
-            popupError.css('display', 'block').append('<p>Указано слишком короткое имя</p>');
-            errors = true;
-        } else if (!nameValid.test(name)) {
-            popupError.css('display', 'block').append('<p>Имя должно содержать только буквы русского/латинского алфавита</p>');
-            errors = true;
-        }
-        if (reqPhone === true) {
-            if (phone.length < 11) {
-                popupError.css('display', 'block').append('<p>Некорректный номер телефона</p>');
-                errors = true;
-            }
-        } else if (typeof phone != 'undefined' && phone.length > 0) {
-            if (phone.length < 11) {
-                popupError.css('display', 'block').append('<p>Некорректный номер телефона</p>');
-                errors = true;
-            }
-        }
-        if (reqEmail === true) {
-            if (!emailValid.test(email)) {
-                popupError.css('display', 'block').append('<p>Некорректный E-mail</p>');
-                errors = true;
-            }
-        } else if (typeof email != 'undefined' && email.length > 0) {
-            if (!emailValid.test(email)) {
-                popupError.css('display', 'block').append('<p>Некорректный E-mail</p>');
-                errors = true;
-            }
-        }
-        if (!policy.prop("checked")) {
-            popupError.css('display', 'block').append('<p>Вы не согласились с политикой обработки персональных данных</p>');
-            errors = true;
-        }
-        if (errors === true) {
-            return false;
-        }
-        return true;
-    }
 });

@@ -253,8 +253,11 @@
         margin-right: 30px;
     }
 
+    .page-collection__information .different-slider__item {
+        height: 160px;
+    }
     .page-collection__information .slider__item {
-        background-size: cover;
+        background-size: contain;
     }
     .page-collection__information .different-slider__item:nth-child(3n) .slider__item {
         top: 0;

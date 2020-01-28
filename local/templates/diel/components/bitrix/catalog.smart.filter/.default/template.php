@@ -37,7 +37,7 @@
                                 <div class="filter__price-wrapper">
                                     <?
                                     foreach ($arFilterItem['VALUES'] as $code => $value) { ?>
-                                        <input type="text"
+                                        <input type="number"
                                                data-<?= mb_strtolower($code) ?>="<?= round($value['VALUE']) ?>"
                                                name="<?= $value['CONTROL_NAME'] ?>"
                                                class="filter__price-<?= strtolower($code) ?> js-init-filter filter__price-input"
