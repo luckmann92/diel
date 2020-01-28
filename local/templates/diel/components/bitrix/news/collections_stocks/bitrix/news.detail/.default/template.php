@@ -23,7 +23,7 @@ $this->setFrameMode(true);
         <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) {?>
             <li class="different-slider__item <?= $k%2 ? 'even' : 'odd' ?>">
                     <div class="slider__item"
-                         style="background-image: url(<?= $arItem['src'] ?>);min-height: <?=$arItem['height']?>px">
+                         style="background-image: url(<?= $arItem['src'] ?>);">
 
                         <div class="slider__item-desc">
 

@@ -7324,7 +7324,7 @@ padding-top: 145px;
 padding-bottom: 150px; } }
 
 .page-news__other {
-padding-bottom: 90px; }
+padding-bottom: 0; }
 
 @media screen and (min-width: 768px) {
 .page-news__other {
@@ -7954,10 +7954,10 @@ color: #fff;
   }
   .slider__label-year {
     top: 38px;
-    left: -31px;
+    left: -26px;
   }
   .all-collections-item__label-year {
-    top: 10%;
+    top: 25%;
     left: auto;
     right: -21px;
   }
