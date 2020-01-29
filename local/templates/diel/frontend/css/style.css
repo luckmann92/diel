@@ -2840,16 +2840,26 @@ label a:hover,
       width: 350px; } }
 
 .collections {
+  position: relative;
   padding-left: 12px;
   padding-top: 105px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   background: linear-gradient(#0F0805, #110A07); }
 
 .collections__slider {
   margin-top: 45px; }
 
 .collections__button-transition {
-  margin-top: 40px; }
+  position: absolute;
+  top: -81px;
+  right: 20px; }
+
+.collections .collections__button-transition {
+  top: auto;
+  bottom: 35px;
+  right: auto;
+  left: 10px;
+}
 
 @media screen and (min-width: 768px) {
   .collections {
@@ -2857,10 +2867,14 @@ label a:hover,
     padding-bottom: 105px;
     padding-left: 20px; }
   .collections__button-transition {
-    position: absolute;
-    top: 120px;
+    top: -81px;
     right: 20px;
-    margin: 0; } }
+    margin: 0; }
+  .collections .collections__button-transition {
+    bottom: auto;
+    left: auto;
+    top: 100px;
+    right: 20px; } }
 
 @media screen and (min-width: 1200px) {
   .collections {
@@ -2868,8 +2882,13 @@ label a:hover,
     padding-bottom: 100px;
     padding-left: 55px; }
   .collections__button-transition {
+    top: -88px;
+    right: 0; }
+  .collections .collections__button-transition {
+    bottom: auto;
+    left: auto;
     top: 240px;
-    right: 40px; }
+    right: 50px; }
   .collections .collections__slider-options {
     width: 100%;
     max-width: 100vw; } }
@@ -2880,6 +2899,9 @@ label a:hover,
     background: url(../img/background_diamond.png) no-repeat -457px 200px, linear-gradient(#0F0805, #110A07); } }
 
 @media screen and (min-width: 1920px) {
+  .collections__button-transition {
+    top: 15px;
+    right: 0; }
   .collections {
     padding-top: 227px;
     padding-bottom: 100px;
@@ -4474,7 +4496,7 @@ label a:hover,
   padding-right: 12px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 47px; }
+  padding-bottom: 100px; }
   @media screen and (min-width: 768px) {
     .collection-information {
       padding-left: 20px;
@@ -5685,21 +5707,13 @@ label a:hover,
   margin-bottom: 30px; }
 
 .certificates__slider {
-  width: 560px; }
+  width: 768px; }
 
 @media screen and (min-width: 768px) {
   .certificates__title {
     margin-bottom: 50px; }
   .certificates__slider {
     width: 1200px; } }
-
-@media screen and (min-width: 1200px) {
-  .certificates__title {
-    margin-bottom: 80px; }
-  .certificates__title {
-    margin-bottom: 50px; }
-  .certificates__slider {
-    width: 1460px; } }
 
 @media screen and (min-width: 1920px) {
   .certificates__title {
@@ -5740,13 +5754,26 @@ label a:hover,
 @media screen and (min-width: 768px) {
   .certificates__list:nth-of-type(1) .certificates-list__item {
     margin-right: 30px;
-    margin-bottom: -30px; }
+    margin-bottom: -30px;
+    width: 310px;}
     .certificates__list:nth-of-type(1) .certificates-list__item .certificates-card {
       margin-bottom: 30px; }
   .certificates__list:nth-of-type(2) .certificates-list__item {
     margin-bottom: 30px; }
     .certificates__list:nth-of-type(2) .certificates-list__item .certificates-card {
       margin-right: 30px; } }
+
+@media screen and (min-width: 1200px) {
+  .certificates__title {
+    margin-bottom: 80px; }
+  .certificates__title {
+    margin-bottom: 50px; }
+  .certificates__slider {
+    width: 1460px; }
+  .certificates__list:nth-of-type(1) .certificates-list__item {
+    display: flex;
+    margin-right: 10px;
+    width: 400px; }}
 
 .certificates__list {
   height: 260px;
@@ -7933,7 +7960,7 @@ color: #fff;
 }
 
 .all-collections-item__label-year {
-  top: 137px;
+  top: 200px;
   left: auto;
   right: -21px;
   z-index: 10 !important;

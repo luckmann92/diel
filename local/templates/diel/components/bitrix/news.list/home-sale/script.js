@@ -41,13 +41,17 @@ $(document).ready(function () {
             dotSlideCoordinate = $('[data-slide="' + nextSlide + '"]').attr('data-x'),
             progress = parseInt(dotSlideCoordinate) - parseInt(startCoordinate),
             progressBar = $('.stocks-slider__nav-progress'),
-            slideText = $('.stocks-slider__text'),
-            slides = $('.stocks__slide-item');
+            slideText = $('.stocks-slider__text');
 
         $('.stocks-slider__item-active').each(function () {
             $(this).removeClass('stocks-slider__item-active');
         });
-        $(slideNext).find('.stocks__slide').addClass('stocks-slider__item-active');
+
+        stocks_slider.find(slideNext).find('.stocks__slide').addClass('slider__item-active');
+        if ($(window).width() > 1200) {
+            stocks_slider.find(slideNext).find('.stocks__slide').css('left', '0');
+            stocks_slider.find(slideNext).prev().find('.stocks__slide').css('left', '-300px');
+        }
 
         progressBar.animate({width: progress}, 300);
 

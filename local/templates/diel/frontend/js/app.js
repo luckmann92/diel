@@ -10,7 +10,6 @@ $(document).ready(function () {
         Filter = $('.popup-smart-filter'),
         Search = $('.popup-search');
 
-
     $('.js-init-filter').on('change', function (e) {
         let form = $(this).closest('form'),
             verticalFilter = true;
@@ -18,13 +17,6 @@ $(document).ready(function () {
         if (form.hasClass('horizontal-filter')) {
             verticalFilter = false;
         }
-        if (form.find('[name="ajax"]').length === 0) {
-            form.append('<input type="hidden" name="ajax" value="y">');
-        }
-        if (form.find('[name="filter_use"]').length === 0) {
-            form.append('<input type="hidden" name="filter_use" value="y">');
-        }
-
 
         $.arcticmodal({
             type: 'ajax',
@@ -32,7 +24,7 @@ $(document).ready(function () {
             ajax: {
                 type: 'get',
                 dataType: 'html',
-                data: form.serialize(),
+                data: form.serialize() + '&ajax=y&filter_use=',
                 success: function (e, b, response) {
                     if (typeof response !== 'undefined') {
                         $.ajax({
@@ -97,7 +89,6 @@ $(document).ready(function () {
 
         return false;
     });
-
 
     let btnFastShow = $('.js-init-fast-show'),
         urlAjax = '/local/tools/ajax.php';

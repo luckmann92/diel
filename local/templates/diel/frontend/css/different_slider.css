@@ -50,7 +50,7 @@
     background-size: cover;
     transition: 300ms;
     cursor: pointer;
-
+    box-sizing: border-box;
 }
 
 .different-slider__item .slider__item:before {
@@ -204,14 +204,9 @@
 }
 
 @media screen and (min-width: 768px) {
+    .page-order__execution-process .different-slider__item .slider__item.slider__item-active,
     .section-faq .different-slider__item .slider__item.slider__item-active {
         border: 1px solid #E08B66;
-    }
-}
-
-@media screen and (max-width: 1919px) {
-    .collections__button-transition {
-        display: none;
     }
 }
 

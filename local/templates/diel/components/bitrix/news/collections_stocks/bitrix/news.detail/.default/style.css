@@ -22,11 +22,6 @@
     z-index: auto;
 }
 
-.collection-products__head .collections__button-transition {
-    top: 15px;
-    right: 0;
-}
-
 .collection-products__head {
     display: flex;
     width: 100%;

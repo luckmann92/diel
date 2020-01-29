@@ -3,7 +3,6 @@ $(document).ready(function () {
 
         let ourProductsSlider = tns({
             container: ".our-products__list",
-            controlsPosition: "bottom",
             autoWidth: true,
             controls: false,
             nav: false,

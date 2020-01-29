@@ -47,7 +47,12 @@ $(document).ready(function () {
         $('.stocks-slider__item-active').each(function () {
             $(this).removeClass('stocks-slider__item-active');
         });
+
         $(slideNext).find('.stocks__slide').addClass('stocks-slider__item-active');
+        if ($(window).width() > 1200) {
+            stocks_slider.find(slideNext).find('.stocks__slide').css('left', '0');
+            stocks_slider.find(slideNext).prev().find('.stocks__slide').css('left', '-300px');
+        }
 
         progressBar.animate({width: progress}, 300);
 

@@ -119,7 +119,6 @@
                         </div>
                     <? } ?>
                 <? } ?>
-
                 <button class="horizontal-filter__submit" type="submit">Применить фильтр</button>
             </div>
         </form>

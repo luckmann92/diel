@@ -3,7 +3,6 @@ $(document).ready(function () {
        btnSlideNext = $('.js-init-home-slider-advantages__next');
 
    slider.slick({
-      //slidesToShow: 3,
        arrows: false,
        infinite: true,
        variableWidth: true
