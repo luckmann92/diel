@@ -154,6 +154,15 @@
     background: #AF6A4D;
 }
 
+@media screen and (min-width: 1920px) {
+    .stocks__slide-item {
+        width: 460px;
+    }
+    .stocks__slide {
+        width: 580px;
+    }
+}
+
 @media screen and (min-width: 1200px) {
     .stocks__slide-item .stocks-slider__item-desc {
         display: none;
