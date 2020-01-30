@@ -181,6 +181,9 @@
         padding-bottom: 200px;
         height: 220px;
     }
+    .stocks__slider-wrapper .stocks__slide-item {
+        padding-bottom: 125px;
+    }
     .stocks__slide {
         display: block;
         width: 300px;
@@ -189,9 +192,24 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
+    .stocks__slider-wrapper .stocks__slide-item .stocks__slide.stocks-slider__item-active:before {
+        background: none;
+    }
+    .stocks__slider-wrapper .stocks__slide {
+        width: 300px;
+        top: 0;
+        height: 200px;
+        min-height: 200px;
+        background-size: 300px auto;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
     .stocks-slider__item-desc {
         position: relative;
         margin-top: 200px;
+    }
+    .stocks__slider-wrapper .stocks-slider__item-desc {
+        margin-top: 225px;
     }
     .stocks-slider__nav {
         display: none;
