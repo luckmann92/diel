@@ -7,8 +7,8 @@ global $arSetting;
 ?>
 <header class="header">
     <nav class="header__nav">
-        <a href="<?= SITE_DIR ?>" class="header__logo logo-wrapper">
-            <img src="<?= $APPLICATION->GetTemplatePath("frontend/img/svg/logo.svg")?>">
+        <a href="<?= SITE_DIR ?>" class="header__logo logo-wrapper js-init-logo-item">
+            <?= GetContentSvgIcon('logo') ?>
         </a>
         <? $APPLICATION->IncludeComponent(
 	"bitrix:menu", 

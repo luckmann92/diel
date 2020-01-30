@@ -115,9 +115,8 @@ global $arSetting;
     <div class="popup popup-search">
         <div class="popup-search__inner">
             <div class="popup-search__left">
-                <a class="popup-search__logo logo-wrapper" href="/">
-                    <img src="<?= $APPLICATION->GetTemplatePath("frontend/img/svg/logo.svg")?>">
-
+                <a class="popup-search__logo logo-wrapper js-init-logo-item" href="/">
+                    <?= GetContentSvgIcon('logo') ?>
                 </a>
             </div>
             <div class="popup-search__right">

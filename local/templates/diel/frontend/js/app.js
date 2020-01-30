@@ -171,6 +171,11 @@ $(document).ready(function () {
         cursorborder:"1px solid #E08B66",
         cursorborderradius:"2px"
     });
+
+    if($.browser.safari)
+    {
+        $('.js-init-logo-item').empty().append('<img src="/local/templates/diel/frontend/img/logo.svg">');
+    }
 });
 
 function formValidate(form, reqPhone = true, reqEmail = false) {

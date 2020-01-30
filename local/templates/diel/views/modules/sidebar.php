@@ -6,9 +6,8 @@
 <nav class="flow-menu-nav">
     <ul class="flow-menu">
         <li class="flow-menu__item flow-menu__logo">
-            <a href="/">
-                <img src="<?= $APPLICATION->GetTemplatePath("frontend/img/svg/logo.svg")?>">
-
+            <a class="js-init-logo-item" href="/">
+                <?= GetContentSvgIcon('logo') ?>
             </a>
         </li>
         <li class="flow-menu__item">

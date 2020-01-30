@@ -35,7 +35,7 @@ global $arSetting;
         <ul class="footer-info__menu footer-info-menu">
             <li class="footer-info-menu__item footer-info-menu__item--logo">
                 <a class="logo-wrapper" href="<?= SITE_DIR ?>">
-                    <img src="<?= $APPLICATION->GetTemplatePath("frontend/img/svg/logo.svg")?>">
+                    <?= GetContentSvgIcon('logo') ?>
                 </a>
             </li>
             <li class="footer-info-menu__item">
