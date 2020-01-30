@@ -16,8 +16,8 @@
         <ul class="flow-menu">
 			<li class="flow-menu__item flow-menu__logo">
 				<a href="/">
-					<?= GetContentSvgIcon('logo') ?>
-				</a>
+                    <img src="<?= $APPLICATION->GetTemplatePath("frontend/img/svg/logo.svg")?>">
+                </a>
 			</li>
             <li class="flow-menu__item">
                 <button class="main-menu-button flow-button-menu button-menu"></button>

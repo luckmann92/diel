@@ -34,7 +34,9 @@ global $arSetting;
     <div class="footer__info footer-info">
         <ul class="footer-info__menu footer-info-menu">
             <li class="footer-info-menu__item footer-info-menu__item--logo">
-                <a class="logo-wrapper" href="<?= SITE_DIR ?>"><?= GetContentSvgIcon('logo') ?></a>
+                <a class="logo-wrapper" href="<?= SITE_DIR ?>">
+                    <img src="<?= $APPLICATION->GetTemplatePath("frontend/img/svg/logo.svg")?>">
+                </a>
             </li>
             <li class="footer-info-menu__item">
                 <a class="footer-info-menu__link"><?= Loc::getMessage('FOOTER_CONTACTS_TITLE') ?></a>

@@ -10,7 +10,9 @@ global $arSetting;
         <div class="popup-main-menu__inner">
             <div class="popup-main-menu__left">
                 <a class="popup-main-menu__logo logo-wrapper" href="/">
-                    <?= GetContentSvgIcon('logo') ?>
+                    <object id="my-button2" data="<?= $APPLICATION->GetTemplatePath("frontend/img/svg/logo.svg")?>" standby="My Button2" type="image/svg+xml">
+                        <?/*= GetContentSvgIcon('logo') */?>
+                    </object>
                 </a>
             </div>
 
@@ -114,7 +116,8 @@ global $arSetting;
         <div class="popup-search__inner">
             <div class="popup-search__left">
                 <a class="popup-search__logo logo-wrapper" href="/">
-                    <?= GetContentSvgIcon('logo') ?>
+                    <img src="<?= $APPLICATION->GetTemplatePath("frontend/img/svg/logo.svg")?>">
+
                 </a>
             </div>
             <div class="popup-search__right">
