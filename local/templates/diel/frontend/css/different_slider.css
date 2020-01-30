@@ -236,14 +236,17 @@
         max-height: 200px;
         width: 250px;
         top: 0;
+        background-size: auto 186px;
+        background-position: 50% 0;
         background-repeat: no-repeat;
     }
 
     .page-news__other .different-slider__item {
         height: 500px;
     }
+
     .page-news__other .slider__item {
-        min-height: 200px !important;
+        min-height: 186px !important;
     }
 
     .different-slider__nav.different-slider__nav {
