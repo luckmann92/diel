@@ -377,11 +377,21 @@ a:active {
   .button-transition:hover > svg {
     right: 20px; }
 
-.button-transition svg {
+  .button-transition svg {
   position: absolute;
   top: calc(50% - 5px);
   right: 40px;
   transition: right 300ms; }
+
+@media screen and (max-width: 767px) {
+  .button-transition {
+    padding: 10px;
+    padding-right: 83px;
+  }
+  .button-transition svg {
+    right: 23px;
+  }
+}
 
 .button-primery {
   display: inline-block;

@@ -39,6 +39,12 @@
     width: auto;
 }
 
+@media screen and (max-width: 767px) {
+    .collection-block__right .different-slider__list {
+        padding: 0;
+    }
+}
+
 @media screen and (min-width: 1920px) {
     .collection-block {
         flex-direction: column;

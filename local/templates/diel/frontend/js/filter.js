@@ -1,4 +1,21 @@
 $(document).ready(function () {
+    $(document).on("click", function (evt) {
+        let target = $(evt.target);
+        let selectBtn = $(".diel-select__button");
+
+        selectBtn.each(function () {
+            if (target.is($(this)) || target.is($(this).find('*'))) {
+                if ($(this).parent().hasClass('diel-select--active')) {
+                    $(this).parent().removeClass("diel-select--active");
+                } else {
+                    $(this).parent().addClass("diel-select--active");
+                }
+            } else {
+                $(this).parent().removeClass("diel-select--active");
+            }
+        });
+    });
+
     if (document.querySelector(".diel-select")) {
         let selectWrapper = document.querySelectorAll(".diel-select");
 
@@ -183,21 +200,3 @@ $(document).ready(function () {
         }
     }
 });
-
-/*
-$(window).on("click", function (evt) {
-    let target = $(evt.target);
-    let selectBtn = $(".diel-select__button");
-
-    selectBtn.each(function () {
-        if (target.is($(this)) || target.is($(this).find('*'))) {
-            if ($(this).parent().hasClass('diel-select--active')) {
-                $(this).parent().removeClass("diel-select--active");
-            } else {
-                $(this).parent().addClass("diel-select--active");
-            }
-        } else {
-            $(this).parent().removeClass("diel-select--active");
-        }
-    });
-});*/
