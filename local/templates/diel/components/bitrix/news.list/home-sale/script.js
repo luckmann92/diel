@@ -3,7 +3,7 @@ $(document).ready(function () {
         stocks_slider_dots = $('.js-init-slider-stocks-nav'),
         slideText = $('.stocks-slider__text');
 
-        stocks_slider.on('init', function (event, slick) {
+    stocks_slider.on('init', function (event, slick) {
         let currentSlide = slick.$slides[slick.currentSlide];
 
         stocks_slider_dots.find('button').each(function () {
@@ -18,6 +18,10 @@ $(document).ready(function () {
 
             $(this).attr('data-x', offsetLeft);
             $(this).attr('data-slide', i - 1);
+        });
+
+        $(slick.$slides).each(function (i, e) {
+            $(this).children().css('z-index', slick.$slides.length - i);
         });
 
         slideText.eq(0).show().css('opacity', 1);

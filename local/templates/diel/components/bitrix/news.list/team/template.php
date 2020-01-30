@@ -32,11 +32,6 @@
 
                                 <p class="stocks-slider__position"><?= $arItem['PROPERTIES']['POSITION']['VALUE'] ?></p>
                                 <div class="stocks-slider__description"><?= $arItem['PREVIEW_TEXT'] ?></div>
-
-                                <a class="stocks-slider__link-detail link-detail"
-                                   href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее
-                                    <?= GetContentSvgIcon('link-detail__image') ?>
-                                </a>
                             </div>
                         </div>
                     </div>

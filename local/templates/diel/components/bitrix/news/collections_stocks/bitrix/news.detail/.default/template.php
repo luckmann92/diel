@@ -45,8 +45,8 @@ $this->setFrameMode(true);
     <section class="page-collection__products collection-products">
         <div class="collection-products__head">
             <h2 class="collection-products__title section-title">Список товаров</h2>
-            <a class="collections__button-transition button-transition" href="/collections/">
-                Вернуться к списку
+            <a class="collections__button-transition button-transition" href="<?= $arParams['IBLOCK_ID'] == 5 ? '/collections/' : '/sale/' ?>">
+                <?= $arParams['IBLOCK_ID'] == 5 ? 'Вернуться к коллекциям' : 'Вернуться к акциям' ?>
                 <?= GetContentSvgIcon('arrow-long') ?>
             </a>
         </div>

@@ -265,6 +265,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
             <?= bitrix_sessid_post(); ?>
             <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
             <input type="hidden" name="web_form_submit" value="Y">
+            <div class="popup-error" style="display: none;"></div>
             <ul class="price-list-form__list">
                 <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
                     <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
@@ -309,7 +310,6 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                     </div>
                 </li>
             </ul>
-            <div class="popup-error" style="display: none;"></div>
         </form>
         <script>
             $(document).ready(function () {

@@ -432,6 +432,10 @@ function setSlider(collection_slider, controls = false) {
   collection_slider.on('init', function (event, slick) {
     let currentSlide = slick.$slides[slick.currentSlide];
 
+    $(slick.$slides).each(function (i, e) {
+      $(this).children().css('z-index', slick.$slides.length - i);
+    });
+
     collection_slider_dots.find('button').each(function () {
       let i = parseInt($(this).text()),
           offsetLeft = $(this).offset().left;
@@ -504,8 +508,8 @@ function setSlider(collection_slider, controls = false) {
 
     collection_slider.find(slideNext).find('.slider__item').addClass('slider__item-active');
     if ($(window).width() > 767) {
-      collection_slider.find(slideNext).find('.slider__item').css('right', '-130px');
-      collection_slider.find(slideNext).prev().find('.slider__item').css('right', '0');
+      collection_slider.find(slideNext).find('.slider__item').css('left', '0');
+      collection_slider.find(slideNext).prev().find('.slider__item').css('left', '-150px');
     }
 
     progressBar.animate({width: progress}, 300);

@@ -69,6 +69,24 @@ if (isset($_GET['list_num']) && ($_GET['list_num'] == 12 || $_GET['list_num'] ==
                 </select>
             </div>
         </div>
+        <script>
+            $(window).on("click", function (evt) {
+                let target = $(evt.target);
+                let selectBtn = $(".diel-select__button");
+
+                selectBtn.each(function () {
+                    if (target.is($(this)) || target.is($(this).find('*'))) {
+                        if ($(this).parent().hasClass('diel-select--active')) {
+                            $(this).parent().removeClass("diel-select--active");
+                        } else {
+                            $(this).parent().addClass("diel-select--active");
+                        }
+                    } else {
+                        $(this).parent().removeClass("diel-select--active");
+                    }
+                });
+            });
+        </script>
 
 
     </div>
