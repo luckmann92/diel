@@ -35,16 +35,19 @@ $(document).ready(function () {
         infinite: false,
         appendDots: stocks_slider_dots,
         focusOnSelect: true,
+        speed: 300,
+        swipeToSlide: true,
+        mobileFirst: true,
         variableWidth: true
     });
 
     stocks_slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         let slideNext = slick.$slides[nextSlide],
-            dotsContainer = $('.stocks-slider__nav-list'),
-            startCoordinate = $('[data-slide="0"]').attr('data-x'),
-            dotSlideCoordinate = $('[data-slide="' + nextSlide + '"]').attr('data-x'),
+            dotsContainer = stocks_slider_dots,
+            startCoordinate = stocks_slider_dots.find('[data-slide="0"]').attr('data-x'),
+            dotSlideCoordinate = stocks_slider_dots.find('[data-slide="' + nextSlide + '"]').attr('data-x'),
             progress = parseInt(dotSlideCoordinate) - parseInt(startCoordinate),
-            progressBar = $('.stocks-slider__nav-progress'),
+            progressBar = stocks_slider_dots.siblings('.stocks-slider__nav-progress'),
             slideText = $('.stocks-slider__text');
 
         $('.stocks-slider__item-active').each(function () {

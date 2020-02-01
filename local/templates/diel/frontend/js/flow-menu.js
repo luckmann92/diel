@@ -11,20 +11,15 @@ window.addEventListener("scroll", function () {
 $(document).ready(function () {
     let flowMenuText = $('.flow-menu__item-text'),
         sectionsTitle = $('main .section-title'),
-        mainTitle = flowMenuText.text(),
-        titlesOffset = [];
-
-    sectionsTitle.each(function (i, e) {
-        titlesOffset[i] = $(e).offset();
-    });
+        mainTitle = flowMenuText.text();
 
     $(document).scroll(function () {
-        if (pageYOffset < (titlesOffset[0]['top'] - $(window).height() * 0.6) ||
-            pageYOffset > (titlesOffset[titlesOffset.length - 1]['top'] + 700)) {
+        if (pageYOffset < (sectionsTitle.eq(0).offset().top - $(window).height() * 0.6) ||
+            pageYOffset > (sectionsTitle.eq(sectionsTitle.length - 1).offset().top + 700)) {
             flowMenuText.text(mainTitle);
         } else {
             sectionsTitle.each(function (i, e) {
-                if (pageYOffset > (titlesOffset[i]['top'] - $(window).height() / 2)) {
+                if (pageYOffset > (sectionsTitle.eq(i).offset().top - $(window).height() / 2)) {
                     flowMenuText.text(sectionsTitle.eq(i).text());
                 }
             });

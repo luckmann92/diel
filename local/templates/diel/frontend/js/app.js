@@ -36,13 +36,11 @@ $(document).ready(function () {
                             },
                             success: function (res) {
                                 if (typeof res !== 'undefined') {
-                                    let hint = $('.f-count'),
-                                        left = verticalFilter === true ? form.innerWidth() : 84,
-                                        top = verticalFilter === true ? form.innerHeight() / 2 - 50 : 500;
+                                    let hint = $('.f-count');
                                     if (hint.length > 0) {
                                         hint.remove();
                                     }
-                                    let h = '<div class="f-count" style="left:' + left + 'px;top:' + top + 'px">Найдено ' + res.ELEMENT_COUNT + ' элементов<br><a href="' + res.FILTER_URL + '">Показать</a></div>';
+                                    let h = '<div class="f-count">Найдено ' + res.ELEMENT_COUNT + ' элементов<br><a href="' + res.FILTER_URL + '">Показать</a></div>';
                                     form.append(h);
                                 }
 
@@ -79,13 +77,6 @@ $(document).ready(function () {
         e.preventDefault();
 
         FormSize.addClass('popup_active');
-
-        return false;
-    });
-    openFilter.on('click', function (e) {
-        e.preventDefault();
-
-        Filter.addClass('popup_active');
 
         return false;
     });
@@ -166,14 +157,13 @@ $(document).ready(function () {
     });
 
     $(".slider__item-desc-content").niceScroll({
-        cursorcolor:"#E08B66",
-        cursorwidth:"2px",
-        cursorborder:"1px solid #E08B66",
-        cursorborderradius:"2px"
+        cursorcolor: "#E08B66",
+        cursorwidth: "2px",
+        cursorborder: "1px solid #E08B66",
+        cursorborderradius: "2px"
     });
 
-    if($.browser.safari)
-    {
+    if ($.browser.safari) {
         $('.js-init-logo-item').empty().append('<img src="/local/templates/diel/frontend/img/logo.svg">');
     }
 });

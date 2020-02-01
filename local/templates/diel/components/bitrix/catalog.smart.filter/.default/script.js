@@ -108,10 +108,5 @@ window.addEventListener("load", function() {
       }
     })
   });
-
-  // document.querySelectorAll('.filter-container .filter-item').forEach(function(item){
-  //   let content = item.querySelector('.filter-item__content');
-  //   content.height = 'initial';
-  // });
 });
 

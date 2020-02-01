@@ -14,34 +14,52 @@ if (count($arResult['MORE_IMAGES']) < 3) { ?>
 
 <? $i = 0 ?>
 <div class="product-slider__cont">
-    <div class="product-slider">
-        <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { ?>
+    <!--<div class="product-slider">
+        <?/* foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { */?>
             <div class="product-slide">
                 <div class="product-slide__img">
-                    <img src="<?= $arItem['SRC'] ?>"
-                         alt="<?= $arItem['ALT'] ?>">
-                    <? if ($i++ == 0 && count($arResult['MORE_IMAGES']) != 1) { ?>
+                    <img src="<?/*= $arItem['SRC'] */?>"
+                         alt="<?/*= $arItem['ALT'] */?>">
+                    <?/* if ($i++ == 0 && count($arResult['MORE_IMAGES']) != 1) { */?>
                         <div class="prev"></div>
                         <div class="next"></div>
-                    <? } ?>
+                    <?/* } */?>
                 </div>
             </div>
-        <? } ?>
+        <?/* } */?>
     </div>
-    <? $i = 1 ?>
-    <? if (count($arResult['MORE_IMAGES']) != 1) { ?>
+    <?/* $i = 1 */?>
+    <?/* if (count($arResult['MORE_IMAGES']) != 1) { */?>
     <div class="product-slider-cont">
         <div class="product-slider-nav">
-            <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { ?>
+            <?/* foreach ($arResult['MORE_IMAGES'] as $k => $arItem) { */?>
                 <div class="product-slider-nav__item-wrap">
                     <div class="product-slider-nav__item">
-                        0<?= $i++ ?>
+                        0<?/*= $i++ */?>
                     </div>
                 </div>
-            <? } ?>
+            <?/* } */?>
         </div>
     </div>
-    <?}?>
+    --><?/*}*/?>
+    <ul class="different-slider__list js-init-slider-catalog-item">
+        <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) {?>
+            <li class="different-slider__item <?= $k%2 ? 'even' : 'odd' ?>">
+                <div class="slider__item"
+                     style="background-image: url(<?= $arItem['SRC'] ?>);">
+
+                    <div class="slider__item-desc">
+
+                    </div>
+                </div>
+            </li>
+        <? } ?>
+    </ul>
+
+    <div class="different-slider__nav">
+        <div class="slider__nav-list"></div>
+        <div class="slider__nav-progress"></div>
+    </div>
 </div>
 
 <form class="card-item__form card-item-form" action="">

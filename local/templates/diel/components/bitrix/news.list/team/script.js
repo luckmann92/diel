@@ -31,6 +31,9 @@ $(document).ready(function () {
         infinite: false,
         appendDots: stocks_slider_dots,
         focusOnSelect: true,
+        speed: 300,
+        swipeToSlide: true,
+        mobileFirst: true,
         variableWidth: true
     });
 

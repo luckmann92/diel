@@ -44,18 +44,14 @@
                                         <? } ?>
                                     </div>
                                     <div class="filter__price-slider-container">
-                                        <div class="filter__price-slider">
-                                            <div class="filter__price-slider-area"></div>
-                                        </div>
-                                        <div class="filter__price-slider-thumb filter__price-slider-thumb_min"></div>
-                                        <div class="filter__price-slider-thumb filter__price-slider-thumb_max"></div>
+                                        <div id="polzunok"></div>
                                     </div>
                                     <?
                                     break;
                                 case 'P':
                                     ?>
                                     <div class="diel-select">
-                                        <button class="diel-select__button" type="button">
+                                        <button class="diel-select__button filter-button" type="button">
                                             <span class="diel-select__button-text">Не выбрано</span>
                                         </button>
 
@@ -125,27 +121,3 @@
 
     </section>
 <? } ?>
-<style>
-    .horizontal-filter .f-count {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        top: calc(50% - 50px);
-        background: #160d08;
-        padding: 4px 8px;
-        border: 1px solid #a4664a;
-    }
-
-    .f-count a {
-        color: #fff;
-        transition: 300ms;
-    }
-
-    .f-count a:hover,
-    .f-count a:active,
-    .f-count a:focus {
-        color: #E08B66;
-    }
-</style>

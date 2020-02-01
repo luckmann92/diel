@@ -43,7 +43,7 @@
 .stocks__slide.stocks-slider__item-active {
     top: 0;
     padding: 0;
-    z-index: 10;
+    z-index: 10 !important;
     cursor: auto;
 }
 

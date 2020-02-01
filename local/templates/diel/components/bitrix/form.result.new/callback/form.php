@@ -35,7 +35,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
                 <input type="hidden" name="web_form_submit" value="Y">
                 <h2 class="popup-order__title section-title">Оформление заказа</h2>
-
+                <div class="popup-error" style="display: none;"></div>
                 <div class="popup-order-form__left">
                     <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
                         <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
@@ -101,7 +101,6 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 <button class="popup-order__close popup__close js-init-form-close" type="button">
                     <?= GetContentSvgIcon('close') ?>
                 </button>
-                <div class="popup-error" style="display: none;"></div>
             </form>
 
         </section>
@@ -195,6 +194,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 <?= bitrix_sessid_post(); ?>
                 <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
                 <input type="hidden" name="web_form_submit" value="Y">
+                <div class="popup-error" style="display: none;"></div>
                 <div class="popup-leave-feedback__form-top">
                     <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
                         <? if ($SID == 'PHONE' || $SID == 'NAME') { ?>
@@ -255,7 +255,6 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 <button class="popup-leave-feedback__close popup__close js-init-form-close" type="button">
                     <?= GetContentSvgIcon('close') ?>
                 </button>
-                <div class="popup-error" style="display: none;"></div>
             </form>
         </section>
     <? } elseif ($arParams['INDIVIDUAL_ORDER'] == 'Y') { ?>

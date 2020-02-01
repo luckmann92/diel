@@ -1,27 +1,15 @@
 $(document).ready(function () {
-        if (!document.querySelector(".our-products__list")) return;
+    if (document.querySelector(".our-products__list")) {
+        let btnNext = $(".our-products__button-next");
 
-        let ourProductsSlider = tns({
-            container: ".our-products__list",
-            autoWidth: true,
-            controls: false,
-            nav: false,
-            touch: true,
-            speed: 1200,
+        $('.our-products__list').slick({
+            arrows: false,
+            dots: false,
+            variableWidth: true
         });
 
-        let btnNext = document.querySelector(".our-products__button-next");
-
-        let flag = true;
-
-        btnNext.addEventListener("click", function() {
-            if (flag) {
-                ourProductsSlider.goTo('next');
-            }
-            flag = false;
+        btnNext.on('click', function () {
+            $('.our-products__list').slick('slickNext');
         });
-
-        ourProductsSlider.events.on('transitionEnd', function() {
-            flag = true;
-        });
+    }
 });
