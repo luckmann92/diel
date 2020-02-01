@@ -8091,6 +8091,8 @@ color: #fff;
     left: 50px;
   }
 }
-.slick-track {
-  transition: 300ms !important;
+@media screen and (min-width: 767px) {
+    .slick-track {
+        transition: 100ms !important;
+    }
 }
