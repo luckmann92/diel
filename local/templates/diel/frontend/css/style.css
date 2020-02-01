@@ -8091,3 +8091,6 @@ color: #fff;
     left: 50px;
   }
 }
+.slick-track {
+  transition: 300ms !important;
+}
