@@ -8091,7 +8091,7 @@ color: #fff;
     left: 50px;
   }
 }
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 767px) {
     .slick-track {
         transition: 100ms !important;
     }
