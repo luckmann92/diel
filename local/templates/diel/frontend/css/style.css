@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Lazurski";
-  src: url("../fonts/lazurskic.otf") format("opentype"); }
+  src: url("../fonts/Lazurski-Regular.otf") format("opentype"); }
 
 @font-face {
   font-family: "Lazurski Bold";
@@ -964,11 +964,11 @@ label a:hover,
   margin: 0;
   margin-top: 20px;
   padding-top: 15px;
-  font-family: "Lazurski";
-  font-weight: normal;
+  font-family: "LazurskiC";
+  font-weight: 300;
   font-size: 1.5rem;
   line-height: 1.5;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   color: #FFFFFF;
   border-top: 1px solid rgba(255, 255, 255, 0.26); }
   .product-card__title a {
@@ -3936,9 +3936,9 @@ label a:hover,
   .section-card__list--view-list .product-card__weight-wrapper {
     padding-right: 58px;
     font-family: "Intro Light";
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 120%;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     color: #fff; }
   .section-card__list--view-list .product-card__metal-title,
   .section-card__list--view-list .product-card__color-title,
