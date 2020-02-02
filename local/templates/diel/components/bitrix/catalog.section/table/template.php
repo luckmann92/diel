@@ -130,7 +130,6 @@
                     </a>
                 </div>
             <? } ?>
-            <a class="absolute-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>"></a>
         </li>
     <? } ?>
 </ol>

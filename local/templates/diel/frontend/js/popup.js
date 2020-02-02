@@ -7,6 +7,7 @@ function Popup(popupClass) {
     popup = document.querySelector(`${popupClass}`);
 
     if (popup.querySelector(".popup__close")) {
+    if (popup.querySelector(".popup__close")) {
       close = popup.querySelector(".popup__close");
 
       close.addEventListener("click", function(evt) {
