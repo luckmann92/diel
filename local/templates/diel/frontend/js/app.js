@@ -36,12 +36,20 @@ $(document).ready(function () {
                             },
                             success: function (res) {
                                 if (typeof res !== 'undefined') {
-                                    let hint = $('.f-count');
+                                    let hint = $('.f-count'),
+                                        filterForm = $('#popupSmartFilter'),
+                                        filterFormPanel = filterForm.find('.horizontal-filter__reset');
                                     if (hint.length > 0) {
                                         hint.remove();
                                     }
                                     let h = '<div class="f-count">Найдено ' + res.ELEMENT_COUNT + ' элементов<br><a href="' + res.FILTER_URL + '">Показать</a></div>';
-                                    form.append(h);
+                                    if (filterFormPanel.length > 0) {
+                                        filterFormPanel.before(h);
+                                    } else {
+                                        filterForm.before(h);
+                                    }
+
+
                                 }
 
                                 $.arcticmodal('close');
@@ -51,6 +59,21 @@ $(document).ready(function () {
                 }
             }
         });
+    });
+    openFilter.on('click', function (e) {
+        e.preventDefault();
+
+        Filter.addClass('popup_active');
+        $('body').css('overflow', 'hidden');
+
+        return false;
+    });
+    $(document).mouseup(function (e) {
+        let filterModal = $('#popupSmartFilter');
+        if (!filterModal.is(e.target) && filterModal.has(e.target).length === 0) {
+            Filter.removeClass('popup_active');
+            $('body').css('overflow', 'auto');
+        }
     });
     openMenu.on('click', function (e) {
         e.preventDefault();
@@ -63,6 +86,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         Popup.removeClass('popup_active');
+        $('body').css('overflow', 'auto');
 
         return false;
     });
@@ -217,3 +241,25 @@ function formValidate(form, reqPhone = true, reqEmail = false) {
     }
     return true;
 }
+
+$(document).ready(function () {
+
+    if (!sortList.is(e.target) && sortList.has(e.target).length === 0) {
+
+//Тип устройства
+        if(device.desktop()) alert('ПК');
+        if(device.tablet()) alert('Планшет');
+        if(device.mobile()) alert('Смартфон');
+//Ориентация экрана
+        if(device.landscape()) alert('Альбомная (в ширину)');
+        if(device.portrait()) alert('Портретная (в высоту)');
+//ОС устройства
+        if(device.ios()) alert('iOS');
+        if(device.ipad()) alert('ipad');
+        if(device.iphone()) alert('iphone');
+        if(device.ipod()) alert('ipod');
+        if(device.android()) alert('android');
+        if(device.windows()) alert('windows');
+        if(device.blackberry()) alert('blackberry');
+        if(device.fxos()) alert('fxos');
+};

@@ -3,7 +3,8 @@ $(document).ready(function () {
         $('.certificates-slider__item').slick({
             arrows: false,
             dots: false,
-            variableWidth: true
+            variableWidth: true,
+            infinite: false
         });
     }
 });

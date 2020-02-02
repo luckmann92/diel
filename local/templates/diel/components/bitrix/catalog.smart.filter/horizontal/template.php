@@ -7,7 +7,8 @@
     <section class="popup popup-smart-filter popup-horizontal-filter">
 
         <form class="popup-horizontal-filter__form horizontal-filter" data-url="<?= $APPLICATION->GetCurPage() ?>"
-              action="<?= POST_FORM_ACTION_URI ?>">
+              action="<?= POST_FORM_ACTION_URI ?>"
+        id="popupSmartFilter">
             <div class="horizontal-filter__left">
                 <h2 class="horizontal-filter__title">Фильтр</h2>
                 <input type="hidden" name="set_filter" value="y"/>
@@ -115,8 +116,9 @@
                         </div>
                     <? } ?>
                 <? } ?>
-                <button class="horizontal-filter__submit" type="submit">Применить фильтр</button>
+
             </div>
+            <button class="horizontal-filter__submit" type="submit">Применить фильтр</button>
         </form>
 
     </section>

@@ -5,9 +5,9 @@ $(document).ready(function () {
         $('.our-products__list').slick({
             arrows: false,
             dots: false,
-            variableWidth: true
+            variableWidth: true,
+            infinite: false
         });
-
         btnNext.on('click', function () {
             $('.our-products__list').slick('slickNext');
         });

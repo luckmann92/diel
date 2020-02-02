@@ -13,8 +13,8 @@
 
 ?>
 <? if ($arResult["ITEMS"]) { ?>
-    <section class="popup popup-smart-filter filter" style="display: block;">
-        <form class="filter__form filter-form" action="<?= POST_FORM_ACTION_URI ?>" data-url="<?=$APPLICATION->GetCurPage()?>">
+    <section class="popup popup-smart-filter filter filter-vertical" style="display: block;">
+        <form class="filter__form filter-form" action="<?= POST_FORM_ACTION_URI ?>" data-url="<?=$APPLICATION->GetCurPage()?>" id="popupSmartFilter">
             <h2 class="filter__title">Фильтр</h2>
             <input type="hidden" name="set_filter" value="y"/>
             <button class="popup__close filter__close js-init-close-menu" type="button">
