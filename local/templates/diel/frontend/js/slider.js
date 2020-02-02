@@ -460,7 +460,7 @@ function setSlider(collection_slider, controls = false) {
     infinite: false,
     appendDots: collection_slider_dots,
     focusOnSelect: true,
-    speed: 300,
+    speed: 50,
     swipeToSlide: true,
     mobileFirst: true,
     variableWidth: true

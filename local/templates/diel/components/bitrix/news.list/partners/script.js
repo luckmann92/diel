@@ -3,7 +3,8 @@ $(document).ready(function () {
     $('.partners-list').slick({
       arrows: false,
       dots: false,
-      variableWidth: true
+      variableWidth: true,
+      infinite: false
     });
   }
 });

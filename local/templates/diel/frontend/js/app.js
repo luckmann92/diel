@@ -242,8 +242,10 @@ function formValidate(form, reqPhone = true, reqEmail = false) {
     return true;
 }
 
-$(document).ready(function () {
+$(window).load(function () {
     if (device.tablet() || device.mobile()) {
-        alert(1);
+        $('.slick-track').each(function () {
+            $(this).css('transition', '10ms');
+        });
     }
 });
