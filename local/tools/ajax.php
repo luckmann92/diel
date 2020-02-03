@@ -68,68 +68,80 @@ if ($_REQUEST['ACTION']) {
             ?>
             <section class="popup popup-product-card popup--active">
                 <div class="popup-product-card__inner">
-                    <h2 class="popup-product-card__title section-title"><?=$arProduct['NAME']?></h2>
-                    <div class="product-slider__cont">
-                        <div class="product-slider">
-                            <div class="product-slide">
-                                <div class="product-slide__img">
-                                    <img src="<?= $arProduct["PREVIEW_PICTURE"]['SRC'] ?>">
-                                        <div class="prev"></div>
-                                        <div class="next"></div>
+                    <h2 class="popup-product-card__title section-title"><?= $arProduct['NAME'] ?></h2>
+                    <div class="popup-product-slider__cont">
+                        <ul class="different-slider__list js-init-slider-catalog-fast-show">
+                            <li class="different-slider__item <?= $k % 2 ? 'even' : 'odd' ?>">
+                                <div class="slider__item"
+                                     style="background-image: url(<?= $arProduct["PREVIEW_PICTURE"]['SRC'] ?>);">
                                 </div>
-                            </div>
+                            </li>
                             <? foreach ($arProduct['PROPERTIES']['MORE_IMAGES']['VALUE'] as $arItem) { ?>
-                                <div class="product-slide">
-                                    <div class="product-slide__img">
-                                        <img src="<?= CFile::GetPath($arItem) ?>">
+                                <li class="different-slider__item <?= $k % 2 ? 'even' : 'odd' ?>">
+                                    <div class="slider__item"
+                                         style="background-image: url(<?= CFile::GetPath($arItem) ?>);">
                                     </div>
-                                </div>
+                                </li>
                             <? } ?>
-                        </div>
+                        </ul>
                     </div>
-
-                    <!--<div class="popup-product-card__image-wrapper">
-                        <?/*if ($arProduct['PREVIEW_PICTURE']) {*/?>
-                            <img class="popup-product-card__image-left" src="<?/*=$arProduct['PREVIEW_PICTURE']['SRC']*/?>" alt="">
-                        <?/*}*/?>
-                    </div>-->
+                    <script>
+                        $(document).ready(function () {
+                            let collection_slider = $('.js-init-slider-catalog-fast-show');
+                            setSlider(collection_slider, true);
+                        });
+                    </script>
 
                     <div class="popup-product-card__middle">
-                        <?if ($price) {?>
-                        <p class="popup-product-card__price">от <?=number_format($price, 0, '', ' ')?> ₽</p>
-                <?}?>
-                        <?if ($arProduct['PROPS']['COLLECTION']) {?>
-                        <a class="popup-product-card__collection" href="<?=$arProduct['PROPS']['COLLECTION']['DETAIL_PAGE_URL']?>"><?=$arProduct['PROPS']['COLLECTION']['NAME']?></a>
-                <?}?>
-            <? if ($arProduct['PROPS']['IS_NEW']['VALUE']) { ?>
-                        <span class="popup-product-card__novelty">Новинка</span>
-                <?}?>
-                        <a data-product-id="<?=$arProduct['ID']?>" class="popup-product-card__to-favorites icon-favorites <?=isFavorites($arProduct['ID'])?> js-init-add-favorites" href="#">
-                            <?=GetContentSvgIcon('favorites')?>
+                        <?
+                        if ($price) { ?>
+                            <p class="popup-product-card__price">от <?= number_format($price, 0, '', ' ') ?> ₽</p>
+                        <?
+                        } ?>
+                        <?
+                        if ($arProduct['PROPS']['COLLECTION']) { ?>
+                            <a class="popup-product-card__collection"
+                               href="<?= $arProduct['PROPS']['COLLECTION']['DETAIL_PAGE_URL'] ?>"><?= $arProduct['PROPS']['COLLECTION']['NAME'] ?></a>
+                        <?
+                        } ?>
+                        <? if ($arProduct['PROPS']['IS_NEW']['VALUE']) { ?>
+                            <span class="popup-product-card__novelty">Новинка</span>
+                        <?
+                        } ?>
+                        <a data-product-id="<?= $arProduct['ID'] ?>"
+                           class="popup-product-card__to-favorites icon-favorites <?= isFavorites($arProduct['ID']) ?> js-init-add-favorites"
+                           href="#">
+                            <?= GetContentSvgIcon('favorites') ?>
                         </a>
                     </div>
-<?if ($arProduct['PROPS']) {?>
-                    <table class="characteristics">
-                        <caption class="characteristics__caption">Характеристики</caption>
-                        <tbody>
-                        <?foreach ($arProduct['PROPS'] as $CODE => $arProp) {
-                            if (!is_array($arProp['VALUE']) && !empty($arProp['VALUE'])) {?>
+                    <?
+                    if ($arProduct['PROPS']) { ?>
+                        <table class="characteristics">
+                            <caption class="characteristics__caption">Характеристики</caption>
+                            <tbody>
+                            <?
+                            foreach ($arProduct['PROPS'] as $CODE => $arProp) {
+                                if (!is_array($arProp['VALUE']) && !empty($arProp['VALUE'])) { ?>
 
-                        <tr class="characteristics__row">
-                            <td class="characteristics__col"><?=$arProp['NAME']?></td>
-                            <td class="characteristics__col"><?=$arProp['VALUE']?></td>
-                        </tr>
-<?}?>
-                    <?}?>
+                                    <tr class="characteristics__row">
+                                        <td class="characteristics__col"><?= $arProp['NAME'] ?></td>
+                                        <td class="characteristics__col"><?= $arProp['VALUE'] ?></td>
+                                    </tr>
+                                <?
+                                } ?>
+                            <?
+                            } ?>
 
-                        </tbody></table>
-<?}?>
-                    <a class="popup-product-card__link-detail link-detail" href="<?=$arProduct['DETAIL_PAGE_URL']?>">Подробнее
-                        <?=GetContentSvgIcon('arrow-long')?>
+                            </tbody>
+                        </table>
+                    <?
+                    } ?>
+                    <a class="popup-product-card__link-detail link-detail" href="<?= $arProduct['DETAIL_PAGE_URL'] ?>">Подробнее
+                        <?= GetContentSvgIcon('arrow-long') ?>
                     </a>
 
                     <button class="popup-product-card__close popup__close js-init-form-close">
-                        <?=GetContentSvgIcon('close')?>
+                        <?= GetContentSvgIcon('close') ?>
                     </button>
                 </div>
             </section>
@@ -215,7 +227,7 @@ if ($_REQUEST['ACTION']) {
         });
 
     </script>
-<?
+    <?
     die();
 }
 ?>

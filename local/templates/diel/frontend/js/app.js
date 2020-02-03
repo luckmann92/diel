@@ -189,18 +189,21 @@ $(document).ready(function () {
         $('.js-init-logo-item').empty().append('<img src="/local/templates/diel/frontend/img/logo.svg">');
     }
 
-    /*$(document).click(function (e) {
-        console.log(e.target);
+    $(document).click(function (e) {
+        if (!(($(e.target).parents('.popup-request-call__inner').length)
+            || ($(e.target).hasClass('popup-request-call__inner'))
+            || ($(e.target).parents('.popup-order-form').length)
+            || ($(e.target).hasClass('popup-order-form'))
+            || ($(e.target).parents('.popup-product-card__inner').length)
+            || ($(e.target).hasClass('popup-product-card__inner'))
+            || ($(e.target).parents('.popup-leave-feedback__form').length)
+            || ($(e.target).hasClass('popup-leave-feedback__form'))
+            || ($(e.target).hasClass('prev'))
+            || ($(e.target).hasClass('next'))
+        )) {
+            $.arcticmodal('close');
+        }
     });
-
-    $('.arcticmodal-overlay').live('click', function () {
-        $.arcticmodal('close');
-    });*/
-
-    /*$(document).on('click', '.arcticmodal-overlay', function () {
-        alert(1);
-        $.arcticmodal('close');
-    });*/
 });
 
 function formValidate(form, reqPhone = true, reqEmail = false) {
