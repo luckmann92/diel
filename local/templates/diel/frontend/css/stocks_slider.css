@@ -11,7 +11,7 @@
     position: relative;
     padding: 120px 0 65px;
     height: 350px;
-    width: 400px;
+    width: 510px;
 }
 
 .page-about .stocks__slide-item {
@@ -158,24 +158,15 @@
     background: #AF6A4D;
 }
 
-@media screen and (min-width: 1920px) {
-    .stocks__slide-item {
-        width: 460px;
-    }
-    .stocks__slide {
-        width: 580px;
-    }
-    .page-about .stocks__slide-item {
-        width: 410px;
-        height: 640px;
-    }
-}
 
 @media screen and (min-width: 1200px) {
     .stocks__slide-item .stocks-slider__item-desc {
         display: none;
     }
     .stocks .stocks__slider {
+        margin-left: 360px;
+    }
+    .page-about .stocks__slider {
         margin-left: 430px;
     }
     .page-about .stocks__slide {
@@ -185,7 +176,7 @@
         left: 0;
     }
     .stocks__slide {
-        left: -125px;
+        left: -200px;
         width: 580px;
     }
     .page-about .stocks__slide-item {
@@ -194,7 +185,27 @@
     }
 }
 
+@media screen and (min-width: 1920px) {
+    .stocks__slide-item {
+        width: 630px;
+    }
+    .stocks__slide {
+        width: 580px;
+    }
+    .page-about .stocks__slide-item {
+        width: 410px;
+        height: 640px;
+    }
+    .stocks .stocks__slider {
+        margin-left: 500px;
+    }
+}
+
 @media screen and (max-width: 1199px) {
+    .stocks__slider .next,
+    .stocks__slider .prev {
+        display: none;
+    }
     .stocks__slider {
         margin-left: 0;
         padding: 0;
