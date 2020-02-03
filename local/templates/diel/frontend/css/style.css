@@ -1853,6 +1853,7 @@ label a:hover,
   .horizontal-filter {
     flex-direction: row;
     margin: 30px auto 0;
+    max-width: 1490px;
     box-sizing: border-box;
     width: calc(100% - 90px); }
   .horizontal-filter__right {
@@ -8039,7 +8040,7 @@ color: #fff;
   position: fixed;
   top: calc(50vh - 37px);
   max-width: 187px;
-  left: 390px;
+  left: 346px;
 }
 .f-count a {
   color: #fff;
@@ -8059,7 +8060,16 @@ color: #fff;
   }
 }
 @media screen and (max-width: 767px) {
-  .f-count {
-    display: none;
+  .horizontal-filter .f-count {
+    position: fixed;
+    top: 23px;
+    max-width: 187px;
+    left: 30px;
+  }
+  .filter-vertical .f-count {
+    position: fixed;
+    top: 14px;
+    max-width: 187px;
+    left: 15px;
   }
 }

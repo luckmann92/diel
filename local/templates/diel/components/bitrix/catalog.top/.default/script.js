@@ -18,7 +18,6 @@ window.addEventListener("load", function() {
     if (el.querySelector(".filter__diel-js")) {
       let id = el.querySelector(".filter__diel-js").selectedIndex;
 
-      console.log(id);
       el.querySelector(".diel-select__button-text").textContent = el.querySelectorAll(".filter__diel-option-js")[id].textContent;
     }
   });

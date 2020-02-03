@@ -32,12 +32,12 @@ $this->setFrameMode(true);
                 </li>
             <? } ?>
         </ul>
-
+    <? if (count($arResult['MORE_IMAGES']) > 1) { ?>
         <div class="different-slider__nav">
             <div class="slider__nav-list"></div>
             <div class="slider__nav-progress"></div>
         </div>
-
+<?}?>
     </div>
 <? } ?>
 <? if ($arResult['ITEMS']) { ?>

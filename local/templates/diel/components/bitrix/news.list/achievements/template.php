@@ -27,6 +27,7 @@ Loc::loadMessages(__FILE__);
                     </li>
                 <? } ?>
             </ul>
+    <? if (count($arResult['ITEMS']) > 1) { ?>
 
             <div class="different-slider__nav">
                 <div class="slider__nav-list"></div>
@@ -34,4 +35,5 @@ Loc::loadMessages(__FILE__);
             </div>
         </div>
 
+<? } ?>
 <? } ?>

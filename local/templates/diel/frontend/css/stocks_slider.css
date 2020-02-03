@@ -11,15 +11,17 @@
     position: relative;
     padding: 120px 0 65px;
     height: 350px;
-    width: 300px;
+    width: 400px;
 }
 
 .page-about .stocks__slide-item {
-    width: 450px;
+    width: 410px;
+    height: 640px;
 }
 
 .page-about .stocks__slide {
-    width: 550px;
+    width: 440px;
+    min-height: 650px;
 }
 
 .stocks__slide {
@@ -41,6 +43,7 @@
 }
 
 .stocks__slide.stocks-slider__item-active {
+    left: 0;
     top: 0;
     padding: 0;
     z-index: 10 !important;
@@ -162,11 +165,32 @@
     .stocks__slide {
         width: 580px;
     }
+    .page-about .stocks__slide-item {
+        width: 410px;
+        height: 640px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     .stocks__slide-item .stocks-slider__item-desc {
         display: none;
+    }
+    .stocks .stocks__slider {
+        margin-left: 430px;
+    }
+    .page-about .stocks__slide {
+        left: -110px;
+    }
+    .page-about .stocks-slider__item-active {
+        left: 0;
+    }
+    .stocks__slide {
+        left: -125px;
+        width: 580px;
+    }
+    .page-about .stocks__slide-item {
+        width: 340px;
+        height: 550px;
     }
 }
 
@@ -265,19 +289,19 @@
         background: none;
     }
     .page-about .stocks__slide-item {
-        height: 200px;
+        height: 380px;
         width: 250px;
         padding-bottom: 60px;
     }
     .page-about .stocks-slider__item-desc {
-        margin-top: 200px;
+        margin-top: 392px;
     }
     .stocks-slider__item-desc {
         margin-top: 200px;
     }
     .page-about .stocks__slide {
         width: 250px;
-        min-height: 186px;
+        min-height: 380px;
     }
     .page-about .collections {
         padding-bottom: 0;

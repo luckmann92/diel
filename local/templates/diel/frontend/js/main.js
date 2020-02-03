@@ -1,14 +1,3 @@
-(function() {
-  // if (document.querySelector('.popup-request-call__phone')) {
-  //   var element = document.querySelector('.popup-request-call__phone');
-  //   var maskOptions = {
-  //     mask: '+{7}(000)000-00-00'
-  //   };
-  //   var mask = IMask(element, maskOptions);
-  // }
-})();
-
-
 //обернуть ссылкой карточку товара
 if (document.querySelector(".section-card__list--view-list .absolute-link")) {
   init();

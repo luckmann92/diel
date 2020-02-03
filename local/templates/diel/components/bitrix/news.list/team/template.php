@@ -32,10 +32,11 @@
                 <? } ?>
             <? } ?>
         </div>
-
+    <? if (count($arResult['ITEMS']) > 1) { ?>
         <div class="stocks-slider__nav">
             <div class="stocks-slider__nav-list js-init-slider-stocks-nav"></div>
             <div class="stocks-slider__nav-progress"></div>
         </div>
+        <?}?>
     </div>
 <? } ?>

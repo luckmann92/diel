@@ -1,21 +1,23 @@
-if (document.querySelector(".popup-request-call__form")) {
-  ajaxForm(document.querySelector(".popup-request-call__form"));
-}
+$(document).ready(function () {
+    if (document.querySelector(".popup-request-call__form")) {
+        ajaxForm(document.querySelector(".popup-request-call__form"));
+    }
 
-if (document.querySelector(".main-search")) {
-  document.querySelector(".main-search").addEventListener("submit", function(evt) {
-    evt.preventDefault();
+    if (document.querySelector(".main-search")) {
+        document.querySelector(".main-search").addEventListener("submit", function(evt) {
+            evt.preventDefault();
 
-    let action = document.querySelector(".main-search").action,
-        inputValue = document.querySelector(".main-search .main-search__input").value;
+            let action = document.querySelector(".main-search").action,
+                inputValue = document.querySelector(".main-search .main-search__input").value;
 
-    fetch(action + inputValue);
+            fetch(action + inputValue);
 
-    window.location = action + inputValue;
-  });
-  document.querySelector(".main-search").action += document.querySelector(".main-search__input").value;
+            window.location = action + inputValue;
+        });
+        document.querySelector(".main-search").action += document.querySelector(".main-search__input").value;
 
-}
+    }
+});
 
 function ajaxForm(form) {
 	form.addEventListener('submit', function(e) {

@@ -16,9 +16,7 @@ if ($arResult['ITEMS']) { ?>
         </div>
 
         <ul class="advantages__list advantages-list js-init-home-slider-advantages">
-            <? foreach ($arResult['ITEMS'] as $key => $arItem) {
-                // dump($arItem);
-                ?>
+            <? foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
                 <li class="advantages-list__item advantages-article <?=$key%2?'even':'odd'?>">
                     <div class="advantages-article__inner">
                         <a class="advantages-article__image-wrapper" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">

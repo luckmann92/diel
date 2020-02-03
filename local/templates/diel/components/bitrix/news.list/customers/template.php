@@ -152,11 +152,12 @@
                 </li>
             <? } ?>
         </ul>
-
+    <? if (count($arResult['ITEMS']) > 1) { ?>
         <div class="different-slider__nav">
             <div class="slider__nav-list"></div>
             <div class="slider__nav-progress"></div>
         </div>
+        <?}?>
     </div>
 </section>
 

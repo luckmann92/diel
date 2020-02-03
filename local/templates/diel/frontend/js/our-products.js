@@ -6,7 +6,8 @@ $(document).ready(function () {
             arrows: false,
             dots: false,
             variableWidth: true,
-            infinite: false
+            mobileFirst: true,
+            waitForAnimate: false
         });
         btnNext.on('click', function () {
             $('.our-products__list').slick('slickNext');

@@ -241,11 +241,3 @@ function formValidate(form, reqPhone = true, reqEmail = false) {
     }
     return true;
 }
-
-$(window).load(function () {
-    if (device.tablet() || device.mobile()) {
-        $('.slick-track').each(function () {
-            $(this).css('transition', '10ms');
-        });
-    }
-});

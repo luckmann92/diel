@@ -46,11 +46,12 @@
                 <? } ?>
             <? } ?>
         </div>
-
+    <? if (count($arResult['ITEMS']) > 1) { ?>
         <div class="stocks-slider__nav">
             <div class="stocks-slider__nav-list js-init-slider-stocks-nav"></div>
             <div class="stocks-slider__nav-progress"></div>
         </div>
+        <?}?>
     </div>
 
     <a class="stocks__button-transition button-transition" href="<?=SITE_DIR?>sale/"><?=$arParams['LINK_TITLE']?>

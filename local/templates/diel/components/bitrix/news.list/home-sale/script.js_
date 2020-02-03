@@ -38,7 +38,8 @@ $(document).ready(function () {
         speed: 300,
         swipeToSlide: true,
         mobileFirst: true,
-        variableWidth: true
+        variableWidth: true,
+        waitForAnimate: false
     });
 
     stocks_slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
@@ -54,7 +55,10 @@ $(document).ready(function () {
             $(this).removeClass('stocks-slider__item-active');
         });
 
-        stocks_slider.find(slideNext).find('.stocks__slide').addClass('slider__item-active');
+        if (!$(slideNext).find('.stocks__slide').hasClass('stocks-slider__item-active')) {
+            $(slideNext).find('.stocks__slide').addClass('stocks-slider__item-active');
+        }
+
         if ($(window).width() > 1200) {
             stocks_slider.find(slideNext).find('.stocks__slide').css('left', '0');
             stocks_slider.find(slideNext).prev().find('.stocks__slide').css('left', '-300px');
@@ -77,14 +81,4 @@ $(document).ready(function () {
         slideText.fadeTo(300, 0);
         slideText.eq(nextSlide).show().fadeTo(300, 1);
     });
-
-    stocks_slider.on('afterChange', function (event, slick, currentSlide) {
-        let slide = slick.$slides[currentSlide];
-
-        if (!$(slide).find('.stocks__slide').hasClass('stocks-slider__item-active')) {
-            $(slide).find('.stocks__slide').addClass('stocks-slider__item-active');
-
-        }
-    });
-
 });

@@ -4,7 +4,8 @@ $(document).ready(function () {
       arrows: false,
       dots: false,
       variableWidth: true,
-      infinite: false
+      mobileFirst: true,
+      waitForAnimate: false
     });
   }
 });

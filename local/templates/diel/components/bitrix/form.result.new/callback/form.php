@@ -35,8 +35,8 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                 <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult['arForm']['ID'] ?>">
                 <input type="hidden" name="web_form_submit" value="Y">
                 <h2 class="popup-order__title section-title">Оформление заказа</h2>
-                <div class="popup-error" style="display: none;"></div>
                 <div class="popup-order-form__left">
+                    <div class="popup-error" style="display: none;"></div>
                     <? foreach ($arResult["arAnswers"] as $SID => $arAnswer) { ?>
                         <? if ($arAnswer[0]['FIELD_TYPE'] == 'text') { ?>
                             <div class="popup-order-form__name input-text-wrapper">
@@ -78,9 +78,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                                 <?= $arResult["arQuestions"][$SID]['TITLE'] ?>
                             </label>
                         <? } ?>
-
                     <? } ?>
-
 
                     <div class="popup-order-form__submit-wrapper">
                         <div class="popup-order-form__submit input-submit-wrapper">
@@ -422,7 +420,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
 
 <style>
     .popup-error {
-        margin-top: 25px;
+        margin: 25px 0;
         background: #1c0d06;
         border: 2px solid #e08b66;
         display: block;

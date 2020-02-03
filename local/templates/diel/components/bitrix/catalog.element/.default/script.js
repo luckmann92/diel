@@ -1,11 +1,14 @@
 $(document).ready(function () {
     let btnProp = $('.js-init-prop'),
-        elOffer = $('.offer-item'),
-        btnFastOrder = $('.js-init-fast-order');
+        btnFastOrder = $('.js-init-fast-order'),
+        collection_slider = $('.js-init-slider-catalog-item');
+
+    setSlider(collection_slider, true);
 
     btnFastOrder.on('click', function () {
 
     });
+
     btnProp.on('click', function () {
         let parentProp = $(this).parent(),
             attr = {};
@@ -54,9 +57,4 @@ $(document).ready(function () {
         }
         return x1 + x2;
     }
-
-
-    let collection_slider = $('.js-init-slider-catalog-item');
-
-    setSlider(collection_slider, true);
 });
