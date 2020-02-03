@@ -69,7 +69,6 @@ $(document).ready(function () {
             !$('body').is(e.target) &&
             !$('.f-count').is(e.target)) {
             Filter.removeClass('popup_active');
-            console.log(e.target);
         }
     });
     openMenu.on('click', function (e) {
@@ -176,7 +175,9 @@ $(document).ready(function () {
         });
         return false;
     });
+});
 
+$(document).ready(function () {
     $(".slider__item-desc-content").niceScroll({
         cursorcolor: "#E08B66",
         cursorwidth: "2px",
@@ -187,10 +188,23 @@ $(document).ready(function () {
     if ($.browser.safari) {
         $('.js-init-logo-item').empty().append('<img src="/local/templates/diel/frontend/img/logo.svg">');
     }
+
+    /*$(document).click(function (e) {
+        console.log(e.target);
+    });
+
+    $('.arcticmodal-overlay').live('click', function () {
+        $.arcticmodal('close');
+    });*/
+
+    /*$(document).on('click', '.arcticmodal-overlay', function () {
+        alert(1);
+        $.arcticmodal('close');
+    });*/
 });
 
 function formValidate(form, reqPhone = true, reqEmail = false) {
-    let popupError = $('.popup-error'),
+    let popupError = form.find('.popup-error'),
         phone = form.find('input[type="tel"]').val().replace(/[^\d]/g, ''),
         policy = form.find('input[type="checkbox"]'),
         email = form.find('input[id="EMAIL"]').val(),

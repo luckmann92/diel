@@ -62,7 +62,8 @@ $(document).ready(function () {
                                     });
                                 } else {
                                     if (res.error === true) {
-                                        $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
+                                        console.log(form);
+                                        form.find('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
                                     }
                                 }
                             }

@@ -169,7 +169,7 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
                     },
                     success: function (res) {
                         if (res.error === true) {
-                            $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
+                            form.find('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
                         } else {
                             let result = '<section class="popup popup-request-call popup--active arcticmodal-overlay"> <div class="popup-successful__inner">' +
                                 '<h2 class="popup-successful__title section-title">Заявка отправлена</h2>' +
@@ -342,12 +342,12 @@ if (isset($_REQUEST['web_form_submit']) && $_REQUEST['web_form_submit'] == 'Y' |
 
                                 if (index < 11) {
                                     if (res["message"].indexOf("Телефон") === -1) {
-                                        $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '<br>&nbsp;&nbsp;» "Телефон"' + '</p>');
+                                        form.find('.popup-error').css('display', 'block').html('<p>' + res["message"] + '<br>&nbsp;&nbsp;» "Телефон"' + '</p>');
                                     } else {
-                                        $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
+                                        form.find('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
                                     }
                                 } else {
-                                    $('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
+                                    form.find('.popup-error').css('display', 'block').html('<p>' + res["message"] + '</p>');
                                 }
                             }
                         } else {
