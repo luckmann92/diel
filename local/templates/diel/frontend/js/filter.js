@@ -16,6 +16,7 @@ $(document).ready(function () {
         });
     });
 
+
     if (document.querySelector(".diel-select")) {
         let selectWrapper = document.querySelectorAll(".diel-select");
 
@@ -82,7 +83,6 @@ $(document).ready(function () {
                     }
                 });
 
-                // width = getComputedStyle(btn).width;
                 width = btn.offsetWidth;
                 btn.style.minWidth = `${width}px`;
 
@@ -107,19 +107,84 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    let outputs = $(".filter__price-input");
-    let minPriceRange = $(".filter__price-min").data("min");
-    let maxPriceRange = $(".filter__price-max").data("max");
+    let outputs = $(".filter__price-input"),
+        priceSlider = $("#polzunok"),
+        minPriceRange = $(".filter__price-min").data("min"),
+        maxPriceRange = $(".filter__price-max").data("max");
 
-    $("#polzunok").slider({
+    priceSlider.slider({
         animate: "slow",
         range: true,
-        values: [$(".filter__price-min").val(), $(".filter__price-max").val()],
         min: minPriceRange,
         max: maxPriceRange,
-        slide : function(event, ui) {
-            outputs.eq(0).val(ui.values[ 0 ]);
-            outputs.eq(1).val(ui.values[ 1 ]);
+        values: [outputs.eq(0).val(), outputs.eq(1).val()],
+        slide: function (event, ui) {
+            outputs.eq(0).val(ui.values[0]);
+            outputs.eq(1).val(ui.values[1]);
+        },
+        change: function (event, ui) {
+            if (ui.handleIndex === 0) {
+                outputs.eq(0).change();
+            } else {
+                outputs.eq(1).change();
+            }
         }
+    });
+
+    outputs.keyup(function () {
+        let elm = $(this);
+
+        elm.val(elm.val().replace(/\D/, ''));
+        if (elm.hasClass('filter__price-min') && elm.val() < minPriceRange) {
+            elm.val(minPriceRange);
+        }
+        if (elm.hasClass('filter__price-max') && elm.val() > maxPriceRange) {
+            elm.val(maxPriceRange);
+        }
+
+        let time = (new Date()).getTime();
+        let delay = 1200; /* Количество мксек. для определения окончания печати */
+
+        elm.attr({'keyup': time});
+
+        setTimeout(function () {
+            let oldtime = parseFloat(elm.attr('keyup'));
+            if (oldtime <= (new Date()).getTime() - delay & oldtime > 0 & elm.attr('keyup') != '' & typeof elm.attr('keyup') !== 'undefined') {
+                if (elm.hasClass('filter__price-min')) {
+                    priceSlider.slider("values", 0, elm.val());
+                } else {
+                    priceSlider.slider("values", 1, elm.val());
+                }
+                elm.removeAttr('keyup');
+            }
+        }, delay);
+    });
+});
+
+$(document).ready(function () {
+    if (document.querySelector(".page-filter")) {
+        let select = document.querySelectorAll(".page-filter .filter__diel-js");
+
+        select.forEach(el => {
+            el.addEventListener("change", () => {
+                fetch(window.location.origin + el.value);
+                window.location = el.value;
+            });
+
+        });
+    }
+
+    window.addEventListener("load", function () {
+        let div = document.querySelectorAll(".filter__diel-select");
+
+
+        div.forEach(function (el) {
+            if (el.querySelector(".filter__diel-js")) {
+                let id = el.querySelector(".filter__diel-js").selectedIndex;
+
+                console.log(id);
+                el.querySelector(".diel-select__button-text").textContent = el.querySelectorAll(".filter__diel-option-js")[id].textContent;
+            }
+        });
     });
 });

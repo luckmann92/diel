@@ -14,7 +14,6 @@ if (document.querySelector(".section-card__list--view-list .absolute-link")) {
       link[i].style.left = `${parent.offsetLeft}px`;
       link[i].style.width = `${parent.offsetWidth}px`;
       link[i].style.height = `${parent.offsetHeight}px`;
-      console.log(parent.offsetTop);
     }
   }
 }

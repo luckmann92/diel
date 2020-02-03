@@ -7,19 +7,24 @@ $(document).ready(function () {
         dotsListMob = $('.banner-menu-diamond__button'),
         wrap = circleMain.innerWidth(),
         triangleValue = 18,
-        radius = wrap / 2;
+        radius = wrap / 2,
+        processStartTriangle = -35;
 
     slider.slick({
         arrows: false,
         fade: true,
-        initialSlide: 0,
+        dots: false,
         autoplay: true,
         autoplaySpeed: $('.banner').attr('data-time-autoplay')
     });
 
+    dotsInit(dotsList, triangleValue, radius);
+
     dotsList.children().eq(0).addClass('active__prev dot__active');
 
     slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        let startTriangle = processStartTriangle;
+
         dotsList.children().removeClass('dot__active');
         dotsList.children().removeClass('active__prev');
         dotsList.children().eq(nextSlide).addClass('dot__active');
@@ -28,8 +33,16 @@ $(document).ready(function () {
         dotsListMob.removeClass('banner-menu-diamond__button--active');
         dotsListMob.eq(nextSlide).addClass('banner-menu-diamond__button--active');
 
-        circleProgressValue = -35 + triangleValue * parseInt(nextSlide);
-        circleProgress.css('transform', 'rotate(' + circleProgressValue + 'deg)');
+        if ($(window).width() < 1750 || ($(window).width() > 1920 && nextSlide > 1)) {
+            startTriangle = -12;
+        }
+
+        circleProgressValue = startTriangle + triangleValue * parseInt(nextSlide);
+        if (nextSlide === 0) {
+            circleProgress.css('transform', 'rotate(-35deg)');
+        } else {
+            circleProgress.css('transform', 'rotate(' + circleProgressValue + 'deg)');
+        }
     });
 
     dotsListMob.on('click', function () {
@@ -37,18 +50,39 @@ $(document).ready(function () {
         slider.slick('slickGoTo', dataSlide);
     });
 
-    dotsList.find('.dot__item').each(function () {
-        let indexSlide = $(this).attr('data-slide-index'),
-            triangleRotate = triangleValue * indexSlide,
-            triangle = (83 + triangleRotate),
-            triangleRad = triangle * Math.PI / 180,
-            dotItem = $(this);
+    $(window).resize(function () {
+        let startTriangle = processStartTriangle,
+            currentSlide = $('.slick-current').attr('data-slick-index');
 
-        dotItem.css('right', (radius + 1) + radius * Math.sin(triangleRad) + 'px');
-        dotItem.css('top', (radius - 16) + radius * Math.cos(triangleRad) + 'px');
+        dotsInit(dotsList, triangleValue, radius);
 
-        dotItem.on('click', function () {
-            slider.slick('slickGoTo', indexSlide - 1);
-        });
+        if ($(window).width() < 1750 || ($(window).width() > 1920 && currentSlide > 1)) {
+            startTriangle = -12;
+        }
+
+        circleProgressValue = startTriangle + triangleValue * parseInt(currentSlide);
+        circleProgress.css('transform', 'rotate(' + circleProgressValue + 'deg)');
+    });
+
+    dotsList.children().on('click', function () {
+        let dataSlide = $(this).attr('data-slide-index');
+        slider.slick('slickGoTo', dataSlide - 1);
     });
 });
+
+function dotsInit(dotsList, triangleValue, radius) {
+    dotsList.find('.dot__item').each(function (i, e) {
+        let dotItem = $(this),
+            indexSlide = dotItem.attr('data-slide-index'),
+            triangleRotate = triangleValue * indexSlide,
+            triangle = (83 + triangleRotate),
+            triangleRad = triangle * Math.PI / 180;
+
+        if (($(window).width() < 1750 && i > 0) || ($(window).width() > 1920 && i > 1)) {
+            triangleRad = (106 + triangleRotate) * Math.PI / 180;
+        }
+
+        dotItem.css('right', (radius + 1) + radius * Math.sin(triangleRad) + 'px').
+        css('top', (radius - 16) + radius * Math.cos(triangleRad) + 'px');
+    });
+}

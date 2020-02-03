@@ -16,7 +16,7 @@
                 <div class="stocks-slider__description"><?= $arItem['PREVIEW_TEXT'] ?></div>
             </div>
         <? } ?>
-        <div class="stocks__slider js-init-slider-stocks">
+        <div class="stocks__slider js-init-slider-stocks js-init-controls">
             <? foreach ($arResult['ITEMS'] as $k => $arItem) { ?>
                 <? if ($arItem['PREVIEW_PICTURE']) { ?>
                     <div class="stocks__slide-item">

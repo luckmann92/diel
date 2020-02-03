@@ -2,6 +2,11 @@ function setSlider(collection_slider, controls = false) {
   let collection_slider_dots = collection_slider.parent().find('.slider__nav-list'),
       dots = false;
 
+  if (collection_slider.find('.slider__item').length < 2) {
+    collection_slider.find('.different-slider__item').css('padding', '0');
+    $('.collection-block').css('min-height', 'auto');
+  }
+
   if ($(window).width() > 1199 && collection_slider.find('.slider__item').length > 1) {
     dots = true;
   }
@@ -29,7 +34,7 @@ function setSlider(collection_slider, controls = false) {
       });
     }
     currentSlide.find('.slider__item').addClass('slider__item-active');
-    if (controls && dots) {
+    if (controls && dots && collection_slider.find('.slider__item').length > 1) {
       collection_slider.find('.slider__item-active').append('<div class="prev"></div><div class="next"></div>');
 
       let prevArrow = collection_slider.find('.prev'),

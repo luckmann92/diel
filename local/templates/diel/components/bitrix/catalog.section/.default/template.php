@@ -155,11 +155,19 @@ if ($arResult['ITEMS']) {?>
     </ol>
 
 <?} else {?>
-    <p style="padding-top: 40px" class="catalog-section__text-empty">К сожалению в данном разделе товаров нет</p>
+    <p style="padding-top: 40px" class="catalog-section__text-empty">
+        <?= $_REQUEST['set_filter'] == 'y' ? 'По вашим параметрам не нашлось ни одного товара' : 'К сожалению в данном разделе товаров нет' ?>
+    </p>
     <br>
     <br>
-    <a class="product-card__button-transition button-transition" href="/catalog/">
-        Перейти в каталог
-    <?=GetContentSvgIcon('arrow-long')?></a>
+    <? if ($_REQUEST['set_filter'] == 'y') { ?>
+        <a class="product-card__button-transition button-transition" href="javascript:history.back()">
+            Вернуться назад
+            <?= GetContentSvgIcon('arrow-long') ?></a>
+    <? } else { ?>
+        <a class="product-card__button-transition button-transition" href="/catalog/">
+            Перейти в каталог
+            <?= GetContentSvgIcon('arrow-long') ?></a>
+    <? } ?>
 <?}?>
 <?=$arResult['NAV_STRING']?>

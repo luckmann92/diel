@@ -86,7 +86,8 @@ a:active {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  padding: 0 !important;}
 
 .popup-error a {
   color: #fff;
@@ -1624,7 +1625,8 @@ label a:hover,
     height: 15px; }
 
 .filter-form {
-  position: relative;
+  z-index: 9999;
+  position: absolute;
   margin: 12px;
   color: #FFFFFF;
   font-family: "Intro Light";
@@ -1691,7 +1693,7 @@ label a:hover,
 .filter__price-wrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
   margin-top: -15px; }
 
 .filter__price-wrapper span {
@@ -2717,7 +2719,7 @@ label a:hover,
   .our-products__description {
     width: 415px; }
   .product-card-list {
-    height: 675px; }
+    height: 730px; }
   .our-products__button-next {
     position: absolute;
     top: 70px;
@@ -2826,7 +2828,7 @@ label a:hover,
     .our-products .product-card {
       padding: 35px 40px;
       width: 350px;
-      height: 322px; }
+      height: 350px; }
       .our-products .product-card .product-card__image-wrapper {
         height: 142px; } }
 
@@ -3051,7 +3053,7 @@ label a:hover,
     position: absolute;
     width: 300px;
     opacity: 0;
-    transition: opacity 0.2s; }
+    transition: opacity 0.1s; }
   .stocks-slider__image-wrapper {
     order: 1;
     padding-right: 0;
@@ -3909,7 +3911,8 @@ label a:hover,
     cursor: pointer; }
   .section-card__list--view-list .section-card-list__item > * {
     display: table-cell;
-    vertical-align: middle; }
+    vertical-align: top;
+    padding-top: 50px; }
   .section-card__list--view-list .product-card__image-wrapper {
     position: relative;
     padding: 40px 27px 15px;
@@ -3925,14 +3928,14 @@ label a:hover,
   }
   .section-card__list--view-list .product-card__title {
     margin: 0;
-    padding: 0 60px;
+    padding: 50px 35px 0;
     width: 240px;
     border: none; }
   .section-card__list--view-list .product-card__metal-wrapper,
   .section-card__list--view-list .product-card__color-wrapper,
   .section-card__list--view-list .product-card__insert-wrapper,
   .section-card__list--view-list .product-card__weight-wrapper {
-    padding-right: 58px;
+    padding-right: 35px;
     font-family: "Intro Light";
     font-size: 1.125rem;
     line-height: 120%;
@@ -5748,7 +5751,7 @@ label a:hover,
   .certificates__list:nth-of-type(1) .certificates-list__item:last-child {
     flex-direction: column; }
     .certificates__list:nth-of-type(1) .certificates-list__item:last-child .certificates-card {
-      height: calc((100% - 10px * 2) / 2); }
+      height: calc((100% - 10px) / 2); }
 
 .certificates__list:nth-of-type(2) {
   display: flex;
@@ -5773,6 +5776,8 @@ label a:hover,
       margin-bottom: 30px; }
   .certificates__list:nth-of-type(2) .certificates-list__item {
     margin-bottom: 30px; }
+  .certificates__list:nth-of-type(1) .certificates-list__item:last-child .certificates-card {
+    height: calc((100% - 30px) / 2); }
     .certificates__list:nth-of-type(2) .certificates-list__item .certificates-card {
       margin-right: 30px; } }
 
@@ -5785,7 +5790,7 @@ label a:hover,
     width: 1460px; }
   .certificates__list:nth-of-type(1) .certificates-list__item {
     display: flex;
-    margin-right: 10px;
+    margin-right: 30px;
     width: 400px; }}
 
 .certificates__list {
@@ -7405,6 +7410,10 @@ width: 1920px !important; } }
 
 .our-products {
 z-index: 1; }
+@media screen and (min-width: 1920px) {
+  .our-products {
+    height: 960px; }
+}
 .our-products::before {
 background-image: linear-gradient(#0C0704, #190E09);
 -webkit-filter: blur(1px); }
@@ -7469,18 +7478,18 @@ z-index: 1; }
 .next {
 display: none;
 position: absolute;
-top: calc(50% - 11px);
-width: 15px;
-height: 22px;
+top: calc(50% - 30px);
+width: 40px;
+height: 60px;
 z-index: 5;
 cursor: pointer;
-transition: 0.2s; }
+transition: 0.1s; }
 .prev {
-background: url(../img/svg/button-prev.svg);
-left: 30px; }
+background: url(../img/svg/button-prev.svg) 50% no-repeat;
+left: 15px; }
 .next {
-background: url(../img/svg/button-next.svg);
-right: 30px;  }
+background: url(../img/svg/button-next.svg) 50% no-repeat;
+right: 15px;  }
 .prev:hover,
 .next:hover {
 transform: scale(1.2);
@@ -7920,7 +7929,7 @@ margin-top: 0; } }
 
 .filter__price-slider-container {
 position: relative;
-  width: calc(100% - 15px);
+  width: 100%;
 margin-top: 20px;
 -moz-user-select: none;
 -o-user-select:none;

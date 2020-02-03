@@ -22,6 +22,9 @@
 .banner-menu-circle__list .dot__item.active__prev {
     color:#AF6A4D;
 }
+/*.banner-menu-circle__list .dot__item:not(.dot__active) .dot__item-title {
+    transform: translateY(-10px);
+}*/
 .banner-menu-circle__list .dot__item {
     position: absolute;
     display: flex;
@@ -39,6 +42,12 @@
     cursor: pointer;
     z-index: 10;
 }
+/*.banner-menu-circle__list .dot__item:hover .dot__item-title,
+.banner-menu-circle__list .dot__item:focus .dot__item-title,
+.banner-menu-circle__list .dot__item:active .dot__item-title,
+.banner-menu-circle__list .dot__item.dot__active .dot__item-title {
+    transform: translateY(0);
+}*/
 .banner-menu-circle__list .dot__item:hover,
 .banner-menu-circle__list .dot__item:focus,
 .banner-menu-circle__list .dot__item:active,

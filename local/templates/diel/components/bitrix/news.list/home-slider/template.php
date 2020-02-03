@@ -55,7 +55,10 @@ if ($arResult['ITEMS']) { ?>
                     <div class="banner-menu-circle__list">
                         <? foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
                             <? $index = $key < 10 ? '0' . ++$key : ++$key ?>
-                            <div class="dot__item" data-slide-index="<?= $key ?>"><span></span><?= $index ?></div>
+                            <div class="dot__item" data-slide-index="<?= $key ?>">
+                                <span></span>
+                                <div class="dot__item-title"><?= $index ?></div>
+                            </div>
                         <? } ?>
                     </div>
                 </div>

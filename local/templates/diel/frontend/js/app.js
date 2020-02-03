@@ -11,12 +11,8 @@ $(document).ready(function () {
         Search = $('.popup-search');
 
     $('.js-init-filter').on('change', function (e) {
-        let form = $(this).closest('form'),
-            verticalFilter = true;
-
-        if (form.hasClass('horizontal-filter')) {
-            verticalFilter = false;
-        }
+        let form = $(this).closest('form');
+        console.log('change');
 
         $.arcticmodal({
             type: 'ajax',
@@ -24,7 +20,7 @@ $(document).ready(function () {
             ajax: {
                 type: 'get',
                 dataType: 'html',
-                data: form.serialize() + '&ajax=y&filter_use=',
+                data: form.serialize() + '&ajax=y&filter_use=y',
                 success: function (e, b, response) {
                     if (typeof response !== 'undefined') {
                         $.ajax({
@@ -48,10 +44,7 @@ $(document).ready(function () {
                                     } else {
                                         filterForm.before(h);
                                     }
-
-
                                 }
-
                                 $.arcticmodal('close');
                             }
                         });
@@ -64,15 +57,19 @@ $(document).ready(function () {
         e.preventDefault();
 
         Filter.addClass('popup_active');
-        $('body').css('overflow', 'hidden');
 
         return false;
     });
-    $(document).mouseup(function (e) {
+    $(document).click(function (e) {
         let filterModal = $('#popupSmartFilter');
-        if (!filterModal.is(e.target) && filterModal.has(e.target).length === 0) {
+        if (!filterModal.is(e.target) &&
+            filterModal.has(e.target).length === 0 &&
+            !$('.arcticmodal-container').is(e.target) &&
+            !$('.arcticmodal-overlay').is(e.target) &&
+            !$('body').is(e.target) &&
+            !$('.f-count').is(e.target)) {
             Filter.removeClass('popup_active');
-            $('body').css('overflow', 'auto');
+            console.log(e.target);
         }
     });
     openMenu.on('click', function (e) {

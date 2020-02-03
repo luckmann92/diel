@@ -96,7 +96,7 @@ $APPLICATION->SetTitle("Каталог");
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
-		"TYPE_FILTER" => ".default",
+		"TYPE_FILTER" => "horizontal",
 		"LABEL_PROP" => "",
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
