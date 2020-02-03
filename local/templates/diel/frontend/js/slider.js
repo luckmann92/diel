@@ -5,6 +5,7 @@ function setSlider(collection_slider, controls = false) {
   if (collection_slider.find('.slider__item').length < 2) {
     collection_slider.find('.different-slider__item').css('padding', '0');
     $('.collection-block').css('min-height', 'auto');
+    $('.js-init-slider-catalog-item').find('.different-slider__item').css('padding', '100px');
   }
 
   if ($(window).width() > 1199 && collection_slider.find('.slider__item').length > 1) {
