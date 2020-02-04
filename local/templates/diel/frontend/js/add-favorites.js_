@@ -29,9 +29,9 @@ $(document).ready(function () {
                 let btn = $('[data-product-id="' + product_id + '"]');
                 if (response.result == 'true') {
                     if (type == 'del') {
-                        btn.removeClass('product-card__to-favorites--active');
+                        $(e).removeClass('product-card__to-favorites--active');
                     } else {
-                        btn.addClass('product-card__to-favorites--active');
+                        $(e).addClass('product-card__to-favorites--active');
                     }
                 }
             }

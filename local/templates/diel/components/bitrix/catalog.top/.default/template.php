@@ -65,8 +65,8 @@ $APPLICATION->IncludeComponent(
         </div>
 
         <div class="page-filter__right">
-            <div class="filter__diel-select" style="display: none">
-                <button class="button-picture button-picture--filter"><span>Фильтр</<span></button>
+            <div class="filter__diel-select">
+                <button class="button-picture button-picture--filter js-init-smart-filter"><span>Фильтр</<span></button>
             </div>
 
             <span class="page-filter__label page-filter__label-sum">Показывать товаров на странице</span>

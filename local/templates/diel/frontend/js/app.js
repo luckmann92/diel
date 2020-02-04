@@ -59,7 +59,7 @@ $(document).ready(function () {
 
         return false;
     });
-    $(document).click(function (e) {
+    $(document).mousedown(function (e) {
         let filterModal = $('#popupSmartFilter');
         if (!filterModal.is(e.target) &&
             filterModal.has(e.target).length === 0 &&
@@ -156,13 +156,12 @@ $(document).ready(function () {
             type = 'add';
         }
 
-        e.preventDefault();
         $.ajax({
             method: 'get',
             data: data,
             dataType: 'json',
             success: function (response) {
-                let btn = $('[data-product-id="' + product_id + '"]');
+                let btn = $('.product-card__to-favorites[data-product-id="' + product_id + '"]');
                 if (response.result == 'true') {
                     if (type == 'del') {
                         btn.removeClass('product-card__to-favorites--active');
@@ -188,7 +187,7 @@ $(document).ready(function () {
         $('.js-init-logo-item').empty().append('<img src="/local/templates/diel/frontend/img/logo.svg">');
     }
 
-    $(document).click(function (e) {
+    $(document).mousedown(function (e) {
         if (!(($(e.target).parents('.popup-request-call__inner').length)
             || ($(e.target).hasClass('popup-request-call__inner'))
             || ($(e.target).parents('.popup-order-form').length)
