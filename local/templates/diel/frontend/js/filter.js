@@ -1,21 +1,18 @@
 $(document).ready(function () {
-    $(document).on("click", function (evt) {
-        let target = $(evt.target);
-        let selectBtn = $(".diel-select__button");
-
-        selectBtn.each(function () {
-            if (target.is($(this)) || target.is($(this).find('*'))) {
-                if ($(this).parent().hasClass('diel-select--active')) {
-                    $(this).parent().removeClass("diel-select--active");
-                } else {
-                    $(this).parent().addClass("diel-select--active");
-                }
-            } else {
-                $(this).parent().removeClass("diel-select--active");
-            }
-        });
+    $('.diel-select__button').on("click", function (evt) {
+        if ($(this).parent().hasClass('diel-select--active')) {
+            $(this).parent().removeClass("diel-select--active");
+        } else {
+            $(this).parent().addClass("diel-select--active");
+        }
     });
-
+    $(document).click(function (e) {
+        let selectBtn = $('.diel-select__button');
+        if (!selectBtn.is(e.target) &&
+            selectBtn.has(e.target).length === 0) {
+            selectBtn.parent().removeClass('diel-select--active');
+        }
+    });
 
     if (document.querySelector(".diel-select")) {
         let selectWrapper = document.querySelectorAll(".diel-select");
@@ -29,7 +26,6 @@ $(document).ready(function () {
         });
 
         window.addEventListener("load", showSelect);
-
         window.addEventListener("resize", showSelect);
 
         function showSelect() {
@@ -54,9 +50,7 @@ $(document).ready(function () {
                         el.addEventListener("click", function () {
 
                             this.parentElement.parentElement.querySelector(".filter__diel-js").selectedIndex = this.dataset.id;
-
                             this.parentElement.parentElement.querySelector(".diel-select__button-text").textContent = option[this.dataset.id].textContent;
-
                             this.parentElement.parentElement.querySelector(".filter__diel-js").dispatchEvent(new Event('change'));
                         });
                     });
@@ -143,7 +137,7 @@ $(document).ready(function () {
         }
 
         let time = (new Date()).getTime();
-        let delay = 1200; /* Количество мксек. для определения окончания печати */
+        let delay = 1200;
 
         elm.attr({'keyup': time});
 
@@ -170,13 +164,11 @@ $(document).ready(function () {
                 fetch(window.location.origin + el.value);
                 window.location = el.value;
             });
-
         });
     }
 
     window.addEventListener("load", function () {
         let div = document.querySelectorAll(".filter__diel-select");
-
 
         div.forEach(function (el) {
             if (el.querySelector(".filter__diel-js")) {

@@ -2240,6 +2240,32 @@ label a:hover,
       margin-right: auto;
       width: 335px; } }
 
+.banner__title-list {
+  position: absolute;
+  top: 0;
+}
+
+.absolute-title {
+  position: absolute;
+  padding-left: 270px;
+  margin-top: 692px !important;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 1920px) {
+  .absolute-title {
+    padding-left: 310px;
+    margin-top: 591px !important;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .banner__title-list {
+    display: none !important;
+  }
+  }
+
 @media screen and (max-width: 767px) {
   .banner-title {
     font-size: 1.5rem;

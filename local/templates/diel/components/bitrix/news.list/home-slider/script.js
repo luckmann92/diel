@@ -5,10 +5,13 @@ $(document).ready(function () {
         circleMain = $('.banner-menu-circle__box'),
         dotsList = $('.banner-menu-circle__list'),
         dotsListMob = $('.banner-menu-diamond__button'),
+        titleList = $('.absolute-title'),
         wrap = circleMain.innerWidth(),
         triangleValue = 18,
         radius = wrap / 2,
         processStartTriangle = -35;
+
+    titleList.eq(0).css('opacity', 1);
 
     slider.slick({
         arrows: false,
@@ -24,6 +27,9 @@ $(document).ready(function () {
 
     slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         let startTriangle = processStartTriangle;
+
+        titleList.css('opacity', 0);
+        titleList.eq(nextSlide).css('opacity', 1);
 
         dotsList.children().removeClass('dot__active');
         dotsList.children().removeClass('active__prev');

@@ -12,15 +12,14 @@ $(document).ready(function () {
 
     $('.js-init-filter').on('change', function (e) {
         let form = $(this).closest('form');
-        console.log('change');
 
         $.arcticmodal({
             type: 'ajax',
-            url: form.attr('data-url'),
+            url: form.attr('data-url')+'?ajax=y',
             ajax: {
                 type: 'get',
                 dataType: 'html',
-                data: form.serialize() + '&ajax=y&filter_use=y',
+                data: form.serialize(),
                 success: function (e, b, response) {
                     if (typeof response !== 'undefined') {
                         $.ajax({
@@ -198,6 +197,10 @@ $(document).ready(function () {
             || ($(e.target).hasClass('popup-product-card__inner'))
             || ($(e.target).parents('.popup-leave-feedback__form').length)
             || ($(e.target).hasClass('popup-leave-feedback__form'))
+            || ($(e.target).parents('.horizontal-filter').length)
+            || ($(e.target).hasClass('horizontal-filter'))
+            || ($(e.target).parents('.filter-form').length)
+            || ($(e.target).hasClass('filter-form'))
             || ($(e.target).hasClass('prev'))
             || ($(e.target).hasClass('next'))
         )) {
