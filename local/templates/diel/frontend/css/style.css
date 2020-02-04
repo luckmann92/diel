@@ -1082,12 +1082,12 @@ label a:hover,
 
 @media screen and (min-width: 1200px) {
   .product-card {
-    padding-right: 15px;
-    padding-left: 15px; }
+    padding-right: 5px;
+    padding-left: 5px; }
   .product-card--view-3 {
-    padding-right: 60px;
-    padding-bottom: 50px;
-    padding-left: 60px; }
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px; }
     .product-card--view-3 .product-card__image-wrapper {
       position: relative;
       top: 50%;
@@ -3845,7 +3845,7 @@ label a:hover,
   .section-card__list {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content;
-    gap: 30px; }
+    gap: 20px; }
   .section-card__list .product-card--view-3 {
     grid-column-end: unset;
     grid-row-end: unset; }
@@ -3854,7 +3854,7 @@ label a:hover,
 
 @media screen and (min-width: 1200px) {
   .section-card__list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: max-content; }
   .section-card__list .product-card--view-3 {
     grid-column-end: span 2;
