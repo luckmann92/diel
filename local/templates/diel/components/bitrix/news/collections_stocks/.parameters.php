@@ -25,6 +25,26 @@ $arTemplateParameters = array(
 		"DEFAULT" =>"N",
 		"REFRESH"=> "Y",
 	),
+    'LINK_ELEMENTS_URL' => array("HIDDEN" => "Y"),
+    'TYPE_SECTION' => array(
+        'PARENT' => 'LIST_SETTINGS',
+        'NAME' => 'Тип отображения списка товаров',
+        'TYPE' => 'LIST',
+        'VALUES' => array(
+            'TABLE' => 'Плиткой',
+            'LIST' => 'Списком'
+        ),
+        'DEFAULT' => 'TABLE'
+    ),
+    'TYPE_FILTER' => array(
+        'PARENT' => 'BASE',
+        'NAME' => 'Тип фильтра',
+        'TYPE' => 'LIST',
+        'VALUES' => array(
+            'horizontal' => 'Горизонтальный',
+            '.default' => 'Вертикальный'
+        )
+    )
 );
 
 if ($arCurrentValues["USE_SHARE"] == "Y")

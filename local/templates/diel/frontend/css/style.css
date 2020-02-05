@@ -4618,7 +4618,7 @@ label a:hover,
     width: 585px; }
   .collection-information__slider-wrapper {
     margin-right: -120px;
-    margin-bottom: 70px;
+    margin-bottom: 0;
     width: 860px;
     width: initial !important; } }
 

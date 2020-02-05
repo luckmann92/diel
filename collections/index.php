@@ -97,6 +97,9 @@ $APPLICATION->SetTitle("Коллекции");
 			0 => "",
 			1 => "",
 		),
+		"TYPE_FILTER" => "horizontal",
+		"LINK_ELEMENTS_URL" => "",
+		"TYPE_SECTION" => "TABLE",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

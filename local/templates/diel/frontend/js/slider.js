@@ -45,17 +45,19 @@ function setSlider(collection_slider, controls = false) {
     }
   });
 
-  collection_slider.slick({
-    arrows: false,
-    slideToShow: 3,
-    dots: dots,
-    infinite: false,
-    appendDots: collection_slider_dots,
-    focusOnSelect: true,
-    speed: 300,
-    mobileFirst: true,
-    variableWidth: true
-  });
+  if (collection_slider.find('.slider__item').length > 1) {
+    collection_slider.slick({
+      arrows: false,
+      slideToShow: 3,
+      dots: dots,
+      infinite: false,
+      appendDots: collection_slider_dots,
+      focusOnSelect: true,
+      speed: 300,
+      mobileFirst: true,
+      variableWidth: true
+    });
+  }
 
   collection_slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
     let slideNext = $(slick.$slides[nextSlide]),

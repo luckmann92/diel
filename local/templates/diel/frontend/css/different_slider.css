@@ -4,9 +4,11 @@
     margin: 0;
     padding: 30px 0;
 }
+.different-slider__item.slick-slide {
+    margin-bottom: 150px;
+}
 .different-slider__item {
     position: relative;
-    margin-bottom: 150px;
 }
 .card-item .different-slider__item {
     margin-bottom: 80px;
@@ -49,6 +51,13 @@
 .different-slider__item .slider__item.slider__item-active:before {
     background: rgb(17,17,17);
     background: linear-gradient(180deg, rgba(17,17,17,0) 0%, rgba(17,17,17,0.3) 85%, rgba(0,0,0,.8) 100%);
+}
+.different-slider__item:not(.slick-slide) .slider__item:before {
+    background: rgb(17,17,17);
+    background: linear-gradient(180deg, rgba(17,17,17,0) 0%, rgba(17,17,17,0.3) 85%, rgba(0,0,0,.8) 100%);
+}
+.different-slider__item:not(.slick-slide) .slider__item {
+    top: 0;
 }
 .different-slider__item.quad .slider__item.slider__item-active:before {
     background: none;
@@ -203,7 +212,7 @@
 }
 
 @media screen and (max-width: 1199px) {
-    .different-slider__item {
+    .different-slider__item.slick-slide {
         margin-bottom: 100px;
     }
     .different-slider__nav {
@@ -234,14 +243,14 @@
 }
 
 @media screen and (max-width: 767px) {
-    .card-item .different-slider__item,
-    .page-collection__information .different-slider__item {
+    .card-item .different-slider__item.slick-slide,
+    .page-collection__information .different-slider__item.slick-slide {
         margin-bottom: 0;
     }
     .page-news__other .different-slider__item {
         margin-bottom: 368px;
     }
-    .different-slider__item {
+    .different-slider__item.slick-slide {
         margin-right: 30px;
         margin-bottom: 280px;
     }

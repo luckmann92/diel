@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <? $this->SetViewTarget('collection_desc') ?>
     <div class="collection-information__description">
         <p class="collection-information__p"><?= $arResult['DETAIL_TEXT'] ?></p>
@@ -86,8 +87,7 @@ $this->setFrameMode(true);
                 "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
                 "INSTANT_RELOAD" => "N",
             ),
-            $component,
-            array('HIDE_ICONS' => 'Y')
+            $component
         );
 
         if (isset($_GET["method"])) {
