@@ -2,7 +2,7 @@
 /**
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
-foreach ($arResult['ITEMS'] as &$arItem) {
+/*foreach ($arResult['ITEMS'] as &$arItem) {
     if ($arItem['PREVIEW_PICTURE']) {
         $img = CFile::ResizeImageGet(
             $arItem['PREVIEW_PICTURE'],
@@ -16,4 +16,4 @@ foreach ($arResult['ITEMS'] as &$arItem) {
         $arItem['PREVIEW_PICTURE']['SRC'] = $img['src'];
         $arItem['PREVIEW_PICTURE']['HEIGHT'] = $img['height'];
     }
-}
+}*/
