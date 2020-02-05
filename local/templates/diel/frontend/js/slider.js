@@ -2,12 +2,6 @@ function setSlider(collection_slider, controls = false) {
   let collection_slider_dots = collection_slider.parent().find('.slider__nav-list'),
       dots = false;
 
-  if (collection_slider.find('.slider__item').length < 2) {
-    collection_slider.find('.different-slider__item').css('padding', '0');
-    $('.collection-block').css('min-height', 'auto');
-    $('.js-init-slider-catalog-item').find('.different-slider__item').css('padding', '100px');
-  }
-
   if ($(window).width() > 1199 && collection_slider.find('.slider__item').length > 1) {
     dots = true;
   }
@@ -95,7 +89,7 @@ function setSlider(collection_slider, controls = false) {
     if ($(window).width() > 767) {
       slideNext.find('.slider__item').css('left', '0');
       slideNext.nextAll().find('.slider__item').css('left', '0');
-      slideNext.prevAll().find('.slider__item').css('left', '-100px');
+      slideNext.prevAll().find('.slider__item').css('left', '-50%');
     }
 
     progressBar.animate({width: progress}, 300);

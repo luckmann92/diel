@@ -26,7 +26,6 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/jque
 /*
  *  Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/slick.min.js"));
 */
-Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/tiny-slider.js"));
 /*
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/flow-menu.js"));
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/js/banner-slider.js"));

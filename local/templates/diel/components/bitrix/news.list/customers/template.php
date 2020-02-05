@@ -140,8 +140,10 @@
     <div class="section-faq__slider-wrapper jumping-slider__slider-wrapper-faq">
         <ul class="different-slider__list js-init-slider-faq">
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
-                <li class="different-slider__item">
-                    <div class="slider__item" style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>);min-height:<?= $arItem['PREVIEW_PICTURE']['HEIGHT'] ?>px">
+                <? $img_src = $_SERVER["DOCUMENT_ROOT"].$arItem['PREVIEW_PICTURE']['SRC'];
+                $imgWH = GetImgProp($img_src); ?>
+                <li class="different-slider__item <?= $imgWH['POSITION'] ?: '' ?>">
+                    <div class="slider__item" style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>);">
                         <div class="slider__item-desc">
                             <h3 class="slider__item-desc-title"><?= $arItem['NAME'] ?></h3>
                             <? if ($arItem['PREVIEW_TEXT']) { ?>

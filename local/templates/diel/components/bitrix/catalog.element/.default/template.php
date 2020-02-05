@@ -16,18 +16,15 @@ if (count($arResult['MORE_IMAGES']) < 3) { ?>
 <div class="product-slider__cont">
     <ul class="different-slider__list js-init-slider-catalog-item">
         <? foreach ($arResult['MORE_IMAGES'] as $k => $arItem) {?>
-            <li class="different-slider__item <?= $k%2 ? 'even' : 'odd' ?>">
+            <? $img_src = $_SERVER["DOCUMENT_ROOT"].$arItem['SRC'];
+            $imgWH = GetImgProp($img_src); ?>
+            <li class="different-slider__item <?= $imgWH['POSITION'] ?: '' ?>">
                 <div class="slider__item"
                      style="background-image: url(<?= $arItem['SRC'] ?>);">
-
-                    <div class="slider__item-desc">
-
-                    </div>
                 </div>
             </li>
         <? } ?>
     </ul>
-
     <? if (count($arResult['MORE_IMAGES']) > 1) { ?>
     <div class="different-slider__nav">
         <div class="slider__nav-list"></div>
@@ -237,6 +234,44 @@ if ($arParams['PROPERTY_CODE'] || ($arResult['DETAIL_TEXT'] || $arResult['PREVIE
             <?
             global $arrFilter;
             $GLOBALS['arrFilter']['ID'] = array_keys($arResult['AR_KITS']);
+
+            $APPLICATION->IncludeComponent(
+                "bitrix:catalog.smart.filter",
+                $arParams['TYPE_FILTER'] ?: ".default",
+                array(
+                    "IBLOCK_TYPE" => "catalog",
+                    "IBLOCK_ID" => "3",
+                    "SECTION_ID" => 0,
+                    "SHOW_ALL_WO_SECTION" => 'Y',
+                    "FILTER_NAME" => "arrFilter",
+                    "PRICE_CODE" => array(
+                        0 => "BASE",
+                    ),
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_GROUPS" => "Y",
+                    "CACHE_FILTER" => "N",
+                    "SAVE_IN_SESSION" => "N",
+                    "PREFILTER_NAME" => "smartPreFilter",
+                    "DISPLAY_ELEMENT_COUNT" => "Y",
+                    "CURRENCY_ID" => "",
+                    "CONVERT_CURRENCY" => "N",
+                    "HIDE_NOT_AVAILABLE" => "N",
+                    "FILTER_VIEW_MODE" => "",
+                    "XML_EXPORT" => "Y",
+                    "SECTION_TITLE" => "NAME",
+                    "SECTION_DESCRIPTION" => "DESCRIPTION",
+                    "SEF_MODE" => "N",
+                    "SEF_RULE" => $arResult["FOLDER"] . $arResult["SMART_FILTER_URL_TEMPLATE"],
+                    "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
+                    "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+                    "INSTANT_RELOAD" => "N",
+                ),
+                $component,
+                array('HIDE_ICONS' => 'Y')
+            );
+
+
             $APPLICATION->IncludeComponent(
                 "bitrix:catalog.top",
                 ".default",

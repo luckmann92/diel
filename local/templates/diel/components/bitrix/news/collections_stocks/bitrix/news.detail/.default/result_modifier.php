@@ -24,7 +24,6 @@ if ($arResult['PROPERTIES']['PRODUCTS']['VALUE']) {
     }
 }
 
-
         $arImages = array();
         if ($arResult['PREVIEW_PICTURE']['ID'] || $arResult['DETAIL_PICTURE']['ID']) {
             $pic = $arResult['PREVIEW_PICTURE']['ID'] ?: $arResult['DETAIL_PICTURE']['ID'];
@@ -33,7 +32,7 @@ if ($arResult['PROPERTIES']['PRODUCTS']['VALUE']) {
                 array('width' => 748, 'height' => 565),
                 BX_RESIZE_IMAGE_EXACT, true
             );
-            $arImages[] = $img;
+            $arImages[] = $pic;
         }
 
         if ($arResult['PROPERTIES']['IMAGES']['VALUE']) {
@@ -42,7 +41,7 @@ if ($arResult['PROPERTIES']['PRODUCTS']['VALUE']) {
                     $arImage,
                     array('width' => 748, 'height' => 565),
                     BX_RESIZE_IMAGE_EXACT, true);
-                $arImages[] = $img;
+                $arImages[] = $arImage;
             }
         }
         if (!empty($arImages)) {

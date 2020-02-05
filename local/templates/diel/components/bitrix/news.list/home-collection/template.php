@@ -14,9 +14,11 @@ Loc::loadMessages(__FILE__);
     <div class="collections__slider-wrapper">
         <ul class="different-slider__list js-init-slider-collections">
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
-                <li class="different-slider__item">
+                <? $img_src = $_SERVER["DOCUMENT_ROOT"].$arItem['PREVIEW_PICTURE']['SRC'];
+                $imgWH = GetImgProp($img_src); ?>
+                <li class="different-slider__item <?= $imgWH['POSITION'] ?: '' ?>">
                     <div class="slider__item"
-                         style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>);min-height:<?= $arItem['PREVIEW_PICTURE']['HEIGHT'] ?>px">
+                         style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>)">
                         <div class="slider__label-year label-year"><?= $arItem['PROPERTIES']['LABLE_YEAR']['VALUE'] ?></div>
                         <div class="slider__item-desc">
                             <h3 class="slider__item-desc-title"><?= $arItem['NAME'] ?></h3>

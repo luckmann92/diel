@@ -66,6 +66,7 @@ $(document).ready(function () {
             !$('.arcticmodal-container').is(e.target) &&
             !$('.arcticmodal-overlay').is(e.target) &&
             !$('body').is(e.target) &&
+            $('.f-count').has(e.target).length === 0 &&
             !$('.f-count').is(e.target)) {
             Filter.removeClass('popup_active');
         }
@@ -175,14 +176,16 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
+$(window).on("load",function(){
     $(".slider__item-desc-content").niceScroll({
         cursorcolor: "#E08B66",
         cursorwidth: "2px",
         cursorborder: "1px solid #E08B66",
         cursorborderradius: "2px"
     });
+});
 
+$(document).ready(function () {
     if ($.browser.safari) {
         $('.js-init-logo-item').empty().append('<img src="/local/templates/diel/frontend/img/logo.svg">');
     }
@@ -200,6 +203,8 @@ $(document).ready(function () {
             || ($(e.target).hasClass('horizontal-filter'))
             || ($(e.target).parents('.filter-form').length)
             || ($(e.target).hasClass('filter-form'))
+            || ($(e.target).parents('.f-count').length)
+            || ($(e.target).hasClass('f-count'))
             || ($(e.target).hasClass('prev'))
             || ($(e.target).hasClass('next'))
         )) {

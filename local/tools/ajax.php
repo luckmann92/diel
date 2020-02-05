@@ -71,13 +71,17 @@ if ($_REQUEST['ACTION']) {
                     <h2 class="popup-product-card__title section-title"><?= $arProduct['NAME'] ?></h2>
                     <div class="popup-product-slider__cont">
                         <ul class="different-slider__list js-init-slider-catalog-fast-show">
-                            <li class="different-slider__item <?= $k % 2 ? 'even' : 'odd' ?>">
-                                <div class="slider__item"
+                            <? $img_src = $_SERVER["DOCUMENT_ROOT"].$arProduct["PREVIEW_PICTURE"]['SRC'];
+                            $imgWH = GetImgProp($img_src); ?>
+                            <li class="different-slider__item <?= $imgWH['POSITION'] ?: '' ?>">
+                            <div class="slider__item"
                                      style="background-image: url(<?= $arProduct["PREVIEW_PICTURE"]['SRC'] ?>);">
                                 </div>
                             </li>
                             <? foreach ($arProduct['PROPERTIES']['MORE_IMAGES']['VALUE'] as $arItem) { ?>
-                                <li class="different-slider__item <?= $k % 2 ? 'even' : 'odd' ?>">
+                                <? $img_src = $_SERVER["DOCUMENT_ROOT"].CFile::GetPath($arItem);
+                                $imgWH = GetImgProp($img_src); ?>
+                                <li class="different-slider__item <?= $imgWH['POSITION'] ?: '' ?>">
                                     <div class="slider__item"
                                          style="background-image: url(<?= CFile::GetPath($arItem) ?>);">
                                     </div>

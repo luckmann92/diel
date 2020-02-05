@@ -8,6 +8,21 @@ require_once __DIR__ . "/include/functions.php";
 //добавление баннера в контент
 addBannerInContent($APPLICATION->GetCurPage());
 
+function GetImgProp($img_src) {
+    $imgWH = getimagesize($img_src);
+    if (count($imgWH) > 0) {
+        $imgWH['PROP'] = $imgWH[0] / $imgWH[1];
+        if ($imgWH['PROP'] < 0.8) {
+            $imgWH['POSITION'] = 'vertical';
+        } elseif ($imgWH['PROP'] > 1.25) {
+            $imgWH['POSITION'] = 'horizontal';
+        } else {
+            $imgWH['POSITION'] = 'quad';
+        }
+    }
+    return $imgWH;
+}
+
 if (!defined('ADMIN_SECTION')) {
     AddEventHandler("main", "OnBeforeProlog", "ConfirmFZ152");
     global $APPLICATION;
