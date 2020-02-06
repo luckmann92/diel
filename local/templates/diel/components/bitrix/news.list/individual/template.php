@@ -11,7 +11,7 @@
     <div class="execution-process__slider-wrapper jumping-slider__slider-wrapper">
         <ul class="different-slider__list js-init-slider-individual">
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
-                <? $img_src = $_SERVER["DOCUMENT_ROOT"].CFile::GetPath($arItem);
+                <? $img_src = $_SERVER["DOCUMENT_ROOT"].$arItem['PREVIEW_PICTURE']['SRC'];
                 $imgWH = GetImgProp($img_src); ?>
                 <li class="different-slider__item <?= $imgWH['POSITION'] ?: '' ?>">
                     <div class="slider__item" style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>);">

@@ -267,7 +267,7 @@
         font-size: 1em;
     }
     .slider__item-desc-content {
-        max-height: 150px;
+        max-height: 120px;
         line-height: 1.5;
     }
     .horizontal {
@@ -276,7 +276,7 @@
     }
     .vertical {
         width: 235px;
-        height: 380px;
+        height: 189px;
     }
     .quad {
         width: 250px;

@@ -39,7 +39,7 @@ $(document).ready(function () {
         dotsListMob.removeClass('banner-menu-diamond__button--active');
         dotsListMob.eq(nextSlide).addClass('banner-menu-diamond__button--active');
 
-        if ($(window).width() < 1750 || ($(window).width() > 1919 && nextSlide > 1)) {
+        if ($(window).width() < 1750 || ($(window).width() > 1900 && nextSlide > 1)) {
             startTriangle = -12;
         }
 
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
         dotsInit(dotsList, triangleValue, radius);
 
-        if ($(window).width() < 1750 || ($(window).width() > 1919 && currentSlide > 1)) {
+        if ($(window).width() < 1750 || ($(window).width() > 1900 && currentSlide > 1)) {
             startTriangle = -12;
         }
 
@@ -84,7 +84,7 @@ function dotsInit(dotsList, triangleValue, radius) {
             triangle = (83 + triangleRotate),
             triangleRad = triangle * Math.PI / 180;
 
-        if (($(window).width() < 1750 && i > 0) || ($(window).width() > 1919 && i > 1)) {
+        if (($(window).width() < 1750 && i > 0) || ($(window).width() > 1900 && i > 1)) {
             triangleRad = (106 + triangleRotate) * Math.PI / 180;
         }
 

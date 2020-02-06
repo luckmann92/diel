@@ -19,7 +19,9 @@
         <div class="stocks__slider js-init-slider-stocks js-init-controls">
             <? foreach ($arResult['ITEMS'] as $k => $arItem) { ?>
                 <? if ($arItem['PREVIEW_PICTURE']) { ?>
-                    <div class="stocks__slide-item">
+                    <? $img_src = $_SERVER["DOCUMENT_ROOT"] . $arItem['PREVIEW_PICTURE']['SRC'];
+                    $imgWH = GetImgProp($img_src); ?>
+                    <div class="stocks__slide-item <?= $imgWH['POSITION'] ?: '' ?>">
                         <div class="stocks__slide"
                              style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>)">
                             <div class="stocks-slider__item-desc">
@@ -32,11 +34,11 @@
                 <? } ?>
             <? } ?>
         </div>
-    <? if (count($arResult['ITEMS']) > 1) { ?>
-        <div class="stocks-slider__nav">
-            <div class="stocks-slider__nav-list js-init-slider-stocks-nav"></div>
-            <div class="stocks-slider__nav-progress"></div>
-        </div>
-        <?}?>
+        <? if (count($arResult['ITEMS']) > 1) { ?>
+            <div class="stocks-slider__nav">
+                <div class="stocks-slider__nav-list js-init-slider-stocks-nav"></div>
+                <div class="stocks-slider__nav-progress"></div>
+            </div>
+        <? } ?>
     </div>
 <? } ?>

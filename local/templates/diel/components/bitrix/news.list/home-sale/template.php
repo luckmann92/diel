@@ -26,7 +26,9 @@
         <div class="stocks__slider js-init-slider-stocks">
             <? foreach ($arResult['ITEMS'] as $k => $arItem) { ?>
                 <? if ($arItem['PREVIEW_PICTURE']) { ?>
-                    <div class="stocks__slide-item">
+                    <? $img_src = $_SERVER["DOCUMENT_ROOT"].$arItem['PREVIEW_PICTURE']['SRC'];
+                    $imgWH = GetImgProp($img_src); ?>
+                    <div class="stocks__slide-item <?= $imgWH['POSITION'] ?: '' ?>">
                         <div class="stocks__slide" style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>)">
                             <div class="stocks-slider__item-desc">
                                 <h3 class="stocks-slider__title">
